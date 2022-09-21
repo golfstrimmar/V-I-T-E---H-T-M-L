@@ -1,0 +1,120 @@
+.btn {
+  border: 1px solid transparent;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+            
+.btn--success {
+  color: white;
+  border-radius: 10px;
+  background:  #fb1f1d;
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(250, 38, 36, 0.5), inset 0 0 15px rgba(255, 255, 255, 1);
+  }
+}
+
+
+/* .btn--success:focus {
+  border: 1px solid #2b2b63;
+  background: #d6a6f7;
+  box-shadow: 0px 0px 20px white !important;
+  color: white;
+} */
+
+// .btn--light svg {
+//   width: 20px;
+//   height: 20px;
+//   fill: chocolate;
+// }
+
+// .btn--light:hover svg {
+//   fill: var(--red);
+// }
+
+.btn--empty {
+  border: 1px solid #ef316b;
+  border-radius: 100px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #030303;
+}
+
+.btn--empty:hover {
+  color: white;
+  box-shadow: 4px 15px 30px 0 #fb211d52, inset 0 0 20px #faf8f8 !important;
+}
+
+// .btn--empty:focus {
+//   border: 1px solid #0000cc;
+//   background: #3333ff;
+//   box-shadow: 0px 0px 20px white !important;
+//   color: white;
+// }
+
+// .btn--light:hover,
+// .btn--cross:hover {
+//   background: #9999ff;
+//   border: 1px solid #0000cc;
+//   box-shadow: 0px 0px 20px white !important;
+//   color: white;
+// }
+
+// .btn--light:focus,
+// .btn--cross:focus {
+//   border: 1px solid #0000cc;
+//   background: #3333ff;
+//   box-shadow: 0px 0px 20px white !important;
+//   color: white;
+// }
+
+// .btn--success-icon {
+//   min-width: 300px;
+//   height: 40px;
+//   background: rgb(12, 185, 133);
+//   border: 3px solid rgb(12, 185, 133);
+//   border-radius: 10px;
+//   cursor: pointer;
+// }
+
+// .btn--success-icon svg,
+// .btn--success-icon span {
+//   color: white;
+//   fill: white;
+// }
+
+.but-wave {
+  // border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.addDiv {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  animation: pulseButton .3s ease-in-out;
+  transform: scale(0);
+  position: absolute;
+  background-color: white;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes pulseButton {
+0% {
+transform: scale(0);
+opacity: .6;
+}
+100% {
+opacity: 0;
+transform: scale(2);
+}
+}

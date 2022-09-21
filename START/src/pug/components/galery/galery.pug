@@ -1,0 +1,55 @@
+section#galery.galery
+  .container
+    .galery__title.title.t-25
+      h2 galery + lazy
+    .galery__body.galery-body
+      .galery__nav
+        button.galery__nav-item._is-active(type='button' data='all' disabled='') all
+        button.galery__nav-item(type='button' data='red') red
+        button.galery__nav-item(type='button' data='blue') blue
+        button.galery__nav-item(type='button' data='green') green
+        button.galery__nav-item(type='button' data='coral') coral
+      ul.galery__items
+        li.galery__item._start-item.rel(data='red')
+          .imgs
+            img(src='./assets/img/paralax.jpg' alt='')
+        li.galery__item._start-item.rel(data='blue')
+          .imgs
+            img(src='./assets/img/img-1.png' alt='')
+        li.galery__item._start-item.rel(data='coral')
+          .imgs
+            img(src='./assets/img/img-2.png' alt='')
+        li.galery__item._start-item.rel(data='green')
+          .imgs
+            img(src='./assets/img/img-3.png' alt='')
+        li.galery__item._start-item.rel(data='blue')
+          .imgs
+            img(src='./assets/img/img-1.png' alt='')
+        li.galery__item._start-item.rel(data='green')
+          .imgs
+            img(src='./assets/img/img-2.png' alt='')
+        li.galery__item._start-item.rel(data='blue')
+          .imgs
+            img(src='./assets/img/img-3.png' alt='')
+        li.galery__item._start-item.rel(data='red')
+          .imgs
+            img(src='./assets/img/img-1.png' alt='')
+        li.galery__item._start-item.rel(data='blue')
+          .imgs
+            img(src='./assets/img/img-2.png' alt='')
+        li.galery__item._start-item.rel(data='coral')
+          .imgs
+            img(src='./assets/img/img-3.png' alt='')
+      section#slider-galery
+        .slider__body
+          button.slider-arrow.slider-arrow-prev.arrow-galery-prev(type='button')
+            svg.icon
+              use(xlink:href='#chevron-left')
+             
+          button.slider-arrow.slider-arrow-next.arrow-galery-next(type='button')
+            svg.icon
+              use(xlink:href='#chevron-right')
+          svg.galeryPopupClose
+            use(xlink:href='#x')
+          .slider__wrapper.slider-js-galery.swiper-container
+            .swiper-wrapper

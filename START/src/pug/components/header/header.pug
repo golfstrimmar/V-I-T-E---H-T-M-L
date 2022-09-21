@@ -1,0 +1,28 @@
+header.header
+  .container
+    .header__body 
+      .header__logo.logo
+        a(href='#!').logo__link
+          img(src='./assets/img/logo.svg' alt='img') 
+        .logo__description lorem
+      nav.header__menu.menu
+        svg.icon.header__close
+          use(xlink:href='#x')
+        ul.menu__list
+          li.menu__item
+            a.menu__link.menu__link--active(href='#!' rel='#bunner') Home
+          li.menu__item
+            a.menu__link(href='#!' rel='#posts') Posts
+          li.menu__item
+            a.menu__link(href='#!' rel='#galery') Projects
+      .header__info.info
+        a.info__phone(href='#!') +7(000) 123 45 65 67 
+        form.info__search
+          input(placeholder='Поиск')
+          input(type='submit')
+          svg
+            use(xlink:href='#search')
+      
+      svg.header__burger.icon
+          use(xlink:href='#list')
+

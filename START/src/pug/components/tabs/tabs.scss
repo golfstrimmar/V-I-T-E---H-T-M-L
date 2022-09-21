@@ -1,0 +1,114 @@
+.tab {
+  position: relative;
+}
+
+.tabs__title h2{
+font-size: 40px;
+text-transform: uppercase;
+color: coral;
+}
+
+
+.tab__title {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .3s ease-in-out;
+  padding: 10px 40px;
+  background: cadetblue;
+
+}
+
+.tab__title svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease-in-out;
+  fill: white;
+}
+
+.tab__title span {
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.tabs ul > li {
+  position: relative;
+  margin:  5px ;
+}
+.tabs ul > li > ul li {
+  margin: 0 0 0 0;
+  
+}
+.tabs-container-js .tabs-container-js{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.tabs ul > li > ul li{
+  display: inline-table;
+  width: 33.33333%;
+}
+
+.tabs .hidden {
+  // background: rgb(85, 40, 143);
+  transition: all .3s ;
+  transform: scaleY(0);
+  transform-origin: top;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.hidden__wrapper{
+border: 1px solid red;
+}
+
+
+.tab-title-js._is-active {
+  background: rgb(142, 127, 212);
+  svg,
+  span {
+    color: rgb(85, 40, 143);
+    fill: rgb(85, 40, 143);
+  }
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.tabs .hidden._is-active {
+ animation: pulse .3s ;
+ animation-fill-mode: forwards;
+}
+
+.tabs .hidden._not-active {
+ animation: notPulse .3s ;
+ animation-fill-mode: forwards;
+}
+
+
+
+
+@keyframes pulse {
+0% {
+transform: scaleY(0);
+}
+100% {
+transform: scaleY(1);
+}
+}
+
+@keyframes notPulse {
+0% {
+transform: scaleY(1);
+}
+100% {
+transform: scaleY(0);
+}
+}
+
+
+// .tabs .hidden._is-active li {
+//   margin: 0 0 0 0;
+// }

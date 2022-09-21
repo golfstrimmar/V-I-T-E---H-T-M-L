@@ -1,0 +1,295 @@
+// font-family: 'Lobster', cursive;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Paytone One', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&family=Paytone+One&display=swap');
+
+
+
+:root {
+  --txt: #252d34;
+  --white: #fff;
+  --blue: #1e82bf;
+  --blue-2: #00ae9a;
+  --yellow: #eff1cc;
+  --red: #eb5858;
+  --orange: #fea623;
+  --green: #cad41a;
+  --blue-3: #00ae9a;
+  --txt-2: #48545e;
+  --white: #fff;
+  --white: #fff;
+  --white: #fff;
+  --white: #fff;
+  --txt: #252d34;
+  --white: #fff;
+  --txt-gray: #818a92;
+  --white: #fff;
+  --black: #000;
+}
+
+
+$txt: #252d34;
+$white: #fff;
+$blue: #1e82bf;
+$blue-2: #00ae9a;
+$yellow: #eff1cc;
+$red: #eb5858;
+$orange: #fea623;
+$green: #cad41a;
+$blue-3: #00ae9a;
+$txt-2: #48545e;
+$white: #fff;
+$white: #fff;
+$white: #fff;
+$white: #fff;
+$txt: #252d34;
+$white: #fff;
+$txt-gray: #818a92;
+$white: #fff;
+$black: #000;
+
+.t-13 {
+  
+  font-size: 44px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--yellow);
+}
+.t-6 {
+  
+  font-size: 32px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--blue-2);
+}
+.t-5 {
+  
+  font-size: 32px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-19 {
+  
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-16 {
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-15 {
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-8 {
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-3 {
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--black);
+}
+.t-7 {
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-12 {
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  text-align: left;
+  color: var(--white);
+}
+.t-10 {
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-9 {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-20 {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--blue-2);
+}
+.t-17 {
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt-gray);
+}
+.t-4 {
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--white);
+}
+.t-11 {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t {
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--black);
+}
+.t-18 {
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-14 {
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt);
+}
+.t-21 {
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--txt-gray);
+}
+.t-2 {
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-align: left;
+  color: var(--black);
+}
+
+span.t-8{
+  position: relative;
+  &::after{
+  content:'';
+  position: absolute;
+  width: 123px;
+  height: 12px;
+  border-radius: 2px;
+  background-color: $yellow;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  }
+}
+
+span.t-16{
+position: relative;
+  &::after{
+  content:'';
+  position: absolute;
+  width: 229px;
+  height: 12px;
+  border-radius: 2px;
+  background-color: $yellow;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  }
+}

@@ -1,0 +1,84 @@
+h2.center  lazy для демонстрации сделан слишком низко. нужно изменить нп скрипте  lazy.js высоту на -5px  
+section(id='do').do.rel
+ .imgs
+   img(src='./assets/img/bg.png' alt='img')
+ .container
+   .do__title.t-26._enter-top
+     h2 pug цикл + lazy
+   .do__body
+
+      -
+        var blocks = [
+          {
+            class: '',
+            src: '#sheet',
+            title: 'Дипломные работы',
+            t1: 'от 80 страниц',
+            t2: '10-30 дней',
+            t3: 'Преподаватель / кандидат наук',
+            t4: '1 месяц',
+            t5: 'План, презентация, речь, отчет об уникальности',
+            nummer: 'от 4100 $'
+          },
+          {
+            class: 'do-item__head--blue',
+            src: '#sheet',
+            title: 'Курсовые работы',
+            t1: 'от 30 страниц',
+            t2: '10-30 дней',
+            t5: 'План, отчет об уникальности',
+            nummer: 'от 650 $'
+          },
+          {
+            class: 'do-item__head--yellow',
+            src: '#sheet',
+            title: 'Рефераты',
+            t1: 'от 30 страниц',
+            t2: '10-30 дней',
+            t3: 'Преподаватель / кандидат наук',
+            t4: '1 месяц',
+            t5: 'План, отчет об уникальности',
+            nummer: 'от 250 $',
+            h6: 'dop',
+            t6: 'План, отчет об уникальности',
+            nummer: 'от 250 $'
+          },
+        ];
+      each block in blocks
+        .do__item.do-item
+          .do-item__head(class=block.class) 
+            .do-item__title.t-16
+              h3=block.title
+            svg.do-item__icon
+                use(xlink:href=block.src)
+          .do-item__body 
+            if block.t1
+                .do-item__line 
+                  .do-item__title-line.t-22 Объем работы:
+                  .do-item__text-line.t-23=block.t1
+            if block.t2
+                .do-item__line 
+                  .do-item__title-line.t-22 Сроки выполнения:
+                  .do-item__text-line.t-23=block.t2
+            if block.t3    
+                .do-item__line 
+                  .do-item__title-line.t-22 Автор:
+                  .do-item__text-line.t-23=block.t3
+            if block.t4
+                .do-item__line 
+                  .do-item__title-line.t-22 Бесплатные правки:
+                  .do-item__text-line.t-23=block.t4
+            if block.t5
+                .do-item__line 
+                  .do-item__title-line.t-22 Бесплатные материалы:
+                  .do-item__text-line.t-23=block.t5
+            if block.h6
+              .do-item__line 
+               .do-item__title-line.t-22=block.h6
+               .do-item__text-line.t-23=block.t6
+          .do-item__footer
+            .do-item__price.t-41  Цена: 
+            .do-item__nummer.t-40=block.nummer 
+            a(href="").do-item__button.center
+              span.t-42 Заказать
+    
