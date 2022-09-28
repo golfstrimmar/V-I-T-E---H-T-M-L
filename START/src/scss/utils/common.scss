@@ -15,20 +15,20 @@
 }
 
 body {
-  // font-family: "Manrope", sans-serif;
-  font-family: 'DrukCyr', sans-serif;
+  // font-family: "Formular", sans-serif;
+  font-family: 'Formular', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
   font-style: normal;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1;
-  background: white;
-  color: rgb(0, 0, 0);
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: var(--white);
 }
 
 .container {
-  // outline: 1px solid #4164ff;
-  max-width: 1200px;
+  outline: 1px solid #4164ff;
+  max-width: 1760px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -75,8 +75,8 @@ a {
   justify-content: center;
 }
 
-svg.hidden {
-  display: none;
+.tta{
+  text-transform: uppercase;
 }
 
 /* +++++++++++++++++++++++++++++++++++++ */
@@ -145,13 +145,7 @@ svg.hidden {
 .lock {
   overflow: hidden;
 }
-.mob-vis {
-  display: none !important;
-}
 
-.md-vis {
-  display: none !important;
-}
 
 @media (min-width: 901px) and (max-width: 1259px) {
   .container {
@@ -160,20 +154,6 @@ svg.hidden {
   }
 }
 
-@media (max-width: 1024px) {
-  .md-vis {
-    display: block !important;
-  }
-}
-
-@media (max-width: 900px) {
-  .mob-none {
-    display: none !important;
-  }
-  .mob-vis {
-    display: block !important;
-  }
-}
 
 @media (max-width: 900px) {
   .container {
