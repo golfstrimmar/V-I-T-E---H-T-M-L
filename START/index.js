@@ -137,3 +137,26 @@ Object.defineProperty(HTMLElement.prototype, "remAct", {
     }
   },
 });
+
+
+import Typed from "typed.js";
+
+document.querySelector(".bunner-button__text").style.display = "none";
+var typedButton;
+
+document.querySelector(".bunner-button").addEventListener("mouseenter", () => {
+  document.querySelector(".bunner-button__text").style.display = "none";
+  typedButton = new Typed(".typed", {
+    stringsElement: ".typed-strings",
+    typeSpeed: 0,
+    onComplete: (self) => {
+      document.querySelector(".bunner-button__text").style.display = "block";
+      typedButton.destroy();
+    },
+  });
+});
+
+document.querySelector(".bunner-button").addEventListener("mouseleave", () => {
+  document.querySelector(".bunner-button__text").style.display = "block";
+  typedButton.destroy();
+});
