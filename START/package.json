@@ -16,6 +16,7 @@
     "@vitejs/plugin-legacy": "^2.2.0",
     "plyr": "^3.7.2",
     "sass": "^1.54.9",
+    "typed.js": "^2.0.12",
     "swiper": "^8.4.2",
     "vite-aliases": "^0.9.2",
     "vite-plugin-pug-transformer": "^1.0.2"
