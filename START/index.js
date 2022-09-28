@@ -24,6 +24,7 @@ import { Select } from "./src/pug/components/select/select";
 import { Look } from "./src/pug/components/look/look";
 import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
+import { TypedItem } from "./src/pug/components/typed/typedHover";
 
 
   
@@ -118,6 +119,16 @@ const ranges = [...document.querySelectorAll(".range-wrap")];
       MyGalery(galery);
     });
   }
+
+
+const textTypedAll = [...document.querySelectorAll("._hover-typed")];
+if (textTypedAll.length > 0) {
+  textTypedAll.forEach((item) => {
+    TypedItem(item);
+  });
+}
+
+
 });
 
 
@@ -138,25 +149,3 @@ Object.defineProperty(HTMLElement.prototype, "remAct", {
   },
 });
 
-
-import Typed from "typed.js";
-
-document.querySelector(".bunner-button__text").style.display = "none";
-var typedButton;
-
-document.querySelector(".bunner-button").addEventListener("mouseenter", () => {
-  document.querySelector(".bunner-button__text").style.display = "none";
-  typedButton = new Typed(".typed", {
-    stringsElement: ".typed-strings",
-    typeSpeed: 0,
-    onComplete: (self) => {
-      document.querySelector(".bunner-button__text").style.display = "block";
-      typedButton.destroy();
-    },
-  });
-});
-
-document.querySelector(".bunner-button").addEventListener("mouseleave", () => {
-  document.querySelector(".bunner-button__text").style.display = "block";
-  typedButton.destroy();
-});

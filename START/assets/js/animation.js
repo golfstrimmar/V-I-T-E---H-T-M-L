@@ -1,6 +1,7 @@
 "use ctrict";
-
+import {TypedItemscroll} from './../../src/pug/components/typed/typedScroll'
 export const Anim = () => {
+  
   
   const observer1 = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -46,6 +47,23 @@ export const Anim = () => {
   if (right.length > 0) {
     right.forEach((ent) => {
       observer3.observe(ent);
+    });
+  }
+
+// ===============================
+
+  const observerScroll = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        TypedItemscroll(entry.target);
+      }
+    });
+  });
+
+  const TypedScroll = document.querySelectorAll("._scroll-typed");
+  if (TypedScroll.length > 0) {
+    TypedScroll.forEach((ent) => {
+      observerScroll.observe(ent);
     });
   }
 

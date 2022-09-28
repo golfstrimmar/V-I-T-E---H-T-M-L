@@ -16,7 +16,7 @@
 
 body {
   // font-family: "Manrope", sans-serif;
-  font-family: 'DrukCyr', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-style: normal;
   font-weight: 600;
@@ -78,6 +78,7 @@ a {
 svg.hidden {
   display: none;
 }
+
 
 /* +++++++++++++++++++++++++++++++++++++ */
 
@@ -145,12 +146,8 @@ svg.hidden {
 .lock {
   overflow: hidden;
 }
-.mob-vis {
-  display: none !important;
-}
-
-.md-vis {
-  display: none !important;
+.ttu{
+  text-transform: uppercase;
 }
 
 @media (min-width: 901px) and (max-width: 1259px) {
@@ -160,20 +157,6 @@ svg.hidden {
   }
 }
 
-@media (max-width: 1024px) {
-  .md-vis {
-    display: block !important;
-  }
-}
-
-@media (max-width: 900px) {
-  .mob-none {
-    display: none !important;
-  }
-  .mob-vis {
-    display: block !important;
-  }
-}
 
 @media (max-width: 900px) {
   .container {
