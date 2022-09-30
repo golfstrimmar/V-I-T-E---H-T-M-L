@@ -6,7 +6,6 @@ import path from "path";
 // import { ViteAliases } from "vite-aliases";
 // import legacy from "@vitejs/plugin-legacy";
 
-
 const pagesInput = {};
 const pages = [{ name: "index", path: resolve(__dirname, "index.html") }];
 pages.forEach((page) => {

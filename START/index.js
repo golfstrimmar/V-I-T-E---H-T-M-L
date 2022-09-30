@@ -3,7 +3,6 @@ import "./assets/css/swiper-bundle.min.css";
 import "./assets/css/fonts.css";
 import "./src/scss/main.scss";
 
-
 import { Button } from "./assets/js/button";
 // import { Lazy } from "./assets/js/lazy";
 import { Anim } from "./assets/js/animation";
