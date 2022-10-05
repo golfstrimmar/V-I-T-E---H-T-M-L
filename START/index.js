@@ -25,14 +25,6 @@ import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
 
-
-  
- 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
    Look();
     Anim();

@@ -1,6 +1,9 @@
 .bunner {
   min-height: 100vh;
   position: relative;
+  h1 {
+    text-shadow: 0 0 8px var(--white);
+  }
 }
 
 .bunner .container {
@@ -21,10 +24,8 @@
 .bunner__text p {
   margin: 0 0 10px 0;
   text-shadow: 0px 0px 4px #1763b2;
-  font-size: 30px;
 }
 
 .slider-main-js {
   max-height: 100%;
 }
-
