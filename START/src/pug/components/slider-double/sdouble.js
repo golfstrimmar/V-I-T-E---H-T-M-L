@@ -5,22 +5,22 @@ export const Double = ()=>{
 
  const swiperDoubleLow = new Swiper("#swiperDoubleLow", {
    spaceBetween: 10,
-   slidesPerView: 4,
+   slidesPerView: 6,
    freeMode: true,
-   loop: "true",
+   //  loop: "true",
    speed: 500,
    watchSlidesProgress: true,
    modules: [Navigation],
    navigation: {
-     nextEl: ".Low-next",
-     prevEl: ".Low-prev",
+     nextEl: ".swiper-button-prev",
+     prevEl: ".swiper-button-next",
    },
    grabCursor: true,
  });
  const swiperDoubleTop = new Swiper("#swiperDoubleTop", {
    spaceBetween: 10,
    slidesPerView: 1,
-   loop: "true",
+  //  loop: "true",
    speed: 500,
    modules: [EffectFade, Thumbs],
    thumbs: {

@@ -1,0 +1,35 @@
+.paint__links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+   margin: 2px 0;
+   column-gap: 7px;
+}
+
+.paint-links__item {
+  display: inline-block;
+  background-color: #fff;
+  border: 2px solid #fbba00;
+  padding: 2px 16px;
+  border-radius: 2px;
+  cursor: pointer;
+ 
+  text-align: center;
+  text-transform: uppercase;
+  &:hover {
+    background: #f3f3f3;
+  }
+  transition: all 0.2s;
+  &._is-active {
+    background: #fbba00;
+    color: #000;
+    border: none;
+    line-height: 24px;
+    padding: 4px 16px;
+  }
+}
+.paint__link {
+  color: #000;
+  line-height: 24px;
+  font-size: 14px;
+}

@@ -1,0 +1,62 @@
+section(id='stages').stages.rel
+ .container
+   ul.stages__body
+    -
+        var blocks = [
+          {
+            url: './assets/img/stages/i-1.png',
+            title: 'Приедем в удобное  для вас время с 8:00 до 22:00',
+            arrow : './assets/img/stages/arrow.png',
+          },
+          {
+            url: './assets/img/stages/i-2.png',
+            title: 'В любую точку города и области',
+            arrow : './assets/img/stages/arrow.png',
+          },
+          {
+            url: './assets/img/stages/i-3.png',
+            title: 'Выполним точный замер до миллиметра',
+            arrow : './assets/img/stages/arrow.png',
+          },
+          {
+            url: './assets/img/stages/i-4.png',
+            title: 'Каталог из 5000+ различных оттенков в наличии',
+          },
+        ];
+    each block in blocks
+        li.stages__item.stages-item
+          .stages-item__img
+            .imgs 
+              img(src=block.url, alt="alt")
+          .stages-item__title=block.title
+          if block.arrow
+            .stages-item__img--arrow
+              .imgs 
+                img(src=block.arrow, alt="alt")
+
+
+          //- .do-item__body 
+            if block.t1
+                .do-item__line 
+                  .do-item__title-line.t-22 Объем работы:
+                  .do-item__text-line.t-23=block.t1
+            if block.t2
+                .do-item__line 
+                  .do-item__title-line.t-22 Сроки выполнения:
+                  .do-item__text-line.t-23=block.t2
+            if block.t3    
+                .do-item__line 
+                  .do-item__title-line.t-22 Автор:
+                  .do-item__text-line.t-23=block.t3
+            if block.t4
+                .do-item__line 
+                  .do-item__title-line.t-22 Бесплатные правки:
+                  .do-item__text-line.t-23=block.t4
+            if block.t5
+                .do-item__line 
+                  .do-item__title-line.t-22 Бесплатные материалы:
+                  .do-item__text-line.t-23=block.t5
+            if block.h6
+              .do-item__line 
+               .do-item__title-line.t-22=block.h6
+               .do-item__text-line.t-23=block.t6

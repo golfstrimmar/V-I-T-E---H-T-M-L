@@ -1,3 +1,20 @@
+
+* {
+  //  outline: 1px solid green;
+  box-sizing: border-box;
+}
+
+body {
+  // font-family: "Manrope", sans-serif;
+  // font-family: 'Manrope', sans-serif;
+
+font-family: 'Open Sans', sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: $txt;
+background: $white;
+}
 .wrapper {
   overflow: hidden;
   min-height: 100vh;
@@ -9,26 +26,9 @@
   }
 }
 
-* {
-  //  outline: 1px solid green;
-  box-sizing: border-box;
-}
-
-body {
-  // font-family: "Manrope", sans-serif;
-  font-family: 'Manrope', sans-serif;
-  font-style: normal;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1;
-  background: white;
-  color: rgb(0, 0, 0);
-}
-
 .container {
   // outline: 1px solid #4164ff;
-  max-width: 1200px;
+  max-width: 1480px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -78,7 +78,9 @@ a {
 svg.hidden {
   display: none;
 }
-
+.tta{
+  text-transform: uppercase;
+}
 
 /* +++++++++++++++++++++++++++++++++++++ */
 

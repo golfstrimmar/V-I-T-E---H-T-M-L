@@ -12,7 +12,7 @@ export class Accord {
   setTime() {
     for (let i = 0; i < this.neibours.length; i++) {
       if (this.neibours[i].classList.contains("_is-active")) {
-        return (this.timeout = 300);
+        return (this.timeout = 200);
       }
     }
   }

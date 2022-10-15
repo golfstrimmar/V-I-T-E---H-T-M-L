@@ -29,20 +29,27 @@
   height: 20px;
   transform: translate(-50%, -50%);
   z-index: 2;
-  stroke-width: 1px;
+  // stroke-width: 1px;
   transition: all 0.2s ease-in-out;
-  fill: rgba(0, 0, 0, .2);
+  // fill: rgba(0, 0, 0, .2);
 }
 
 .slider-arrow:hover {
-  transform: scale(1.05) translate(0%, -50%);
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, .4), 0 0 18px rgba(0, 0, 0, .2);
+  // transform: scale(1.05) translate(0%, -50%);
+  // box-shadow: inset 0 0 8px rgba(0, 0, 0, .4), 0 0 18px rgba(0, 0, 0, .2);
 }
 
 .slider-arrow:hover svg {
   fill: rgba(0, 0, 0, .2);
 }
 
+.swiper-button-disabled {
+  display: none;
+}
+.swiper-button-next, .swiper-button-prev {
+  margin-top: 0;
+  color: transparent;
+}
 // .slider-arrow-prev {
 //   left: -55px;
 // }

@@ -1,68 +1,56 @@
-h2.t-25(style="margin: 40px 0 0 0;") Double
+
 .Double
   .swiper.swiperDoubleTop#swiperDoubleTop.swiper-container
     .swiper-wrapper
       .swiper-slide
-        .imgs
-          img(src='https://swiperjs.com/demos/images/nature-1.jpg')
+          include ../serv/top-1.pug
       .swiper-slide
-        .imgs
-          img(src='https://swiperjs.com/demos/images/nature-2.jpg')
+          include ../serv/top-2.pug
       .swiper-slide
-        .imgs
-          img(src='https://swiperjs.com/demos/images/nature-3.jpg')
+          include ../serv/top-3.pug
       .swiper-slide
-        .imgs
-          img(src='https://swiperjs.com/demos/images/nature-4.jpg')
+          include ../serv/top-4.pug
       .swiper-slide
-        .imgs
-          img(src='https://swiperjs.com/demos/images/nature-5.jpg')
+          include ../serv/top-5.pug
       .swiper-slide
-        .imgs
-          img(src='https://swiperjs.com/demos/images/nature-6.jpg')
+          include ../serv/top-6.pug
       .swiper-slide
-        .imgs
-          img(src='https://swiperjs.com/demos/images/nature-7.jpg')
-      .swiper-slide
-        .imgs
-          img(src='https://swiperjs.com/demos/images/nature-8.jpg')
-      .swiper-slide
-        .imgs
-          img(src='https://swiperjs.com/demos/images/nature-10.jpg')
+          include ../serv/top-7.pug
   .inner
-    .Low-next.slider-arrow
+    .Low-next.slider-arrow.swiper-button-prev
       svg
         use(xlink:href='#chevron-left') 
-    .Low-prev.slider-arrow
+    .Low-prev.slider-arrow.swiper-button-next
       svg
         use(xlink:href='#chevron-right')
 
     .swiper.swiperDoubleLow(thumbsslider='')#swiperDoubleLow
       .swiper-wrapper
+          .swiper-slide.rel
+            .imgs
+                img(src='./assets/img/serv/i-1.jpg' alt='img')
+            p Покраска стен в квартире
           .swiper-slide
             .imgs
-              img(src='https://swiperjs.com/demos/images/nature-1.jpg')
+                img(src='./assets/img/serv/i-2.jpg' alt='img')
+            p Покраска стен в доме
           .swiper-slide
             .imgs
-              img(src='https://swiperjs.com/demos/images/nature-2.jpg')
+                img(src='./assets/img/serv/i-3.jpg' alt='img')
+            p Покраска стен в офисе
           .swiper-slide
             .imgs
-              img(src='https://swiperjs.com/demos/images/nature-3.jpg')
+                img(src='./assets/img/serv/i-4.jpg' alt='img')
+            p Покраска обоев
           .swiper-slide
             .imgs
-              img(src='https://swiperjs.com/demos/images/nature-4.jpg')
+                img(src='./assets/img/serv/i-5.jpg' alt='img')
+            p Покраска потолка
           .swiper-slide
             .imgs
-              img(src='https://swiperjs.com/demos/images/nature-5.jpg')
+                img(src='./assets/img/serv/i-6.jpg' alt='img')
+            p Покраска фасадов
           .swiper-slide
             .imgs
-              img(src='https://swiperjs.com/demos/images/nature-6.jpg')
-          .swiper-slide
-            .imgs
-              img(src='https://swiperjs.com/demos/images/nature-7.jpg')
-          .swiper-slide
-            .imgs
-              img(src='https://swiperjs.com/demos/images/nature-8.jpg')
-          .swiper-slide
-            .imgs
-              img(src='https://swiperjs.com/demos/images/nature-10.jpg')
+                img(src='./assets/img/serv/i-7.jpg' alt='img')
+            p Покраска деревянного фасада
