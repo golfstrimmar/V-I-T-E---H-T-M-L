@@ -100,5 +100,5 @@ export const OpenPopGalery = () =>{
         popup.classList.remove("_not-active");
         popup.classList.add("_is-active");
         popupGalery.style.display = "block";
-      // body.classList.add("lock");
+      body.classList.add("lock");
 }
