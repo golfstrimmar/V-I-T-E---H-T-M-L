@@ -1,11 +1,129 @@
+include ../buttons/deutsch-button.pug
 section.tabs#tabs_deutsch
       ul.tabs__body.tabs-container-js
-        li.tabs__tab.tab.tab-js
-          p.tab__title.tab__title_deutsch.tab-title-js
-            span tab3
-            svg
-              use(xlink:href='#chevron-down')
-          .hidden.tab-hidden-js
-            .hidden__wrapper.hidden__wrapper_deutsch
-              p hidden3
-             
+        -
+          var blocks = [
+            {
+              title: 'tab1',
+              text: 'hidden1'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+            {
+              title: 'tab2',
+              text: 'hidden2'
+            },
+          ];
+        each block in blocks
+
+          li.tabs__tab.tab.tab-js
+            p.tab__title.tab__title_deutsch.tab-title-js
+              span=block.title
+              svg
+                use(xlink:href='#chevron-down')
+            .hidden.tab-hidden-js
+              .hidden__wrapper.hidden__wrapper_deutsch
+                p=block.text
+

@@ -1,0 +1,28 @@
+.but--deutsch{
+  position: fixed;
+  z-index: 1000;
+}
+.but-deutsch__body {
+  // display: flex;
+  row-gap: 40px;
+}
+#but-deutsch-stop {
+  background-color: rgb(174, 84, 226);
+  &:hover {
+    box-shadow: 0 10px 20px rgba(174, 84, 226, 0.5),
+      inset 0 0 15px rgb(174, 84, 226);
+  }
+}
+
+.but-deutsch {
+  padding: 5px;
+  min-width: 10px;
+  border-radius: 50%;
+  margin: 5px;
+svg{
+  width: 25px;
+  height: 25px;
+  stroke-width: 3px;
+  stroke: 3px;
+}
+}

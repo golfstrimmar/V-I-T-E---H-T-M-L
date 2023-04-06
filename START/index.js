@@ -24,10 +24,14 @@ import { Look } from "./src/pug/components/look/look";
 import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
+import { MyDeutsch } from "./src/pug/components/deutsch-catalog/catalog.js";
 
 document.addEventListener("DOMContentLoaded", function () {
    Look();
     Anim();
+  if (document.querySelector("#tabs_deutsch")) {
+    MyDeutsch();
+  }
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
