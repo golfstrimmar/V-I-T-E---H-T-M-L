@@ -1,0 +1,22 @@
+.hidden__wrapper_deutsch {
+  background: rgb(253, 223, 183);
+  border: none;
+  padding: 3px;
+  p {
+    font-size: 20px;
+  }
+}
+.tab__title_deutsch {
+  padding: 5px;
+  background: rgb(247, 225, 127);
+
+  span {
+    font-size: 20px;
+  }
+  &._is-active {
+    background:  rgb(241, 209, 63);
+  }
+  span {
+    color: rgb(3, 3, 3);
+  }
+}
