@@ -1,0 +1,68 @@
+
+.swiper#Swiper-index-pronomen
+    .swiper-wrapper
+      
+        -
+          var blocks = [
+            {title: 'Этот роман увлекателен.',text: 'Dieser Roman ist spannend.'},
+            {title: 'Тот роман скучен.',text: 'Jener Roman ist langweilig.'},
+            {title: 'Это тот же самый мужчина, что и на фото?',text: 'Ist das derselbe Mann wie auf den Foto?'},
+            {title: 'Он такой интересный мужчина.',text: 'Er ist solch ein/Eine solche/So eine interessanter Mann.'},
+            {title: 'Эта сумка мне нравится.',text: 'Die/Diese Tasche gefält mir.'},
+            {title: 'Это та (сумка), про которую ты говорила?',text: 'Ist das jene Tasche/diejenige (Tasche), von der du gesprochen hast?'},
+            {title: 'Та же (самая) сумка лежит у меня на столе.',text: 'Dieselbe Tasche liegt jetzt auf mainem Tich.'},
+            {title: 'Такая сумка очень дорогая.',text: 'Solch eine/Eine solche /So eine Tasche ist sehr teuer.'},
+            {title: '(Э)то платье новое?',text: 'Ist das/dieses Kleid neu?'},
+            {title: 'Jenes Kleid/Dasjenige(Kleid) das sie mir geschenkt hat, passt mir nicht.',text: 'То(платье), которое она мне подарила , мне не подходит.'},
+            {title: 'Es war dasselbe Kleid, in dem sie gekommen war.',text: 'Это было то же самое платье, в котором она пришла.'},
+            {title: ' Такое платье есть в любом цвете.',text: 'Solch ein/ Ein solches/So ein Kleid gibt es in jeder Farbe.'},
+            {title: 'Те /эти люди совсем сумашедшие.',text: 'Die/Diese Leute sind total verrückt.'},
+            {title: 'Те люди, которые знают мало говорят много.',text: 'Jene Leute Diejenigen (Leute) , die wenig wissen, sagen viel.'},
+            {title: 'Всегда одни и те же люди.',text: 'Immer dieselben Leute!'},
+            {title: 'Такие люди не имеют никакого представления о политике.',text: 'Solche Leute haben keine Ahnung von Politik.'},
+            {title: 'Я скажу (э)тому мужчине, что ...',text: 'Ich sage dem/diesem Mann, dass ...'},
+            {title: 'Про этого мужчину из новостей давно ничего не было слышно.',text: 'Man hat von jenem Mann/demjenigen (Mann) aus den Nachrichten lange nicht gehört.'},
+            {title: 'Машина и дом пренадлежат тому же мужчине.',text: 'Das Auto und das Haus gehören demselben Mann.'},
+            {title: 'С таким мужчиной невозможно жить.',text: 'Mit solch einem/einem solchen/so einem Mann kann man nicht leben.'},
+            {title: 'У этой сумки не хватает одной пуговицы.',text: 'Der /Dieser Tasche fehlt ein Knopf.'},
+            {title: 'Что в (э)той сумке?',text: 'Was ist in jener/derjenigen Tasche?'},
+            {title: 'я приду с той же сумкой что и на прошлой неделе',text: 'Ich komme mit derselben Tasche wie letzte Woche.'},
+            {title: 'о такой сумке она только мечтала',text: 'Von solch einer/einer solchen/ so einer Tasche hat sie nur geträumt.'},
+            {title: 'кроме этого платья пришло ещё вот это',text: 'Außer dem/diesem Kleid kam noch das/ dieses hier.'},
+            {title: 'у того платья покрой не совсем оптимальный',text: 'Bei jenem/ demjenigen Kleid ist der Schnitl nicht gans optimal.'},
+            {title: 'она во второй раз вышла замуж в том же платье',text: 'Sie hat zum zweiten Mal in demselben Kleid geheiratet.'},
+            {title: 'К такому платью подходит элегантная причёска',text: 'Zu solch einem /einem solchen/ so einem Kleid passt eine elegante Frisur.'},
+            {title: 'надо поблагодарить тех/этих людей',text: 'Mann muss den/diesen Leuten danken.'},
+            {title: 'мы помогаем тем людям, которые и нам помогают',text: 'Wir helfen jenen Leuten/ denjenigen (Leuten), die uns auch helfen.'},
+            {title: 'Каждый день они имеют дело с теми же (самыми) людьми',text: 'Jeden tag haben sie mit denselben Leuten zu tun.'},
+            {title: 'таких людей я боюсь',text: 'Vor solchen Leuten habe ich Angst.'},
+            {title: 'Я знаю этого мужчину.',text: 'Ich kenne den/siesenMann'},
+            {title: 'они нашли того мужчину,который был Пропавший без вести.',text: 'Sie haben jenen Mann/ denjenigen /(Mann), der vermist war, gefunden.'},
+            {title: 'Мария любит того самого мужчину что и Надя.',text: 'Maria liebt denselben Mann wie Nadine'},
+            {title: 'Такого мужчину не видишь каждый день!.',text: 'Solch einen / Einen solhen/So einen Mann sieht man nicht alle Tage'},
+            {title: 'Я люблю эту сумку.',text: 'Ich liebe die/diese Tasche'},
+            {title: 'Лиза получит ту сумку, которую она хотела.',text: 'Lisa bekommt jene Tasche/ diejenige (Tasche ), die sie sich gewünscht hat'},
+            {title: 'Почему ты всегда берешь с собой ту же (самую) сумку.',text: 'Warum nimmst du immer dieselbe tasche mit?'},
+            {title: 'Такую сумку я хочу на день рождения',text: 'Solch eine/Eine solche/So eine Tasche wünsche ich mir zum Geburtstag. '},
+            {title: '(Э)то платье у меня тоже есть.',text: 'Das/Dieses Kleid habe ich auch.'},
+            {title: 'Ты помнишь то платье, которое мы видели в магазине.',text: 'Erinnerst du dich an jenes Kleid/ dasjenige (Kleid), das wir Laden gesehen haben?'},
+            {title: 'Sie trägt dasselbe Kleid wie gestern.',text: 'Ты помнишь то платье, которое мы видели в магазине.'},
+            {title: 'На ней то же самое платье что и вчера.',text: 'Sie trägt dasselbe Kleid wie gestern.'},
+            {title: 'Такое красивое платье я никогда не видела.',text: 'Solch ein/Ein solches/So ein schönes Kleid habe ich noch nie gesehen.'},
+            {title: 'Мы избегаем тех\этих людей.',text: 'Wir vermeiden die/diese Leute.'},
+            {title: 'Это только для тех (Людей),которые имеют деньги.',text: 'Das ist nur für jene Leute/diejenigen (Leute), die Geld haben.'},
+            {title: 'Он консультирует тех же самых людей что и я.',text: 'Er berät dieselben Leute wie ich.'},
+            {title: 'Таких людей я терпеть не могу.',text: 'Solche Leute kann ich gar nicht leiden.'},
+            {title: 'Из за (э)того/того же (самого)/такого мужчины она часто бывает в депрессии.',text: 'Wegen des / dieses / jenes / desjenigen / desselben / solch eines / eines solhen / so eines Mannes hatte sie oft Depressionen.'},
+            {title: 'Материал (э)той/той же (самой)/такой сумки очень прочный.',text: 'Das Material der/dieser/ jener/ derjenigen/ derselben/ solch einer/ einer solchen/ so einer Tasche ist sehr strapazierfähig.'},
+            {title: 'Вместо этого/того же (самого)/такого платья она решилась на брюки.',text: 'Anstatt des/ dieses/ jenes/ desjenigen/ desselben/ solch eines/ eines solchen/ so eines Kleides entschied sich Anna für eine Hose.'},
+            {title: 'Несмотря на (э)тих/тех/тех же (самых)/таких людей я была успешной.',text: 'Trotz der/ dieser/ jener/ derjenigen/ deselben/ solher Leute hatte ich Erfolg.'},
+          ];
+        each block in blocks
+          .swiper-slide
+            .container
+              .swiper-slide__body
+                .swiper-slide__title 
+                  h3=block.title
+                .schattig=block.text
+                a.swiper-slide__text.but-wave.popups-init-js(rel='#popup2' href='#!') überzetzung

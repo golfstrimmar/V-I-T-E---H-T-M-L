@@ -51,15 +51,17 @@
   position: relative;
   z-index: 1010;
   display: flex;
-  border: 10px solid rgb(93, 15, 138);
-  border-radius: 10px;
   z-index: 1010;
-  width: 60vw;
+  width: 90vw;
   margin: 100px 0;
 }
 .popup__content {
   display: none;
-  background: #ffffff;
+  background: #ccebfa;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: large;
+  margin: 0 auto;
 }
 
 .popup__content--galery {
@@ -92,7 +94,8 @@
   width: 40px;
   opacity: 0.7;
   right: 4px;
-  top: 5px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .popup__close svg {

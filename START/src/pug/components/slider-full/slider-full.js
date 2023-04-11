@@ -29,6 +29,8 @@ export const SwiperFull = () =>{
         prevEl: ".js-full-prev",
       },
     });
+
+
   }
 
 

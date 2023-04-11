@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  background-color: rgb(217, 220, 223);
   .imgs {
     // z-index: +1;
   }
@@ -16,7 +17,7 @@
 
 body {
   // font-family: "Manrope", sans-serif;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-style: normal;
   font-style: normal;
   font-weight: 600;
@@ -79,7 +80,6 @@ svg.hidden {
   display: none;
 }
 
-
 /* +++++++++++++++++++++++++++++++++++++ */
 
 .d-flex {
@@ -95,58 +95,55 @@ svg.hidden {
   flex-direction: column;
 }
 /* +++++++++++++++++++++++++++++++++++++ */
- @media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
+  .top-animation {
+    animation: wipe-enter 1.5s;
+  }
+  @keyframes wipe-enter {
+    0% {
+      transform: translate(0, -100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
 
-.top-animation {
-  animation: wipe-enter 1.5s 
-}
-@keyframes wipe-enter {
-  0% {
-    transform: translate(0,-100px);
-    opacity: 0
+  .left-animation {
+    animation: left-enter 1.5s;
   }
-  100% {
-    transform: translate(0,0);
-    opacity: 1
+  @keyframes left-enter {
+    0% {
+      transform: translate(-200px, 0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
   }
-}
 
-
-.left-animation {
-  animation: left-enter 1.5s 
-}
-@keyframes left-enter {
-  0% {
-    transform: translate(-200px,0);
-    opacity: 0
+  .right-animation {
+    animation: right-enter 1.5s;
   }
-  100% {
-    transform: translate(0,0);
-    opacity: 1
+  @keyframes right-enter {
+    0% {
+      transform: translate(200px, 0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
   }
-}
-
-.right-animation {
-  animation: right-enter 1.5s 
-}
-@keyframes right-enter {
-  0% {
-    transform: translate(200px,0);
-    opacity: 0
-  }
-  100% {
-    transform: translate(0,0);
-    opacity: 1
-  }
-}
-
 }
 /* +++++++++++++++++++++++++++++++++++++ */
 
 .lock {
   overflow: hidden;
 }
-.ttu{
+.ttu {
   text-transform: uppercase;
 }
 
@@ -156,7 +153,6 @@ svg.hidden {
     max-width: calc(100% - 40px);
   }
 }
-
 
 @media (max-width: 900px) {
   .container {

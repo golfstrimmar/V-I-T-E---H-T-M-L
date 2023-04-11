@@ -24,8 +24,13 @@ export const Popups = () => {
 
   document.addEventListener("click", (e) => {
     const target = e.target;
+    // if (e.target.closest(".schattig")) {
+    //   const schattig = e.target.closest(".schattig");
+    // }
+    
+    
     //   // ==========================
-    const openPop = () => {
+    const openPop = (schattig) => {
       body.classList.add("lock");
       const initTarget = popup.querySelector(
         target.closest(".popups-init-js").getAttribute("rel")
@@ -44,16 +49,16 @@ export const Popups = () => {
           }
         });
       }, 200);
-
-      if (initTarget) {
-        let linkPlyr = initTarget.querySelector("video").getAttribute("id");
-        for (let i = 0; i < tempor.length; ++i) {
-          if (Pleers[i].id === linkPlyr) {
-            Pleers[i].e.play();
-          }
-        }
-      }
-
+  
+     initTarget.innerHTML = schattig.innerHTML; 
+      // if (initTarget) {
+      //   let linkPlyr = initTarget.querySelector("video").getAttribute("id");
+      //   for (let i = 0; i < tempor.length; ++i) {
+      //     if (Pleers[i].id === linkPlyr) {
+      //       Pleers[i].e.play();
+      //     }
+      //   }
+      // }
     };
     //   // ==========================
     const closePop = () => {
@@ -69,9 +74,9 @@ export const Popups = () => {
       }, 300);
 
  
-      for (let i = 0; i < Pleers.length; ++i) {
-        Pleers[i].e.stop();
-      }
+      // for (let i = 0; i < Pleers.length; ++i) {
+      //   Pleers[i].e.stop();
+      // }
     };
     //   // ==========================
 
@@ -80,7 +85,21 @@ export const Popups = () => {
       //  &&
       // target.closest(".slider__item").classList.contains("swiper-slide-active")
     ) {
-      openPop();
+     
+if (
+  target
+    .closest(".popups-init-js")
+    .closest(".swiper-slide")
+    .querySelector(".schattig")
+) {
+  const schattig = target
+    .closest(".popups-init-js")
+    .closest(".swiper-slide")
+    .querySelector(".schattig");
+  console.log(schattig);
+  openPop(schattig);
+}
+      
     } else if (
       target.matches(".popup-overlay-js") ||
       target.closest(".popup-close-js")
@@ -95,7 +114,6 @@ export const Popups = () => {
 export const OpenPopGalery = () =>{
   const popup = document.querySelector(".popup-js")
   const popupGalery = document.querySelector(".popup__content--galery")
-
         popup.style.display = "block";
         popup.classList.remove("_not-active");
         popup.classList.add("_is-active");
