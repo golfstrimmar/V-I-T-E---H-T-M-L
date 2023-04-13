@@ -1,0 +1,19 @@
+.lernen--worter {
+  min-width: 240px;
+  max-width: 240px;
+  margin: 20px 0;
+  .swiper-slide {
+    background: rgb(247, 190, 129);
+    &__body {
+      min-height: 180px;
+    }
+    &__text {
+      background: rgb(150, 89, 25);
+      border: none;
+      padding: 8px;
+    }
+  }
+}
+.Worter__body {
+  padding: 0 50px;
+}
