@@ -1,0 +1,10 @@
+.lernen--werben {
+  .swiper-slide {
+  background-color: rgb(160, 206, 160);
+  }
+  .swiper-slide {
+    &__text {
+      background: rgb(54, 95, 54);
+    }
+  }
+}

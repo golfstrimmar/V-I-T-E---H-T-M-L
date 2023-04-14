@@ -1,19 +1,50 @@
-.lernen--worter {
+.Worter__body {
+  padding: 0 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.sell {
   min-width: 240px;
   max-width: 240px;
   margin: 20px 0;
   .swiper-slide {
-    background: rgb(247, 190, 129);
+    border-radius: 10px;
     &__body {
       min-height: 180px;
+      position: relative;
+      padding: 10px;
+    }
+    &__title{
+      color: rgb(250, 247, 237);
+      font-size: 20px;
+    }
+    .schattig{
+      position: absolute;
+      left: 10000px;
     }
     &__text {
-      background: rgb(150, 89, 25);
       border: none;
       padding: 8px;
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgb(251, 251, 252);
+      border-radius: 5px;
+      width: calc(100% - 10px);
+      text-align: center;
     }
   }
 }
-.Worter__body {
-  padding: 0 50px;
+
+.lernen--worter {
+  .swiper-slide {
+    background: rgb(247, 190, 129);
+  }
+  .swiper-slide {
+    &__text {
+      background: rgb(150, 89, 25);
+    }
+  }
 }
