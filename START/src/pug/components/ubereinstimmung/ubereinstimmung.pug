@@ -1,0 +1,349 @@
+section(id='Uber').uber.rel
+   .uber__body
+      ul.uber__links.uber-blocks
+         -
+            var blocks = [
+
+               {title: 'dieses (jenes) Kind'},
+               {title: 'diese (jene) Männer, Kinder, Frauen'},
+               {title: 'dieses (jenes) Kind'},
+               {title: 'Einer solchen Stadt'},
+               {title: 'Einer solchen Stadt'},
+               {title: 'Einen solchen Baum'},
+               {title: 'Eine solche Stadt'},
+               {title: 'diesem (jenem) Mann'},
+               {title: 'Ein solches Haus'},
+               {title: 'diesem (jenem) Kind'},
+               {title: 'dieser (jener) Männer, Kinder, Frauen'},
+               {title: 'diesen (jenen) Männer, Kinder, Frauen'},
+               {title: 'diesen (jenen) Mann'},
+               {title: 'dieses (jenes) Kindes'},
+               {title: 'diese (jene) Frau'},
+               {title: 'Eine solche Stadt'},
+               {title: 'dieser (jener) Mann'},
+               {title: 'Ein solcher Baum'},
+               {title: 'Ein solches Haus'}, 
+               {title: 'dieser (jener) Frau'},
+               {title: 'solche Städte'},
+               {title: 'diese (jene) Frau'},
+               {title: 'Eines solchen Baumes'},
+               {title: 'Eines solchen Hauses'},
+               {title: 'dieses (jenes) Mannes'},
+               {title: 'solcher Städte'},
+               {title: 'Einem solchen Baum'},
+               {title: 'Einem solchen Haus'},
+               {title: 'dieser (jener) Frau'},
+               {title: 'solchen Städten'}, 
+               {title: 'diese (jene) Männer, Kinder, Frauen'},
+               {title: 'solche Städte'},
+
+
+
+            ];
+         each block in blocks
+            li.uber-block.js-cell
+               .mark=block.title
+               .hidden=block.title
+               .uber-block__card.js-card(draggable='true')
+                  h4=block.title
+
+
+
+
+      ul.uber__rechts.uber-blocks
+         -
+            var blocks = [
+               {title: 'dieser (jener) Mann', text: 'этот (тот) мужчина'},
+               {title: 'dieses (jenes) Kind',text: 'этот (тот) ребенок'},
+               {title: 'diese (jene) Frau',text: 'эта (та) женщина'},
+               {title: 'diese (jene) Männer, Kinder, Frauen',text: 'эти (те) мужчины, дети, женщины'},
+
+               {title: 'dieses (jenes) Mannes', text: 'этот (тот) мужчина Gen'},
+               {title: 'dieses (jenes) Kindes',text: 'этот (тот) ребенок Gen'},
+               {title: 'dieser (jener) Frau',text: 'эта (та) женщина Gen'},
+               {title: 'dieser (jener) Männer, Kinder, Frauen',text: 'эти (те) мужчины, дети, женщины Gen'},
+
+               {title: 'diesem (jenem) Mann', text: 'этому (тому) мужчине'},
+               {title: 'diesem (jenem) Kind', text: 'этому (тому) ребенку'},
+               {title: 'dieser (jener) Frau', text: 'этой (той) женщине'},
+               {title: 'diesen (jenen) Männer, Kinder, Frauen', text: 'этим (тем) мужчинам, детям, женщинам'},
+
+               {title: 'diesen (jenen) Mann', text: 'этого (того) человека'},
+               {title: 'dieses (jenes) Kind', text: 'этого (того) ребенка'},
+               {title: 'diese (jene) Frau', text: 'эту (ту) женщину'},
+               {title: 'diese (jene) Männer, Kinder, Frauen', text: 'этих (тех) мужчин, детей, женщин'},
+
+
+               {title: 'Ein solcher Baum', text: 'Такое дерево'},
+               {title: 'Ein solches Haus', text: 'Такой дом'},
+               {title: 'Eine solche Stadt', text: 'Такой город'},
+               {title: 'solche Städte', text: 'такие города'},
+
+               {title: 'Eines solchen Baumes', text: 'такого дерева'},
+               {title: 'Eines solchen Hauses', text: 'такого дома'},
+               {title: 'Einer solchen Stadt', text: 'такого города'},
+               {title: 'solcher Städte', text: 'таких городов'},
+
+               {title: 'Einem solchen Baum', text: 'Такому дереву'},
+               {title: 'Einem solchen Haus', text: 'Такому дому'},
+               {title: 'Einer solchen Stadt', text: 'Такому городу'},
+               {title: 'solchen Städten', text: 'таким городам'},
+
+
+               {title: 'Einen solchen Baum', text: 'Такое дерево AKK'},
+               {title: 'Ein solches Haus', text: 'Такой дом AKK'},
+               {title: 'Eine solche Stadt', text: 'Такой город AKK'},
+               {title: 'solche Städte', text: 'такие города AKK'},
+
+
+            //-  {title: 'derselbe',text: 'тот же самый'},
+            //-  {title: 'dasselbe',text: 'то же самое'},
+            //-  {title: 'dieselbe',text: 'та же самая'},
+            //-  {title: 'dieselben',text: 'те же самые'},
+            ];
+         each block in blocks
+            li.uber-block.js-cell
+               .rus=block.text
+               .mark=block.title
+
+      //- ====================================================
+      ul.uber__links.uber-blocks.uber-blocks--lang
+         -
+            var blocks = [
+            {title: 'конченый',text: 'erledigt'},{title: 'Коридор',text: 'Gang'},
+            {title: 'приятный',text: 'angenehm'},{title: 'Урожай',text: 'Ernte'},
+            
+            {title: 'то же самое',text: 'genauso'},{title: 'Куча',text: 'Haufen'},
+            
+            {title: 'исцелить',text: 'heilen'},
+            
+            {title: 'Мика ничего не может поделать',text: 'Mika kann nicht anders'},
+            {title: 'махать',text: 'winken'},
+            {title: 'наконец',text: 'schließlich'},
+            
+            {title: 'беззаботный',text: 'unbeschwert'},
+            {title: 'между тем',text: 'mittlerweile'},
+            
+            {title: 'только',text: 'lediglich'},
+            {title: 'утилизировать',text: 'entsorgen'},{title: 'выходить', text: 'ausgehen'},
+            {title: 'затруднительный',text: 'umständlich'},
+            {title: 'Странно',text: 'seltsam'},{title: 'в беспорядке',text: 'durcheinander'},
+            {title: 'Большое количество',text: 'Menge'},
+            {title: 'подмигивать',text: 'zwinkern'},
+            {title: 'оборачиваться',text: 'umdrehen'},{title: 'тенистый',text: 'schattige'},
+            {title: 'Табурет',text: 'Hocker'},{title: 'Усилие',text: 'Mühe'},
+            
+            {title: 'позволять',text: 'erlauben'},
+            {title: 'взволнованный',text: 'aufgeregt'},{title: 'наблюдать',text: 'beobachten'},
+            
+            {title: 'оживленный',text: 'lebhaft'},
+            {title: 'вчерашний',text: 'gestrige'},
+            {title: 'брать на себя',text: 'übernehmen'},
+            {title: 'отправляйтесь в путь',text: 'machen sie sich auf den Weg'},
+            
+            {title: 'запасный',text: 'vorrätig'},{title: 'отклонять',text: 'abweisen'},
+            {title: 'однако',text: 'allerdings, jedoch'},
+            {title: 'зарплата',text: 'Gehalt'},
+            {title: 'по меньшей мере',text: 'wenigstens'},{title: 'пересечь',text: 'überquert'},
+            {title: 'суетливый',text: 'hektisch'},
+            
+            {title: 'при случае',text: 'gelegentlich'},
+            {title: 'друг от друга',text: 'voneinander'},{title: 'занимать',text: 'ausleihen'},
+            {title: 'дополнительный',text: 'zusätzlich'},
+            {title: 'кусать',text: 'beißen'},
+            {title: 'Выражение',text: 'Redewendung'},{title: 'Встреча',text: 'Begegnung'},
+            {title: 'Правда',text: 'Wahrheit'},
+            {title: 'ревнивый',text: 'neidisch'},
+            {title: 'восхищенное',text: 'bewundert'},{title: 'полностью',text: 'völlig'},
+            {title: 'Закат',text: 'Sonnenuntergang'},
+            {title: 'бесконечно',text: 'unendlich'},
+            {title: 'Зависть',text: 'Neid'},
+            {title: 'След',text: 'Spur'},
+            {title: 'вот что я подумал',text: 'das dachte ich mir'},
+            {title: 'но теперь с тобой',text: 'jetzt aber ab mit dir'},
+            {title: 'глядя в глаза',text: 'in die Augen gestarrt'},{title: 'что-то',text: 'irgendetwas'},
+            {title: 'Холм',text: 'Hügel'},{title: 'сбитый с толку',text: 'verwirrt'},
+            {title: 'зевать',text: 'gähnen'},
+            {title: 'Адвокат',text: 'Rechtsanwalt'},
+            {title: 'прерывать',text: 'unterbrechen'},{title: 'Полезное',text: 'Sinnvolles'},
+            {title: 'тем самым',text: 'hiermit'},{title: 'доверять',text: 'trauen'},
+            {title: 'моргать',text: 'blinzeln'},
+            {title: 'выстукивать',text: 'tippen'},{title: 'прекрати это делать',text: 'hör damit auf'},
+            {title: 'поспешно',text: 'eilig'},
+            {title: 'а именно',text: 'nämlich'},{title: 'обдуманный',text: 'überlegt'},
+            {title: 'высаживаться из',text: 'aussteigen aus'},
+            {title: 'Торможение',text: 'Bremsung'},{title: 'Миска',text: 'Schüssel'},
+            {title: 'дрожащий',text: 'zitternd'},
+            {title: 'лаять',text: 'bellen'},
+            {title: 'преувеличивать',text: 'übertreiben'},
+            {title: 'тревожить',text: 'stören'},
+            
+            {title: 'трясти',text: 'schütteln'},
+            
+            {title: 'ласкать гладить',text: 'streicheln'},
+            {title: 'зло',text: 'übel'},
+            
+            {title: 'нащупывает тайком',text: 'tasten heimlich'},
+            {title: 'чужие',text: 'fremden'},{title: 'неподходящий',text: 'unpassend'},
+            {title: 'Я немного боюсь садиться в машину с незнакомыми людьми',text: 'ich habe etwas Angst mich zu fremden Menschen ins Auto zu setzen'},
+            {title: 'кстати',text: 'übrigens'},
+            {title: 'Также',text: 'ebenfalls'},
+            {title: 'больше не',text: 'nicht mehr'},
+            {title: 'что происходит, то происходит',text: 'was ab ist ist ab'},
+            {title: 'медлить',text: 'zögern'},
+            {title: 'удивленный',text: 'erstaunten'},{title: 'спешить',text: 'eilen'},
+            {title: 'скрытый от',text: 'versteckt vor'},
+            {title: 'тихо',text: 'leise'},
+            {title: 'не любой ценой',text: 'nicht um jeden Preis'},
+            {title: 'возможность',text: 'gelegenheit'},
+            {title: 'билет на поезд для вас слишком дорогой',text: 'die Zugfahrkarte ist ihnen zu teuer'},
+            {title: 'маршрут',text: 'Strecke'},
+            
+            {title: 'доверчивый',text: 'zutraulich'},{title: 'Документы',text: 'Unterlagen'},
+            {title: 'решенный',text: 'abgemacht'},
+            {title: 'упрекать',text: 'vorwerfen'},
+            
+            {title: 'удобный',text: 'bequem'},
+            
+            {title: 'Лаура и Марко смотрят друг на друга',text: 'Laura und Marco sehen sich an'},
+            {title: 'очень вкусный',text: 'köstlich'},
+            {title: 'серьезный',text: 'ernsthaft'},
+            {title: 'обиженный',text: 'beleidigt'},
+            
+            {title: 'поддерживать ,вести',text: 'unterhalten'},
+            
+            
+            
+            
+            
+            
+            
+            ];
+         each block in blocks
+            li.uber-block.js-cell
+               .mark=block.title
+               .hidden=block.title
+               .uber-block__card.js-card(draggable='true')
+                  h4=block.title
+
+      ul.uber__rechts.uber-blocks.uber-blocks--lang
+         -
+            var blocks = [
+             
+            {
+              title: 'выходить',
+              text: 'ausgehen'
+            },
+            {title: 'приятный',text: 'angenehm'},
+            {title: 'тенистый',text: 'schattige'},
+            {title: 'то же самое',text: 'genauso'},
+            {title: 'наблюдать',text: 'beobachten'},
+            {title: 'исцелить',text: 'heilen'},
+            {title: 'пересечь',text: 'überquert'},
+            {title: 'Мика ничего не может поделать',text: 'Mika kann nicht anders'},
+            {title: 'Встреча',text: 'Begegnung'},
+            {title: 'наконец',text: 'schließlich'},
+            {title: 'что-то',text: 'irgendetwas'},
+            {title: 'беззаботный',text: 'unbeschwert'},
+            {title: 'между тем',text: 'mittlerweile'},
+            {title: 'Куча',text: 'Haufen'},
+            {title: 'только',text: 'lediglich'},
+            {title: 'утилизировать',text: 'entsorgen'},
+            {title: 'затруднительный',text: 'umständlich'},
+            {title: 'Странно',text: 'seltsam'},
+            {title: 'Большое количество',text: 'Menge'},
+            {title: 'подмигивать',text: 'zwinkern'},
+            {title: 'оборачиваться',text: 'umdrehen'},
+            {title: 'Табурет',text: 'Hocker'},
+            {title: 'конченый',text: 'erledigt'},
+            {title: 'позволять',text: 'erlauben'},
+            {title: 'взволнованный',text: 'aufgeregt'},
+            {title: 'махать',text: 'winken'},
+            {title: 'оживленный',text: 'lebhaft'},
+            {title: 'вчерашний',text: 'gestrige'},
+            {title: 'брать на себя',text: 'übernehmen'},
+            {title: 'отправляйтесь в путь',text: 'machen sie sich auf den Weg'},
+            {title: 'Документы',text: 'Unterlagen'},
+            {title: 'запасный',text: 'vorrätig'},
+            {title: 'однако',text: 'allerdings, jedoch'},
+            {title: 'зарплата',text: 'Gehalt'},
+            {title: 'по меньшей мере',text: 'wenigstens'},
+            {title: 'суетливый',text: 'hektisch'},
+            {title: 'Урожай',text: 'Ernte'},
+            {title: 'при случае',text: 'gelegentlich'},
+            {title: 'друг от друга',text: 'voneinander'},
+            {title: 'дополнительный',text: 'zusätzlich'},
+            {title: 'кусать',text: 'beißen'},
+            {title: 'Выражение',text: 'Redewendung'},
+            {title: 'Правда',text: 'Wahrheit'},
+            {title: 'ревнивый',text: 'neidisch'},
+            {title: 'восхищенное',text: 'bewundert'},
+            {title: 'Закат',text: 'Sonnenuntergang'},
+            {title: 'бесконечно',text: 'unendlich'},
+            {title: 'Зависть',text: 'Neid'},
+            {title: 'След',text: 'Spur'},
+            {title: 'вот что я подумал',text: 'das dachte ich mir'},
+            {title: 'но теперь с тобой',text: 'jetzt aber ab mit dir'},
+            {title: 'глядя в глаза',text: 'in die Augen gestarrt'},
+            {title: 'Холм',text: 'Hügel'},
+            {title: 'зевать',text: 'gähnen'},
+            {title: 'Адвокат',text: 'Rechtsanwalt'},
+            {title: 'прерывать',text: 'unterbrechen'},
+            {title: 'тем самым',text: 'hiermit'},
+            {title: 'моргать',text: 'blinzeln'},
+            {title: 'выстукивать',text: 'tippen'},
+            {title: 'поспешно',text: 'eilig'},
+            {title: 'а именно',text: 'nämlich'},
+            {title: 'высаживаться из',text: 'aussteigen aus'},
+            {title: 'Торможение',text: 'Bremsung'},
+            {title: 'дрожащий',text: 'zitternd'},
+            {title: 'лаять',text: 'bellen'},
+            {title: 'преувеличивать',text: 'übertreiben'},
+            {title: 'тревожить',text: 'stören'},
+            {title: 'прекрати это делать',text: 'hör damit auf'},
+            {title: 'трясти',text: 'schütteln'},
+            {title: 'Усилие',text: 'Mühe'},
+            {title: 'ласкать гладить',text: 'streicheln'},
+            {title: 'зло',text: 'übel'},
+            {title: 'Коридор',text: 'Gang'},
+            {title: 'нащупывает тайком',text: 'tasten heimlich'},
+            {title: 'чужие',text: 'fremden'},
+            {title: 'Я немного боюсь садиться в машину с незнакомыми людьми',text: 'ich habe etwas Angst mich zu fremden Menschen ins Auto zu setzen'},
+            {title: 'кстати',text: 'übrigens'},
+            {title: 'Также',text: 'ebenfalls'},
+            {title: 'больше не',text: 'nicht mehr'},
+            {title: 'что происходит, то происходит',text: 'was ab ist ist ab'},
+            {title: 'медлить',text: 'zögern'},
+            {title: 'удивленный',text: 'erstaunten'},
+            {title: 'скрытый от',text: 'versteckt vor'},
+            {title: 'тихо',text: 'leise'},
+            {title: 'не любой ценой',text: 'nicht um jeden Preis'},
+            {title: 'возможность',text: 'gelegenheit'},
+            {title: 'билет на поезд для вас слишком дорогой',text: 'die Zugfahrkarte ist ihnen zu teuer'},
+            {title: 'маршрут',text: 'Strecke'},
+            {title: 'занимать',text: 'ausleihen'},
+            {title: 'доверчивый',text: 'zutraulich'},
+            {title: 'решенный',text: 'abgemacht'},
+            {title: 'упрекать',text: 'vorwerfen'},
+            {title: 'неподходящий',text: 'unpassend'},
+            {title: 'удобный',text: 'bequem'},
+            {title: 'Миска',text: 'Schüssel'},
+            {title: 'Лаура и Марко смотрят друг на друга',text: 'Laura und Marco sehen sich an'},
+            {title: 'очень вкусный',text: 'köstlich'},
+            {title: 'серьезный',text: 'ernsthaft'},
+            {title: 'обиженный',text: 'beleidigt'},
+            {title: 'отклонять',text: 'abweisen'},
+            {title: 'поддерживать ,вести',text: 'unterhalten'},
+            {title: 'сбитый с толку',text: 'verwirrt'},
+            {title: 'доверять',text: 'trauen'},
+            {title: 'обдуманный',text: 'überlegt'},
+            {title: 'полностью',text: 'völlig'},
+            {title: 'в беспорядке',text: 'durcheinander'},
+            {title: 'Полезное',text: 'Sinnvolles'},
+            {title: 'спешить',text: 'eilen'},
+            ];
+         each block in blocks
+            li.uber-block.js-cell
+               .rus=block.text
+               .mark=block.title
+      include ./ubereinstimmung-werben.pug

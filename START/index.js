@@ -18,6 +18,7 @@ import { Popups } from "./src/pug/components/popup/popup";
 // import { Gal } from "./src/pug/components/galSlider/galSlider";
 // import { Accord } from "./src/pug/components/accord/accord";
 import { MyTab } from "./src/pug/components/tabs/tabs";
+import { Uber } from "./src/pug/components/ubereinstimmung/ubereinstimmung";
 // import { MyRange } from "./src/pug/components/range/range";
 // import { Select } from "./src/pug/components/select/select";
 // import { Look } from "./src/pug/components/look/look";
@@ -43,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (document.querySelector("#Swiper-werben")) {
     SwiperWerben();
+  }
+  if (document.querySelector("#Uber")) {
+    Uber();
   }
   // if (document.querySelector("#bunner-slider")) {
   //   bunnerSwiper();
