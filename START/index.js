@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#Uber")) {
     Uber();
   }
+  if (document.querySelector("#phrasen")) {
+    Uber();
+  }
   // if (document.querySelector("#bunner-slider")) {
   //   bunnerSwiper();
   // }

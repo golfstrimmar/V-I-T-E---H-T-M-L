@@ -1,7 +1,9 @@
 .tab {
   position: relative;
 }
-
+.tabs__body{
+  padding: 5px;
+}
 .tabs__title h2{
 font-size: 40px;
 text-transform: uppercase;
@@ -17,8 +19,8 @@ color: coral;
   align-items: center;
   justify-content: space-between;
   transition: all .3s ease-in-out;
-  padding: 10px 40px;
-  background: cadetblue;
+  padding: 5px 10px;
+  background: rgb(95, 134, 160);
 
 }
 
@@ -32,11 +34,13 @@ color: coral;
 .tab__title span {
   transition: all 0.3s ease-in-out;
   color: white;
+  font-size: 15px;
+text-transform: uppercase;
+
 }
 
 .tabs ul > li {
   position: relative;
-  margin:  5px ;
 }
 .tabs ul > li > ul li {
   margin: 0 0 0 0;
@@ -60,20 +64,19 @@ color: coral;
   overflow: hidden;
 }
 
-.hidden__wrapper{
-border: 1px solid red;
-}
 
 
 .tab-title-js._is-active {
-  background: rgb(142, 127, 212);
+  background: rgb(4, 74, 121);
   svg,
   span {
-    color: rgb(85, 40, 143);
-    fill: rgb(85, 40, 143);
+    // color: rgb(85, 40, 143);
+    
   }
   svg {
+  //   color: rgb(85, 40, 143);
     transform: rotate(180deg);
+  //   fill: rgb(85, 40, 143);
   }
 }
 

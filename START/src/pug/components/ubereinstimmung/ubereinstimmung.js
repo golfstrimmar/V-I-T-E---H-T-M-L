@@ -11,11 +11,13 @@ export const Uber = () => {
     setTimeout(() => {
       this.classList.add("hide");
     }, 0);
-    if (this.closest(".uber-block").querySelector(".hidden")) {
+    if (
+      this.closest(".uber-block").querySelector(".versteckt") &&
+      this.closest(".uber-block").querySelector(".mark")
+    ) {
       deutsch = this.closest(".uber-block").querySelector(".mark").innerHTML;
     }
     res = this;
-
   };
 
   const dragEnd = function () {
@@ -42,13 +44,15 @@ export const Uber = () => {
       cell.addEventListener("dragenter", dragEnter);
       cell.addEventListener("dragleave", dragLeave);
       cell.addEventListener("drop", function () {
-        probire = cell.querySelector(".mark");
-        if (deutsch === probire.innerHTML) {
-          cell.append(res);
-          if (!cell.closest(".uber__links")) {
-            res.style.background = "#13c78b";
-          }else{
-            res.style.background = "rgb(93, 104, 250)";
+        if (cell.querySelector(".mark")) {
+          probire = cell.querySelector(".mark");
+          if (deutsch === probire.innerHTML) {
+            cell.append(res);
+            if (!cell.closest(".uber__links")) {
+              res.style.background = "#13c78b";
+            } else {
+              res.style.background = "rgb(93, 104, 250)";
+            }
           }
         }
       });

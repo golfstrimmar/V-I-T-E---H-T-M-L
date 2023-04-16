@@ -1,0 +1,75 @@
+section(id='worte').phrasen.rel.phrasen--worte
+    ul.uber__links.uber-blocks.uber-blocks
+      -
+        var blocks = [
+
+            {title: 'конченый',text: 'erledigt'},
+            {title: 'Коридор',text: 'Gang'},
+            {title: 'приятный',text: 'angenehm'},
+            {title: 'Урожай',text: 'Ernte'},
+            {title: 'то же самое',text: 'genauso'},
+            {title: 'Куча',text: 'Haufen'},
+            {title: 'наконец',text: 'schließlich'},
+            {title: 'беззаботный',text: 'unbeschwert'},
+            {title: 'между тем',text: 'mittlerweile'},
+            {title: 'только',text: 'lediglich'},
+            {title: 'затруднительный',text: 'umständlich'},
+            {title: 'Странно',text: 'seltsam'},{title: 'в беспорядке',text: 'durcheinander'},
+            {title: 'Большое количество',text: 'Menge'},
+            {title: 'тенистый',text: 'schattige'},
+            {title: 'Табурет',text: 'Hocker'},{title: 'Усилие',text: 'Mühe'},
+            {title: 'взволнованный',text: 'aufgeregt'},{title: 'наблюдать',text: 'beobachten'},
+            {title: 'оживленный',text: 'lebhaft'},
+            {title: 'вчерашний',text: 'gestrige'},
+            {title: 'запасный',text: 'vorrätig'},{title: 'отклонять',text: 'abweisen'},
+            {title: 'однако',text: 'allerdings, jedoch'},
+            {title: 'зарплата',text: 'Gehalt'},
+            {title: 'по меньшей мере',text: 'wenigstens'},{title: 'пересечь',text: 'überquert'},
+            {title: 'суетливый',text: 'hektisch'},
+            {title: 'при случае',text: 'gelegentlich'},
+            {title: 'друг от друга',text: 'voneinander'},{title: 'занимать',text: 'ausleihen'},
+            {title: 'дополнительный',text: 'zusätzlich'},
+            {title: 'Выражение',text: 'Redewendung'},{title: 'Встреча',text: 'Begegnung'},
+            {title: 'Правда',text: 'Wahrheit'},
+            {title: 'ревнивый',text: 'neidisch'},
+            {title: 'восхищенное',text: 'bewundert'},{title: 'полностью',text: 'völlig'},
+            {title: 'Закат',text: 'Sonnenuntergang'},
+            {title: 'бесконечно',text: 'unendlich'},
+            {title: 'Зависть',text: 'Neid'},
+            {title: 'След',text: 'Spur'},
+            {title: 'что-то',text: 'irgendetwas'},
+            {title: 'Холм',text: 'Hügel'},{title: 'сбитый с толку',text: 'verwirrt'},
+            {title: 'Адвокат',text: 'Rechtsanwalt'},
+            {title: 'Полезное',text: 'Sinnvolles'},
+            {title: 'тем самым',text: 'hiermit'},{title: 'доверять',text: 'trauen'},
+            {title: 'поспешно',text: 'eilig'},
+            {title: 'а именно',text: 'nämlich'},{title: 'обдуманный',text: 'überlegt'},
+            {title: 'Торможение',text: 'Bremsung'},{title: 'Миска',text: 'Schüssel'},
+            {title: 'дрожащий',text: 'zitternd'},
+            {title: 'зло',text: 'übel'},
+            {title: 'чужие',text: 'fremden'},{title: 'неподходящий',text: 'unpassend'},
+            {title: 'кстати',text: 'übrigens'},
+            {title: 'Также',text: 'ebenfalls'},
+            {title: 'больше не',text: 'nicht mehr'},
+            {title: 'удивленный',text: 'erstaunten'},{title: 'спешить',text: 'eilen'},
+            {title: 'скрытый от',text: 'versteckt vor'},
+            {title: 'тихо',text: 'leise'},
+            {title: 'не любой ценой',text: 'nicht um jeden Preis'},
+            {title: 'возможность',text: 'gelegenheit'},
+            {title: 'маршрут',text: 'Strecke'},
+            {title: 'доверчивый',text: 'zutraulich'},{title: 'Документы',text: 'Unterlagen'},
+            {title: 'решенный',text: 'abgemacht'},
+            {title: 'удобный',text: 'bequem'},
+            {title: 'очень вкусный',text: 'köstlich'},
+            {title: 'серьезный',text: 'ernsthaft'},
+            {title: 'обиженный',text: 'beleidigt'},
+            
+
+        ];
+      each block in blocks
+        li.uber-block.js-cell
+          .versteckt=block.text
+          .uber-block__card.js-card(draggable='true')
+            h4=block.title
+
+

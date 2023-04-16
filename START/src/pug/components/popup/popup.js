@@ -96,7 +96,6 @@ if (
     .closest(".popups-init-js")
     .closest(".swiper-slide")
     .querySelector(".schattig");
-  console.log(schattig);
   openPop(schattig);
 }
       

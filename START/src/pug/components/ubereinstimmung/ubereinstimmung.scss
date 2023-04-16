@@ -9,7 +9,7 @@
   border-radius: 5px;
 }
 
-.uber {
+.uber,.phrasen {
   &__body {
     width: 100%;
     margin: 20px auto;
@@ -35,7 +35,7 @@
       outline: 2px solid darkblue;
       @include flex-center;
       background-color: #f0f2f5;
-      .hidden {
+      .versteckt {
         position: absolute;
         z-index: 1;
         font-size: 15px;

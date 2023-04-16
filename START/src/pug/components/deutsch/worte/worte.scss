@@ -1,0 +1,21 @@
+#worte{
+  .uber-blocks {
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 10px;
+  }
+  .uber-block {
+    outline: 2px solid rgb(11, 107, 99);
+    &__card {
+      background: rgb(18, 212, 196);
+    }
+  }
+  .versteckt {
+  width: calc(100% );
+} 
+}
+.tab__title--worte {
+  background: rgb(19, 173, 161);
+  &._is-active {
+    background: rgb(11, 107, 99);
+  }
+}

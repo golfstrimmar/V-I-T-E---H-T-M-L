@@ -1,0 +1,21 @@
+.tab__title--verben{
+ background: rgb(121, 163, 5);
+ &._is-active{
+  background: rgb(95, 131, 4);
+ }
+}
+#verben{
+  .uber-blocks {
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 10px;
+  }
+  .uber-block {
+    outline: 2px solid rgb(11, 107, 99);
+    &__card {
+      background: rgb(167, 201, 74);
+    }
+  }
+  .versteckt {
+  width: calc(100% );
+} 
+} 

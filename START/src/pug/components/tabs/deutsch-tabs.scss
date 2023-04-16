@@ -1,4 +1,4 @@
-.hidden__wrapper_deutsch {
+.versteckt__wrapper_deutsch {
   background: rgb(252, 226, 198);
   border: none;
   padding: 3px;
@@ -6,6 +6,7 @@
     font-size: 20px;
   }
 }
+
 .tab__title_deutsch {
   padding: 5px;
   background-color: rgb(231, 144, 44);
@@ -23,10 +24,7 @@
     color: rgb(3, 3, 3);
   }
 }
-.tabs__body {
-  padding: 0 0 0 40px;
 
-}
 
 .tab-werb {
   .tab__title_deutsch {
@@ -35,10 +33,11 @@
       background: rgb(98, 150, 98);
     }
   }
-  .hidden__wrapper_deutsch {
+  .versteckt__wrapper_deutsch {
     background: rgb(230, 245, 225);
   }
 }
+
 .tab-zaten{
    .tab__title_deutsch {
     background-color: rgb(181, 192, 252);
@@ -46,7 +45,7 @@
       background: rgb(128, 139, 196);
     }
   }
-  .hidden__wrapper_deutsch {
+  .versteckt__wrapper_deutsch {
     background: rgb(230, 233, 252);
   }
 }

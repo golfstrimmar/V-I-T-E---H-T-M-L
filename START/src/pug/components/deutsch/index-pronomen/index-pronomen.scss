@@ -1,0 +1,27 @@
+.tab__title--index-pronomen{
+ background: rgb(116, 123, 212);
+ &._is-active{
+  background: rgb(31, 37, 117);
+ }
+}
+#index-pronomen{
+  .uber-blocks {
+    grid-template-columns: repeat(2, 50%);
+    gap: 10px;
+  }
+  .uber-block {
+    outline: 2px solid rgb(116, 123, 212);
+    &__card {
+      background: rgb(116, 123, 212);
+    }
+  }
+  .versteckt {
+  width: calc(100% );
+}
+.demo-pronomen{
+
+ img{
+position: relative;
+  }
+} 
+} 

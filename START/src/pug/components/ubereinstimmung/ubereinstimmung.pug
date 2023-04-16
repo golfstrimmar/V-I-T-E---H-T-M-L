@@ -43,11 +43,11 @@ section(id='Uber').uber.rel
          each block in blocks
             li.uber-block.js-cell
                .mark=block.title
-               .hidden=block.title
+               .versteckt=block.title
                .uber-block__card.js-card(draggable='true')
                   h4=block.title
 
-
+       
 
 
       ul.uber__rechts.uber-blocks
@@ -106,17 +106,17 @@ section(id='Uber').uber.rel
                .rus=block.text
                .mark=block.title
 
-      //- ====================================================
+      ====================================================
       ul.uber__links.uber-blocks.uber-blocks--lang
          -
             var blocks = [
-            {title: 'конченый',text: 'erledigt'},{title: 'Коридор',text: 'Gang'},
-            {title: 'приятный',text: 'angenehm'},{title: 'Урожай',text: 'Ernte'},
-            
-            {title: 'то же самое',text: 'genauso'},{title: 'Куча',text: 'Haufen'},
-            
+            {title: 'конченый',text: 'erledigt'},
+            {title: 'Коридор',text: 'Gang'},
+            {title: 'приятный',text: 'angenehm'},
+            {title: 'Урожай',text: 'Ernte'},
+            {title: 'то же самое',text: 'genauso'},
+            {title: 'Куча',text: 'Haufen'},
             {title: 'исцелить',text: 'heilen'},
-            
             {title: 'Мика ничего не может поделать',text: 'Mika kann nicht anders'},
             {title: 'махать',text: 'winken'},
             {title: 'наконец',text: 'schließlich'},
@@ -209,20 +209,12 @@ section(id='Uber').uber.rel
             {title: 'очень вкусный',text: 'köstlich'},
             {title: 'серьезный',text: 'ernsthaft'},
             {title: 'обиженный',text: 'beleidigt'},
-            
             {title: 'поддерживать ,вести',text: 'unterhalten'},
-            
-            
-            
-            
-            
-            
-            
             ];
          each block in blocks
             li.uber-block.js-cell
                .mark=block.title
-               .hidden=block.title
+               .versteckt=block.title
                .uber-block__card.js-card(draggable='true')
                   h4=block.title
 
@@ -346,4 +338,4 @@ section(id='Uber').uber.rel
             li.uber-block.js-cell
                .rus=block.text
                .mark=block.title
-      include ./ubereinstimmung-werben.pug
+      //- include ./ubereinstimmung-werben.pug
