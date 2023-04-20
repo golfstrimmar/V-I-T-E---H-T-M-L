@@ -1,0 +1,21 @@
+.tab__title--komplexe{
+ background: rgb(88, 50, 131);
+ &._is-active{
+  background:  rgb(57, 4, 117);
+ }
+}
+#komplexe{
+  .uber-blocks {
+    grid-template-columns:  repeat(2, 1fr);
+    gap: 10px;
+  }
+  .uber-block {
+    outline: 2px solid rgb(44, 16, 77);
+    &__card {
+      background: rgb(173, 138, 212);
+    }
+  }
+  .versteckt {
+  width: calc(100% );
+} 
+} 

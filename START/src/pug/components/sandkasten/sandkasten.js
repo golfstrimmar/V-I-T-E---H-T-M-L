@@ -1,6 +1,6 @@
 "use ctrict";
 
-export const Uber = () => {
+export const Sand = () => {
   const cards = document.querySelectorAll(".js-card");
   const cells = document.querySelectorAll(".js-cell");
   var res;
@@ -44,21 +44,17 @@ export const Uber = () => {
       cell.addEventListener("dragenter", dragEnter);
       cell.addEventListener("dragleave", dragLeave);
       cell.addEventListener("drop", function () {
-        
         if (cell.querySelector(".mark")) {
           probire = cell.querySelector(".mark");
           if (deutsch === probire.innerHTML) {
             cell.append(res);
             if (!cell.closest(".uber__links")) {
-              res.style.background = "rgb(149 250 93)";
+              res.style.background = "#13c78b";
             } else {
               res.style.background = "rgb(93, 104, 250)";
             }
           }
         }
-
-
-
       });
     });
   });

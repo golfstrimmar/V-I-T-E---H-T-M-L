@@ -5,6 +5,11 @@
  }
 }
 #index-pronomen{
+  p{
+    margin: 5px 0 8px;
+    font-size: larger;
+    color: rgb(59, 8, 117);
+  }
   .uber-blocks {
     grid-template-columns: repeat(2, 50%);
     gap: 10px;

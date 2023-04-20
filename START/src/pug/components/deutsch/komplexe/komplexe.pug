@@ -1,0 +1,29 @@
+section(id='komplexe').phrasen.rel
+    ul.uber__links.uber-blocks.uber-blocks
+      -
+          var blocks = [
+            {title: 'Я работаю с удовольствием, но это иногда не просто.',text: 'Ich arbeite gerne, aber manchmal ist es nicht leicht.'},
+            {title: 'Мы испечем пирог, а моя сестра приготовит торт.',text: 'Wir backen einen Kuchen und meine Schwester macht eine Torte.'},
+            {title: 'У меня температура, поэтому я пойду спать раньше.',text: 'Ich habe Fieber, darum gehe ich früher ins Bett.'},
+            {title: 'Поскольку он опоздал, он не слышал твою речь.',text: 'Da er sich verspätet hat, hat er deine Rede nicht gehört.'},
+            {title: 'Он не слышал твою речь, потому что опоздал.',text: 'Er hat deine Rede nicht gehört, weil er sich verspätet hat.'},
+            {title: 'Я хочу еще раз сходить в ресторан, где мы были в пятницу.',text: 'Ich will noch einmal ins Restaurant gehen, wo wir am Freitag waren.'},
+            {title: 'Это мой друг, который пишет очень хорошие стихи.',text: 'Das ist mein Freund, der sehr gute Gedichte schreibt.'},
+            {title: ' Он приехал из Берлина, чтобы с тобой встретиться.',text: 'Er ist aus Berlin gekommen, um dich zu treffen.'},
+            {title: 'Он приехал из Берлина, чтобы ты могла с ним встретиться.',text: 'Er ist aus Berlin gekommen, damit du ihn treffen kannst.'},
+            {title: 'Ну и вырос же ты!',text: 'Bist du aber erwachsen! '},
+            {title: 'Я знаю, что он сегодня поздно домой придет.',text: 'Ich weiß, dass er heute spät nach Hause kommt.'},
+            {title: 'Почему он сегодня поздно придет домой, я не знаю.',text: 'Warum er heute spät nach Hause kommt, weiß ich nicht.'},
+            {title: 'Я полагаю, что она целый день ничего не делала.',text: 'Ich glaube, dass sie den ganzen Tag nichts gemacht hat. '},
+            {title: 'Я думал, что ты мне сегодня позвонишь.',text: 'Ich habe geglaubt, dass du mich heute anrufst'},
+            {title: 'Он говорит, что хотел сегодня поздно прийти домой.',text: 'Er sagt, dass er heute spät nach Hause hat kommen wollen'},
+            {title: 'Бизнесмен волнуется, потому что он, видимо, не сможет достичь вовремя цели своего путешествия',text: 'Der Geschäftsmann regt sich auf, weil er sein Reiseziel wohl nicht rechtzeitig wird erreichen können.'},
+
+            
+
+          ];
+      each block in blocks
+        li.uber-block.js-cell
+          .versteckt=block.text
+          .uber-block__card.js-card(draggable='true')
+            h4=block.title

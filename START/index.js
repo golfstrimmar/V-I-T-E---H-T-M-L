@@ -29,6 +29,7 @@ import { MyDeutsch } from "./src/pug/components/deutsch-catalog/catalog.js";
 import { SwiperIndexPronomen } from "./src/pug/components/slider-index-pronomen/slider-index-pronomen.js";
 import { SwiperWorter } from "./src/pug/components/slider-worter/worter.js";
 import { SwiperWerben } from "./src/pug/components/slider-werben/slider-werben.js";
+// import { Sand } from "./src/pug/components/sandkasten/sandkasten.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   // Look();
@@ -51,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#phrasen")) {
     Uber();
   }
+  // if (document.querySelector("#sand")) {
+  //   Sand();
+  // }
   // if (document.querySelector("#bunner-slider")) {
   //   bunnerSwiper();
   // }
