@@ -1,22 +1,21 @@
 .phrasen {
   width: 100%;
-padding: 5px;
-.uber-blocks {
-    grid-template-columns: 50% 50%;
-    // width: 100%;
+  padding: 5px;
+  .uber-blocks {
+    grid-template-columns: repeat(3, 1fr);
     .uber-block {
       width: 100%;
       &__card {
         background: rgb(93, 161, 250);
         width: 100%;
-        font-size: 18px;
+        font-size: 16px;
       }
-     .versteckt{
-      width: calc(100% ) ;
-      background: rgb(223, 236, 252);
-       font-size: 18px!important;
-      height: 100%!important;
-     } 
+      .versteckt {
+        width: calc(100%);
+        background: rgb(223, 236, 252);
+        font-size: 16px;
+        height: 100% !important;
+      }
     }
   }
 }

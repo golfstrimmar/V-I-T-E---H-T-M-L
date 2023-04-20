@@ -1,20 +1,29 @@
 section(id='sand').phrasen.rel
-    ul.uber__links.uber-blocks.uber-blocks
-
-        li.uber-block.js-cell
-          .versteckt 1
-          .uber-block__card.js-card(draggable='true')
-            h4 1
-        li.uber-block.js-cell
-          .versteckt 2
-          .uber-block__card.js-card(draggable='true')
-            h4 2
-        li.uber-block.js-cell
-          .versteckt 3
-          .uber-block__card.js-card(draggable='true')
-            h4 3
-        li.uber-block.js-cell
-          .versteckt 4
-          .uber-block__card.js-card(draggable='true')
-            h4 4
-    
+     
+    ul.uber__links.uber-blocks
+      -
+        var blocks = [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+        ];
+      each block in blocks
+        li.uber-block.js-cell-Sand.rel
+          .uber-block__card.js-Sand(draggable='true') 
+       
+    .uber__enter.rel
+      button.btn.btn-primary(type='text')#clear-blocks x
+      button.btn.btn-primary(type='text')#clear x
+      input(type="text" placeholder='')#enter

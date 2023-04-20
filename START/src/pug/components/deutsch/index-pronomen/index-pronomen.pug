@@ -1,15 +1,9 @@
 section(id='index-pronomen').phrasen.rel
-    section(id='demo-pronomen').demo-pronomen
-
-          img(src='../assets/img/3.png' alt='img')
-          img(src='../assets/img/1.png' alt='img')
-
-          img(src='../assets/img/2.png' alt='img')
-
-          p derselbe -----тот же
-          p solcher -----подобный такой
-          p jeder -----каждый
-          p jener -----тот
+    .phrasen__spans
+      span derselbe -----тот же
+      span solcher -----подобный такой
+      span jeder -----каждый
+      span jener -----тот
 
     ul.uber__links.uber-blocks.uber-blocks
       -
@@ -73,3 +67,14 @@ section(id='index-pronomen').phrasen.rel
           .versteckt=block.text
           .uber-block__card.js-card(draggable='true')
             h4=block.title
+
+    section(id='demo-pronomen').demo-pronomen
+          img(src='../assets/img/3.png' alt='img')
+          img(src='../assets/img/1.png' alt='img')
+          img(src='../assets/img/2.png' alt='img')
+
+
+
+
+
+

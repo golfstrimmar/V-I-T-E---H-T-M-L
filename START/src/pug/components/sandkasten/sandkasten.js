@@ -1,23 +1,26 @@
 "use ctrict";
 
 export const Sand = () => {
-  const cards = document.querySelectorAll(".js-card");
-  const cells = document.querySelectorAll(".js-cell");
+  const cards = document.querySelectorAll(".js-Sand");
+  const arrCards = Array.prototype.slice.call(cards);
+  const cells = document.querySelectorAll(".js-cell-Sand");
+  const arrCells = Array.prototype.slice.call(cells);
+  const enter = document.querySelector("#enter");
+  const clear = document.querySelector("#clear");
+  const clearBlocks = document.querySelector("#clear-blocks");
+
+  var hoverCard;
   var res;
-  var deutsch;
-  var probire;
+  var temp;
+  var inputVal = "";
 
   const dragStart = function () {
     setTimeout(() => {
       this.classList.add("hide");
     }, 0);
-    if (
-      this.closest(".uber-block").querySelector(".versteckt") &&
-      this.closest(".uber-block").querySelector(".mark")
-    ) {
-      deutsch = this.closest(".uber-block").querySelector(".mark").innerHTML;
-    }
+
     res = this;
+    temp = this.closest(".js-cell-Sand");
   };
 
   const dragEnd = function () {
@@ -29,33 +32,67 @@ export const Sand = () => {
 
   const dragEnter = function (evt) {
     evt.preventDefault();
-    this.classList.add("hovered");
+    if (this.querySelector(".js-Sand")) {
+      hoverCard = this.querySelector(".js-Sand");
+      this.querySelector(".js-Sand").remove();
+      temp.append(hoverCard);
+      temp = this;
+    }
   };
 
   const dragLeave = function () {
     this.classList.remove("hovered");
+    hoverCard = this.querySelector(".js-Sand");
   };
 
-  cards.forEach((cell) => {
-    cell.addEventListener("dragstart", dragStart);
-    cell.addEventListener("dragend", dragEnd);
-    cells.forEach((cell) => {
-      cell.addEventListener("dragover", dragOver);
-      cell.addEventListener("dragenter", dragEnter);
-      cell.addEventListener("dragleave", dragLeave);
-      cell.addEventListener("drop", function () {
-        if (cell.querySelector(".mark")) {
-          probire = cell.querySelector(".mark");
-          if (deutsch === probire.innerHTML) {
-            cell.append(res);
-            if (!cell.closest(".uber__links")) {
-              res.style.background = "#13c78b";
-            } else {
-              res.style.background = "rgb(93, 104, 250)";
-            }
-          }
-        }
+  const Enter = (function () {
+    enter.addEventListener("input", function () {
+      inputVal = this.value;
+      arrCards.forEach((cell) => {
+        cell.addEventListener("click", function () {
+          cell.innerHTML = inputVal;
+        });
       });
     });
+  })();
+
+  clear.addEventListener("click", function () {
+    enter.value = "";
+    inputVal = "";
+    dropCell();
+  });
+
+  clearBlocks.addEventListener("click", function () {
+    arrCards.forEach((card) => {
+      card.innerHTML = "";
+    });
+    dropCell();
+  });
+
+  const dropCell = function () {
+    enter.focus();
+    enter.value = "";
+  };
+
+  arrCards.forEach((cell) => {
+    cell.addEventListener("click", function () {
+      dropCell();
+    });
+  });
+  // ==============================
+
+  cells.forEach((cell) => {
+    cell.addEventListener("dragover", dragOver);
+    cell.addEventListener("dragenter", dragEnter);
+    cell.addEventListener("dragleave", dragLeave);
+    cell.addEventListener("drop", function () {
+      cell.append(res);
+      dropCell();
+    });
+  });
+
+  cards.forEach((card) => {
+    card.addEventListener("dragstart", dragStart);
+    card.addEventListener("dragend", dragEnd);
   });
 };

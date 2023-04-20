@@ -1,5 +1,60 @@
-#sand{
-  .uber-blocks{
-grid-template-columns: repeat(auto-fill, 200px) ;
+#sand {
+  .uber-blocks {
+    grid-template-columns: repeat(20, max-content);
+    justify-content: flex-start;
+    gap: 0;
+    .uber-block {
+      min-width: 150px;
+      border-radius: 0;
+      border-color: rgb(7, 110, 179);
+      border: 1px solid rgb(7, 7, 65);
+      border-color: rgb(7, 110, 179);
+      &__card {
+        padding: 0 5px;
+        width: 100%;
+        box-shadow: none;
+        background-color: rgb(41, 158, 236);
+        border-radius: 0;
+        border-color: rgb(7, 110, 179);
+      }
+    }
+  }
+  input {
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px 5px 5px 55px;
+    background-color: beige;
+    color: rgb(8, 8, 134);
+    font-size: larger;
+    &::placeholder {
+      color: rgb(8, 8, 134);
+      font-size: larger;
+    }
+  }
+  .uber__enter {
+    margin: 5px 0 0 0;
+  }
+  #clear {
+    position: absolute;
+    left: 20px;
+    height: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 2px;
+    background-color: darksalmon;
+    color: aliceblue;
+    padding: 5px;
+  }
+  #clear-blocks {
+    position: absolute;
+    left: 0px;
+    margin: 0 0 10px 0;
+    border-radius: 2px;
+    background-color: rgb(29, 2, 151);
+    color: aliceblue;
+    padding: 5px;
+    height: 90%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }

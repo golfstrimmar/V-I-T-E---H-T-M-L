@@ -5,11 +5,12 @@
 }
 @mixin uber-width {
   width: 200px;
-  min-height: 35px;
+  min-height: 30px;
   border-radius: 5px;
 }
 
-.uber,.phrasen {
+.uber,
+.phrasen {
   &__body {
     width: 100%;
     margin: 20px auto;
@@ -18,64 +19,63 @@
     justify-content: center;
     gap: 20px;
   }
-  .uber {
-    &-blocks {
-      display: grid;
-      grid-template-columns: repeat(2, auto);
-      column-gap: 5px;
-      justify-content: center;
-      row-gap: 5px;
-       &--lang{
-        grid-template-columns: repeat(4, auto);
-       }
+  &-blocks {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 5px;
+    justify-content: center;
+    row-gap: 5px;
+    &--lang {
+      grid-template-columns: repeat(4, auto);
     }
+  }
 
-    &-block {
+  &-block {
+    @include uber-width;
+    @include flex-center;
+    // background-color: #35a784;
+    border: 1px solid darkblue;
+    .h5{
+      position: absolute;
+    }
+    .versteckt {
+      font-size: 10px;
       @include uber-width;
-      outline: 2px solid darkblue;
+      padding: 3px;
       @include flex-center;
-      background-color: #f0f2f5;
-      .versteckt {
-        position: absolute;
-        z-index: 1;
-        font-size: 15px;
-        @include uber-width;
-        padding: 3px;
-        @include flex-center;
-      }
-      .rus {
-        position: absolute;
-        z-index: 1;
-        font-size: 15px;
-        padding: 0 0 0 5px;
-        @include uber-width;
-        @include flex-center;
-      }
-      .mark {
-        position: absolute;
-        opacity: 0;
-      }
-      &__card {
-        @include uber-width;
-        min-height: 33px;
-        background: rgb(93, 104, 250);
-        z-index: 2;
-        color: #f2ffef;
-        box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.3);
-        font-size: 15px;
-        cursor: pointer;
-        @include flex-center;
-        padding: 0 0 0 5px;
-      }
+    }
+    .rus {
+      font-size: 15px;
+      padding: 0 0 0 5px;
+      @include uber-width;
+      @include flex-center;
+
+    }
+    .mark {
+      position: absolute;
+      opacity: 0;
+    }
+    &__card {
+      position: absolute;
+      z-index: 1;
+      @include uber-width;
+      min-height: 30px;
+      background: rgb(93, 104, 250);
+      z-index: 2;
+      color: #f2ffef;
+      box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.3);
+      font-size: 15px;
+      cursor: pointer;
+      @include flex-center;
+      padding: 0 0 0 5px;
     }
   }
 }
 
 .hovered {
-  background-color: #d1d8e2;
+  background-color: #d1d8e2 !important;
 }
 
 .hide {
   display: none !important;
 }
-

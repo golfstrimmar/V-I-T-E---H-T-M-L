@@ -55,7 +55,7 @@ export const MyTab = () => {
   });
 
   document.addEventListener("click", function (e) {
-    if (!e.target.closest(".tabs-container-js")) {
+    if (!e.target.closest(".tabs-container-js") && !e.target.closest("#sand")) {
       tabs.forEach((cell) => {
         if (cell.querySelector(".tab-title-js").matches("._is-active")) {
           cell.querySelector(".tab-title-js").remAct;
