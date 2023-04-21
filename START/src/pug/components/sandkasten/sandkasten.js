@@ -7,18 +7,21 @@ export const Sand = () => {
   const arrCells = Array.prototype.slice.call(cells);
   const enter = document.querySelector("#enter");
   const clear = document.querySelector("#clear");
-  const clearBlocks = document.querySelector("#clear-blocks");
 
-  var hoverCard;
-  var res;
-  var temp;
+  var hoverCard, res, temp;
+  var ind = 0;
   var inputVal = "";
+
+  const Clear = function () {
+    for (var i = 0; i < arrCells.length; i++) {
+      arrCells[i].append(arrCards[i]);
+    }
+  };
 
   const dragStart = function () {
     setTimeout(() => {
       this.classList.add("hide");
     }, 0);
-
     res = this;
     temp = this.closest(".js-cell-Sand");
   };
@@ -45,16 +48,33 @@ export const Sand = () => {
     hoverCard = this.querySelector(".js-Sand");
   };
 
-  const Enter = (function () {
-    enter.addEventListener("input", function () {
-      inputVal = this.value;
-      arrCards.forEach((cell) => {
-        cell.addEventListener("click", function () {
-          cell.innerHTML = inputVal;
-        });
+  const dropCell = function () {
+    enter.focus();
+    enter.value = "";
+  };
+
+  enter.addEventListener("input", function () {
+    inputVal = this.value;
+    arrCards.forEach((cell) => {
+      cell.addEventListener("click", function () {
+        cell.innerHTML = inputVal;
       });
     });
-  })();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.code == "Enter") {
+      arrCards.forEach((cell) => {
+        if (arrCards.indexOf(cell) === ind) {
+          cell.innerHTML = inputVal;
+        }
+      });
+      enter.value = "";
+      inputVal = "";
+      dropCell();
+      ind = ind + 1;
+    }
+  });
 
   clear.addEventListener("click", function () {
     enter.value = "";
@@ -62,23 +82,27 @@ export const Sand = () => {
     dropCell();
   });
 
-  clearBlocks.addEventListener("click", function () {
-    arrCards.forEach((card) => {
-      card.innerHTML = "";
-    });
-    dropCell();
-  });
-
-  const dropCell = function () {
-    enter.focus();
-    enter.value = "";
-  };
-
-  arrCards.forEach((cell) => {
-    cell.addEventListener("click", function () {
+  document.addEventListener("click", function (event) {
+    if (event.target.closest("#clear")) {
+      enter.value = "";
+      inputVal = "";
       dropCell();
-    });
+    } else if (event.target.closest("#clear-blocks")) {
+      arrCards.forEach((card) => {
+        card.innerHTML = "";
+      });
+      dropCell();
+      ind = 0;
+      Clear();
+    }
   });
+
+  // arrCards.forEach((cell) => {
+  //   cell.addEventListener("click", function () {
+  //     dropCell();
+  //   });
+  // });
+
   // ==============================
 
   cells.forEach((cell) => {
