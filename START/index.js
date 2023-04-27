@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (popupsInit.length > 0) {
     Popups();
   }
-  // if (document.querySelector("header")) {
-  //   Header();
-  // }
+  if (document.querySelector("header")) {
+    Header();
+  }
 
   // const accordAll = document.querySelectorAll(".accord");
   // if (accordAll.length > 0) {

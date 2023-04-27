@@ -1,0 +1,31 @@
+p Präsens Passivn( Vorgangspassiv)
+  span(style='color: red; ') werden + pt2
+p Präsens Passivn( Zustandpassiv)
+  span(style='color: red; ') sein + pt2
+p Präteritum Passiv 
+  span(style='color: red; ') wurden + pt2
+p Perfekt Passiv 
+  span(style='color: red; ') sein + pt2 + worden
+p Plusguamperfekt Passiv
+  span(style='color: red; ') waren + pt2 + worden
+p Futur Passiv 
+  span(style='color: red; ') werden + pt2 + 'werden' 
+section(id='passive').phrasen.rel
+  ul.uber__links.uber-blocks.uber-blocks
+    include data.pug
+    each block in blocks
+      if block.thema
+        li.uber-block.uber-block--thema
+          h3=block.thema 
+      else 
+        li.uber-block.js-cell
+          .versteckt=block.text
+          .uber-block__card.js-card(draggable='true')
+            h4=block.title
+
+section(id='passimg').passimg.rel
+  .passimg__body
+    img(src="../assets/img/passiv/i1.png" alt="alt")
+    img(src="../assets/img/passiv/i2.png" alt="alt")
+    img(src="../assets/img/passiv/i3.png" alt="alt")
+    img(src="../assets/img/passiv/i4.png" alt="alt")

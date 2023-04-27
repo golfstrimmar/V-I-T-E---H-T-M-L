@@ -34,7 +34,7 @@
     @include uber-width;
     @include flex-center;
     // background-color: #35a784;
-    border: 1px solid darkblue;
+    outline: 1px solid darkblue;
     .h5{
       position: absolute;
     }
@@ -63,7 +63,7 @@
       background: rgb(93, 104, 250);
       z-index: 2;
       color: #f2ffef;
-      box-shadow: 0px 0px 7px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 0px 7px 5px rgba(32, 32, 32, 0.3);
       font-size: 15px;
       cursor: pointer;
       @include flex-center;

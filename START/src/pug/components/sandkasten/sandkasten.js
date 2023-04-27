@@ -97,11 +97,11 @@ export const Sand = () => {
     }
   });
 
-  // arrCards.forEach((cell) => {
-  //   cell.addEventListener("click", function () {
-  //     dropCell();
-  //   });
-  // });
+   arrCards.forEach((cell) => {
+     cell.addEventListener("click", function () {
+       dropCell();
+     });
+   });
 
   // ==============================
 
@@ -119,4 +119,13 @@ export const Sand = () => {
     card.addEventListener("dragstart", dragStart);
     card.addEventListener("dragend", dragEnd);
   });
+    window.addEventListener("scroll", function (event) {
+      if (window.pageYOffset > 100) {
+        document.querySelector("#sand").classList.add("responciveHeader");
+        document.querySelector("#sand").style.zIndex = '1000'
+      } else {
+        document.querySelector("#sand").classList.remove("responciveHeader");
+        document.querySelector("#sand").style.zIndex = "1";
+      }
+    });
 };

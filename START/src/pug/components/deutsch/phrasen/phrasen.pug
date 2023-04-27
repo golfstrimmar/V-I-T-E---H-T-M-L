@@ -1,62 +1,6 @@
 section(id='phrasen').phrasen.rel
     ul.uber__links.uber-blocks.uber-blocks
-      -
-        var blocks = [
-        {title: 'полезные фразы',text: 'nützliche Sätze'},
-        {title: 'вы когда-нибудь были у нас  в школе?',text: 'waren sie schon einmal bei uns in der Schule?'},
-        {title: 'В настоящее время все наши линии заняты',text: 'Momentan sind alle unsere Leitungen belegt'},
-        {title: 'вас это устраивает?',text: 'passt es bei Ihnen gut?'},
-        {title: 'Надеюсь, это поможет вам',text: 'Dabei hilft euch hoffentlich'},
-        {title: 'шаг за шагом',text: 'Schritt für Schritt '},
-        {title: 'я хочу пожаловаться',text: 'ich  möchte mich beschweren '},
-        {title: 'вы получите от нас купон',text: 'sie erhalten einen Gutschein von uns '},
-        {title: 'Бывает ли у вас волнение перед собеседованием?',text: 'habt ihr Bammel vor dem Gespräch? '},
-        {title: 'Как вы узнали о нас?',text: 'wie sind sie auf uns aufmerksam geworden?'},
-        {title: 'почему вы хотите работать у нас?',text: 'warum möchten Sie bei uns arbeiten?'},
- 
-        {title: 'Просто заткнись!',text: 'Halt einfach die Fresse!'},
-        {title: 'не очень подходит',text: 'es passt grad nicht so gut'},
-        {title: 'Что происходит?',text: 'was ist denn los?'},
-        {title: 'она позволяет тебе участвовать',text: 'sie lässt dich teilhaben'},
-        {title: 'Я и сам могу найти выход.',text: 'Ich finde alleine raus.'},
-        {title: 'о чем ты хотел со мной поговорить?',text: 'worüber wolltest du mit mir reden?'},
-        {title: 'это звучит совершенно глупо',text: 'das klingt total bescheuert'},
-        {title: 'я снова подумал',text: 'ich hab noch mal nachgedacht'},
-        {title: 'как это должно выглядеть?',text: 'wie soll das aussehen?'},
-        {title: 'отправляйтесь в путь',text: 'machen sie sich auf den Weg'},
-        {title: 'я заберу тебя сегодня вечером',text: 'ich hol dich heute abend ab'},
-        {title: 'прекрати это делать',text: 'hör damit auf'},
-        {title: 'глядя в глаза',text: 'in die Augen gestarrt'},
-        {title: 'Я думал, что это что-то серьезное',text: 'ich dachte schon, es wär was Ernstes'},
-        {title: 'не с чем-то таким',text: 'bei so was halt nicht'},
-        {title: 'теперь не смотри на это так',text: 'jetzt guck da nicht so hin'},
-        {title: 'А теперь расслабься на время',text: 'Jetzt mach dich mal locker'},
-        {title: 'ты выглядишь потрясающе',text: 'du siest  toll aus'},
-        {title: 'потому что сегодня вечером мы празднуем',text: 'denn feiern wir  heut Abend '},
-        {title: 'теперь подожди минутку',text: 'jetzt warte doch mal '},
-        {title: 'Не трогайте меня',text: 'fass mich nicht an'},
-        {title: 'как ты мог(ла) так поступить со мной?',text: 'wie konntest du mir das antun?'},
-        {title: 'ты прекрасно знаешь, что это неправда.',text: 'du weißt genau, dass es so nicht wahr.'},
-        {title: 'Вы все сумасшедшие',text: 'Ihr spinnt doch alle'},
-        {title: 'я вырос',text: 'ich bin erwachsen'},
-        {title: 'выпустить пар',text: 'dampf ablassen'},
-        {title: 'это же совсем не так!',text: 'das stimmt doch gar nicht!'},
-        {title: 'что вы себе позволяете?',text: 'was erlauben sie sich?'},
-        {title: 'не обманывай себя в этом',text: 'täusch dich da mal nicht'},
-        {title: 'кому вы пытаетесь угодить?',text: 'wem versuchen sie zu gefallen?'},
-        {title: 'я всегда любил это',text: 'das hab ich immer so geliebt '},
-        {title: 'ты все еще помнишь?',text: 'kannst du dich noch erinnern?'},
-        {title: 'мы давно не виделись',text: 'wir haben uns sehr lange nicht gesehen '},
-        {title: 'Мика ничего не может поделать',text: 'Mika kann nicht anders'},
-        {title: 'вот что я подумал',text: 'das dachte ich mir'},
-        {title: 'поприветствуйте этого человека',text: 'begrüssen sie den Mann'},
-        {title: 'но теперь с тобой',text: 'jetzt aber ab mit dir'},
-        {title: 'Я немного боюсь садиться в машину с незнакомыми людьми',text: 'ich habe etwas Angst mich zu fremden Menschen ins Auto zu setzen'},
-        {title: 'что происходит, то происходит',text: 'was ab ist ist ab'},
-        {title: 'билет на поезд для вас слишком дорогой',text: 'die Zugfahrkarte ist ihnen zu teuer'},
-        {title: 'Лаура и Марко смотрят друг на друга',text: 'Laura und Marco sehen sich an'},
-
-        ];
+      include data.pug
       each block in blocks
         li.uber-block.js-cell
           .versteckt=block.text

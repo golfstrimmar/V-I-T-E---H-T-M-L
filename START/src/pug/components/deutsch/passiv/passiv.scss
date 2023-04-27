@@ -1,0 +1,42 @@
+.tab__title--passiv
+{
+ background: rgb(197, 156, 19);
+ &._is-active{
+  background:  rgb(128, 100, 12);
+ }
+}
+#passive{
+  .uber-blocks {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+  .uber-block {
+    outline: 1px solid rgb(175, 159, 107);
+    &__card {
+      background: rgb(148, 124, 45);
+    }
+        &--thema {
+        grid-column: 1/4;
+          min-height: 20px;
+        border-radius: 0;
+        background: rgb(250, 33, 44);
+        color: blanchedalmond;
+        text-align: center;
+        margin: 0 0 3px 0;
+      }
+  }}
+
+#passimg{
+  .passimg__body{
+    padding: 10px 0 40px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 45%);
+    justify-content: center;
+    gap: 10px;
+  }
+  img{
+    max-width: 700px;
+  }
+}
+
+ 
