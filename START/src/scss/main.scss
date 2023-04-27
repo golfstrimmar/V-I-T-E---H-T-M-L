@@ -4,13 +4,11 @@
 @import './utils/colors.scss';
 @import './utils/mixins.scss';
 @import './utils/common.scss';
-@import './utils/typography.scss';
 @import './utils/buttons.scss';
 @import './utils/inputs.scss';
 @import './utils/sliders-swiper.scss';  
 
 @import './../pug/components/header/header.scss';
-@import './../pug/components/typography/typography.scss';
 @import './../pug/components/bunner/bunner.scss';
 @import './../pug/components/bunner/bunner-slider.scss';
 @import './../pug/components/do/do.scss';
@@ -30,5 +28,7 @@
 @import './../pug/components/footer/footer.scss';
 
 @import './../pug/components/typed/typedHover.scss';
+@import './../pug/components/patern/patern.scss';
+@import './../pug/components/title/title.scss';
 
 

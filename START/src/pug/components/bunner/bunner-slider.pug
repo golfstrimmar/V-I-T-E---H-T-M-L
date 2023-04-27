@@ -29,9 +29,7 @@ section#bunner-slider.bunner-slider
               img(src=entry.src alt='img')
             .container
               .slider-card__body
-                .slider-card__title
-                  h1= entry.title
-                  h1= entry.title1
+                include ../title/title.pug
                 include ../buttons/bunner-button.pug
   form.bunner-slider__search.bunner-search
     input(type='text' placeholder='Leškoti...')

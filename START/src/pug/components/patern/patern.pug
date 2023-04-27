@@ -1,0 +1,82 @@
+section(id=patern.name).rel.patern
+  .container
+    include ../title/title.pug
+      //- =============================
+    if patern.index1
+      ul.patern__cards
+        -
+          var blocks = [
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'Title slide 1 ',
+              text: 'text	text	text'
+            },
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'Title slide 2 ',
+              text: 'text	text	text'
+            },
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'Title slide 3 ',
+              text: 'text	text	text'
+            },
+          ];
+        each block in blocks
+          include patern-card.pug
+      //- =============================
+    if patern.index2
+      .patern__top.patern-top
+          .patern-top__img.rel._a
+            .imgs
+              img(src='../../../../assets/img/paralax.jpg' alt='img')
+          .patern-top__title._b
+            h4 Lorem ipsum dolor, sit 
+          p.patern-top__text._c
+            |amet consectetur adipisicing elit. Cupiditate voluptatibus ea ipsam voluptas quisquam, deleniti facilis. Illo illum laboriosam, quidem eum voluptates at neque sint iusto nam, ut eligendi amet!
+      ul.patern__cards
+        -
+          var blocks = [
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'second 1 ',
+              text: 'second second second'
+            },
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'second 2 ',
+              text: 'text	text	text'
+            },
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'second 3 ',
+              text: 'text	text	text'
+            },
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'second 3 ',
+              text: 'text	text	text'
+            },
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'second 3 ',
+              text: 'text	text	text'
+            },
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'second 3 ',
+              text: 'text	text	text'
+            },
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'second 3 ',
+              text: 'text	text	text'
+            },
+            {
+              src: './img/sprite.svg#ban-1',
+              title: 'second 3 ',
+              text: 'text	text	text'
+            },
+          ];
+        each block in blocks
+          include patern-card.pug

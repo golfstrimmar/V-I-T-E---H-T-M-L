@@ -1,11 +1,10 @@
 h2.center  lazy для демонстрации сделан слишком низко. нужно изменить нп скрипте  lazy.js высоту на -5px  
 section(id='do').do.rel
- .imgs
-   img(src='./assets/img/bg.png' alt='img')
- .container
-   .do__title.t-26._enter-top.ttu
-     h2 enter top
-   .do__body
+  .imgs
+    img(src='./assets/img/bg.png' alt='img')
+  .container
+    include ../title/title.pug
+    .do__body
 
       -
         var blocks = [
@@ -50,35 +49,35 @@ section(id='do').do.rel
             .do-item__title.t-16
               h3=block.title
             svg.do-item__icon
-                use(xlink:href=block.src)
+              use(xlink:href=block.src)
           .do-item__body 
             if block.t1
-                .do-item__line 
-                  .do-item__title-line.t-22 Объем работы:
-                  .do-item__text-line.t-23=block.t1
+              .do-item__line 
+                .do-item__title-line.t-22 Объем работы:
+                .do-item__text-line.t-23=block.t1
             if block.t2
-                .do-item__line 
-                  .do-item__title-line.t-22 Сроки выполнения:
-                  .do-item__text-line.t-23=block.t2
+              .do-item__line 
+                .do-item__title-line.t-22 Сроки выполнения:
+                .do-item__text-line.t-23=block.t2
             if block.t3    
-                .do-item__line 
-                  .do-item__title-line.t-22 Автор:
-                  .do-item__text-line.t-23=block.t3
+              .do-item__line 
+                .do-item__title-line.t-22 Автор:
+                .do-item__text-line.t-23=block.t3
             if block.t4
-                .do-item__line 
-                  .do-item__title-line.t-22 Бесплатные правки:
-                  .do-item__text-line.t-23=block.t4
+              .do-item__line 
+                .do-item__title-line.t-22 Бесплатные правки:
+                .do-item__text-line.t-23=block.t4
             if block.t5
-                .do-item__line 
-                  .do-item__title-line.t-22 Бесплатные материалы:
-                  .do-item__text-line.t-23=block.t5
+              .do-item__line 
+                .do-item__title-line.t-22 Бесплатные материалы:
+                .do-item__text-line.t-23=block.t5
             if block.h6
               .do-item__line 
-               .do-item__title-line.t-22=block.h6
-               .do-item__text-line.t-23=block.t6
+                .do-item__title-line.t-22=block.h6
+                .do-item__text-line.t-23=block.t6
           .do-item__footer
             .do-item__price.t-41  Цена: 
             .do-item__nummer.t-40=block.nummer 
             a(href="").do-item__button.center
               span.t-42 Заказать
-    
+
