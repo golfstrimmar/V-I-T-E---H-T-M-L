@@ -1,45 +1,41 @@
 .bunner__title {
   h1 {
-    text-shadow: 0 0 8px $white;
-    font-size: 80px;
-    font-weight: bold;
-    color: var(--perrywinkle);
-  }
-}
-
-.slider-card__title {
-  h1 {
-    font-size: 60px;
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 1;
-    color: white;
-    text-shadow: 0px 0px 4px $blue1;
-  }
-}
-
-.patern {
-  &__title {
-    h2 {
-      font-size: larger;
-      text-transform: uppercase;
-      color: var(--txt-gray);
-      text-align: center;
-      padding: 10px 0;
-    }
-  }
-}
-.title-do h2 {
-  font-size: 50px;
+  font-family: 'Stolzl';
+  font-size: 45px;
   font-weight: bold;
-  color: var(--white);
-}
-
-.title-Second {
-  h2 {
-    font-size: 20px;
-    text-transform: uppercase;
-    color: coral;
-    font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $white;
   }
 }
+
+
+
+// .patern {
+//   &__title {
+//     h2 {
+//       font-size: larger;
+//       text-transform: uppercase;
+//       color: var(--txt-gray);
+//       text-align: center;
+//       padding: 10px 0;
+//     }
+//   }
+// }
+// .title-do h2 {
+//   font-size: 50px;
+//   font-weight: bold;
+//   color: var(--white);
+// }
+
+// .title-Second {
+//   h2 {
+//     font-size: 20px;
+//     text-transform: uppercase;
+//     color: coral;
+//     font-weight: 700;
+//   }
+// }

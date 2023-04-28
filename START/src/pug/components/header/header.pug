@@ -4,24 +4,41 @@ header.header
       .header__logo.logo
         a(href='#!').logo__link
           img(src='./assets/img/logo.svg' alt='img') 
-        .logo__description lorem
       nav.header__menu.menu
         svg.icon.header__close
           use(xlink:href='#x')
         ul.menu__list
-          li.menu__item
-            a.menu__link.menu__link--active(href='#!' rel='#bunner') Home
-          li.menu__item
-            a.menu__link(href='#!' rel='#posts') Posts
-          li.menu__item
-            a.menu__link(href='#!' rel='#galery') Projects
+          -
+            var blocks = [
+              {title: 'Купить', active: 'true'},
+              {title: 'Продать'},
+              {title: 'О компании'},
+              {title: 'Риэлторы'},
+              {title: 'Отзывы'},
+              {title: 'Вакансии'},
+              {title: 'Контакты'},
+              {title: 'Обучение'},
+            ];
+          each block in blocks
+            if block.active
+              li.menu__item
+                a.menu__link.menu__link--active(href='#!' rel='#'+block.title)=block.title
+            else 
+              li.menu__item
+                a.menu__link(href='#!' rel='#'+block.title)=block.title
+
       .header__info.info
-        a.info__phone(href='#!') +7(000) 123 45 65 67 
-        form.info__search
-          input(placeholder='Поиск')
-          input(type='submit')
+        .info__lang.info-lang
+          a(href='#!' rel='#popupOder').info-lang RU 
+          span / 
+          a(href='#!' rel='#popupOder').info-lang USD
+        a(href='#!' rel='#popupOder').info__like 
           svg
-            use(xlink:href='#search')
+            use(xlink:href='../../../../assets/img/sprite.svg#like') 
+
+        a(href='#!' rel='#popupOder').info__phone.header__button.but-wave.btn.btn--success Продать квартиру 
+
+
       
       svg.header__burger.icon
           use(xlink:href='#list')
