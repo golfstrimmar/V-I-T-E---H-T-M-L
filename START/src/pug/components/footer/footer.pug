@@ -1,22 +1,29 @@
 footer#footer.footer
-  .container
     .footer__body
       .footer__logo.logo
         a(href='#!').logo__link
          img(src='./assets/img/logo.svg' alt='img')
-        .logo__description lorem
-      .footer__col
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, error.
-      .footer__col
-        span Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, error.
+      nav.footer__col
+        a(href='#!' ).footer__link О нас
+        a(href='#!' ).footer__link Вакансии
+        a(href='#!' ).footer__link Обучение
+        a(href='#!' ).footer__link Франшиза
+        a(href='#!' ).footer__link Realty Forum
+        a(href='#!' ).footer__link Отзывы
+        a(href='#!' ).footer__link Контакты
        
       .footer__col.footer__col--info.info
-        a.info__phone(href='#!') +7(000) 123 45 65 67 
-        form.info__search.info__search--footer
-          input(placeholder='Поиск')
-          input(type='submit')
+        .info__adress
           svg
-            use(xlink:href='#search')
-      img.footer__cheap(src='./assets/img/footer-cheap.svg' alt='ïmg')
+            use(xlink:href='../../../../assets/img/sprite.svg#location') 
+          span Киев, ул. Богдана Хмельницкого, 17/52 БЦ "Леонардо"
+        .info__phone 
+          svg
+            use(xlink:href='../../../../assets/img/sprite.svg#location') 
+          span +7(000) 123 45 65 67 
+        .info__email  
+          svg
+            use(xlink:href='../../../../assets/img/sprite.svg#location') 
+          span info@valion.ua
     .footer__low
-      a.footer__pol(href='#!') @Lorem ipsum dolor sit amet.
+      .footer__pol 2020. Все права защищены. Наши партнеры:

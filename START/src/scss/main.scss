@@ -15,6 +15,9 @@
 @import './../pug/components/get/get.scss';
 @import './../pug/components/lider/lider.scss';
 @import './../pug/components/vor/vor.scss';
+@import './../pug/components/partner/partner.scss';
+@import './../pug/components/contact/contact.scss';
+@import './../pug/components/faq/faq.scss';
 // @import './../pug/components/bunner/bunner-slider.scss';
 // @import './../pug/components/do/do.scss';
 // @import './../pug/components/swiper-1/swiper-1.scss';
@@ -25,12 +28,12 @@
 // @import './../pug/components/galery/galery.scss';
 // @import './../pug/components/buttons/bunner-button.scss';
 // @import './../pug/components/popup/popup.scss';
-// @import './../pug/components/form/form.scss';
+@import './../pug/components/form/form.scss';
 // @import './../pug/components/accord/accord.scss';
-// @import './../pug/components/tabs/tabs.scss';
+@import './../pug/components/tabs/tabs.scss';
 // @import "./../pug/components/look/look.scss";
 // @import "./../pug/components/select/select.scss";
-// @import './../pug/components/footer/footer.scss';
+@import './../pug/components/footer/footer.scss';
 
 // @import './../pug/components/typed/typedHover.scss';
 // @import './../pug/components/patern/patern.scss';

@@ -17,6 +17,12 @@
     include ./src/pug/components/lider/lider.pug
     - var patern = { vor: 'true'};
     include ./src/pug/components/vor/vor.pug
+    - var patern = { partner: 'true'};
+    include ./src/pug/components/partner/partner.pug
+    - var patern = { contact: 'true'};
+    include ./src/pug/components/contact/contact.pug
+    - var patern = { faq: 'true'};
+    include ./src/pug/components/faq/faq.pug
   //-   - var patern = { bunnerSlider: 'true'};
   //-   include ./src/pug/components/bunner/bunner-slider.pug
   //-   - var patern = { index1: 'true', name: 'first'};
@@ -41,8 +47,8 @@
   //-   include ./src/pug/components/look/look.pug
   //-   include ./src/pug/components/typed/typedHover.pug
   //-   include ./src/pug/components/typed/typedScroll.pug
-
-  //- include ./src/pug/components/footer/footer.pug
+  - var patern = {footer: 'true'};
+  include ./src/pug/components/footer/footer.pug
 
 //- include ./src/pug/components/popup/popup.pug
 include ./assets/img/sprite.svg

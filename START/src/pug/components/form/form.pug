@@ -1,0 +1,18 @@
+form.form
+          .form__title
+            h3 Свяжитесь с нами
+          .form__item
+            input#name(type='text' required='' placeholder=' Denzel Washington')
+            label(for='name') Имя
+          .form__item
+            input#email(type='text' required='' placeholder='Город')
+            label(for='email') Город
+
+          .form__item
+            input#email(type='phone' required='' placeholder=' +380')
+            label(for='email') +380
+          .form__item
+            input#email(type='email' required='' placeholder=' thebestmail@mail.com')
+            label(for='email') E-mail
+          .form__item
+            include ../buttons/form-button.pug

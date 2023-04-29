@@ -70,6 +70,102 @@ if patern.vor
       p.item__text=block.text
 
 
+if patern.partner 
+    -
+      var blocks = [
+        {
+          src: '../../../../assets/img/partner-1.svg',
+          title: 'Собственники молодых агентств недвижимости',
+          text1: 'Успешный старт «под крылом» надежного бренда',
+          text2: 'Гарантированное доверие клиентов',
+          text3: 'Быстрое развитие',
+          text4: 'Стабильная прибыль',
+          text5: 'Конкурентоспобность',
+        },
+        {
+          src: '../../../../assets/img/partner-2.svg ',
+          title: 'Опытные риэлторы, желающие создать агентство недвижимости',
+          text1: 'Готовая бизнес-модель для агентства',
+          text2: 'Минимальные вложения',
+          text3: 'План развития',
+          text4: 'Стабильная прибыль',
+        },
+        {
+          src: '../../../../assets/img/partner-3.svg',
+          title: 'Самостоятельно работающие риэлторы',
+          text1: 'Повышение квалификации и высококлассное обучение',
+          text2: 'Больший поток клиентов',
+          text3: 'Новый этап в развитии карьеры',
+          text4: 'Увеличение прибыли',
+        },
+        {
+          src: '../../../../assets/img/partner-4.svg',
+          title: 'Каждый, кто желает стать самостоятельно работающим риэлтором',
+          text1: 'Гарантированная окупаемость бизнеса',
+          text2: 'Минимальные вложения, доступные каждому',
+          text3: 'Успешный старт даже при отсутствии навыков самостоятельной работы',
+          text4: 'Обучение и полная поддержка',
+        },
+        
+
+       
+      ];
+    each block in blocks
+      section.card
+        img.card__img(src=block.src alt='img')
+        .card__title
+          h4=block.title
+        .card__text
+          if block.text1
+            p=block.text1
+          if block.text2
+            p=block.text2
+          if block.text3
+            p=block.text3
+          if block.text4
+            p=block.text4
+          if block.text5
+            p=block.text5
+
+
+if patern.contact
+  -
+    var blocks = [
+      {
+        src: '../../../../assets/img/contact.png',
+        pretitle: 'Шаповалов Денис Юрьевич',
+        title: 'Шаповалов Денис Юрьевич',
+        text: 'Менеджер по продаже франшизы',
+        contact: '+ 38 044 503 08 08'
+      },
+      {
+        src: '../../../../assets/img/contact.png',
+        pretitle: 'Директор компании',
+        title: 'Пилипчук Артур Кириллович',
+        text: 'Генеральный директор',
+        contact: '+ 38 044 503 08 08'
+      },
+    ];
+  each block in blocks
+    section.card
+        .card__img(src=block.src alt='img').rel
+          .imgs
+            img(src=block.src alt='img')
+        .card__title
+          h4=block.title
+        .card__text=block.text
+        .card__contact
+          svg
+            use(xlink:href='../../../../assets/img/sprite.svg#contact')
+          span=block.contact
+
+
+
+
+
+
+
+
 
 
 
