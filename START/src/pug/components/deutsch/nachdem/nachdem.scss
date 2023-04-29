@@ -1,0 +1,18 @@
+.tab__title--nachdem{
+ background: rgb(240, 141, 76);
+ &._is-active{
+  background: rgb(212, 129, 21);
+ }
+}
+#nachdem{
+  .uber-blocks {
+    grid-template-columns: repeat(auto-fill, 33%);
+  }
+  .uber-block {
+    outline: 2px solid rgb(204, 112, 26);
+    &__card {
+      background: rgb(175, 81, 4);
+    }
+  }
+
+} 

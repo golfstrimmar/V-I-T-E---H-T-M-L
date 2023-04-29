@@ -1,0 +1,17 @@
+section(id='nachdem').phrasen.rel
+    ul.uber__links.uber-blocks.uber-blocks
+      include data.pug
+      each block in blocks
+        li.uber-block.js-cell
+          .versteckt=block.text
+          .uber-block__card.js-card(draggable='true')
+            h4=block.title
+
+
+
+
+
+
+
+
+
