@@ -50,11 +50,19 @@ section.tabs(id='gross')
               include ../deutsch/passiv/passiv.pug
         li.tabs__tab.tab.tab-js
           p.tab__title.tab-title-js.tab__title--nachdem
-            span nachdem während
+            span nachdem . während
             svg
               use(xlink:href='#chevron-down')
           .hidden.tab-hidden-js
             .hidden__wrapper
               include ../deutsch/nachdem/nachdem.pug
+        li.tabs__tab.tab.tab-js
+          p.tab__title.tab-title-js.tab__title--indirect
+            span indirect . weder noch
+            svg
+              use(xlink:href='#chevron-down')
+          .hidden.tab-hidden-js
+            .hidden__wrapper
+              include ../deutsch/indirect/indirect.pug
 
 

@@ -1,0 +1,21 @@
+.tab__title--indirect{
+ background: rgb(190, 17, 196);
+ &._is-active{
+  background:  rgb(148, 7, 167);
+ }
+}
+#indirect{
+  .uber-blocks {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .uber-block {
+    outline: 2px solid rgb(72, 16, 77);
+    &__card {
+      background: rgb(184, 7, 238);
+    }
+  }
+  .versteckt {
+  width: calc(100% );
+} 
+} 
