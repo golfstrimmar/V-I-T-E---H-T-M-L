@@ -1,4 +1,27 @@
-.partner{
+.partner {
   min-height: 593px;
   width: 100%;
+  padding: 60px 0 0 0;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title2 {
+      h2 {
+        color: $white;
+      }
+    }
+  }
+
+ 
+}
+
+#partner{
+ .bunner__button {
+    border: solid 1px $white;
+    margin: 0 0 0 0;
+    p {
+      color: $white;
+    }
+  }
 }

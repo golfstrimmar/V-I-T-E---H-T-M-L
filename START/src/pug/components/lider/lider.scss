@@ -1,5 +1,35 @@
 .lider{
+   background-color: #fbfbfb;
+   &__body{
+display: grid;
+grid-template-areas: 'a c' 'b c';
+grid-template-columns:  1fr 482px;
+column-gap: 65px;
+row-gap: 0px;
+align-items: center;
+padding: 70px 0;
+align-items: self-start;
+
+._a{grid-area: a;}
+._b{grid-area: b;}
+._c{grid-area: c;}
+ 
+   }
+   &__title{
+padding: 30px 0 0 0;
+   }
+   &__info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: -45px 0 0 0;
+p{
+  font-size: 17px;
+
+}
+   }
+
   &__img{
-    min-height: 360px;
+    min-height: 400px;
   }
 }

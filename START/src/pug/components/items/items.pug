@@ -11,7 +11,7 @@ if patern.one
         use(xlink:href='../../../../assets/img/sprite.svg#round')
       p.item__text=block.text
 if patern.get 
-  ul.get__body
+  ul.cards__body
     -
       var blocks = [
         {
@@ -48,19 +48,19 @@ if patern.get
       ];
     each block in blocks
       section.card
-        svg.card__img
+        svg.card__img._a
               use(xlink:href=block.src)
-        .card__title
+        .card__title._b
           h4=block.title
-        p.card__text=block.text
+        p._c.card__text=block.text
 
 if patern.vor
   -
     var blocks = [
       {text: 'Работа c поддержкой надежного бренда'},
-      {text: 'Вся необходимая брендированная продукция: брендбук,презентации и т. д.'},
+      {text: 'Вся необходимая брендированная продукция: брендбук, презентации и т. д.'},
       {text: 'Эффективный, функциональный и стильный сайт для работы'},
-      {text: 'Повышение квалификации и обучение: семинары,бизнес-тренинги,мастер-классы'},
+      {text: 'Повышение квалификации и обучение: семинары, бизнес-тренинги, мастер-классы'},
       {text: 'Лояльная цена на франшизу для наших новых партнеров'},
     ];
   each block in blocks

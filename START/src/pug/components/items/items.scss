@@ -1,19 +1,100 @@
-.item{
+.item {
   display: grid;
   grid-template-columns: 18px 1fr;
   column-gap: 14px;
-  &__icon{
+  &__icon {
     width: 18px;
-  height: 18px;
-  } 
-  &__text{
+    height: 18px;
+  }
+  &__text {
     font-size: 16px;
     color: $black;
-  } 
+  }
 }
-.card{
-  &__img{
+.card {
+  &__img {
     width: 40px;
     height: 30px;
+  }
+}
+
+.cards {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 333px);
+    gap: 100px 46px;
+    justify-content: space-between;
+    .card {
+      display: grid;
+      grid-template-areas: "a b" "a c" ;
+      grid-template-columns: 50px 1fr;
+      column-gap: 20px;
+      row-gap: 13px;
+      grid-auto-rows: max-content;
+      ._a {
+        grid-area: a;
+      }
+      ._b {
+        grid-area: b;
+      }
+      ._c {
+        grid-area: c;
+      }
+     
+
+      &:nth-child(1) {
+        .card__img {
+          width: 40px;
+          height: 30px;
+        }
+      }
+      &:nth-child(2) {
+        .card__img {
+          width: 40px;
+          height: 35px;
+        }
+      }
+      &:nth-child(3) {
+        .card__img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      &:nth-child(4) {
+        .card__img {
+          width: 40px;
+          height: 37px;
+        }
+      }
+      &:nth-child(5) {
+        .card__img {
+          width: 40px;
+          height: 44px;
+        }
+      }
+      &:nth-child(6) {
+        .card__img {
+          width: 40px;
+          height: 33px;
+        }
+      }
+      .card__img {
+        width: 40px;
+        height: 35px;
+      }
+      &__title {
+        h4 {
+          font-size: 24px;
+          font-weight: bold;
+          color: $black;
+          line-height: 1;
+        }
+      }
+      &__text {
+        
+        font-size: 15px;
+        color: $text;
+      }
+    }
   }
 }
