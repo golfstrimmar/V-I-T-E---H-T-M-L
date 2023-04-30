@@ -1,5 +1,107 @@
-.one{
-  &__img{
+.one {
+  display: flex;
+  flex-direction: column;
+  &__body {
+    padding: 60px 0 0 0;
+    display: grid;
+    grid-template-areas: "a b" "a c" "a d";
+    grid-template-columns: 695px 1fr;
+    column-gap: 60px;
+    ._a {
+      grid-area: a;
+    }
+    ._b {
+      grid-area: b;
+    }
+    ._c {
+      grid-area: c;
+    }
+    ._d {
+      grid-area: d;
+    }
+  }
+  &__img {
     min-height: 300px;
   }
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin: 40px 0 0 0;
+  }
+  &__button {
+    margin: 40px 0 0 0;
+  }
+  &__tauns {
+    margin: 67px 0 0 0;
+    display: flex;
+    column-gap: 70px;
+      padding: 0 35px;
+    li {
+      font-family: "Stolzl_medium";
+      font-size: 30px;
+      line-height: 36px;
+      color: $white-two;
+      text-transform: uppercase;
+    }
+  }
+}
+
+#one {
+  .btn--empty {
+    width: 206px;
+    height: 39px;
+    border-radius: 11px;
+    box-shadow: -5px 5px 15px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px $blood-orange;
+    p {
+      font-family: "Stolzl";
+      font-size: 14px;
+      font-weight: 500;
+      color: $blood-orange;
+    }
+  }
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+ 
+@-moz-keyframes scroll {
+    0% {
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -moz-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+ 
+@keyframes scroll {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0)
+    }
+}
+ 
+.marque {
+    display: flex;
+    overflow: hidden;
+}
+ 
+._activRun {
+    // padding-left: 100%;
+    -webkit-animation: scroll 15s infinite linear;
+    -moz-animation: scroll 15s infinite linear;
+    animation: scroll 15s infinite linear;
 }

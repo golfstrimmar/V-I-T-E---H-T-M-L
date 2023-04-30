@@ -1,7 +1,6 @@
 .bunner {
-  min-height: 100vh;
+  min-height: 654px;
   position: relative;
-
 }
 
 .bunner .container {
@@ -12,18 +11,35 @@
 .bunner__body {
   display: flex;
   flex-direction: column;
-  padding: 300px 300px 0 0px;
+  padding: 180px 0px 0 0px;
+}
+.bunner__title {
+  padding: 0 660px 0 0;
+  h1 {
+    font-family: "Stolzl";
+    font-size: 45px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+  }
 }
 
 .bunner__text {
-  margin: 50px 0 30px 0;
+  margin: 43px 0 0 0;
+  padding: 0 671px 0 0;
+  font-size: 17px;
+  color: $white;
 }
 
 .bunner__text p {
-  margin: 0 0 10px 0;
-  text-shadow: 0px 0px 4px #1763b2;
+  font-size: 17px;
 }
-
-.slider-main-js {
-  max-height: 100%;
+.bunner__button {
+  width: 265px;
+  height: 47px;
+  margin: 43px 0 0 0;
 }

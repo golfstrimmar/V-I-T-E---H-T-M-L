@@ -36,18 +36,24 @@
 // }
 
 .btn--empty {
-  border: 1px solid #ef316b;
-  border-radius: 100px;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
   text-align: center;
-  color: #030303;
+   border-radius: 11px;
+  box-shadow: -5px 5px 15px 0 rgba(0, 0, 0, 0.05);
+  border: solid 1px $white;
+    p {
+      font-family: "Stolzl";
+  font-size: 14px;
+  font-weight: 500;
+    color: $white;
+  }
 }
 
 .btn--empty:hover {
   color: white;
-  box-shadow: 4px 15px 30px 0 #fb211d52, inset 0 0 20px #faf8f8 !important;
+  box-shadow: 0px 5px 20px 0 lighten($blood-orange, 20%), inset 0 0 20px #faf8f8 !important;
 }
 
 // .btn--empty:focus {

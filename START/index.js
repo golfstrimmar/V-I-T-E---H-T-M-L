@@ -24,6 +24,7 @@ import { Look } from "./src/pug/components/look/look";
 import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
+import { Marque } from "./assets/js/marque";
 
 document.addEventListener("DOMContentLoaded", function () {
    Look();
@@ -42,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (document.querySelector("#galery")) {
     MyGalery();
+  }
+  if (document.querySelector(".marque")) {
+    Marque();
   }
   if (document.querySelector("#swiper-scroll")) {
     SwiperScroll();

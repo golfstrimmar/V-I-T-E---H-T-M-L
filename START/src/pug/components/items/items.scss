@@ -1,3 +1,16 @@
+.item{
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  column-gap: 14px;
+  &__icon{
+    width: 18px;
+  height: 18px;
+  } 
+  &__text{
+    font-size: 16px;
+    color: $black;
+  } 
+}
 .card{
   &__img{
     width: 40px;
