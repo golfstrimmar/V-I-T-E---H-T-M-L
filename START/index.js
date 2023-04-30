@@ -6,7 +6,7 @@ import "./src/scss/main.scss";
 import { Button } from "./assets/js/button";
 // import { Lazy } from "./assets/js/lazy";
 import { Anim } from "./assets/js/animation";
-
+import { Marque } from "./assets/js/marque";
 
 
 import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
@@ -25,6 +25,7 @@ import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
 
+
 document.addEventListener("DOMContentLoaded", function () {
    Look();
     Anim();
@@ -33,6 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (document.querySelector("#swiper-1")) {
     Swiper1();
+  }
+  if (document.querySelector(".marque")) {
+    Marque();
   }
   if (document.querySelector("#slider-full")) {
     SwiperFull();
