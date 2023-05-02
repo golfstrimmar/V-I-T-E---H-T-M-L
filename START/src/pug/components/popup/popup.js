@@ -45,14 +45,14 @@ export const Popups = () => {
         });
       }, 200);
 
-      if (initTarget) {
-        let linkPlyr = initTarget.querySelector("video").getAttribute("id");
-        for (let i = 0; i < tempor.length; ++i) {
-          if (Pleers[i].id === linkPlyr) {
-            Pleers[i].e.play();
-          }
-        }
-      }
+      // if (initTarget) {
+      //   let linkPlyr = initTarget.querySelector("video").getAttribute("id");
+      //   for (let i = 0; i < tempor.length; ++i) {
+      //     if (Pleers[i].id === linkPlyr) {
+      //       Pleers[i].e.play();
+      //     }
+      //   }
+      // }
 
     };
     //   // ==========================

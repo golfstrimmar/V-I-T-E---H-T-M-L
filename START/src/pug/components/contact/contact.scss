@@ -19,61 +19,7 @@
 }
 #contact {
   padding: 86px 148px;
-  .form {
-    padding: 30px 33px;
-    border-radius: 10px;
-    box-shadow: 2px 14px 41px 0 rgba(0, 0, 0, 0.1);
-    &__title {
-      h3 {
-        font-family: "Stolzl_medium";
-        font-size: 21px;
-        color: $black;
-      }
 
-      margin: 0 0 25px 0;
-    }
-    &__item {
-      height: 40px;
-      border-radius: 11px;
-      border: solid 1px $white-four;
-      background-color: $white;
-      margin-bottom: 15px;
-      input {
-        border-bottom: none;
-      }
-      label {
-        font-size: 14px;
-        color: $warm-grey;
-        padding: 0 0 0 18px;
-        // top: 50%;
-        transition: 0.3s;
-        // transform: translateY(-50%);
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 16px;
-        color: #898989;
-      }
-      &:last-child {
-        margin: 25px 0 0 0;
-      }
-    }
-
-    .submit-button {
-      text-shadow: none;
-      transition: all 0.2s ease-in-out;
-      height: 40px;
-      border-radius: 11px;
-      box-shadow: -5px 5px 15px 0 rgba(0, 0, 0, 0.05);
-      background-color: $green;
-      font-family: "Stolzl";
-      font-size: 14px;
-      font-weight: 500;
-      color: $white;
-      &:hover {
-        box-shadow: 0 10px 20px #72e268, inset 0 0 15px rgb(255, 255, 255);
-      }
-    }
-  }
   .contact__items {
     display: flex;
     gap: 70px;

@@ -11,7 +11,7 @@ import { Anim } from "./assets/js/animation";
 
 import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
 import { Header } from "./src/pug/components/header/header";
-// import { Popups } from "./src/pug/components/popup/popup";
+import { Popups } from "./src/pug/components/popup/popup";
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";  
@@ -57,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
   //   Lazy();
   // }
 
-  // const popupsInit = document.querySelectorAll(".popups-init-js");
-  // if (popupsInit.length > 0) {
-  //   Popups();
-  // }
+  const popupsInit = document.querySelectorAll(".popups-init-js");
+  if (popupsInit.length > 0) {
+    Popups();
+  }
   if (document.querySelector("header")) {
     Header();
   }

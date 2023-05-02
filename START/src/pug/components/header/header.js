@@ -3,15 +3,14 @@
 export const Header = () => {
   // const burger = document.querySelector(".header__burger");
   const menu = document.querySelector(".menu");
+  const info = document.createElement("div");
 
   document.addEventListener("click", function (event) {
     if (event.target.closest(".header__burger")) {
-      const info = document.createElement("div");
       menu.classList.add("menu-active");
       info.classList.add("header__info", "info");
       info.innerHTML =
-        "<a class='info__phone' href='#!'>+7(000) 123 45 65</a><form class='info__search '><input type='text' placeholder='Поиск' /><svg> <use xlink:href='#search'></use></svg><input type='submit'/></form>";
-      console.log(info);
+        "";
       function activeInfo() {
         info.classList.add("info-active");
         menu.append(info);
