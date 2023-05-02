@@ -11,21 +11,15 @@
 
 .form__item label {
   position: absolute;
-  top: 0;
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   transition: 0.3s;
-  transform: translateY(0);
   pointer-events: none;
-  color: blue;
   width: 100%;
-  font-size: 19px;
-  line-height: 25px;
-  font-weight: 500;
 }
 
-.form__item .submit-button{
-  font-size: 14px;
-}
+
 
 .form__item input,
 .form__item textarea {

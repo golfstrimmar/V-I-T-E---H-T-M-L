@@ -1,15 +1,12 @@
-if patern.one 
-  -
-    var blocks = [
-      {text: '14 офисов в восьми городах Украины'},
-      {text: 'Развиваемся всегда. Даже в кризис и трудные времена'},
-      {text: 'Самые доступные условия приобретения франшизы для новых партнеров'},
-    ];
-  each block in blocks
-    .item
-      svg.item__icon 
-        use(xlink:href='../../../../assets/img/sprite.svg#round')
-      p.item__text=block.text
+if patern.one || patern.vor
+  include ./data.pug
+    each block in blocks
+      .item
+        svg.item__icon 
+          use(xlink:href='../../../../assets/img/sprite.svg#round')
+        p.item__text=block.text
+
+
 if patern.get 
   ul.cards__body
     -
@@ -54,22 +51,6 @@ if patern.get
           h4=block.title
         p._c.card__text=block.text
 
-if patern.vor
-  -
-    var blocks = [
-      {text: 'Работа c поддержкой надежного бренда'},
-      {text: 'Вся необходимая брендированная продукция: брендбук, презентации и т. д.'},
-      {text: 'Эффективный, функциональный и стильный сайт для работы'},
-      {text: 'Повышение квалификации и обучение: семинары, бизнес-тренинги, мастер-классы'},
-      {text: 'Лояльная цена на франшизу для наших новых партнеров'},
-    ];
-  each block in blocks
-    .item
-      svg.item__icon 
-        use(xlink:href='../../../../assets/img/sprite.svg#round')
-      p.item__text=block.text
-
-
 if patern.partner 
     -
       var blocks = [
@@ -112,28 +93,27 @@ if patern.partner
       ];
     each block in blocks
       section.card
-        img.card__img(src=block.src alt='img')
-        .card__title
+        img.card__img(src=block.src alt='img')._a
+        .card__title._b
           h4=block.title
-        .card__text
+        ul.card__text._c
           if block.text1
-            p=block.text1
+            li=block.text1
           if block.text2
-            p=block.text2
+            li=block.text2
           if block.text3
-            p=block.text3
+            li=block.text3
           if block.text4
-            p=block.text4
+            li=block.text4
           if block.text5
-            p=block.text5
-
+            li=block.text5
 
 if patern.contact
   -
     var blocks = [
       {
         src: '../../../../assets/img/contact.png',
-        pretitle: 'Шаповалов Денис Юрьевич',
+        pretitle: 'Отдел продаж франшизы',
         title: 'Шаповалов Денис Юрьевич',
         text: 'Менеджер по продаже франшизы',
         contact: '+ 38 044 503 08 08'
@@ -147,17 +127,22 @@ if patern.contact
       },
     ];
   each block in blocks
+
     section.card
-        .card__img(src=block.src alt='img').rel
-          .imgs
-            img(src=block.src alt='img')
-        .card__title
-          h4=block.title
-        .card__text=block.text
-        .card__contact
-          svg
-            use(xlink:href='../../../../assets/img/sprite.svg#contact')
-          span=block.contact
+        .card__pre-title
+          h3=block.pretitle
+        .card__body
+          .card__img(src=block.src alt='img').rel._b
+            .imgs
+              img(src=block.src alt='img')
+  
+          .card__title._c
+            h4=block.title
+          ._d.card__text=block.text
+          .card__contact._e
+            svg
+              use(xlink:href='../../../../assets/img/sprite.svg#contact')
+            span=block.contact
 
 
 

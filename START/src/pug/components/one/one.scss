@@ -21,7 +21,7 @@
     }
   }
   &__img {
-    min-height: 300px;
+    min-height: 393px;
   }
   &__blocks {
     display: flex;
@@ -48,6 +48,8 @@
 }
 
 #one {
- 
+ .addDiv{
+  background-color: lighten($blood-orange , 20%);
+ }
 }
 

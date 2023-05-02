@@ -1,33 +1,80 @@
 .footer {
   position: relative;
-  background: rgb(161, 190, 243);
   margin: auto 0 0 0;
-  padding: 30px 0;
+
+  flex-grow: 0;
+
+  background-color: $greyish-brown;
 }
 
 .footer__body {
+  padding: 0 30px 0 30px;
   display: grid;
-  grid-template-columns: 10% 20% 20% 20% 5%;
-  column-gap: 10px;
+  height: 83px;
+  grid-template-columns: 96px 460px 1fr;
+  column-gap: 40px;
   align-items: center;
-  justify-content: space-between;
 }
 
-.footer__cheap {
-  justify-self: right;
-  width: 50px;
-  height: 50px;
+.footer__col {
+  display: flex;
+  align-items: center;
 }
+
+nav {
+  column-gap: 10px;
+  .footer__link {
+    font-size: 13px;
+    color: $white;
+    cursor: pointer;
+    &:hover{
+      color: lighten($blood-orange, 20%)
+    }
+  }
+}
+
+
 
 .footer__col--info {
+  a{
+  &:hover{
+     span{
+color: lighten($blood-orange, 20%)
+     } 
+     svg{
+      fill:lighten($blood-orange, 20%)
+     }
+    }
+  }
+    
   display: flex;
-  flex-direction: column;
-  row-gap: 10px;
+  column-gap: 40px;
+  margin: 0 0 0 auto;
+  svg {
+    height: 13px;
+    width: 8px;
+    margin: 0 6px 0 0;
+    transition: all .2s;
+    fill:$white;
+  }
+  span {
+    font-size: 13px;
+    color: $white;
+    transition: all .2s;
+  }
 }
 
 .footer__low {
   text-align: center;
-  margin: 20px 0 0 0;
+  height: 64px;
+  background-color: $black;
+}
+.footer__pol{
+  color: $white;font-size: 12px; height: 64px;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  padding: 0 30px  ;
 }
 
 @media (min-width: 901px) and (max-width: 1024px) {

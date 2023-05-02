@@ -45,17 +45,18 @@
     box-shadow: -5px 5px 15px 0 rgba(0, 0, 0, 0.05);
     border: solid 1px $blood-orange;
     p {
-      font-family: "Stolzl";
+      font-family: "Stolzl_medium";
       font-size: 14px;
-      font-weight: 500;
       color: $blood-orange;
     }
   }
 
 .btn--empty:hover {
-  color: white;
+  color: $white;
   box-shadow: 0px 5px 20px 0 lighten($blood-orange, 20%), inset 0 0 20px #faf8f8 !important;
 }
+
+
 
 // .btn--empty:focus {
 //   border: 1px solid #0000cc;

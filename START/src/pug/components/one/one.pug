@@ -4,12 +4,13 @@ section(id='one').one.rel
       .one__img.rel._a
         .imgs
           img(src='../../../../assets/img/one.svg' alt='img')
-      .one__title._b
-        include ../title/title.pug
+      .one__title._b.title2
+        h2 Франшиза №1 в недвижимости
       ul.one__blocks._c
         include ../items/items.pug
       .one__button._d
-        include ../buttons/bunner-button.pug
+        a.btn.btn--empty.but-wave.popups-init-js(rel='#popup1' href='#!')
+          p Оставить заявку
   .marque
     ul.one__tauns
         li БРОВАРЫ

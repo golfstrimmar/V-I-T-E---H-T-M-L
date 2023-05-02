@@ -31,15 +31,22 @@
 .bunner__text {
   margin: 43px 0 0 0;
   padding: 0 671px 0 0;
-  font-size: 17px;
   color: $white;
 }
 
-.bunner__text p {
-  font-size: 17px;
-}
+
 .bunner__button {
   width: 265px;
   height: 47px;
   margin: 43px 0 0 0;
+}
+#bunner {
+  .btn--empty {
+    border-radius: 11px;
+    box-shadow: -5px 5px 15px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px $white;
+    p {
+      color: $white;
+    }
+  }
 }

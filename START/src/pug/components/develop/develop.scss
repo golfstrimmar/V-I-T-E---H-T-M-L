@@ -1,0 +1,75 @@
+.develop {
+  &__body {
+    display: grid;
+    grid-template-areas: "a d" "b d" "c d";
+    grid-template-columns: 1fr 634px;
+    column-gap: 38px;
+    row-gap: 17px;
+    grid-auto-rows: max-content;
+    padding: 60px 0 0 0;
+    ._a {
+      grid-area: a;
+    }
+    ._b {
+      grid-area: b;
+    }
+    ._c {
+      grid-area: c;
+    }
+    ._d {
+      grid-area: d;
+    }
+  }
+  &__title {
+  }
+  &__text {
+    font-size: 18px;
+  }
+  &__buttons {
+    display: flex;
+    column-gap: 15px;
+    padding: 20px 0 0 0;
+    svg{
+      width: 12px;
+      height: 12px;
+      margin: 0 0 0 10px;
+    }
+  }
+  &__img-block {
+    display: grid;
+    grid-template-areas: "g h" "g j";
+    grid-template-columns: 240px 1fr;
+    column-gap: 23px;
+    row-gap: 23px;
+    ._g {
+      grid-area: g;
+    }
+    ._h {
+      grid-area: h;
+    }
+    ._j {
+      grid-area: j;
+    }
+    img {
+      border-radius: 10px;
+      box-shadow: 5px 10px 25px 0 rgba(0, 0, 0, 0.19);
+    }
+    .develop__img1 {
+      width: 240px;
+      height: 318px;
+    }
+    .develop__img2 {
+      width: 156px;
+      height: 159px;
+    }
+    .develop__img3 {
+      width: 371px;
+      height: 246px;
+    }
+  }
+}
+#develop {
+  .addDiv {
+    background-color: lighten($blood-orange, 20%);
+  }
+}
