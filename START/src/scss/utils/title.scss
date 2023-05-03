@@ -5,6 +5,17 @@
   color: #333333;
 }
 
+@media (max-width: 1199px) {
+  .title2 h2 {
+    font-size: 25px;
+    line-height: 1;
+    text-align: center;
+  }
+  .card__title h4 {
+    line-height: 1;
+  }
+}
+
 // .patern {
 //   &__title {
 //     h2 {

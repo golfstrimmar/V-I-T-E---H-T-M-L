@@ -47,7 +47,7 @@ if patern.get
       section.card
         svg.card__img._a
               use(xlink:href=block.src)
-        .card__title._b
+        .card__title._b._s-24
           h4=block.title
         p._c.card__text=block.text
 
@@ -94,7 +94,7 @@ if patern.partner
     each block in blocks
       section.card
         img.card__img(src=block.src alt='img')._a
-        .card__title._b
+        .card__title._b._s-24
           h4=block.title
         ul.card__text._c
           if block.text1

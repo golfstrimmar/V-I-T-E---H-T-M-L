@@ -34,7 +34,6 @@
   color: $white;
 }
 
-
 .bunner__button {
   width: 265px;
   height: 47px;
@@ -49,4 +48,21 @@
       color: $white;
     }
   }
+}
+
+@media (max-width: 999px) {
+  .bunner__body {
+    padding: 160px 0px 0 0px;
+  }
+  .bunner__title {
+    padding: 0 0 0 0;
+    h1 {
+      font-size: 30px;
+    }
+  }
+  .bunner__text {
+  margin: 43px 0 0 0;
+  padding: 0 ;
+  color: #fff;
+}
 }

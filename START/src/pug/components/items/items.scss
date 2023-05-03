@@ -84,7 +84,7 @@
       }
       &__title {
         h4 {
-          font-size: 24px;
+          
           font-weight: bold;
           color: $black;
           line-height: 1;
@@ -97,4 +97,28 @@
       }
     }
   }
+}
+
+
+@media (max-width: 1199px) {
+    .cards__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px 0;
+}  
+.cards__body .card {
+  display: grid;
+  grid-template-areas:
+  "a" 
+  "b" 
+  "c";
+  grid-template-columns:  1fr;
+  column-gap: 0px;
+  row-gap: 13px;
+justify-items: center; 
+}
+.cards__body .card__text{
+  text-align: center;
+  line-height: 1.5;
+}
 }

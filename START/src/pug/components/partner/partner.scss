@@ -67,7 +67,7 @@
     &__title {
       h4 {
         font-family: "Roboto";
-        font-size: 24px;
+        
         font-weight: bold;
         color: $white;
         line-height: 28px;
@@ -84,4 +84,13 @@
       line-height: 18px;
     }
   }
+  @media (min-width: 768px) and (max-width: 1199px) {
+        
+  }
+  @media (max-width: 1199px) {
+    .card__title h4{
+      line-height: 1;
+    }
+  }
 }
+
