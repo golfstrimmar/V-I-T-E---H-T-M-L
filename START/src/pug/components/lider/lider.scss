@@ -7,7 +7,6 @@ grid-template-columns:  1fr 482px;
 column-gap: 65px;
 row-gap: 0px;
 align-items: center;
-padding: 70px 0;
 align-items: self-start;
 
 ._a{grid-area: a;}
@@ -29,4 +28,41 @@ padding: 30px 0 0 0;
   &__img{
     min-height: 400px;
   }
+}
+
+@media (max-width: 1199px) {
+.lider{
+   background-color: #fbfbfb;
+   &__body{
+
+display: grid;
+grid-template-areas: 'c' 'a' 'b' ;
+grid-template-columns: 100% ;
+column-gap: 0;
+row-gap: 20px;
+padding: 20px 0;
+._a{grid-area: a;}
+._b{grid-area: b;}
+._c{grid-area: c;}
+ 
+   }
+   &__title{
+padding: 0px 0 0 0;
+   }
+   &__info{
+    row-gap: 15px;
+    margin: 20px 0 0 0;
+   *{
+      text-align: center;
+   }
+
+   }
+
+  &__img{
+    min-height: 260px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
 }

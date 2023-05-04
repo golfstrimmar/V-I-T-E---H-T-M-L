@@ -90,6 +90,10 @@ svg.hidden {
 .fdc {
   flex-direction: column;
 }
+._p60{
+  padding: 60px 0 0 0;
+}
+
 /* +++++++++++++++++++++++++++++++++++++ */
 @media (prefers-reduced-motion: no-preference) {
   .top-animation {
@@ -143,16 +147,19 @@ svg.hidden {
   text-transform: uppercase;
 }
 
-@media (min-width: 901px) and (max-width: 1259px) {
+@media (min-width: 1200px) and (max-width: 1259px) {
   .container {
     margin: 0 20px;
     max-width: calc(100% - 40px);
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1199px) {
   .container {
     margin: 0 10px;
     max-width: calc(100% - 20px);
   }
+  ._p60{
+  padding: 40px 0 0 0;
+}
 }

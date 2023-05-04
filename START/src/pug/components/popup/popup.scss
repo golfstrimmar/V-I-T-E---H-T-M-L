@@ -78,6 +78,8 @@
   transition: all 0.2s ease-in-out;
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 50%;left:50%;transform: translate(-50%,-50%);
 }
 
 .popup__close:hover {
@@ -88,208 +90,29 @@
   fill: darkgray;
 }
 
-@media (max-width: 900px) {
-  .popup__inner {
-    min-width: 100%;
+@media (max-width: 1199px) {
+ .popup__close {
+    opacity: 0.7;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    width: 15px;
+    height: 15px;
   }
 
-  .popup-close-js {
-    right: 3px;
-    top: 6px;
-  }
+
+  .popup__close svg {
+  fill: $black;}
 }
 
 
-@media (min-width: 901px) and (max-width: 1024px) {
-  .Call {
-    background: #ffffff;
-    border-radius: 22px;
-    width: 500px;
-    height: 617px;
-    &__body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 46px 36px 0;
-    }
-    &__title {
-      font-weight: 600;
-      font-size: 32px;
-      line-height: 44px;
-      span {
-        font-weight: 600;
-        font-size: 32px;
-        line-height: 44px;
-      }
-    }
-    &__post-title {
-      text-align: center;
-      margin: 11px 0 0 0;
-      color: #7f98ae;
-      margin: 13px 0 0;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 28px;
-    }
-    &__button {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 25px;
-
-      border-radius: 100px;
-      width: 387px;
-      height: 73px;
-      margin: 30px 0 0;
-    }
-    &__check-block {
-      margin: 26px 0 0;
-    }
-    &__check {
-      width: 15px;
-      height: 15px;
-      position: relative;
-    }
-    &__span {
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 20px;
-    }
-    &__link {
-      color: #009bfc;
-      display: inline-block;
-      margin: 0 0 0 23px;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 20px;
-      span {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 20px;
-      }
-    }
-    .Oder-form__inputs-area {
-      margin: 28px 0 0;
-      row-gap: 20px;
-      width: 100%;
-    }
-    .Oder-form__input {
-      background: rgba(127, 152, 174, 0.08);
-      border-radius: 32px;
-      padding: 0 0 0 10px;
-      width: 387px;
-      height: 74px;
-      border-radius: 50px;
-      &::placeholder {
-        color: #7f98ae;
-        text-align: center;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 28px;
-      }
-    }
-
-    input[type="checkbox"]:checked + label::before,
-    input[type="checkbox"]:not(:checked) + label::before,
-    input[type="radio"]:checked + label::before,
-    input[type="radio"]:not(:checked) + label::before {
-      height: 18px !important;
-      width: 18px !important;
-      top: 4px !important;
-      left: -5px !important;
-    }
-
-    input[type="checkbox"]:checked + label,
-    input[type="checkbox"]:not(:checked) + label,
-    input[type="radio"]:checked + label,
-    input[type="radio"]:not(:checked) + label {
-      padding-left: 20px !important;
-    }
-
-    input[type="checkbox"]:checked + label::after,
-    input[type="checkbox"]:not(:checked) + label::after {
-      height: 8px;
-      left: 0px;
-      top: 7px;
-      width: 8px;
-    }
-  }
 
   // =======================
 
-  .Thanks {
-    width: 418px;
-    height: 505px;
-    .Thanks__img {
-      height: 175px;
-      width: 175px;
-      margin: 20px 0 0 0;
-    }
-    .Call__body {
-      padding: 63px 0 0;
-    }
 
-    .Call__title {
-      margin: -17px 0 0 0;
-      font-weight: 600;
-      font-size: 26px;
-      line-height: 36px;
-      order: -2;
-    }
-    .Call__post-title {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
-      order: -1;
-    }
-    .Call__button {
-      width: 313px;
-      height: 76px;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 24px;
-      margin: -10px 0 0;
-    }
-  }
 
-  //  =======================
-  .Age {
-    border-radius: 18px;
-    width: 489px;
-    height: 276px;
-    .Call__body {
-      padding: 53px 0 0;
-    }
 
-    .Call__title {
-      margin: -17px 0 0 0;
-      font-weight: 700;
-      font-size: 46px;
-    }
-    .Call__post-title {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 20px;
-      text-align: center;
-      margin: 20px 0 0;
-    }
-    .Call__button {
-      height: 60px;
-      margin: 33px 0 0;
-      max-width: 242px;
-      width: 233px;
-      font-size: 13px;
-    }
-  }
-
-  .popup__close {
-    height: 48px;
-    opacity: 0.7;
-    position: absolute;
-    right: 11px;
-    top: 9px;
-    width: 51px;
-  }
-}
+ 
 
 @media (min-width: 901px) and (max-width: 1280px) {
   .Oder {

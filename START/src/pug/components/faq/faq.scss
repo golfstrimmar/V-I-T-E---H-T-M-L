@@ -1,48 +1,74 @@
-#faq{
-  padding: 60px 0;
+#faq {
   .tabs ul > li {
-  position: relative;
-  margin: 5px;
-  border-radius: 7px;
-  box-shadow: -2px 14px 41px 0 rgba(0, 0, 0, 0.07);
-  background-color: $white;
-}
-.faq__body{
-  margin: 46px 0 0 0;
-}
-
-
-
-.tab__title {
-  width: 100%;
-  position: relative;
-   height: 65px;
-  border-radius: 7px;
-  box-shadow: -2px 14px 41px 0 rgba(0, 0, 0, 0.07);
-  background-color: $white;
-  span{
-  font-family: 'Stolzl_medium';
-  font-size: 16px;
-  color: $black;
+    position: relative;
+    margin: 5px;
+    border-radius: 7px;
+    box-shadow: -2px 14px 41px 0 rgba(0, 0, 0, 0.07);
+    background-color: $white;
   }
-   svg {
+  .faq__body {
+   padding: 30px 0 ;
+  }
+
+  .tab__title {
+    width: 100%;
+    position: relative;
+    min-height: 65px;
+    border-radius: 7px;
+    box-shadow: -2px 14px 41px 0 rgba(0, 0, 0, 0.07);
+    background-color: $white;
+    gap: 0 10px;
+    span {
+      font-family: "Stolzl_medium";
+      font-size: 16px;
+      color: $black;
+    }
+    svg {
+      width: 12px;
+      height: 6px;
+      transition: all 0.3s ease-in-out;
+      fill: $warm-grey-two;
+    }
+  }
+  .hidden__wrapper {
+    border: none;
+    background-color: $white;
+    padding: 0 0 19px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    p {
+      font-size: 14px;
+      color: $black;
+      padding: 0 0 0 24px;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  #faq {
+    margin: 40px 0 0 0;
+  }
+  #faq .faq__body {
+    padding: 20px 0;
+    margin: 0 0 0 0;
+  }
+  #faq .tab__title {
+    min-height: 45px;
+    padding: 10px;
+  }
+  #faq .tab__title span {
+    font-size: 14px;
+  }
+  #faq .tab__title svg {
     width: 12px;
-  height: 6px;
-  transition: all 0.3s ease-in-out;
-  fill: $warm-grey-two;
-}
-  
-}
-.hidden__wrapper {
-  border: none;
-  background-color: $white;
-  padding: 0 0 19px 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  p{
-     font-size: 14px;
-  color: $black;
-  padding: 0 0 0 24px;
+    height: 6px;
   }
-}
+  #faq .hidden__wrapper {
+    border: none;
+    background-color: #fff;
+    padding: 10px;
+    p {
+      padding: 0 0 0 0;
+    }
+  }
 }

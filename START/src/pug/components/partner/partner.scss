@@ -1,7 +1,7 @@
 .partner {
   min-height: 593px;
   width: 100%;
-  padding: 60px 0 0 0;
+  
   &__title {
     display: flex;
     justify-content: space-between;
@@ -67,7 +67,7 @@
     &__title {
       h4 {
         font-family: "Roboto";
-        
+
         font-weight: bold;
         color: $white;
         line-height: 28px;
@@ -84,13 +84,79 @@
       line-height: 18px;
     }
   }
-  @media (min-width: 768px) and (max-width: 1199px) {
-        
+}
+
+@media (max-width: 1199px) {
+  .partner {
+    min-height: 593px;
+    padding: 40px 0 0 0;
+    &__title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 20px;
+    }
+    &__body {
+      display: grid;
+      grid-template-columns: 100%;
+      gap: 47px 160px;
+      margin: 30px 0 0 0;
+      padding: 0 0 30px 0;
+    }
   }
-  @media (max-width: 1199px) {
-    .card__title h4{
-      line-height: 1;
+  .card__title h4 {
+    line-height: 1;
+  }
+#partner{
+  .card {
+    display: grid;
+    grid-template-areas: "a" "b" "c";
+    grid-template-columns:  1fr;
+    gap: 15px 0px ;
+  justify-items: center;
+  
+    &:nth-child(1) > .card__title {
+      padding: 0;
+    }
+
+    &:nth-child(3) {
+      .card__text li:nth-child(1) {
+        padding: 0 ;
+      }
+    }
+    &:nth-child(2) > .card__title {
+      padding: 0 ;
+    }
+    &:nth-child(4) {
+      .card__text li:nth-child(3) {
+        padding: 0 ;
+      }
+    }
+    &__img {
+      width: 42px;
+      height: 42px;
+    }
+    &__title {
+      h4 {
+        line-height: 20px;
+        text-align: center;
+      }
+    }
+  }
+  .card__text {
+    li {
+      font-size: 15px;
+      margin: 0 0 0 15px;
+      line-height: 18px;
     }
   }
 }
+.partner__button{
+ margin: 30px auto 0;
+  max-width: 265px;
+  width: 100%;
+}
 
+
+}

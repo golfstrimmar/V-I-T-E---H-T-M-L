@@ -18,12 +18,11 @@
   }
 }
 #contact {
-  padding: 86px 148px;
+  padding: 0 148px 86px;
 
   .contact__items {
     display: flex;
     gap: 70px;
-    
   }
   .card {
     &__body {
@@ -85,5 +84,104 @@
       font-size: 18px;
       color: $black;
     }
+  }
+}
+
+@media (max-width: 1199px) {
+  .contact {
+    background-color: #fbfbfb;
+    &__body {
+      display: grid;
+      grid-template-areas: "a" " b" "c";
+      grid-template-columns: 1fr;
+      gap: 30px 0;
+      ._a {
+        grid-area: a;
+      }
+      ._b {
+        grid-area: b;
+      }
+      ._c {
+        grid-area: c;
+      }
+    }
+  }
+
+  #contact, .popup {
+    padding: 46px 0px;
+    .form {
+      padding: 20px 23px;
+      &__title h3 {
+        font-size: 18px;
+      }
+      .form__item {
+        padding-bottom: 30px;
+      }
+      .form__item {
+        height: 28px;
+        padding-bottom: 0px;
+        label {
+          font-size: 12px;
+        }
+      }
+      .submit-button {
+        font-size: 12px;
+        height: 33px;
+      }
+      .form__item input:focus + label {
+        transform: translateY(-28px);
+      }
+      .form .submit-button:hover {
+        box-shadow: 0 5px 15px #72e268, inset 0 0 15px rgb(255, 255, 255);
+      }
+    }
+    .card {
+      &__body {
+        margin: 20px 0 0 0;
+        min-width: 1px;
+        display: grid;
+        grid-template-columns: 62px 1fr;
+        column-gap: 25px;
+        align-items: center;
+      }
+     
+    }
+    .card__img {
+      width: 62px;
+      height: 62px;
+      border-radius: 100%;
+    }
+
+    .card__pre-title {
+      font-size: 18px;
+    }
+    .card__title {
+      h4 {
+        font-size: 14px;
+      }
+    }
+    .card__text {
+      margin: 0px 0 0 0;
+      font-size: 12px;
+    }
+    .card__contact {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+      span {
+        font-size: 15px;
+      }
+    }
+  }
+
+  #contact .contact__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px 0;
   }
 }

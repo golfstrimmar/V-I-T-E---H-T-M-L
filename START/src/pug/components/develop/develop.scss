@@ -6,7 +6,7 @@
     column-gap: 38px;
     row-gap: 17px;
     grid-auto-rows: max-content;
-    padding: 60px 0 0 0;
+    width: 100%;
     ._a {
       grid-area: a;
     }
@@ -29,7 +29,7 @@
     display: flex;
     column-gap: 15px;
     padding: 20px 0 0 0;
-    svg{
+    svg {
       width: 12px;
       height: 12px;
       margin: 0 0 0 10px;
@@ -50,10 +50,13 @@
     ._j {
       grid-area: j;
     }
-    img {
+    li {
       border-radius: 10px;
+      overflow: hidden;
       box-shadow: 5px 10px 25px 0 rgba(0, 0, 0, 0.19);
     }
+
+  
     .develop__img1 {
       width: 240px;
       height: 318px;
@@ -71,5 +74,62 @@
 #develop {
   .addDiv {
     background-color: lighten($blood-orange, 20%);
+  }
+}
+
+@media (max-width: 767px) {
+  .develop {
+    &__body {
+      grid-template-areas: "d" "a " "b " "c ";
+      grid-template-columns: 1fr;
+      column-gap: 0px;
+      row-gap: 17px;
+      padding: 40px 0 0 0;
+    }
+
+    &__text {
+      font-size: 15px;
+      text-align: center;
+    }
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px 0;
+      align-items: center;
+ padding: 20px 0 ;
+      svg {
+        width: 12px;
+        height: 12px;
+        margin: 0 0 0 10px;
+      }
+    }
+    &__img-block {
+      display: grid;
+      grid-template-areas: "g" "g" ' j' 'h';
+      grid-template-columns: 100%;
+      column-gap: 0px;
+      row-gap: 20px;
+   justify-items: center;
+      .develop__img1 {
+        width: 100%;
+        max-width: 300px;
+        height: 400px;
+      }
+      .develop__img2 {
+        width: 100%;
+        max-width: 300px;
+        height: 315px;
+      }
+      .develop__img3 {
+        width: 100%;
+        max-width: 300px;
+        height: 196px;
+      }
+    }
+  }
+  #develop {
+    .addDiv {
+      background-color: lighten($blood-orange, 20%);
+    }
   }
 }

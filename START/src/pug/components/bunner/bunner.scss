@@ -50,19 +50,32 @@
   }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 1199px) {
+  .bunner {
+    min-height: 600px;
+  }
   .bunner__body {
     padding: 160px 0px 0 0px;
+   align-items: center;
+   *{
+ text-align: center;
+   }
   }
   .bunner__title {
     padding: 0 0 0 0;
+   
     h1 {
       font-size: 30px;
+       text-align: center;
     }
   }
   .bunner__text {
-  margin: 43px 0 0 0;
-  padding: 0 ;
-  color: #fff;
+    margin: 43px 0 0 0;
+    padding: 0;
+    color: #fff;
+  }
+  .bunner__button {
+    width: 100%;
+  max-width: 265px;
 }
 }

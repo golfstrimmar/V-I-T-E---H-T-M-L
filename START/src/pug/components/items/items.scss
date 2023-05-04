@@ -101,6 +101,17 @@
 
 
 @media (max-width: 1199px) {
+  .item {
+ 
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
     .cards__body {
   display: grid;
   grid-template-columns: 1fr;
