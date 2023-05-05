@@ -56,7 +56,6 @@
       box-shadow: 5px 10px 25px 0 rgba(0, 0, 0, 0.19);
     }
 
-  
     .develop__img1 {
       width: 240px;
       height: 318px;
@@ -77,7 +76,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   .develop {
     &__body {
       grid-template-areas: "d" "a " "b " "c ";
@@ -96,7 +95,7 @@
       flex-direction: column;
       gap: 15px 0;
       align-items: center;
- padding: 20px 0 ;
+      padding: 20px 0;
       svg {
         width: 12px;
         height: 12px;
@@ -105,11 +104,11 @@
     }
     &__img-block {
       display: grid;
-      grid-template-areas: "g" "g" ' j' 'h';
+      grid-template-areas: "g" "g" " j" "h";
       grid-template-columns: 100%;
       column-gap: 0px;
       row-gap: 20px;
-   justify-items: center;
+      justify-items: center;
       .develop__img1 {
         width: 100%;
         max-width: 300px;
@@ -131,5 +130,52 @@
     .addDiv {
       background-color: lighten($blood-orange, 20%);
     }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .develop {
+    &__title {
+      text-align: center;
+    }
+    &__text {
+      font-size: 15px;
+      text-align: center;
+    }
+    &__buttons {
+      display: flex;
+      padding: 20px 0;
+      justify-content: center;
+      flex-direction: row;
+      column-gap: 40px;
+      svg {
+        width: 12px;
+        height: 12px;
+        margin: 0 0 0 10px;
+      }
+    }
+   
+     &__img-block {
+    display: grid;
+    grid-template-areas: "g h" "g j";
+    grid-template-columns: repeat(2,auto) ;
+    column-gap: 23px;
+    row-gap: 23px;
+    justify-content: center;
+    justify-items: left;
+
+    .develop__img1 {
+      width: 240px;
+      height: 318px;
+    }
+    .develop__img2 {
+      width: 156px;
+      height: 159px;
+    }
+    .develop__img3 {
+      width: 371px;
+      height: 246px;
+    }
+  }
   }
 }

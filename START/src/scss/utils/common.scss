@@ -90,7 +90,7 @@ svg.hidden {
 .fdc {
   flex-direction: column;
 }
-._p60{
+._p60 {
   padding: 60px 0 0 0;
 }
 
@@ -147,19 +147,27 @@ svg.hidden {
   text-transform: uppercase;
 }
 
-@media (min-width: 1200px) and (max-width: 1259px) {
+@media (min-width: 768px) and (max-width: 1199px) {
   .container {
     margin: 0 20px;
     max-width: calc(100% - 40px);
   }
+  ._md-900{
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 767px) {
   .container {
     margin: 0 10px;
     max-width: calc(100% - 20px);
   }
-  ._p60{
-  padding: 40px 0 0 0;
-}
+  ._p60 {
+    padding: 40px 0 0 0;
+  }
+  ._sm-568{
+    max-width: 568px;
+    margin: 0 auto;
+  }
 }

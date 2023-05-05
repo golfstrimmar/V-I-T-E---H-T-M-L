@@ -15,6 +15,7 @@
   background:  #fb1f1d;
   &:hover {
     box-shadow: 0 10px 20px rgba(250, 38, 36, 0.5), inset 0 0 15px rgba(255, 255, 255, 1);
+    text-shadow: 0px 0px 8px indigo;
   }
 }
 
@@ -53,7 +54,7 @@
 
 .btn--empty:hover {
   color: $white;
-  box-shadow: 0px 5px 20px 0 lighten($blood-orange, 20%), inset 0 0 20px #faf8f8 !important;
+  box-shadow: 0px 5px 10px 0 lighten($blood-orange, 40%), inset 0 0 10px lighten($blood-orange, 40%) !important;
 }
 
 

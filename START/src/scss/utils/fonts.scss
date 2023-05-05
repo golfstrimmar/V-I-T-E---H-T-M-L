@@ -55,7 +55,14 @@
 ._s-14{
    font-size: 14px;
 }
-@media (max-width: 999px) {
+@media (min-width: 768px) and (max-width: 1199px) {
+    
+ ._s-24 {
+  font-size: 20px;
+}
+}
+
+@media (max-width: 767px) {
   ._s-17{
    font-size: 15px;
 }

@@ -75,6 +75,8 @@ nav {
   padding: 0 30px;
 }
 
+
+
 @media (max-width: 1199px) {
   .footer {
     margin: auto 0 0 0;
@@ -136,3 +138,23 @@ nav {
     padding: 10px 30px;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1199px)
+{
+  .footer__body {
+    grid-template-columns: 96px 1fr ;
+    column-gap: 20px;
+  }
+ nav {
+    column-gap: 20px;
+    flex-direction: row;
+align-items: center;
+    margin: 0px 0 0 0;
+  }
+  .footer__col--info{
+    grid-column: 1/3;
+  }
+
+}
+
+

@@ -7,3 +7,13 @@ margin: 46px 0 0 0;
   margin: 50px 0 0 0;
 }
 }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+ .get__title{
+  text-align: center;
+ }
+ #get .cards__body{
+gap: 80px 40px;
+justify-content: center;
+ }
+}
