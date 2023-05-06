@@ -1,4 +1,70 @@
-section.tabs
+
+if section.header
+  section.tabs
+    .container
+      ul.tabs__body.tabs-container-js
+        li.tabs__tab.tab.tab-js
+          p.tab__title.tab-title-js
+            span Наркомания
+            //- svg
+            //-   use(xlink:href='#chevron-down')
+            span.icon 
+          .hidden.tab-hidden-js
+            .hidden__wrapper
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания1
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания2
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания3
+            
+        li.tabs__tab.tab.tab-js
+          p.tab__title.tab-title-js
+            span Алкоголизм
+            span.icon
+          .hidden.tab-hidden-js
+            .hidden__wrapper
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Алкоголизм1
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Алкоголизм2
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Алкоголизм3
+            
+        li.tabs__tab.tab.tab-js
+          p.tab__title.tab-title-js
+            span Реабилитация
+            span.icon
+          .hidden.tab-hidden-js
+            .hidden__wrapper
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Реабилитация1
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Реабилитация2
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Реабилитация3
+            
+        li.tabs__tab.tab.tab-js
+          p.tab__title.tab-title-js
+            span Кодирование
+            span.icon
+          .hidden.tab-hidden-js
+            .hidden__wrapper
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Реабилитация1
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Реабилитация2
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Реабилитация3
+        li.tabs__tab.tab.tab-js
+          p.tab__title.tab-title-js
+            span Цены
+          .hidden.tab-hidden-js
+      
+        li.tabs__tab.tab.tab-js
+          p.tab__title.tab-title-js
+            span О клинике
+            span.icon
+          .hidden.tab-hidden-js
+            .hidden__wrapper
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Реабилитация1
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Реабилитация2
+              a.menu__link.menu__link--active(href='#!' rel='#bunner') Реабилитация3
+        li.tabs__tab.tab.tab-js
+          p.tab__title.tab-title-js
+            span Контакты
+          .hidden.tab-hidden-js
+      
+else 
+   section.tabs
     .container
       ul.tabs__body.tabs-container-js
         li.tabs__tab.tab.tab-js
@@ -58,7 +124,7 @@ section.tabs
               p hidden2
               p hidden2
               p hidden2
-            
+            //- 
         li.tabs__tab.tab.tab-js
           p.tab__title.tab-title-js
             span tab3

@@ -1,104 +1,125 @@
-.tab {
-  position: relative;
-}
-
-
-
-
 .tab__title {
+  background-color: rgb(255, 255, 255);
   width: 100%;
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  transition: all .3s ease-in-out;
-  padding: 10px 40px;
-
+  transition: all 0.3s ease-in-out;
+  column-gap: 13px;
+  padding: 14px;
+  
 }
 
-.tab__title svg {
-  width: 20px;
-  height: 20px;
-  transition: all 0.3s ease-in-out;
+.tab__title {
+  span.icon {
+    position: relative;
+    background-color: rgb(215, 198, 231);
+    width: 12px;
+    height: 12px;
+    &::before,
+    &::after {
+      content: "";
+      background-color: $azul;
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      top: 50%;
+      left: 50%;
+      transition: all .3s;
+    }
+    &::before {
+      transform: translate(-50%, -50%);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+  svg {
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .tab__title span {
+    font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
   transition: all 0.3s ease-in-out;
 }
 
 .tabs ul > li {
   position: relative;
-  margin:  5px ;
 }
 .tabs ul > li > ul li {
   margin: 0 0 0 0;
-  
 }
-.tabs-container-js .tabs-container-js{
+.tabs-container-js .tabs-container-js {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.tabs ul > li > ul li{
+.tabs ul > li > ul li {
   display: inline-table;
   width: 33.33333%;
 }
 
 .tabs .hidden {
-  // background: rgb(85, 40, 143);
-  transition: all .3s ;
+  transition: all 0.3s;
   transform: scaleY(0);
   transform-origin: top;
   max-height: 0;
   overflow: hidden;
+  position: absolute;
 }
 
-.hidden__wrapper{
-border: 1px solid red;
-}
 
 
 .tab-title-js._is-active {
   svg,
   span {
- 
   }
   svg {
     transform: rotate(180deg);
   }
+  span.icon {
+    position: relative;
+    &::after {
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
+
+
 .tabs .hidden._is-active {
- animation: pulse .3s ;
- animation-fill-mode: forwards;
+  animation: pulse 0.3s;
+  animation-fill-mode: forwards;
+  
 }
 
 .tabs .hidden._not-active {
- animation: notPulse .3s ;
- animation-fill-mode: forwards;
+  animation: notPulse 0.3s;
+  animation-fill-mode: forwards;
 }
-
-
-
 
 @keyframes pulse {
-0% {
-transform: scaleY(0);
-}
-100% {
-transform: scaleY(1);
-}
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 @keyframes notPulse {
-0% {
-transform: scaleY(1);
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
 }
-100% {
-transform: scaleY(0);
-}
-}
-
 
 // .tabs .hidden._is-active li {
 //   margin: 0 0 0 0;

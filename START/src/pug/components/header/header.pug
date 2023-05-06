@@ -4,25 +4,32 @@ header.header
       .header__logo.logo
         a(href='#!').logo__link
           img(src='./assets/img/logo.svg' alt='img') 
-        .logo__description lorem
-      nav.header__menu.menu
-        svg.icon.header__close
-          use(xlink:href='#x')
-        ul.menu__list
-          li.menu__item
-            a.menu__link.menu__link--active(href='#!' rel='#bunner') Home
-          li.menu__item
-            a.menu__link(href='#!' rel='#posts') Posts
-          li.menu__item
-            a.menu__link(href='#!' rel='#galery') Projects
+      ul.header__soc
+        -
+          var blocks = [
+            {src: '#vk'},
+            {src: '#fb'},
+            {src: '#wa'},
+            {src: '#tg'},
+          ];
+        each block in blocks
+          li
+            a(href="#!").header__soc-link
+              svg
+                use(xlink:href=block.src)
       .header__info.info
-        a.info__phone(href='#!') +7(000) 123 45 65 67 
-        form.info__search
-          input(placeholder='Поиск')
-          input(type='submit')
+        a.info__phone._s-24._a(href='#!') 8 (800) 123-45-67
+        .info__adress._b г. Богучар, ул. Мжд Киевское 17-й км
+        a(href="!#").info__search._c.center
           svg
             use(xlink:href='#search')
-      
+        ._d
+          include  ../buttons/button.pug
+      nav.header__menu.menu.rel.header__low
+        svg.icon.header__close
+          use(xlink:href='#x')
+        .menu__list
+          include ../tabs/tabs.pug
       svg.header__burger.icon
           use(xlink:href='#list')
 

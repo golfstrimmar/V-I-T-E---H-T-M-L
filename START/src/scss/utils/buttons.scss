@@ -1,22 +1,24 @@
 .btn {
   border: 1px solid transparent;
   outline: none;
-  // transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-            
+
 .btn--success {
-  color: white;
-  border-radius: 10px;
-  background:  #fb1f1d;
+  color: $white;
+  border-radius: 4px;
+  background-color: $azul;
   &:hover {
-    box-shadow: 0 10px 20px rgba(250, 38, 36, 0.5), inset 0 0 15px rgba(255, 255, 255, 1);
+    background-color: $hover;
+    color: $white;
+    text-shadow: 0 0 5px indigo;
+    box-shadow: 0 5px 15px $hover, inset 0 0 15px rgba(255, 255, 255, 1);
   }
 }
-
 
 /* .btn--success:focus {
   border: 1px solid #2b2b63;
@@ -87,26 +89,24 @@
   overflow: hidden;
 }
 
-
 .addDiv {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  animation: pulseButton .3s ease-in-out;
+  animation: pulseButton 0.3s ease-in-out;
   transform: scale(0);
   position: absolute;
   background-color: white;
   animation-fill-mode: forwards;
 }
 
-
 @keyframes pulseButton {
-0% {
-transform: scale(0);
-opacity: .6;
-}
-100% {
-opacity: 0;
-transform: scale(2);
-}
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
 }

@@ -16,12 +16,18 @@
 
 body {
   // font-family: "Manrope", sans-serif;
-  background: white;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $denim-blue;
+  background: $white;
 }
 
 .container {
   // outline: 1px solid #4164ff;
-  max-width: 1200px;
+  max-width: 1790px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -33,9 +39,14 @@ body {
 
 a {
   display: inline-block;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: rgb(72, 89, 245);
+  color: $azul;
+  &:hover{
+    color: lighten($azul, 20%);
+    text-shadow: 0 0 5px $hover;
+   
+  }
 }
 
 .imgs {
@@ -72,7 +83,6 @@ svg.hidden {
   display: none;
 }
 
-
 /* +++++++++++++++++++++++++++++++++++++ */
 
 .d-flex {
@@ -88,58 +98,55 @@ svg.hidden {
   flex-direction: column;
 }
 /* +++++++++++++++++++++++++++++++++++++ */
- @media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
+  .top-animation {
+    animation: wipe-enter 1.5s;
+  }
+  @keyframes wipe-enter {
+    0% {
+      transform: translate(0, -100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
 
-.top-animation {
-  animation: wipe-enter 1.5s 
-}
-@keyframes wipe-enter {
-  0% {
-    transform: translate(0,-100px);
-    opacity: 0
+  .left-animation {
+    animation: left-enter 1.5s;
   }
-  100% {
-    transform: translate(0,0);
-    opacity: 1
+  @keyframes left-enter {
+    0% {
+      transform: translate(-200px, 0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
   }
-}
 
-
-.left-animation {
-  animation: left-enter 1.5s 
-}
-@keyframes left-enter {
-  0% {
-    transform: translate(-200px,0);
-    opacity: 0
+  .right-animation {
+    animation: right-enter 1.5s;
   }
-  100% {
-    transform: translate(0,0);
-    opacity: 1
+  @keyframes right-enter {
+    0% {
+      transform: translate(200px, 0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
   }
-}
-
-.right-animation {
-  animation: right-enter 1.5s 
-}
-@keyframes right-enter {
-  0% {
-    transform: translate(200px,0);
-    opacity: 0
-  }
-  100% {
-    transform: translate(0,0);
-    opacity: 1
-  }
-}
-
 }
 /* +++++++++++++++++++++++++++++++++++++ */
 
 .lock {
   overflow: hidden;
 }
-.ttu{
+.ttu {
   text-transform: uppercase;
 }
 
@@ -149,7 +156,6 @@ svg.hidden {
     max-width: calc(100% - 40px);
   }
 }
-
 
 @media (max-width: 900px) {
   .container {

@@ -17,6 +17,7 @@ export const MyTab = () => {
           const hidden = el.querySelector(".tab-hidden-js");
           title.remAct;
           hidden.remAct;
+          el.remAct;
           hidden.classList.add("_not-active");
           hidden.style.maxHeight = 0;
         }
@@ -40,6 +41,7 @@ export const MyTab = () => {
           title.addAct;
           hidden.classList.remove("_not-active");
           hidden.addAct;
+          cell.addAct;
           hidden.style.maxHeight = addition + "px";
           if (cell.closest(".tab-hidden-js")) {
             const parent = cell.closest(".tab-hidden-js");
@@ -50,6 +52,7 @@ export const MyTab = () => {
 
       if (title.matches("._is-active")) {
         close();
+        cell.remAct;
       }
     });
   });
@@ -57,10 +60,13 @@ export const MyTab = () => {
   document.addEventListener("click", function (e) {
     if (!e.target.closest(".tabs-container-js")) {
       tabs.forEach((cell) => {
+        cell.remAct;
         if (cell.querySelector(".tab-title-js").matches("._is-active")) {
           cell.querySelector(".tab-title-js").remAct;
+          
         }
         if (cell.querySelector(".tab-hidden-js").matches("._is-active")) {
+          
           cell.querySelector(".tab-hidden-js").remAct;
           cell.querySelector(".tab-hidden-js").classList.add("_not-active");
           cell.querySelector(".tab-hidden-js").style.maxHeight = 0;

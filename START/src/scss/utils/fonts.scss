@@ -1,12 +1,4 @@
-
-
-
 // @import url('https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800');
-
-
-
-
-
 
 // @font-face {
 //   font-family: 'DrukCyr';
@@ -18,7 +10,7 @@
 //   font-style: normal;
 //   font-stretch: normal;
 // }
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
 // @font-face {
 //   font-family: 'DrukCyr';
 //   src: url('../fonts/DrukCyr-Bold.eot');
@@ -30,5 +22,16 @@
 //   font-stretch: normal;
 // }
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;700&display=swap");
 
+._s-18 {
+  font-size: 18px;
+  font-weight: 600;
+}
+._s-24{
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.33;
+  color: $dark-slate-blue;
+}
 
