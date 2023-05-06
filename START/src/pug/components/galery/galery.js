@@ -141,7 +141,7 @@ export const MyGalery = () => {
         nextEl: ".arrow-galery-next",
       },
       slidesPerView: 1,
-      loop: "false",
+      // loop: "false",
       speed: 800,
       initialSlide: indexOf,
       modules: [Navigation],
