@@ -16,15 +16,12 @@
   transition: 0.3s;
   transform: translateY(0);
   pointer-events: none;
-  color: blue;
   width: 100%;
-  font-size: 19px;
-  line-height: 25px;
-  font-weight: 500;
+  
 }
 
 .form__item .submit-button{
-  font-size: 14px;
+
 }
 
 .form__item input,
@@ -118,8 +115,7 @@
 .form__item textarea:not(:placeholder-shown):invalid {
   color: #fa333c;
   border-bottom: 1px solid #fa333c;
-  font-size: 15px;
-  font-weight: 400;
+ 
 }
 
 .contacts__file-add {
@@ -158,17 +154,11 @@
   position: absolute;
   left: 0;
   pointer-events: none;
-  font-size: 15px;
-  line-height: 25px;
-  font-weight: 400;
   z-index: 5;
 }
 
 .form .custom-file label {
   transform: translateY(0);
-  font-size: 19px;
-  line-height: 25px;
-  font-weight: 400;
 }
 
 .form .custom-file__lb {
@@ -216,7 +206,6 @@
 }
 
 .feedback .loader {
-  background-color: #000;
   position: relative;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -229,13 +218,10 @@
 }
 
 .feedback .loader__name {
-  color: #fff;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 20px;
-  line-height: 20px;
 }
 
 .feedback .loader__items {
@@ -353,7 +339,6 @@
 
 .contact-form__item label {
   display: inline-block;
-  font-size: 20px;
   text-transform: uppercase;
 }
 

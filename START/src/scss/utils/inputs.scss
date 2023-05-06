@@ -194,7 +194,6 @@ input[type=radio]:checked + label:after {
 .contacts-form__item input:not([type="range"]):focus + label,
 .contacts-form__item textarea:focus + label {
   transform: translateY(-34px);
-  font-size: 12px;
   left: 0;
   color: #6666ff;
 }

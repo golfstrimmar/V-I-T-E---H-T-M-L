@@ -14,7 +14,6 @@
   justify-content: space-between;
   transition: all .3s ease-in-out;
   padding: 10px 40px;
-  background: cadetblue;
 
 }
 
@@ -22,12 +21,10 @@
   width: 20px;
   height: 20px;
   transition: all 0.3s ease-in-out;
-  fill: white;
 }
 
 .tab__title span {
   transition: all 0.3s ease-in-out;
-  color: white;
 }
 
 .tabs ul > li {
@@ -62,11 +59,9 @@ border: 1px solid red;
 
 
 .tab-title-js._is-active {
-  background: rgb(142, 127, 212);
   svg,
   span {
-    color: rgb(85, 40, 143);
-    fill: rgb(85, 40, 143);
+ 
   }
   svg {
     transform: rotate(180deg);
