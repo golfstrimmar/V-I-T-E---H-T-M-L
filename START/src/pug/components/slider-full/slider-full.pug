@@ -7,34 +7,46 @@ h2.t-25(style="margin: 40px 0 0 0;") swiper-full+ pagination+plyr
     svg
           use(xlink:href='#chevron-right')
   .swiper-wrapper
-    .slider__item.swiper-slide
-      .imgs
-        img(src='./assets/img/paralax.jpg')
-      a.popups-init-js.slider__control.controls(href='#!' rel='#popupPlyr1')
+    -
+      var blocks = [
+        {
+          rel: '#popupPlyr1',
+          src: './assets/img/bg.png',
+          srcPlyr: './assets/img/paralax.jpg',
+        },
+        {
+          rel: '#popupPlyr2',
+          src: './assets/img/img-1.png',
+          srcPlyr: './assets/img/paralax.jpg',
+        },
+        {
+          rel: '#popupPlyr3',
+          src: './assets/img/img-2.png',
+          srcPlyr: './assets/img/paralax.jpg',
+        },
+        {
+          rel: '#popupPlyr4',
+          src: './assets/img/img-3.png',
+          srcPlyr: './assets/img/paralax.jpg',
+        },
+        {
+          rel: '#popupPlyr1',
+          src: './assets/img/bg.png',
+          srcPlyr: './assets/img/paralax.jpg',
+        },
+        {
+          rel: '#popupPlyr5',
+          src: './assets/img/bg.png',
+          srcPlyr: './assets/img/paralax.jpg',
+        },
+       
+      ];
+    each block in blocks
+      .slider__item.swiper-slide
         .imgs
-          img(src='./assets/img/paralax.jpg' alt='')
-    .slider__item.swiper-slide
-      .imgs
-        img(src='./assets/img/paralax.jpg ')
-      a.popups-init-js.slider__control.controls(href='#!' rel='#popupPlyr2')
-        .imgs
-          img(src='./assets/img/paralax.jpg' alt='')
-    .slider__item.swiper-slide
-      .imgs
-        img(src='./assets/img/paralax.jpg')
-      a.popups-init-js.slider__control.controls(href='#!' rel='#popupPlyr3')
-        .imgs
-          img(src='./assets/img/paralax.jpg' alt='')
-    .slider__item.swiper-slide
-      .imgs
-        img(src='./assets/img/paralax.jpg ')
-      a.popups-init-js.slider__control.controls(href='#!' rel='#popupPlyr4')
-        .imgs
-          img(src='./assets/img/paralax.jpg' alt='')
-    .slider__item.swiper-slide
-      .imgs
-        img(src='./assets/img/paralax.jpg ')
-      a.popups-init-js.slider__control.controls(href='#!' rel='#popupPlyr5')
-        .imgs
-          img(src='./assets/img/paralax.jpg' alt='')
+          img(src=block.src)
+        a.popups-init-js.slider__control.controls(href='#!' rel=block.rel)
+          .imgs
+            img(src=block.srcPlyr alt='img')
+
 .swiper-pagination-full
