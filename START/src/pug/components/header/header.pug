@@ -5,18 +5,7 @@ header.header
         a(href='#!').logo__link
           img(src='./assets/img/logo.svg' alt='img') 
       ul.header__soc
-        -
-          var blocks = [
-            {src: '#vk'},
-            {src: '#fb'},
-            {src: '#wa'},
-            {src: '#tg'},
-          ];
-        each block in blocks
-          li
-            a(href="#!").header__soc-link
-              svg
-                use(xlink:href=block.src)
+        include  ../common/soc.pug
       .header__info.info
         a.info__phone._s-24._a(href='#!') 8 (800) 123-45-67
         .info__adress._b г. Богучар, ул. Мжд Киевское 17-й км

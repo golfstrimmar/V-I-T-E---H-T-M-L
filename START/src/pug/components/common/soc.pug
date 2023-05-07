@@ -1,0 +1,13 @@
+.soc
+          -
+            var blocks = [
+              {src: '#vk'},
+              {src: '#fb'},
+              {src: '#wa'},
+              {src: '#tg'},
+            ];
+          each block in blocks
+            li
+              a(href="#!").soc__link
+                svg
+                  use(xlink:href=block.src)

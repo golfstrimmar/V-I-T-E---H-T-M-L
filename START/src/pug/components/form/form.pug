@@ -1,0 +1,43 @@
+if section.footer 
+  form.form
+          .form__title._a 
+            h2 Получите консультацию специалиста бесплатно
+          p.form__text._b Не нашли категорию или остались вопросы? Оставьте заявку и мы поможем вам
+          .form__item._c
+            input#name(type='text' required='' placeholder=' Denzel Washington')
+            label(for='name') 
+              svg
+                use(xlink:href='#persona')
+              span Ваше имя
+          .form__item._d
+            input#email(type='email' required='' placeholder=' thebestmail@mail.com')
+            label(for='email') 
+              svg
+                use(xlink:href='#handy')
+              span  Телефон
+          .form__item._e
+            include ../buttons/form-button.pug
+          p.form__aggry._f Нажимая кнопку “Отправить заявку”, вы даете согласие на обработку 
+            a(href="!#") персональных данных
+          
+
+else
+    form.form
+          .form__item
+            input#name(type='text' required='' placeholder=' Denzel Washington')
+            label(for='name') What is your name?
+          .form__item
+            input#email(type='email' required='' placeholder=' thebestmail@mail.com')
+            label(for='email') What is your email?
+          .form__item
+            textarea#message(type='text' required='' placeholder=' Your awesome message' cols=' 40' rows='6')
+            label(for='message') Write your message
+          .form__item.contacts__file-add
+            input#customFile.custom-file-input(type='file')
+            label.name__text(for='customFile') Add &quot;attachment
+            .custom-file
+          .form__item
+            include ../buttons/form-button.pug
+          div
+              input#cb1(type='checkbox')
+              label(for='cb1') checkbox 1

@@ -1,0 +1,52 @@
+.soc {
+  display: grid;
+  grid-template-columns: repeat(4, 48px);
+  align-items: center;
+  gap: 25px;
+  &__link {
+    width: 48px;
+    height: 48px;
+    border-radius: 57px;
+    background-color: $ice-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      fill: $azul;
+      transition: all 0.2s;
+    }
+    &:hover {
+      background-color: $azul;
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  li {
+    &:nth-child(1) {
+      svg {
+        width: 24px;
+        height: 14px;
+      }
+    }
+    &:nth-child(2) {
+      svg {
+        width: 15px;
+        height: 30px;
+      }
+    }
+    &:nth-child(3) {
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &:nth-child(4) {
+      svg {
+        width: 18px;
+        height: 16px;
+      }
+    }
+  }
+}

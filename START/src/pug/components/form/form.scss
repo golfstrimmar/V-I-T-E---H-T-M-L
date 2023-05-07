@@ -1,4 +1,3 @@
-
 .form {
   background: white;
   padding: 86px 148px;
@@ -17,11 +16,9 @@
   transform: translateY(0);
   pointer-events: none;
   width: 100%;
-  
 }
 
-.form__item .submit-button{
-
+.form__item .submit-button {
 }
 
 .form__item input,
@@ -31,7 +28,7 @@
   border: 1px solid transparent;
   background-color: transparent;
   background-repeat: no-repeat;
-  background-position: 100% 5px; 
+  background-position: 100% 5px;
   border-bottom: 1px solid #d8d8d8;
   resize: none;
 }
@@ -115,7 +112,6 @@
 .form__item textarea:not(:placeholder-shown):invalid {
   color: #fa333c;
   border-bottom: 1px solid #fa333c;
- 
 }
 
 .contacts__file-add {
@@ -301,7 +297,6 @@
 
 /*=====================*/
 
-
 .contact-form {
   margin: 40px 0;
   border: indigo 1px solid;
@@ -313,7 +308,7 @@
 }
 
 .contact-form__title h2 {
-  font-family: 'Sarina', cursive;
+  font-family: "Sarina", cursive;
 }
 
 .contact-form__item {
@@ -329,7 +324,7 @@
   height: 60px;
   border-radius: 10px;
   text-shadow: 0px 0px 8px black;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .submit-button:hover {
@@ -342,14 +337,123 @@
   text-transform: uppercase;
 }
 
-.contact-form__item input, .contact-form__item textarea{
+.contact-form__item input,
+.contact-form__item textarea {
   border: 1px solid palegreen;
   padding: 8px 0 8px 15px;
 }
 
+footer {
+  .form {
+    height: 274px;
+    border-radius: 4px;
+    background-color: $azul;
+    display: grid;
+    grid-template-areas: "a a a" "b b b " "c d e" "f f f";
+    grid-template-columns: 300px 300px 190px;
+    gap: 24px 10px;
+    padding: 32px;
+    grid-auto-rows: max-content;
+    ._a {
+      grid-area: a;
+    }
+    ._b {
+      grid-area: b;
+    }
+    ._c {
+      grid-area: c;
+    }
+    ._d {
+      grid-area: d;
+    }
+    ._e {
+      grid-area: e;
+    }
+    ._f {
+      grid-area: f;
+    }
 
+    &__title {
+      h2 {
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.45;
+        color: $white;
+        text-align: center;
+      }
+    }
+    &__text {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.44;
+      color: $white;
+      text-align: center;
+    }
+    button.submit-button {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.33;
+      color: $white;
+      height: 56px;
+      border-radius: 4px;
+      background-color: $dark-slate-blue-four;
+    }
 
-
-
-
-
+    &__aggry {
+      font-size: 16px;
+      color: $white;
+      text-align: center;
+      
+      a {
+        color: $white;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          bottom: 5px;
+          left: 0;
+          background-color: $white;
+        }
+      }
+    }
+    label[for="name"] {
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+    label[for="email"] {
+      svg {
+        width: 16px;
+        height: 27px;
+      }
+    }
+    label {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.44;
+      color: rgba(255, 255, 255, 0.4);
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 0 0 20px;
+      svg {
+        margin: 0 16px 0 0;
+      }
+    }
+    .form__item {
+      margin-bottom: 0px;
+    }
+    .form__item input {
+      border-bottom: none;
+      height: 56px;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .form__item input:focus + label {
+      transform: translateY(-40px);
+    }
+  }
+}

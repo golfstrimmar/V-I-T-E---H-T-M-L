@@ -14,7 +14,6 @@
 .tab__title {
   span.icon {
     position: relative;
-    background-color: rgb(215, 198, 231);
     width: 12px;
     height: 12px;
     &::before,
@@ -70,7 +69,6 @@
   transform-origin: top;
   max-height: 0;
   overflow: hidden;
-  position: absolute;
 }
 
 
