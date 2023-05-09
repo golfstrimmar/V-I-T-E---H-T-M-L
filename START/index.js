@@ -80,8 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  const tabs = document.querySelectorAll(".tab-js");
-  if (tabs.length > 0) {
+  const tabcontainers = [...document.querySelectorAll(".tabs-container-js")];
+  if (tabcontainers.length > 0) {
     MyTab();
   }
 

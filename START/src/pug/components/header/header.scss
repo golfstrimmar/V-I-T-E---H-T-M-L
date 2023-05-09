@@ -54,6 +54,7 @@
 
 /*=====================*/
 
+
 /*=====================*/
 .menu {
   &__list {
@@ -139,60 +140,22 @@
     height: 56px;
   }
 }
-/*=====================*/
-.tabs--common {
-  .tabs {
-    &__body {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 12px;
-    }
-    &__tab {
-    }
-    &__tab._is-active {
-      transition: all 0.5s;
-      box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.5);
-      z-index: 300;
-      .tab__title {
-        z-index: 3;
-        background-color: white;
-      }
-    }
-    .hidden {
-      position: absolute;
-      .hidden__wrapper {
-        display: flex;
-        flex-direction: column;
-        row-gap: 5px;
-        padding: 0 0 5px 0;
-        .menu__link {
-          padding: 2px 5px;
-        }
-      }
-    }
-    .hidden._is-active {
-      width: 100%;
-      z-index: 2;
-      background-color: white;
-      box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.5);
-      .menu__link {
-        &:hover {
-            background-color: $light-sky-blue !important;
-          }
-      }
-    }
-  }
-}
 
 // ==========================================
 .responciveHeader {
   position: fixed;
   width: 100%;
-  height: 70px;
+  height: 125px;
   background: rgba(15, 18, 22, 0.65);
   border: 1px solid #1e2329;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(15px);
+  .tab__title{
+    padding: 6px;
+  }
+  .header__low {
+  height: 33px;
+}
 }
 
 .responciveHeader .menu__link {

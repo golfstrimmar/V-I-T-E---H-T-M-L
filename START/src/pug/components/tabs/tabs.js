@@ -6,76 +6,301 @@ export const MyTab = () => {
   tabs.forEach((cell) => {
     const title = cell.querySelector(".tab-title-js");
     const hidden = cell.querySelector(".tab-hidden-js");
-    let addition = 0;
-
+    
 
     title.addEventListener("click", (e) => {
-      function close() {
+      function resetAll() {
         const naibous = [...cell.closest(".tabs-container-js").children];
-        function resetAll(el) {
+        naibous.forEach((el) => {
           const title = el.querySelector(".tab-title-js");
           const hidden = el.querySelector(".tab-hidden-js");
+
+        
+        if (hidden.matches("._is-active")) {
+          
+          setTimeout(() => {
+            hidden.animate(
+              [{ minHeight: `${hidden.scrollHeight}px` }, { minHeight: "0px" }],
+              {
+                duration: 1000,
+                easing: "ease-in-out",
+              }
+            );
+            hidden.animate(
+              [{ height: `${hidden.scrollHeight}px` }, { height: "0px" }],
+              {
+                duration: 1000,
+                easing: "ease-in-out",
+              }
+            );
+          }, 0);
+
+          setTimeout(() => {
+            hidden.style.height = 0 + "px";
+          }, 1000);
+          setTimeout(() => {
+            hidden.style.minHeight = 0 + "px";
+          }, 1000);
+        }
+          
           title.remAct;
           hidden.remAct;
           el.remAct;
-          hidden.classList.add("_not-active");
-          hidden.style.maxHeight = 0;
-        }
-        naibous.forEach((el) => {
-         resetAll(el);
         });
-        if (hidden.querySelector(".tabs-container-js")) {
-          const childrens = [
-            ...hidden.querySelector(".tabs-container-js").children,
-          ];
-          childrens.forEach((el) => {
-          resetAll(el);
-          });
-        }
       }
+
+      function close() {
+        setTimeout(() => {
+          
+          hidden.animate(
+            [
+              { minHeight: `${hidden.scrollHeight}px` },
+              { minHeight: 0 + "px" },
+            ],
+            {
+              duration: 1000,
+              easing: "ease-in-out",
+            }
+          );
+          title.classList.remove("_is-active");
+        }, 0);
+
+        setTimeout(() => {
+          hidden.style.minHeight = 0 + "px";
+        }, 1000);
+
+        // const naibous = [...cell.closest(".tabs-container-js").children];
+
+        // naibous.forEach((el) => {
+        //     const title = el.querySelector(".tab-title-js");
+        //     const hidden = el.querySelector(".tab-hidden-js");
+        //     title.remAct;
+        //     hidden.remAct;
+        //     el.remAct;
+        //      setTimeout(() => {
+        //        hidden.animate(
+        //          [
+        //            { minHeight: `${hidden.scrollHeight}px` },
+        //            { minHeight: "0px" },
+        //          ],
+        //          {
+        //            duration: 1000,
+        //            easing: "ease-in-out",
+        //          }
+        //        );
+        //      }, 0);
+
+        //      setTimeout(() => {
+        //        hidden.style.minHeight = 0 + "px";
+        //      }, 1000);
+
+        //     //  if (
+        //     //    hidden.closest(".tabs-container-js").closest(".tab-hidden-js")
+        //     //  ) {
+        //     //    var temp = hidden
+        //     //      .closest(".tabs-container-js")
+        //     //      .closest(".tab-hidden-js");
+        //     //    var tempScrollHeight = temp.scrollHeight;
+        //     //    setTimeout(() => {
+        //     //      temp.animate(
+        //     //        [
+        //     //          { minHeight: `${tempScrollHeight}px` },
+        //     //          { minHeight: `${tempScrollHeight - addition}px` },
+        //     //        ],
+        //     //        {
+        //     //          duration: 1000,
+        //     //          easing: "ease-in-out",
+        //     //        }
+        //     //      );
+        //     //    }, 0);
+
+        //     //    setTimeout(() => {
+        //     //      temp.style.minHeight = `${tempScrollHeight - addition}px`;
+        //     //      addition = 0;
+        //     //    }, 1000);
+        //     //  }
+        // });
+        // function resetAll(el) {
+        //   const title = el.querySelector(".tab-title-js");
+        //   const hidden = el.querySelector(".tab-hidden-js");
+        //   title.remAct;
+        //   hidden.remAct;
+        //   el.remAct;
+        //   hidden.classList.add("_not-active");
+        //   // setTimeout(() => {
+        //   // hidden.style.maxHeight = 0;
+        //   // }, 0);
+        // }
+        // naibous.forEach((el) => {
+        //   resetAll(el);
+        // });
+
+        // if (hidden.querySelector(".tabs-container-js")) {
+        //   const childrens = [
+        //     ...hidden.querySelector(".tabs-container-js").children,
+        //   ];
+        //   childrens.forEach((el) => {
+        //     resetAll(el);
+        //   });
+        // }
+      }
+
+      // ===========================
+      function open() {
+        setTimeout(() => {
+         
+          hidden.animate(
+            [{ minHeight: "0px" }, { minHeight: `${hidden.scrollHeight}px` }],
+            {
+              duration: 1000,
+              easing: "ease-in-out",
+            }
+          );
+        }, 0);
+
+        setTimeout(() => {
+          hidden.style.minHeight = hidden.scrollHeight + "px";
+          title.classList.add("_is-active");
+          hidden.classList.add("_is-active");
+          // addition = 0;
+        }, 1000);
+
+        // if (hidden.closest(".tabs-container-js").closest(".tab-hidden-js")) {
+        //   var temp = hidden
+        //     .closest(".tabs-container-js")
+        //     .closest(".tab-hidden-js");
+        //   var tempScrollHeight = temp.scrollHeight;
+        //   setTimeout(() => {
+        //     temp.animate(
+        //       [
+        //         { minHeight: `${tempScrollHeight}px` },
+        //         { minHeight: `${tempScrollHeight + addition}px` },
+        //       ],
+        //       {
+        //         duration: 1000,
+        //         easing: "ease-in-out",
+        //       }
+        //     );
+        //   }, 0);
+
+        //   setTimeout(() => {
+        //     temp.style.minHeight = `${tempScrollHeight + addition}px`;
+        //   }, 1000);
+        // }
+      }
+      // ===========================
 
       if (!title.matches("._is-active")) {
-        close();
-        setTimeout(() => {
-          addition = hidden.scrollHeight;
-          title.addAct;
-          hidden.classList.remove("_not-active");
-          hidden.addAct;
-          cell.addAct;
-          hidden.style.maxHeight = addition + "px";
-          if (cell.closest(".tab-hidden-js")) {
-            const parent = cell.closest(".tab-hidden-js");
-            parent.style.maxHeight = "300px";
-          }
-        }, 0);
+        // close();
+        // setTimeout(() => {
+        // title.addAct;
+        // if (hidden.matches("._not-active")) {
+        //   hidden.classList.remove("_not-active");
+        // }
+        // hidden.addAct;
+        // cell.addAct;
+        // hidden.style.maxHeight = addition + "px";
+        resetAll();
+        open();
       }
-
+      // =========================================
       if (title.matches("._is-active")) {
         close();
-        cell.remAct;
+        // cell.remAct;
       }
     });
   });
 
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".tabs-container-js")) {
-      tabs.forEach((cell) => {
-        cell.remAct;
-        if (cell.querySelector(".tab-title-js").matches("._is-active")) {
-          cell.querySelector(".tab-title-js").remAct;
-          
-        }
-        if (cell.querySelector(".tab-hidden-js").matches("._is-active")) {
-          
-          cell.querySelector(".tab-hidden-js").remAct;
-          cell.querySelector(".tab-hidden-js").classList.add("_not-active");
-          cell.querySelector(".tab-hidden-js").style.maxHeight = 0;
-        }
-      });
-    }
-  });
+  // document.addEventListener("click", function (e) {
+  //   if (!e.target.closest(".tabs-container-js")) {
+  //     tabs.forEach((cell) => {
+  //       cell.remAct;
+  //       if (cell.querySelector(".tab-title-js").matches("._is-active")) {
+  //         cell.querySelector(".tab-title-js").remAct;
+  //       }
+  //       if (cell.querySelector(".tab-hidden-js").matches("._is-active")) {
+  //         cell.querySelector(".tab-hidden-js").remAct;
+  //         cell.querySelector(".tab-hidden-js").classList.add("_not-active");
+  //         // setTimeout(() => {
+  //         cell.querySelector(".tab-hidden-js").style.maxHeight = 0;
+  //         // }, 1000);
+  //       }
+  //     });
+  //   }
+  // });
 };
+// export const MyTab = () => {
+//   const tabsContainers = [...document.querySelectorAll(".tabs-container-js")];
 
+//   // tabsContainers.forEach((element) => {
+//   //   const tabs = [...element.querySelectorAll(".tab-js")];
+//   //   tabs.forEach((tab) => {
+//   //     const CloseALL = () => {
+//   //       tabs.forEach((t) => {
+//   //         t.querySelector(".tab-title-js").classList.remove("_is-active");
+//   //         t.querySelector(".tab-hidden-js").classList.remove("_is-active");
+//   //         t.querySelector(".tab-hidden-js").animate(
+//   //           [
+//   //             { height: `${t.querySelector(".tab-hidden-js").scrollHeight}px` },
+//   //             { height: "0px" },
+//   //           ],
+//   //           {
+//   //             duration: 1000,
+//   //             easing: "ease-in-out",
+//   //           }
+//   //         );
+//   //         setTimeout(() => {
+//   //           t.querySelector(".tab-hidden-js").style.maxHeight = 0 + "px";
+//   //         }, 1000);
+//   //       });
+//   //     };
+//   //     const Close = () => {
+//   //       title.classList.remove("_is-active");
+//   //       hidden.animate(
+//   //         [{ height: `${hidden.scrollHeight}px` }, { height: "0px" }],
+//   //         {
+//   //           duration: 1000,
+//   //           easing: "ease-in-out",
+//   //         }
+//   //       );
+//   //       setTimeout(() => {
+//   //         hidden.style.maxHeight = 0 + "px";
+//   //       }, 1000);
+//   //     };
+//   //     const Open = () => {
+//   //       title.classList.add("_is-active");
+//   //       var scroll = hidden.scrollHeight;
+
+//   //       tab.animate(
+//   //         [{ height: hidden.scrollHeight + "px" }, { height: `${scroll}px` }],
+//   //         {
+//   //           duration: 1000,
+//   //           easing: "ease-in-out",
+//   //         }
+//   //       );
+//   //       hidden.animate([{ height: "0px" }, { height: `${scroll}px` }], {
+//   //         duration: 1000,
+//   //         easing: "ease-in-out",
+//   //       });
+//   //       hidden.style.maxHeight = scroll + "px";
+//   //     };
+
+//   //     const title = tab.querySelector(".tab-title-js");
+//   //     const hidden = tab.querySelector(".tab-hidden-js");
+
+//   //     title.addEventListener("click", function () {
+//   //       if (!title.matches("._is-active")) {
+//   //         // CloseALL();
+//   //         // setTimeout(() => {
+//   //         Open();
+//   //         // }, 1000);
+//   //       } else {
+//   //         Close();
+//   //       }
+//   //     });
+//   //   });
+//   // });
+// };
 // export class Tab {
 //   constructor(tab) {
 //     this.tab = tab;
