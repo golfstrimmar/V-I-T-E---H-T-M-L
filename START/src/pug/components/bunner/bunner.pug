@@ -1,13 +1,30 @@
-section#bunner.bunner
+section#bunner.bunner.rel
   .bunner__bg.imgs
     picture
-      source(srcset='./assets/img/paralax.jpg, ' type='image/jpg' media='(min-width: 1200px)')
+      source(srcset='../../../../assets/img/bunner-bg.png, ' type='image/jpg' media='(min-width: 1200px)')
       source(srcset='./assets/img/paralax.jpg' type='image/png' media='(min-width: 1000px) and (max-width: 1199px)')
       source(srcset='./assets/img/paralax.jpg' type='image/gif' media='(max-width: 999px)')
-      img(src='./assets/img/paralax.jpg' alt='img')
+      img(src='../../../../assets/img/bunner-bg.png' alt='img')
+  .bunner__img.rel
+        .imgs
+          img(src='../../../../assets/img/kons.svg' alt='img')
   .container
     .bunner__body
-      .bunner__title.t-31
-        h1 Lorem ipsum dolor sit amet.
-      .bunner__text.t-6
-        p Lorem ipsum .
+      .bunner__title
+        h1 Частная наркологическая клиника
+          span в Твери
+      .bunner__items.items
+        -
+          var blocks = [
+            {text: 'Гарантия анонимности'},
+            {text: 'В стационаре и на дому'},
+            {text: 'Приезд врача в течении 40 минут'},
+            {text: 'Реабилитация с пожизненной гарантией от срыва'},
+          ];
+        each block in blocks
+          p.items__item=block.text 
+        
+
+      .bunner__buttons
+        a(href='#!' rel='#popup1').popups-init-js.but-wave.btn.btn--success._s-18 Оставить заявку
+        a(href='#!' rel='#popup1').popups-init-js.but-wave.btn.btn--empty._s-18 Написать на WhatsApp

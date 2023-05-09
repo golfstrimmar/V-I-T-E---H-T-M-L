@@ -1,0 +1,31 @@
+#kons {
+  min-height: 546px;
+  background-color: $dark-slate-blue-six;
+  form {
+    z-index: 10;
+    width: 872px;
+    min-height: 322px;
+  }
+  .form__title h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+.kons {
+  &__img1 {
+    position: relative;
+    position: absolute;
+    width: 125px;
+    height: 327px;
+    left: 0;
+    top: -80px;
+  }
+  &__img2 {
+    position: relative;
+    position: absolute;
+    width: 125px;
+    height: 327px;
+    right: 0;
+    bottom: -80px;
+  }
+}

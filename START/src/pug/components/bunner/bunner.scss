@@ -1,7 +1,7 @@
 .bunner {
-  min-height: 100vh;
+  min-height: 1080px;
   position: relative;
-
+  
 }
 
 .bunner .container {
@@ -12,18 +12,45 @@
 .bunner__body {
   display: flex;
   flex-direction: column;
-  padding: 300px 300px 0 0px;
+  padding: 330px 1000px 0 120px;
 }
-
-.bunner__text {
-  margin: 50px 0 30px 0;
+.bunner__bg {
+  position: relative;
+  position: absolute;
+  width: 1056px;
+  height: 811px;
+  left: auto;
+  top: auto;
+  bottom: 90px;
+  right: 0;
 }
-
-.bunner__text p {
-  margin: 0 0 10px 0;
-  text-shadow: 0px 0px 4px #1763b2;
+.bunner__title {
+  h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.14;
+    color: $dark-slate-blue-two;
+  }
+  span {
+    font-weight: normal;
+    margin: 0 0 0 15px;
+  }
 }
-
-.slider-main-js {
-  max-height: 100%;
+.bunner__items {
+  margin: 30px 0 0 0;
+}
+.bunner__buttons {
+  display: grid;
+  grid-template-columns: 190px 256px;
+  height: 56px;
+  gap: 0 20px;
+  margin: 30px 0 0 0;
+}
+.bunner__img {
+  width: 105px;
+  height: 327px;
+  position: relative;
+  position: absolute;
+  left: -50px;
+  top: 312px;
 }

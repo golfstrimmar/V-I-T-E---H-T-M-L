@@ -1,0 +1,44 @@
+.nark {
+  &__body {
+    padding: 0 265px 56px 370px;
+  }
+  &__text {
+    margin: 16px 0 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $denim-blue;
+  }
+  &__title{
+margin: 0 0 32px 0;
+  }
+  &__title1 {
+    margin: 16px 0 0 0;
+    h3 {
+      font-size: 32px;
+      font-weight: 800;
+      text-align: left;
+      color: $dark-slate-blue-two;
+    }
+  }
+  &__title2 {
+    margin: 16px 0 0 0;
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: $dark-slate-blue-two;
+    }
+  }
+}
+
+#nark {
+.items {
+  margin: 16px 0 0 0;
+    padding: 0 0 0 20px;
+}
+  .items p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: $denim-blue;
+  }
+}

@@ -42,10 +42,9 @@ a {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   color: $azul;
-  &:hover{
+  &:hover {
     color: lighten($azul, 20%);
     text-shadow: 0 0 5px $hover;
-   
   }
 }
 
@@ -99,6 +98,56 @@ svg.hidden {
 .fdc {
   flex-direction: column;
 }
+
+.items {
+  padding: 0 0 0 32px;
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.44;
+    color: $denim-blue;
+    position: relative;
+    margin: 0 0 10px 0;
+    &:last-child {
+      margin: 0 0 0 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $greenblue;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      top: 50%;
+      left: -20px;
+    }
+  }
+}
+.title {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 5px;
+    height: 112px;
+    margin: 0 21px 32px 0;
+    background-color: $azul;
+  }
+  h2 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.27;
+    color: $dark-slate-blue-two;
+
+    span {
+      font-weight: 400;
+    }
+  }
+}
+
 /* +++++++++++++++++++++++++++++++++++++ */
 @media (prefers-reduced-motion: no-preference) {
   .top-animation {
