@@ -6,52 +6,60 @@ export const MyTab = () => {
   tabs.forEach((cell) => {
     const title = cell.querySelector(".tab-title-js");
     const hidden = cell.querySelector(".tab-hidden-js");
-    
-
+    var ScrollHeight = hidden.scrollHeight;
     title.addEventListener("click", (e) => {
       function resetAll() {
         const naibous = [...cell.closest(".tabs-container-js").children];
         naibous.forEach((el) => {
           const title = el.querySelector(".tab-title-js");
           const hidden = el.querySelector(".tab-hidden-js");
-
-        
-        if (hidden.matches("._is-active")) {
-          
-          setTimeout(() => {
-            hidden.animate(
-              [{ minHeight: `${hidden.scrollHeight}px` }, { minHeight: "0px" }],
-              {
-                duration: 1000,
-                easing: "ease-in-out",
-              }
-            );
-            hidden.animate(
-              [{ height: `${hidden.scrollHeight}px` }, { height: "0px" }],
-              {
-                duration: 1000,
-                easing: "ease-in-out",
-              }
-            );
-          }, 0);
-
-          setTimeout(() => {
-            hidden.style.height = 0 + "px";
-          }, 1000);
-          setTimeout(() => {
-            hidden.style.minHeight = 0 + "px";
-          }, 1000);
-        }
-          
           title.remAct;
           hidden.remAct;
           el.remAct;
+
+          if (hidden.clientHeight > 0) {
+            setTimeout(() => {
+              hidden.animate(
+                [{ height: `${hidden.clientHeight}px` }, { height: "0px" }],
+                {
+                  duration: 1000,
+                  easing: "ease-in-out",
+                }
+              );
+            }, 0);
+            setTimeout(() => {
+              hidden.style.height = 0 + "px";
+            }, 1000);
+
+            if (
+              hidden.closest(".tabs-container-js").closest(".tab-hidden-js")
+            ) {
+              var temp = hidden
+                .closest(".tabs-container-js")
+                .closest(".tab-hidden-js");
+   setTimeout(() => {
+     temp.animate(
+       [
+         { height: `${temp.scrollHeight}px` },
+         { height: `${temp.scrollHeight - hidden.scrollHeight}px` },
+       ],
+       {
+         duration: 1000,
+         easing: "ease-in-out",
+       }
+     );
+   }, 0);
+   setTimeout(() => {
+     temp.style.height = temp.scrollHeight - hidden.scrollHeight + "px";
+   }, 0);
+              
+            }
+          }
         });
       }
 
       function close() {
         setTimeout(() => {
-          
           hidden.animate(
             [
               { minHeight: `${hidden.scrollHeight}px` },
@@ -66,7 +74,10 @@ export const MyTab = () => {
         }, 0);
 
         setTimeout(() => {
-          hidden.style.minHeight = 0 + "px";
+          hidden.style.height = 0 + "px";
+          title.classList.remove("_is-active");
+          hidden.classList.remove("_is-active");
+          cell.classList.remove("_is-active");
         }, 1000);
 
         // const naibous = [...cell.closest(".tabs-container-js").children];
@@ -148,65 +159,40 @@ export const MyTab = () => {
       // ===========================
       function open() {
         setTimeout(() => {
-         
-          hidden.animate(
-            [{ minHeight: "0px" }, { minHeight: `${hidden.scrollHeight}px` }],
-            {
-              duration: 1000,
-              easing: "ease-in-out",
-            }
-          );
+          title.classList.add("_is-active");
+          hidden.classList.add("_is-active");
+          cell.classList.add("_is-active");
+
+          hidden.animate([{ height: "0px" }, { height: `${ScrollHeight}px` }], {
+            duration: 1000,
+            easing: "ease-in-out",
+          });
         }, 0);
 
         setTimeout(() => {
-          hidden.style.minHeight = hidden.scrollHeight + "px";
-          title.classList.add("_is-active");
-          hidden.classList.add("_is-active");
-          // addition = 0;
+          hidden.style.height = ScrollHeight + "px";
         }, 1000);
 
-        // if (hidden.closest(".tabs-container-js").closest(".tab-hidden-js")) {
-        //   var temp = hidden
-        //     .closest(".tabs-container-js")
-        //     .closest(".tab-hidden-js");
-        //   var tempScrollHeight = temp.scrollHeight;
-        //   setTimeout(() => {
-        //     temp.animate(
-        //       [
-        //         { minHeight: `${tempScrollHeight}px` },
-        //         { minHeight: `${tempScrollHeight + addition}px` },
-        //       ],
-        //       {
-        //         duration: 1000,
-        //         easing: "ease-in-out",
-        //       }
-        //     );
-        //   }, 0);
-
-        //   setTimeout(() => {
-        //     temp.style.minHeight = `${tempScrollHeight + addition}px`;
-        //   }, 1000);
-        // }
+        if (hidden.closest(".tabs-container-js").closest(".tab-hidden-js")) {
+          hidden
+            .closest(".tabs-container-js")
+            .closest(".tab-hidden-js").style.height =
+            hidden.closest(".tabs-container-js").closest(".tab-hidden-js")
+              .clientHeight +
+            hidden.scrollHeight +
+            "px";
+        }
       }
       // ===========================
 
       if (!title.matches("._is-active")) {
-        // close();
-        // setTimeout(() => {
-        // title.addAct;
-        // if (hidden.matches("._not-active")) {
-        //   hidden.classList.remove("_not-active");
-        // }
-        // hidden.addAct;
-        // cell.addAct;
-        // hidden.style.maxHeight = addition + "px";
         resetAll();
         open();
       }
       // =========================================
       if (title.matches("._is-active")) {
         close();
-        // cell.remAct;
+        cell.remAct;
       }
     });
   });
