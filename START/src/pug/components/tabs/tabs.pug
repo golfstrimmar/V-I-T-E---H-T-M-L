@@ -1,41 +1,92 @@
 
 if section.header || section.footer
-  section.tabs.tabs--common
-      ul.tabs__body.tabs-container-js
-        li.tabs__tab.tab.tab-js
-          p.tab__title.tab-title-js
-            span Наркомания
-            //- svg
-            //-   use(xlink:href='#chevron-down')
-            span.icon 
-          .hidden.tab-hidden-js
-              .hidden__wrapper
-                a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания1
-                a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания2
-                a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания3
-        li.tabs__tab.tab.tab-js
-          p.tab__title.tab-title-js
-            span Наркомания
-            //- svg
-            //-   use(xlink:href='#chevron-down')
-            span.icon 
-          .hidden.tab-hidden-js
-              .hidden__wrapper
-                a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания1
-                a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания2
-                a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания3
-        li.tabs__tab.tab.tab-js
-          p.tab__title.tab-title-js
-            span Наркомания
-            //- svg
-            //-   use(xlink:href='#chevron-down')
-            span.icon 
-          .hidden.tab-hidden-js
-              .hidden__wrapper
-                a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания1
-                a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания2
-                a.menu__link.menu__link--active(href='#!' rel='#bunner') Наркомания3
-            
+  section#tabs--common.tabs
+    ul.tabs__body.tabs-container-js
+      li.tabs__tab.tab.tab-js
+        p.tab__title.tab-title-js
+          span Наркомания
+          span.icon 
+        ul.hidden.tab-hidden-js
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания1
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания2
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания3
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания1
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания2
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания3
+      li.tabs__tab.tab.tab-js
+        p.tab__title.tab-title-js
+          span Алкоголизм
+          span.icon 
+        ul.hidden.tab-hidden-js
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания1
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания2
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания3
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания1
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания2
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания3
+      li.tabs__tab.tab.tab-js
+        p.tab__title.tab-title-js
+          span Реабилитация
+          span.icon 
+        ul.hidden.tab-hidden-js
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания1
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания2
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания3
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания1
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания2
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания3
+
+      li.tabs__tab.tab.tab-js
+        p.tab__title.tab-title-js
+          span Кодирование
+          span.icon 
+        ul.hidden.tab-hidden-js
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания1
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания2
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания3
+      li.tabs__tab.tab.tab-js
+        p.tab__title.tab-title-js
+          span Цены
+        .hidden.tab-hidden-js
+
+      li.tabs__tab.tab.tab-js
+        p.tab__title.tab-title-js
+          span О клинике
+          span.icon 
+        ul.hidden.tab-hidden-js
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания1
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания2
+          li
+            a.menu__link(href='#!' rel='#bunner') Наркомания3
+      li.tabs__tab.tab.tab-js
+        p.tab__title.tab-title-js
+          span Контакты
+        .hidden.tab-hidden-js
+
+
 
 else if section.tabs
   section.tabs
@@ -47,11 +98,9 @@ else if section.tabs
             svg
               use(xlink:href='#chevron-down')
           .hidden.tab-hidden-js
-            //- .hidden__wrapper
-            p hidden2
-            p hidden2
-            p hidden2
-            //- 
+                p hidden2
+                p hidden2
+                p hidden2
         li.tabs__tab.tab.tab-js
           p.tab__title.tab-title-js
             span Наркологическая клиника
@@ -65,10 +114,9 @@ else if section.tabs
                   svg
                     use(xlink:href='#chevron-down')
                 .hidden.tab-hidden-js
-                  //- .hidden__wrapper
-                  p hidden2
-                  p hidden2
-                  p hidden2
+                      p hidden2
+                      p hidden2
+                      p hidden2
               li.tabs__tab.tab.tab-js
                 p.tab__title.tab-title-js
                   span tab2
@@ -82,24 +130,21 @@ else if section.tabs
                         svg
                           use(xlink:href='#chevron-down')
                       .hidden.tab-hidden-js
-                        //- .hidden__wrapper
-                        p hidden2
-                        p hidden2
-                        p hidden2
+                            p hidden2
+                            p hidden2
+                            p hidden2
                     li.tabs__tab.tab.tab-js
                       p.tab__title.tab-title-js
                         span tab2
                         svg
                           use(xlink:href='#chevron-down')
                       .hidden.tab-hidden-js
-                        //- .hidden__wrapper
-                        p hidden2
-                        p hidden2
-                        p hidden2
-                        p hidden2
-                        p hidden2
-                        p hidden2
-               
+                            p hidden2
+                            p hidden2
+                            p hidden2
+                            p hidden2
+                            p hidden2
+                            p hidden2
 
 
 
@@ -110,4 +155,5 @@ else if section.tabs
 
 
 
-            
+
+

@@ -147,53 +147,6 @@ svg.hidden {
     }
   }
 }
-/*=====================*/
-// .tabs--common {
-//   .tabs {
-//     &__body {
-//       display: flex;
-//       justify-content: space-between;
-//       padding: 0 12px;
-//     }
-//     &__tab {
-//     }
-//     &__tab._is-active {
-//       transition: all 0.5s;
-//       box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.5);
-//       z-index: 300;
-//       background-color: $white;
-//       .tab__title {
-//         z-index: 3;
-//         background-color: white;
-//       }
-//     }
-//     .hidden {
-//       position: absolute;
-//       background-color: $white !important;
-//       .hidden__wrapper {
-//         display: flex;
-//         flex-direction: column;
-//         row-gap: 5px;
-//         padding: 0 0 5px 0;
-//         background-color: $white;
-//         .menu__link {
-//           padding: 2px 5px;
-//         }
-//       }
-//     }
-//     .hidden._is-active {
-//       width: 100%;
-//       z-index: 2;
-//       background-color: $white;
-//       box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.5);
-//       .menu__link {
-//         &:hover {
-//           background-color: $light-sky-blue !important;
-//         }
-//       }
-//     }
-//   }
-// }
 
 /* +++++++++++++++++++++++++++++++++++++ */
 @media (prefers-reduced-motion: no-preference) {

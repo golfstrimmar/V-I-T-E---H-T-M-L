@@ -14,14 +14,28 @@ export const MyTab = () => {
     const title = cell.querySelector(".tab-title-js");
     const hidden = cell.querySelector(".tab-hidden-js");
     var ScrollHeight = hidden.scrollHeight;
-    localStorage.setItem("SH", 0);
 
     // :==========resetAll
     function resetAll(el) {
-      cell.remAct;
+      el.remAct;
       el.querySelectorAll(".tab-hidden-js").forEach((hidden) => {
-        hidden.style.height = 0;
-        hidden.remAct;
+      hidden.remAct;
+// hidden.animate(
+//   [
+//     { height: `${hidden.clientHeight}` + "px" },
+//     { height: 0 },
+//   ],
+//   {
+//     duration: 1000
+    
+//   }
+// );
+// setTimeout(() => {
+      hidden.style.height = 0;
+// }, 1000);
+        
+
+        
       });
       el.querySelectorAll(".tab-title-js").forEach((title) => {
         title.remAct;
@@ -37,7 +51,14 @@ export const MyTab = () => {
         });
       }
     }
-
+    // ==============================
+    function close() {
+      title.remAct;
+      hidden.remAct;
+      cell.querySelector(".tab-hidden-js").style.height = 0;
+      cell.remAct;
+    }
+    
     // ==openopenopenopenopenopenopen=========================
     function open() {
       tabs.forEach((cell) => {
@@ -57,13 +78,7 @@ export const MyTab = () => {
       hidden.addAct;
       cell.addAct;
     }
-    // ==============================
-    function close() {
-      cell.querySelector(".tab-hidden-js").style.height = 0;
-      title.remAct;
-      hidden.remAct;
-      cell.remAct;
-    }
+
     // ==============================
 
     title.addEventListener("click", (e) => {
@@ -73,11 +88,11 @@ export const MyTab = () => {
         open();
       }
     });
-  };
+  }
 
   // ====================
   function closeGlobal() {
-     let tabs = [...document.querySelectorAll(".tab-js")];
+    let tabs = [...document.querySelectorAll(".tab-js")];
     tabs.forEach((cell) => {
       cell.querySelectorAll(".tab-hidden-js").forEach((hidden) => {
         hidden.style.height = 0;
@@ -90,7 +105,7 @@ export const MyTab = () => {
     });
   }
   document.addEventListener("click", function (e) {
-    if (!e.target.closest(".tabs-container-js")) {
+    if (!e.target.closest(".tab-js")) {
       closeGlobal();
     }
   });
