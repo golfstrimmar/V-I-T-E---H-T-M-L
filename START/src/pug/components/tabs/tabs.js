@@ -15,39 +15,36 @@ export const MyTab = () => {
     const hidden = cell.querySelector(".tab-hidden-js");
     var ScrollHeight = hidden.scrollHeight;
 
-    // :==========resetAll
-    function resetAll(el) {
-      el.remAct;
-      el.querySelectorAll(".tab-hidden-js").forEach((hidden) => {
-      hidden.remAct;
-// hidden.animate(
-//   [
-//     { height: `${hidden.clientHeight}` + "px" },
-//     { height: 0 },
-//   ],
-//   {
-//     duration: 1000
-    
-//   }
-// );
-// setTimeout(() => {
-      hidden.style.height = 0;
-// }, 1000);
-        
-
-        
-      });
-      el.querySelectorAll(".tab-title-js").forEach((title) => {
-        title.remAct;
-      });
-    }
-
     // ==closeChildrens=====
-    function closeChildrens(hidden) {
-      const childrens = [...hidden.closest(".tabs-container-js").children];
+    function closeChildrens(cell) {
+      const childrens = [...cell.closest(".tabs-container-js").children];
       if (childrens.length > 0) {
         childrens.forEach((el) => {
-          resetAll(el);
+          if (el !== cell) {
+            el.remAct;
+            [...el.querySelectorAll(".tab-title-js")].forEach((title) => {
+              title.remAct;
+            });
+            let temp = [...el.querySelectorAll(".tab-hidden-js")];
+            temp.forEach((hidden) => {
+              if (hidden.clientHeight > 5 && hidden.matches("._is-active")) {
+                hidden.animate(
+                  [
+                    { height: `${hidden.clientHeight}` + "px" },
+                    { height: 0 + "px" },
+                  ],
+                  { duration: 300 }
+                );
+                setTimeout(() => {
+                  hidden.remAct;
+                  hidden.style.height = 0;
+                }, 250);
+              } else {
+                hidden.remAct;
+                hidden.style.height = 0;
+              }
+            });
+          }
         });
       }
     }
@@ -55,28 +52,41 @@ export const MyTab = () => {
     function close() {
       title.remAct;
       hidden.remAct;
-      cell.querySelector(".tab-hidden-js").style.height = 0;
       cell.remAct;
+      [...hidden.querySelectorAll(".tab-title-js")].forEach((title) => {
+        title.remAct;
+      });
+      [...hidden.querySelectorAll(".tab-hidden-js")].forEach((hidden) => {
+        hidden.remAct;
+        setTimeout(() => {
+          hidden.style.height = 0;
+        }, 250);
+      });
+      hidden.animate(
+        [{ height: `${hidden.clientHeight}` + "px" }, { height: 0 }],
+        {
+          duration: 300,
+        }
+      );
+      setTimeout(() => {
+        hidden.style.height = 0;
+      }, 250);
     }
-    
+
     // ==openopenopenopenopenopenopen=========================
     function open() {
-      tabs.forEach((cell) => {
-        if (
-          cell
-            .querySelector(".tab-hidden-js")
-            .querySelector(".tabs-container-js")
-        ) {
-          cell.querySelector(".tab-hidden-js").style.height = "auto";
-        } else {
-          cell.querySelector(".tab-hidden-js").style.height = 0;
-        }
-      });
-      closeChildrens(hidden);
+      if (hidden.closest(".tabs-container-js").closest(".tab-hidden-js")) {
+        let temp = hidden
+          .closest(".tabs-container-js")
+          .closest(".tab-hidden-js");
+        console.log(temp);
+        temp.style.height = "auto";
+      }
       hidden.style.height = ScrollHeight + "px";
       title.addAct;
       hidden.addAct;
       cell.addAct;
+      closeChildrens(cell);
     }
 
     // ==============================
@@ -94,14 +104,21 @@ export const MyTab = () => {
   function closeGlobal() {
     let tabs = [...document.querySelectorAll(".tab-js")];
     tabs.forEach((cell) => {
-      cell.querySelectorAll(".tab-hidden-js").forEach((hidden) => {
-        hidden.style.height = 0;
-        hidden.remAct;
-      });
+      cell.remAct;
       cell.querySelectorAll(".tab-title-js").forEach((title) => {
         title.remAct;
       });
-      cell.remAct;
+      var temp = [...cell.querySelectorAll(".tab-hidden-js")];
+      temp.forEach((hidden) => {
+        hidden.remAct;
+        hidden.animate(
+          [{ height: `${hidden.clientHeight}` + "px" }, { height: 0 + "px" }],
+          { duration: 300 }
+        );
+        setTimeout(() => {
+          hidden.style.height = 0;
+        }, 250);
+      });
     });
   }
   document.addEventListener("click", function (e) {

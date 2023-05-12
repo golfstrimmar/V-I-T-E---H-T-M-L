@@ -1,18 +1,20 @@
 .tab__title {
-  background-color: rgb(255, 255, 255);
   width: 100%;
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   transition: all 0.3s ease-in-out;
-  column-gap: 13px;
   padding: 14px;
-}
-
-.tab__title {
   background-color: rgb(60, 168, 218);
   border: 1px solid red;
+  span {
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+  }
   span.icon {
     position: relative;
     width: 12px;
@@ -42,13 +44,6 @@
   }
 }
 
-.tab__title span {
-  font-size: 18px;
-  font-weight: 500;
-  white-space: nowrap;
-  transition: all 0.3s ease-in-out;
-}
-
 .tabs ul > li {
   position: relative;
   border: 1px solid rgb(170, 194, 37);
@@ -58,7 +53,7 @@
 .tabs ul > li > ul li {
   margin: 0 0 0 0;
 }
-.tabs-container-js {
+.tabs__body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -68,10 +63,17 @@
   overflow: hidden;
   border: 1px solid red;
   background-color: blue;
-  transition: all 0.3s;
+  &._is-active {
+    transition: all 0.3s;
+    height: auto;
+  }
+  p {
+    color: aliceblue;
+  }
 }
 
-.tab-title-js._is-active {
+.tab__title._is-active {
+  background-color: chartreuse;
   svg,
   span {
   }
@@ -87,34 +89,31 @@
 }
 
 // =================
-#tabs--common{
-  & ul > li{
+#tabs--common {
+  & ul > li {
     border: none;
     padding: 0 5px;
   }
-.tabs__body{
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5px;
-}
-.tab{
-  &__tab{
-    border: none;
-
+  .tabs__body {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
   }
-&__title{
-  border: none;
-  &._is-active{
- box-shadow: 0 4px 24px 0 rgba(27, 49, 95, .25);
+  .tab {
+    &__tab {
+      border: none;
+    }
+    &__title {
+      border: none;
+      &._is-active {
+        box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.25);
+      }
+    }
+    .hidden {
+      border: none;
+      background: $white;
+      box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.25);
+      z-index: 3;
+    }
   }
- 
-}
-.hidden{
-  border: none;
-  background: $white;
-   box-shadow: 0 4px 24px 0 rgba(27, 49, 95, .25);
-  z-index: 3;
-}
-
-}
 }
