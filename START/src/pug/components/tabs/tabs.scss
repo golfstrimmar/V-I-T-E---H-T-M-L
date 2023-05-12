@@ -14,6 +14,7 @@
   justify-content: space-between;
   transition: all .3s ease-in-out;
   padding: 10px 40px;
+  background-color: rgb(218, 167, 100);
 
 }
 
@@ -30,6 +31,7 @@
 .tabs ul > li {
   position: relative;
   margin:  5px ;
+  background-color: antiquewhite;
 }
 .tabs ul > li > ul li {
   margin: 0 0 0 0;
@@ -46,7 +48,7 @@
 
 .tabs .hidden {
   // background: rgb(85, 40, 143);
-  transition: all .3s ;
+  transition: all 1s ;
   transform: scaleY(0);
   transform-origin: top;
   max-height: 0;
@@ -55,6 +57,7 @@
 
 .hidden__wrapper{
 border: 1px solid red;
+background-color: rgb(138, 79, 214);
 }
 
 
@@ -69,12 +72,12 @@ border: 1px solid red;
 }
 
 .tabs .hidden._is-active {
- animation: pulse .3s ;
+ animation: pulse 1s ;
  animation-fill-mode: forwards;
 }
 
 .tabs .hidden._not-active {
- animation: notPulse .3s ;
+ animation: notPulse 1s ;
  animation-fill-mode: forwards;
 }
 
