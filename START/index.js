@@ -68,14 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const accordAll = document.querySelectorAll(".accord");
   if (accordAll.length > 0) {
     document.addEventListener("click", (e) => {
-      if (
-        e.target.closest(".accord-header-item") ||
-        e.target.closest(".accord-hidden-item")
-      ) {
-        const target = e.target.closest(".accord-header-item");
+      if ( e.target.closest(".accord-js")) {
+        const target = e.target.closest(".accord-item-js");
         const accord = new Accord(target);
         accord.start();
-      } else {
+      }
+       else {
         Accord.resetAll();
       }
     });
@@ -130,7 +128,7 @@ if (textTypedAll.length > 0) {
 // ===============================================
 Object.defineProperty(HTMLElement.prototype, "addAct", {
   get: function () {
-    if (!this.classList.contains("_is-active")) {
+    if (!this.matches("_is-active")) {
       return this.classList.add("_is-active");
     }
   },
@@ -138,7 +136,7 @@ Object.defineProperty(HTMLElement.prototype, "addAct", {
 
 Object.defineProperty(HTMLElement.prototype, "remAct", {
   get: function () {
-    if (this.classList.contains("_is-active")) {
+    if (this.matches("_is-active")) {
       return this.classList.remove("_is-active");
     }
   },

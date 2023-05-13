@@ -3,119 +3,120 @@
 export class Accord {
   constructor(button) {
     this.button = button;
-    this.neibours = [...this.button.closest(".accord-header-js").children];
-    this.hid = this.button.closest(".accord-header-js").nextElementSibling;
-    this.hiddens = [...this.hid.children];
-    this.timeout = 0;
+    this.Nab = [
+      ...this.button.closest(".accord-js").querySelectorAll(".accord-item-js"),
+    ];
+    this.Nabours = this.Nab.map((el) => {
+      if (!el.classList.contains("accord-hidden-js")) {
+        return el;
+      }
+    });
+    this.Hiddens = [
+      ...this.button.closest(".accord-js").querySelector(".accord-hidden-js")
+        .children,
+    ];
+    this.flag = false;
   }
 
-  setTime() {
-    for (let i = 0; i < this.neibours.length; i++) {
-      if (this.neibours[i].classList.contains("_is-active")) {
-        return (this.timeout = 300);
+ 
+  // -----------------------------------------------
+  outOpen(i) {
+    this.Hiddens[i].animate(
+      [{ height: "0px" }, { height: `${this.Hiddens[i].scrollHeight}px` }],
+      {
+        duration: 200,
+        easing: "ease-in-out",
+      }
+    );
+    this.Nabours[i].classList.add("_is-active");
+    this.Hiddens[i].classList.add("_is-active");
+    setTimeout(() => {
+      this.Hiddens[i].style.height = this.Hiddens[i].scrollHeight + "px";
+    }, 150);
+  }
+  // -----------------------------------------------
+
+  // -----------------------------------------------
+  actionOpen() {
+    for (let i = 0; i < this.Nabours.length; i++) {
+      if (this.Nabours[i] === this.button) {
+        this.outOpen(i);
       }
     }
   }
-
-  resetAccord() {
-    for (let i = 0; i < this.neibours.length; i++) {
-      this.neibours[i].classList.remove("_is-active");
-      this.hiddens[i].classList.remove("_is-active");
-      this.hiddens[i].style.height = 0;
+  // -----------------------------------------------
+  actionClose() {
+    for (let i = 0; i < this.Nabours.length; i++) {
+      if (this.Nabours[i].classList.contains("_is-active")) {
+        this.Hiddens[i].animate(
+          [{ height: `${this.Hiddens[i].scrollHeight}px` }, { height: "0px" }],
+          {
+            duration: 200,
+            easing: "ease-in-out",
+          }
+        );
+        setTimeout(() => {
+          this.Nabours[i].classList.remove("_is-active");
+          this.Hiddens[i].classList.remove("_is-active");
+          this.Hiddens[i].style.height = 0 + "px";
+        }, 190);
+      }
     }
   }
-
+  // -----------------------------------------------
   start() {
-    this.setTime();
-    console.log("timeout" + this.timeout);
-    for (let i = 0; i < this.neibours.length; i++) {
-      if (
-        this.neibours[i] === this.button &&
-        !this.neibours[i].classList.contains("_is-active")
-      ) {
-        this.resetAccord();
-        setTimeout(() => {
-          this.neibours[i].classList.add("_is-active");
-          this.hiddens[i].classList.add("_is-active");
-          this.hiddens[i].style.height = this.hiddens[i].scrollHeight + "px";
-        }, this.timeout);
+    if (!this.button.classList.contains("_is-active")) {
+      for (let i = 0; i < this.Nabours.length; i++) {
+        if (this.Nabours[i].classList.contains("_is-active")) {
+           this.Hiddens[i].animate(
+             [
+               { height: `${this.Hiddens[i].scrollHeight}px` },
+               { height: "0px" },
+             ],
+             {
+               duration: 200,
+               easing: "ease-in-out",
+             }
+           );
+           setTimeout(() => {
+             this.Nabours[i].classList.remove("_is-active");
+             this.Hiddens[i].classList.remove("_is-active");
+             this.Hiddens[i].style.height = 0 + "px";
+           }, 190);
+        }
       }
-      if (
-        this.neibours[i] === this.button &&
-        this.neibours[i].classList.contains("_is-active")
-      ) {
-        setTimeout(() => {
-          this.resetAccord();
-        }, 0);
-      }
+      setTimeout(() => {
+        this.actionOpen();
+      }, 100);
+    } else {
+      this.actionClose();
     }
+ 
   }
-
+  // -----------------------------------------------
   static resetAll() {
-    [...document.querySelectorAll(".accord-header-item")].forEach((item) => {
+    [...document.querySelectorAll(".accord-item-js")].forEach((item) => {
       item.classList.remove("_is-active");
     });
-    [...document.querySelectorAll(".accord-hidden-item")].forEach((item) => {
-      item.classList.remove("_is-active");
-      item.style.height = 0;
+
+    [...document.querySelector(".accord-hidden-js").children].forEach((item) => {
+      if (item.classList.contains("_is-active")){
+        var animation = item.animate(
+          [{ height: `${item.scrollHeight}px` }, { height: "0px" }],
+          {
+            duration: 200,
+            easing: "ease-in-out",
+          }
+        );
+        animation.addEventListener(
+          "finish",
+          function () {
+            item.style.height = 0;
+          },
+          false
+        );
+      }
     });
   }
+  // -----------------------------------------------
 }
-
-// export const Accord = (button) => {
-//   const neibours = [...button.closest(".accord-header-js").children];
-//   const hid = button.closest(".accord-header-js").nextElementSibling;
-//   const hiddens = [...hid.children];
-//   let timeout;
-//   timeout = 0;
-
-//   function setTime() {
-//     for (let i = 0; i < neibours.length; i++) {
-//       if (neibours[i].classList.contains("_is-active")) {
-//         return (timeout = 500);
-//       }
-//     }
-//   }
-
-//   setTime();
-// console.log("timeout is" + timeout);
-//   for (let i = 0; i < neibours.length; i++) {
-//     function resetAll() {
-//       for (let i = 0; i < neibours.length; i++) {
-//         neibours[i].classList.remove("_is-active");
-//         hiddens[i].classList.remove("_is-active");
-//         hiddens[i].style.height = 0;
-//       }
-//     }
-
-//     function setActive() {
-//       neibours[i].classList.add("_is-active");
-//       hiddens[i].classList.add("_is-active");
-//       hiddens[i].style.height = hiddens[i].scrollHeight + "px";
-//     }
-
-//     if (
-//       neibours[i] === button &&
-//       !neibours[i].classList.contains("_is-active")
-//     ) {
-//       resetAll();
-
-      
-//       setTimeout(() => {
-//         setActive();
-//       }, timeout);
-//     }
-
-//     if (
-//       neibours[i] === button &&
-//       neibours[i].classList.contains("_is-active")
-//     ) {
-//       setTimeout(() => {
-//         resetAll();
-//       }, 0);
-//     }
-//   }
-
-// };
-
-
