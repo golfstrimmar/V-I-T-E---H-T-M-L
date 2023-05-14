@@ -22,7 +22,7 @@
     &::before,
     &::after {
       content: "";
-      background-color: rgb(60, 89, 218);
+      background-color: $azul;
       position: absolute;
       width: 12px;
       height: 2px;
@@ -63,8 +63,8 @@
   overflow: hidden;
   border: 1px solid red;
   background-color: blue;
+  transition: all 1s;
   &._is-active {
-    transition: all 0.3s;
     height: auto;
   }
   p {
@@ -87,3 +87,4 @@
     }
   }
 }
+

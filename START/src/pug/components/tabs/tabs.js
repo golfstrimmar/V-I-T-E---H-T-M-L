@@ -1,129 +1,122 @@
 "use ctrict";
 
-export const MyTab = () => {
-  let containers = [...document.querySelectorAll(".tabs")];
+export class MyTab {
+  constructor(tab) {
+    this.tab = tab;
+    this.neibours = [...this.tab.closest(".tabs-container-js").children];
+    this.title = this.tab.querySelector(".tab-title-js");
+    this.hidden = this.tab.querySelector(".tab-hidden-js");
+  }
+  // ==================================
+  close() {
+    this.tab.classList.remove("_is-active");
+    this.title.classList.remove("_is-active");
+    this.hidden.classList.remove("_is-active");
+    this.hidden.animate(
+      [{ height: `${this.hidden.scrollHeight}px` }, { height: "0px" }],
+      {
+        duration: 200,
+        easing: "ease-in-out",
+      }
+    );
+    this.hidden.style.height = `0px`;
+  }
+  // ==================================
+  open() {
+    for (let i = 0; i < this.neibours.length; i++) {
+      if (this.neibours[i] !== this.tab) {
+        this.neibours[i]
+          .querySelector(".tab-title-js")
+          .classList.remove("_is-active");
+        this.neibours[i]
+          .querySelector(".tab-hidden-js")
+          .classList.remove("_is-active");
+        this.neibours[i].querySelector(".tab-hidden-js").style.height = 0;
+        this.neibours[i].classList.remove("_is-active");
+      }
+    }
 
-  containers.forEach((cont) => {
-    let tabs = [...cont.querySelectorAll(".tab-js")];
-    tabs.forEach((cell) => {
-      ACTIVE(cell, tabs);
-    });
-  });
-
-  function ACTIVE(cell, tabs) {
-    const title = cell.querySelector(".tab-title-js");
-    const hidden = cell.querySelector(".tab-hidden-js");
-    var ScrollHeight = hidden.scrollHeight;
-
-    // ==closeChildrens=====
-    function closeChildrens(cell) {
-      const childrens = [...cell.closest(".tabs-container-js").children];
-      if (childrens.length > 0) {
-        childrens.forEach((el) => {
-          if (el !== cell) {
-            el.remAct;
-            [...el.querySelectorAll(".tab-title-js")].forEach((title) => {
-              title.remAct;
-            });
-            let temp = [...el.querySelectorAll(".tab-hidden-js")];
-            temp.forEach((hidden) => {
-              if (hidden.clientHeight > 5 && hidden.matches("._is-active")) {
-                hidden.animate(
-                  [
-                    { height: `${hidden.clientHeight}` + "px" },
-                    { height: 0 + "px" },
-                  ],
-                  { duration: 300 }
-                );
-                setTimeout(() => {
-                  hidden.remAct;
-                  hidden.style.height = 0;
-                }, 250);
-              } else {
-                hidden.remAct;
-                hidden.style.height = 0;
-              }
-            });
-          }
+    this.tab.classList.add("_is-active");
+    this.title.classList.add("_is-active");
+    this.hidden.classList.add("_is-active");
+    this.hidden.animate(
+      [{ height: "0px" }, { height: `${this.hidden.scrollHeight}px` }],
+      {
+        duration: 200,
+        easing: "ease-in-out",
+      }
+    );
+    this.hidden.style.height = `auto`;
+  }
+  // ==================================
+  closeNabours() {
+    for (let i = 0; i < this.neibours.length; i++) {
+      if (
+        this.neibours[i]
+          .querySelector(".tab-hidden-js")
+          .querySelector(".tabs-container-js")
+      ) {
+        let nabourContainers = this.neibours[i]
+          .querySelector(".tab-hidden-js")
+          .querySelectorAll(".tabs-container-js");
+        nabourContainers.forEach((el) => {
+          el.querySelectorAll(".tab-js").forEach((elem) => {
+            if (elem.classList.contains("_is-active")) {
+              elem.classList.remove("_is-active");
+            }
+          });
+          el.querySelectorAll(".tab-hidden-js").forEach((elem) => {
+            if (elem.classList.contains("_is-active")) {
+              elem.classList.remove("_is-active");
+              elem.animate(
+                [{ height: `${elem.scrollHeight}px` }, { height: "0px" }],
+                {
+                  duration: 200,
+                  easing: "ease-in-out",
+                }
+              );
+              elem.style.height = 0;
+            }
+          });
+          el.querySelectorAll(".tab-title-js").forEach((elem) => {
+            if (elem.classList.contains("_is-active")) {
+              elem.classList.remove("_is-active");
+            }
+          });
         });
       }
     }
-    // ==============================
-    function close() {
-      title.remAct;
-      hidden.remAct;
-      cell.remAct;
-      [...hidden.querySelectorAll(".tab-title-js")].forEach((title) => {
-        title.remAct;
-      });
-      [...hidden.querySelectorAll(".tab-hidden-js")].forEach((hidden) => {
-        hidden.remAct;
-        setTimeout(() => {
-          hidden.style.height = 0;
-        }, 250);
-      });
-      hidden.animate(
-        [{ height: `${hidden.clientHeight}` + "px" }, { height: 0 }],
-        {
-          duration: 300,
-        }
-      );
-      setTimeout(() => {
-        hidden.style.height = 0;
-      }, 250);
+  }
+  // ==================================
+  start() {
+    this.closeNabours();
+    if (this.tab.classList.contains("_is-active")) {
+      this.close();
+    } else {
+      this.open();
     }
-
-    // ==openopenopenopenopenopenopen=========================
-    function open() {
-      if (hidden.closest(".tabs-container-js").closest(".tab-hidden-js")) {
-        let temp = hidden
-          .closest(".tabs-container-js")
-          .closest(".tab-hidden-js");
-        console.log(temp);
-        temp.style.height = "auto";
-      }
-      hidden.style.height = ScrollHeight + "px";
-      title.addAct;
-      hidden.addAct;
-      cell.addAct;
-      closeChildrens(cell);
-    }
-
-    // ==============================
-
-    title.addEventListener("click", (e) => {
-      if (title.matches("._is-active")) {
-        close();
-      } else if (!title.matches("._is-active")) {
-        open();
-      }
-    });
   }
 
-  // ====================
-  function closeGlobal() {
-    let tabs = [...document.querySelectorAll(".tab-js")];
-    tabs.forEach((cell) => {
-      cell.remAct;
-      cell.querySelectorAll(".tab-title-js").forEach((title) => {
-        title.remAct;
-      });
-      var temp = [...cell.querySelectorAll(".tab-hidden-js")];
-      temp.forEach((hidden) => {
-        hidden.remAct;
-        hidden.animate(
-          [{ height: `${hidden.clientHeight}` + "px" }, { height: 0 + "px" }],
-          { duration: 300 }
+  static resetAll() {
+    [...document.querySelectorAll(".tab-js")].forEach((item) => {
+      item.classList.remove("_is-active");
+    });
+    [...document.querySelectorAll(".tab-title-js")].forEach((item) => {
+      item.classList.remove("_is-active");
+    });
+    [...document.querySelectorAll(".tab-hidden-js")].forEach((item) => {
+      item.classList.remove("_is-active");
+      if (item.style.height > 0) {
+        item.animate(
+          [{ height: `${item.scrollHeight}px` }, { height: "0px" }],
+          {
+            duration: 200,
+            easing: "ease-in-out",
+          }
         );
-        setTimeout(() => {
-          hidden.style.height = 0;
-        }, 250);
-      });
+        item.style.height = 0;
+      }
+      item.style.height = 0;
     });
   }
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".tab-js")) {
-      closeGlobal();
-    }
-  });
-};
+}
