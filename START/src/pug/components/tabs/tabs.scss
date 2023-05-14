@@ -63,8 +63,8 @@
   overflow: hidden;
   border: 1px solid red;
   background-color: blue;
+  transition: all 1s;
   &._is-active {
-    transition: all 0.3s;
     height: auto;
   }
   p {

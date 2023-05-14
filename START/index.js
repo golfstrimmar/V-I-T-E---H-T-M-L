@@ -80,10 +80,25 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  const tabcontainers = [...document.querySelectorAll(".tabs-container-js")];
-  if (tabcontainers.length > 0) {
-    MyTab();
+  const tabs = document.querySelectorAll(".tabs-container-js");
+  if (tabs.length > 0) {
+    document.addEventListener("click", (e) => {
+      
+      if (e.target.closest(".tab-title-js")) {
+        const target = e.target.closest(".tab-js");
+        const Tab = new MyTab(target);
+        Tab.start();
+      } else if (!e.target.closest(".tabs-container-js")) {
+        MyTab.resetAll();
+      }else if (!e.target.closest(".tab-js")) {
+        MyTab.resetAll();
+      }
+    });
   }
+  // const tabcontainers = [...document.querySelectorAll(".tabs-container-js")];
+  // if (tabcontainers.length > 0) {
+  //   MyTab();
+  // }
 
 const ranges = [...document.querySelectorAll(".range-wrap")];
   if (ranges.length > 0) {
