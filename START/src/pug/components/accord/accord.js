@@ -15,83 +15,165 @@ export class Accord {
       ...this.button.closest(".accord-js").querySelector(".accord-hidden-js")
         .children,
     ];
-    this.flag = false;
+    this.nummer = 0;
   }
-
- 
   // -----------------------------------------------
-  outOpen(i) {
-    this.Hiddens[i].animate(
-      [{ height: "0px" }, { height: `${this.Hiddens[i].scrollHeight}px` }],
+
+  close() {
+    var temp1 = this.Hiddens[this.nummer];
+    var temp2 = this.Nabours[this.nummer];
+
+    var animation = this.Hiddens[this.nummer].animate(
+      [
+        { height: `${this.Hiddens[this.nummer].scrollHeight}px` },
+        { height: "0px" },
+      ],
       {
         duration: 200,
         easing: "ease-in-out",
       }
     );
-    this.Nabours[i].classList.add("_is-active");
-    this.Hiddens[i].classList.add("_is-active");
-    setTimeout(() => {
-      this.Hiddens[i].style.height = this.Hiddens[i].scrollHeight + "px";
-    }, 150);
-  }
-  // -----------------------------------------------
 
-  // -----------------------------------------------
-  actionOpen() {
-    for (let i = 0; i < this.Nabours.length; i++) {
-      if (this.Nabours[i] === this.button) {
-        this.outOpen(i);
-      }
-    }
+    const activeHEAD = (e) => {
+      temp2.classList.remove("_is-active");
+      temp1.classList.remove("_is-active");
+      temp1.style.height = 0;
+    };
+    animation.addEventListener(
+      "finish",
+      function () {
+        activeHEAD();
+      },
+      false
+    );
+
+    // ================================
   }
-  // -----------------------------------------------
-  actionClose() {
-    for (let i = 0; i < this.Nabours.length; i++) {
-      if (this.Nabours[i].classList.contains("_is-active")) {
-        this.Hiddens[i].animate(
-          [{ height: `${this.Hiddens[i].scrollHeight}px` }, { height: "0px" }],
-          {
-            duration: 200,
-            easing: "ease-in-out",
-          }
-        );
-        setTimeout(() => {
-          this.Nabours[i].classList.remove("_is-active");
-          this.Hiddens[i].classList.remove("_is-active");
-          this.Hiddens[i].style.height = 0 + "px";
-        }, 190);
+
+  open() {
+    [...document.querySelector(".accord-hidden-js").children].forEach(
+      (item) => {
+        item.style.display = "block";
       }
+    );
+    this.Nabours[this.nummer].classList.add("_is-active");
+    var temp1 = this.Hiddens[this.nummer];
+    temp1.classList.add("_is-active");
+
+    var animation = temp1.animate(
+      [{ height: "0px" }, { height: `${temp1.scrollHeight}px` }],
+      {
+        duration: 200,
+        easing: "ease-in-out",
+      }
+    );
+
+    const activeHEAD = (e) => {
+      temp1.style.height = `${temp1.scrollHeight}px`;
+    };
+    animation.addEventListener(
+      "finish",
+      function () {
+        activeHEAD();
+      },
+      false
+    );
+  }
+
+  Change(i, nummer) {
+    var temp1 = this.Nabours[i];
+    var temp2 = this.Hiddens[i];
+    var temp3 = this.Nabours[nummer];
+    var temp4 = this.Hiddens[nummer];
+
+    var animation = temp2.animate(
+      [{ height: `${temp2.scrollHeight}px` }, { height: "0px" }],
+      {
+        duration: 200,
+        easing: "ease-in-out",
+      }
+    );
+    function openHidButton() {
+      temp1.classList.remove("_is-active");
+      temp2.classList.remove("_is-active");
+      temp2.style.height = 0;
+              temp3.classList.add("_is-active");
+              temp4.classList.add("_is-active");
+      var an = temp4.animate(
+        [{ height: "0px" }, { height: `${temp4.scrollHeight}px` }],
+        {
+          duration: 200,
+          easing: "ease-in-out",
+        }
+      );
+
+      function finischAnim() {
+        temp4.style.height = `${temp4.scrollHeight}px`;
+
+      }
+      an.addEventListener(
+        "finish",
+        function () {
+          finischAnim();
+        },
+        false
+      );
     }
+
+    animation.addEventListener(
+      "finish",
+      function () {
+        openHidButton();
+        console.log("finish");
+      },
+      false
+    );
   }
   // -----------------------------------------------
   start() {
+    for (let i = 0; i < this.Nabours.length; i++) {
+      if (this.Nabours[i] == this.button) {
+        this.nummer = i;
+      }
+    }
+
     if (!this.button.classList.contains("_is-active")) {
       for (let i = 0; i < this.Nabours.length; i++) {
-        if (this.Nabours[i].classList.contains("_is-active")) {
-           this.Hiddens[i].animate(
-             [
-               { height: `${this.Hiddens[i].scrollHeight}px` },
-               { height: "0px" },
-             ],
-             {
-               duration: 200,
-               easing: "ease-in-out",
-             }
-           );
-           setTimeout(() => {
-             this.Nabours[i].classList.remove("_is-active");
-             this.Hiddens[i].classList.remove("_is-active");
-             this.Hiddens[i].style.height = 0 + "px";
-           }, 190);
+        if (
+          this.Nabours[i] !== this.Nabours[this.nummer] &&
+          this.Nabours[i].classList.contains("_is-active")
+        ) {
+          this.Change(i, this.nummer);
         }
       }
-      setTimeout(() => {
-        this.actionOpen();
-      }, 100);
     } else {
-      this.actionClose();
+      this.close();
     }
- 
+
+    if (!this.button.classList.contains("_is-active")) {
+      for (let i = 0; i < this.Nabours.length; i++) {
+        if (
+          this.Nabours[i] !== this.button &&
+          this.Nabours[i].classList.contains("_is-active")
+        ) {
+          return;
+        }
+      }
+      this.open();
+    }
+  }
+  // -----------------------------------------------
+  static resetDouble() {
+    [...document.querySelectorAll(".accord-item-js")].forEach((item) => {
+      item.classList.remove("_is-active");
+    });
+    [...document.querySelector(".accord-hidden-js").children].forEach(
+      (item) => {
+        item.classList.remove("_is-active");
+        item.style.height = 0;
+        item.style.display = "none";
+      }
+    );
   }
   // -----------------------------------------------
   static resetAll() {
@@ -99,24 +181,27 @@ export class Accord {
       item.classList.remove("_is-active");
     });
 
-    [...document.querySelector(".accord-hidden-js").children].forEach((item) => {
-      if (item.classList.contains("_is-active")){
-        var animation = item.animate(
-          [{ height: `${item.scrollHeight}px` }, { height: "0px" }],
-          {
-            duration: 200,
-            easing: "ease-in-out",
-          }
-        );
-        animation.addEventListener(
-          "finish",
-          function () {
-            item.style.height = 0;
-          },
-          false
-        );
+    [...document.querySelector(".accord-hidden-js").children].forEach(
+      (item) => {
+        if (item.classList.contains("_is-active")) {
+          var animation = item.animate(
+            [{ height: `${item.scrollHeight}px` }, { height: "0px" }],
+            {
+              duration: 200,
+              easing: "ease-in-out",
+            }
+          );
+          animation.addEventListener(
+            "finish",
+            function () {
+              item.classList.remove("_is-active");
+              item.style.height = 0;
+            },
+            false
+          );
+        }
       }
-    });
+    );
   }
   // -----------------------------------------------
 }

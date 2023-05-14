@@ -8,13 +8,12 @@ import { Button } from "./assets/js/button";
 import { Anim } from "./assets/js/animation";
 import { Marque } from "./assets/js/marque";
 
-
 import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
 import { Header } from "./src/pug/components/header/header";
 import { Popups } from "./src/pug/components/popup/popup";
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
-import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";  
+import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 import { Gal } from "./src/pug/components/galSlider/galSlider";
 import { Accord } from "./src/pug/components/accord/accord";
 import { MyTab } from "./src/pug/components/tabs/tabs";
@@ -25,10 +24,9 @@ import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
 
-
 document.addEventListener("DOMContentLoaded", function () {
-   Look();
-    Anim();
+  Look();
+  Anim();
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
@@ -68,29 +66,43 @@ document.addEventListener("DOMContentLoaded", function () {
   const accordAll = document.querySelectorAll(".accord");
   if (accordAll.length > 0) {
     document.addEventListener("click", (e) => {
-      if ( e.target.closest(".accord-js")) {
+      if (e.target.closest(".accord-js")) {
         const target = e.target.closest(".accord-item-js");
         const accord = new Accord(target);
-        accord.start();
-      }
-       else {
+          accord.start();
+      } else {
         Accord.resetAll();
       }
     });
+    document.addEventListener("dblclick", (e) => {
+      if (e.target.closest(".accord-item-js")) {
+        Accord.resetDouble();
+      }
+    });
   }
-  const tabs = document.querySelectorAll(".tab-js");
+  const tabs = document.querySelectorAll(".tabs-container-js");
   if (tabs.length > 0) {
-    MyTab();
+    document.addEventListener("click", (e) => {
+      if (e.target.closest(".tab-title-js")) {
+        const target = e.target.closest(".tab-js");
+        const Tab = new MyTab(target);
+        Tab.start();
+      } else if (!e.target.closest(".tabs-container-js")) {
+        MyTab.resetAll();
+      } else if (!e.target.closest(".tab-js")) {
+        MyTab.resetAll();
+      }
+    });
   }
 
-const ranges = [...document.querySelectorAll(".range-wrap")];
+  const ranges = [...document.querySelectorAll(".range-wrap")];
   if (ranges.length > 0) {
     ranges.forEach((item) => {
       MyRange(item);
     });
   }
 
- const selects = [...document.querySelectorAll(".select-custom")];
+  const selects = [...document.querySelectorAll(".select-custom")];
   if (selects.length > 0) {
     selects.forEach((select) => {
       Select(select);
@@ -113,17 +125,13 @@ const ranges = [...document.querySelectorAll(".range-wrap")];
     });
   }
 
-
-const textTypedAll = [...document.querySelectorAll("._hover-typed")];
-if (textTypedAll.length > 0) {
-  textTypedAll.forEach((item) => {
-    TypedItem(item);
-  });
-}
-
-
+  const textTypedAll = [...document.querySelectorAll("._hover-typed")];
+  if (textTypedAll.length > 0) {
+    textTypedAll.forEach((item) => {
+      TypedItem(item);
+    });
+  }
 });
-
 
 // ===============================================
 Object.defineProperty(HTMLElement.prototype, "addAct", {
@@ -141,4 +149,3 @@ Object.defineProperty(HTMLElement.prototype, "remAct", {
     }
   },
 });
-

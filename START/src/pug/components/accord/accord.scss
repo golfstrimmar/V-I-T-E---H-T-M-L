@@ -10,8 +10,9 @@
   transition: all .2s ease-in-out;
   cursor: pointer;
   outline: 1px solid rgb(51, 120, 180);
+  padding: 10px;
   &:hover {
-    background: rgb(51, 120, 180);
+    background: rgb(248, 68, 143);
   }
   &._is-active {
     background: rgb(146, 17, 71);
@@ -19,14 +20,12 @@
 }
 
 .accord-hidden {
-  transition: all .2s ease-in-out;
   grid-column: 1/4;
   background: rgb(134, 231, 125);
   overflow: hidden;
 
 }
 .accord__content{
-  //  transition: all 1s ease-in-out;
    height: 0;
    overflow: hidden;
   &._is-active {
