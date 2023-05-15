@@ -4,42 +4,35 @@ section#galery.galery
       h2 galery + lazy
     .galery__body.galery-body._galery-body-js
       .galery__nav.galery-nav-js
-        button.galery__nav-item._galery-nav-item-js._is-active(type='button' data='all' disabled='') all
+        //- button.galery__nav-item._galery-nav-item-js._is-active(type='button' data='all' disabled='') all
+        button.galery__nav-item._galery-nav-item-js(type='button' data='all' ) all
         button.galery__nav-item._galery-nav-item-js(type='button' data='red') red
         button.galery__nav-item._galery-nav-item-js(type='button' data='blue') blue
         button.galery__nav-item._galery-nav-item-js(type='button' data='green') green
         button.galery__nav-item._galery-nav-item-js(type='button' data='coral') coral
-      ul.galery__items
-        li.galery__item._start-item.rel(data='red')
-          .imgs
-            img(src='./assets/img/paralax.jpg' alt='')
-        li.galery__item._start-item.rel(data='blue')
-          .imgs
-            img(src='./assets/img/img-1.png' alt='')
-        li.galery__item._start-item.rel(data='coral')
-          .imgs
-            img(src='./assets/img/img-2.png' alt='')
-        li.galery__item._start-item.rel(data='green')
-          .imgs
-            img(src='./assets/img/img-3.png' alt='')
-        li.galery__item._start-item.rel(data='blue')
-          .imgs
-            img(src='./assets/img/img-1.png' alt='')
-        li.galery__item._start-item.rel(data='green')
-          .imgs
-            img(src='./assets/img/img-2.png' alt='')
-        li.galery__item._start-item.rel(data='blue')
-          .imgs
-            img(src='./assets/img/img-3.png' alt='')
-        li.galery__item._start-item.rel(data='red')
-          .imgs
-            img(src='./assets/img/img-1.png' alt='')
-        li.galery__item._start-item.rel(data='blue')
-          .imgs
-            img(src='./assets/img/img-2.png' alt='')
-        li.galery__item._start-item.rel(data='coral')
-          .imgs
-            img(src='./assets/img/img-3.png' alt='')
+      ul.galery__items._plasa-js
+        -
+          var blocks = [
+            {src: './assets/img/img-1.png',data: 'red',},
+            {src: './assets/img/paralax.jpg',data: 'blue',},
+            {src: './assets/img/img-1.png',data: 'green',},
+            {src: './assets/img/img-1.png',data: 'green',},
+            {src: './assets/img/img-2.png',data: 'coral',},
+            {src: './assets/img/paralax.jpg',data: 'blue',},
+            {src: './assets/img/img-1.png',data: 'green',},
+            {src: './assets/img/img-1.png',data: 'red',},
+            {src: './assets/img/img-1.png',data: 'green',},
+            {src: './assets/img/img-3.png',data: 'red',},
+            {src: './assets/img/img-3.png',data: 'green',},
+            {src: './assets/img/paralax.jpg',data: 'blue',},
+            {src: './assets/img/img-1.png',data: 'green',},
+            {src: './assets/img/img-2.png',data: 'coral',},
+          ];
+        each block in blocks
+          li.galery__item._galery-item-js.rel(data=block.data)
+            .imgs
+              img(src=block.src alt='img')
+  
       section#slider-galery
         .slider__body
           button.slider-arrow.slider-arrow-prev.arrow-galery-prev(type='button')

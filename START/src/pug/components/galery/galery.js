@@ -2,7 +2,6 @@
 // import { Polifils } from "/src/functions";
 import Swiper, { Navigation } from "swiper";
 
-
 export class MyGalery {
   constructor(Gal) {
     this.Gal = Gal;
@@ -11,12 +10,162 @@ export class MyGalery {
         "._galery-nav-item-js"
       ),
     ];
+    this.numer = 0;
+    this.temp = "";
+    this.plaza =
+      this.Gal.closest("._galery-body-js").querySelector("._plasa-js");
+    this.fotos = [...this.plaza.querySelectorAll("._galery-item-js")];
+    this.Attr = this.Gal.getAttribute("data");
+    this.fotoWidth = 0;
+    this.fotoHeight = 0;
   }
   // ==================================
-  start(){
-for (let i = 0; this.navItems.length > i; i++) {
-  console.log(this.navItems[i]);
-}
+  addAct(arg) {
+    arg.classList.add("_is-active");
+  }
+  // this.addAct();
+  remAct(arg) {
+    arg.classList.remove("_is-active");
+  }
+  // this.remAct();
+  vechselAct(arg) {
+    arg.classList.remove("_is-active");
+    arg.classList.add("_is-active");
+  }
+
+  // ==================================
+  close(foto, tWidth, tHeight) {
+    var anim = foto.animate(
+      [
+        {
+          width: tWidth + "px",
+          height: tHeight + "px",
+        },
+        {
+          width: `0px`,
+          height: `0px`,
+        },
+      ],
+      {
+        duration: 3000,
+        easing: "ease-in-out",
+      }
+    );
+    const beendet = () => {
+      foto.style.height = "0px";
+      foto.style.width = "0px";
+      foto.style.position = "absolute";
+    };
+    anim.addEventListener("finish", (e) => {
+      beendet();
+    });
+  }
+  // ==================================
+  open(foto, tWidth, tHeight) {
+    foto.style.position = "relative";
+    var animopen = foto.animate(
+      [
+        {
+          width: `0px`,
+          height: `0px`,
+        },
+        {
+          width: tWidth + "px",
+          height: tHeight + "px",
+        },
+      ],
+      {
+        duration: 3000,
+        easing: "ease-in-out",
+      }
+    );
+    const beendetopen = () => {
+      foto.style.width = tWidth + "px";
+      foto.style.height = tHeight + "px";
+      // 
+    };
+    animopen.addEventListener("finish", (e) => {
+      beendetopen();
+    });
+  }
+  // ==================================
+  change(foto, tWidth, tHeight) {
+    var anim = foto.animate(
+      [
+        {
+          width: tWidth + "px",
+          height: tHeight + "px",
+        },
+        { height: "0px", width: "0px" },
+      ],
+      {
+        duration: 3000,
+        easing: "ease-in-out",
+      }
+    );
+
+    const beendet = () => {
+      foto.style.height = "0px";
+      foto.style.width = "0px";
+      foto.style.position = "absolute";
+      this.open(foto, tWidth, tHeight);
+    };
+    anim.addEventListener("finish", (e) => {
+      beendet();
+    });
+  }
+  // ==================================
+  start(tWidth, tHeight) {
+    for (let i = 0; i < this.navItems.length; i++) {
+      this.temp = this.navItems[i];
+      if (this.Gal === this.temp) {
+        this.numer = i;
+        this.addAct(this.temp);
+      } else if (this.temp.classList.contains("_is-active")) {
+        this.remAct(this.temp);
+      }
+    }
+
+
+    var tempchange = this.fotos.map((el) => {
+      if (el.getAttribute("data") === this.Attr) {
+        return el;
+      }
+    });
+
+    var tempclose = this.fotos.map((el) => {
+      if (el.getAttribute("data") !== this.Attr) {
+        return el;
+      }
+    });
+
+
+    if (tempchange.length > 0) {
+      tempchange.forEach((element) => {
+       
+        if (element) {
+           console.log(element);
+          this.change(element, tWidth, tHeight);
+        }
+        
+      });
+    }
+
+    if (tempclose.length > 0) {
+      tempclose.forEach((element) => {
+         
+         if (element) {
+          console.log(element);
+           this.close(element, tWidth, tHeight);
+         }
+      });
+    }
+
+    if (this.Attr === "all") {
+      this.fotos.forEach((foto) => {
+        this.open(foto, tWidth, tHeight);
+      });
+    }
   }
 
   // const galery = document.querySelector("#galery ");
@@ -202,4 +351,4 @@ for (let i = 0; this.navItems.length > i; i++) {
   //   //   }, timeout);
   //   // }
   // });
-};
+}

@@ -49,13 +49,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // }
   const galeryAll = document.querySelectorAll("._galery-body-js");
 if (galeryAll.length > 0) {
+       const tWidth = document.querySelector("._galery-item-js").clientWidth;
+       const tHeight = document.querySelector("._galery-item-js").clientHeight;
   document.addEventListener("click", (e) => {
      if (e.target.closest("._galery-nav-item-js")) {
        const target = e.target.closest("._galery-nav-item-js");
        const Galery = new MyGalery(target);
-       Galery.start();
+       Galery.start(tWidth, tHeight);
      } else {
-      //  Accord.resetAll();
+       //  Galery.resetAll();
      }
   });
 }
