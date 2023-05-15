@@ -2,13 +2,13 @@ section#galery.galery
   .container
     .galery__title.title.t-25
       h2 galery + lazy
-    .galery__body.galery-body
-      .galery__nav
-        button.galery__nav-item._is-active(type='button' data='all' disabled='') all
-        button.galery__nav-item(type='button' data='red') red
-        button.galery__nav-item(type='button' data='blue') blue
-        button.galery__nav-item(type='button' data='green') green
-        button.galery__nav-item(type='button' data='coral') coral
+    .galery__body.galery-body._galery-body-js
+      .galery__nav.galery-nav-js
+        button.galery__nav-item._galery-nav-item-js._is-active(type='button' data='all' disabled='') all
+        button.galery__nav-item._galery-nav-item-js(type='button' data='red') red
+        button.galery__nav-item._galery-nav-item-js(type='button' data='blue') blue
+        button.galery__nav-item._galery-nav-item-js(type='button' data='green') green
+        button.galery__nav-item._galery-nav-item-js(type='button' data='coral') coral
       ul.galery__items
         li.galery__item._start-item.rel(data='red')
           .imgs
