@@ -82,7 +82,6 @@ export class MyGalery {
     const beendetopen = () => {
       foto.style.width = tWidth + "px";
       foto.style.height = tHeight + "px";
-      // 
     };
     animopen.addEventListener("finish", (e) => {
       beendetopen();
@@ -142,10 +141,9 @@ export class MyGalery {
 
     if (tempchange.length > 0) {
       tempchange.forEach((element) => {
-       
-        if (element) {
-           console.log(element);
-          this.change(element, tWidth, tHeight);
+        if (element ) {
+          this.open(element, tWidth, tHeight);
+
         }
         
       });
@@ -153,9 +151,7 @@ export class MyGalery {
 
     if (tempclose.length > 0) {
       tempclose.forEach((element) => {
-         
          if (element) {
-          console.log(element);
            this.close(element, tWidth, tHeight);
          }
       });
