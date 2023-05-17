@@ -10,6 +10,13 @@
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid transparent;
   // background-image: url("/dist/img/img-1.png")
+  &__button{
+   margin: 0 0 0 20px;
+  }
+  .btn--success{
+    width: 180px;
+    height: 40px;
+  }
 }
 
 .header .container {
@@ -20,7 +27,7 @@
   position: relative;
   height: 100%;
   display: grid;
-  grid-template-columns: 100px 1fr 350px;
+  grid-template-columns: 100px 1fr 450px;
   width: 100%;
   gap: 0 20px;
   justify-content: space-between;
@@ -103,6 +110,7 @@
   display: flex;
   align-items: center;
   height: 25px;
+  min-width: 25px;
   position: relative;
   margin: 0 0 0 10px;
   justify-content: space-between;
