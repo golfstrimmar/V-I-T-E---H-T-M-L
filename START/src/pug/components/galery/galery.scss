@@ -44,7 +44,9 @@
 .galery__nav-item[data="coral"] {
   background-color: coral;
 }
-
+.galery__item .galery__img{
+transition: all .3s;
+}
 .galery__item[data="red"] {
   .galery__img {
     outline: 2px solid red;

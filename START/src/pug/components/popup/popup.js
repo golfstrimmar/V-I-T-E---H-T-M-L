@@ -6,23 +6,8 @@ import Swiper, { Navigation } from "swiper";
 export class Popup {
   constructor(pop) {
     this.popInit = pop;
-    if (this.popInit.closest("._galery-item-js")) {
-      this.category = this.popInit
-        .closest("._galery-item-js")
-        .getAttribute("data");
-    }
     this.rel = this.popInit.getAttribute("rel");
     this.pop = document.querySelector(".popup-js");
-    this.plasa = this.popInit.closest("._plasa-js");
-    this.plasaRelItems = [... this.plasa.querySelectorAll("._galery-item-js")]
-    this.plasaRelIt = this.plasaRelItems
-      .map((el) => {
-        if (el.getAttribute("data") === this.category ) {
-          return el;
-        }
-      })
-      .filter((el) => el !== undefined);
-      this.initialSlide = this.plasaRelIt.indexOf(this.popInit.closest("._galery-item-js"));
     this.content = "";
     this.linkPlyr = "";
     this.popoverlay = this.pop.querySelector(".popup__overlay");
@@ -49,77 +34,82 @@ export class Popup {
     }
   }
   // =====================
-  close() {
-    this.body.classList.remove("lock");
-    this.pop.classList.remove("_is-active");
-    this.content.classList.remove("_is-active");
-    if (this.newPlayer) {
-      this.newPlayer.destroy();
-      this.newPlayer = "";
-    }
-    if (this.rel === "#popupGalery") {
-      this.pop
-        .querySelector(".popup__inner")
-        .classList.remove("popup__inner--galary");
-      this.pop
-        .querySelector(".popup-close-js")
-        .classList.remove("close--galary");
-    }
+  closePlyr() {
+    document.addEventListener('click',(e) =>{ 
+          if (this.newPlayer) {
+            this.newPlayer.destroy();
+            this.newPlayer = "";
+          }
+    });
   }
   // =====================
-  start() {
-    console.log(this.plasaRelIt);
+  startGalary(plasa, itemIndex) {
     this.body.classList.add("lock");
-    if (this.rel === "#popupGalery") {
-      var tempStoragePop = JSON.parse(localStorage.getItem("object"));
-      var popupGalerySwiper = this.pop.querySelector("#popupGalerySwiper");
-      var temp = "";
-      var tempSrc = "";
-      popupGalerySwiper.innerHTML = "";
-      for (var i = 0; i < tempStoragePop.length; i++) {
-         temp = document.createElement("li");
-        tempSrc = tempStoragePop[i];
-        temp.classList.add("slider__item", "swiper-slide");
-        temp.innerHTML = `
-          <div class="imgs">
-            <img src= "${tempSrc}"> </img>
-          </div>`;
-        popupGalerySwiper.append(temp);
-       
-      }
-
-      this.pop
-        .querySelector(".popup__inner")
-        .classList.add("popup__inner--galary");
-
-      this.pop.querySelector(".popup-close-js").classList.add("close--galary");
-      
-      const mySwiperGalary = new Swiper(".slider-js-galery", {
-        slidesPerView: 1,
-        speed: 500,
-        modules: [Navigation],
-        navigation: {
-          nextEl: ".arrow-galery-next",
-          prevEl: ".arrow-galery-prev",
-        },
-        initialSlide: this.initialSlide,
-        grabCursor: true,
-      });
+    var popupGalerySwiper = this.pop.querySelector("#popupGalerySwiper");
+    popupGalerySwiper.innerHTML = "";
+    for (var i = 0; i < plasa.length; i++) {
+      var temp = document.createElement("li");
+      temp.classList.add("slider__item", "swiper-slide");
+      temp.innerHTML = ` <div class="imgs">
+        <img src= "${plasa[i]}"> </img>
+      </div>`;
+      popupGalerySwiper.append(temp);
     }
 
+    this.pop
+      .querySelector(".popup__inner")
+      .classList.add("popup__inner--galary");
+    this.pop.querySelector(".popup-close-js").classList.add("close--galary");
+    const mySwiperGalary = new Swiper(".slider-js-galery", {
+      slidesPerView: 1,
+      speed: 500,
+      modules: [Navigation],
+      navigation: {
+        nextEl: ".arrow-galery-next",
+        prevEl: ".arrow-galery-prev",
+      },
+      initialSlide: itemIndex,
+      grabCursor: true,
+    });
     setTimeout(() => {
       this.open();
     }, 200);
-    document.addEventListener("click", (e) => {
-      if (
-        e.target.closest(".popup-overlay-js") &&
-        !e.target.closest(".popup-inner-js")
-      ) {
-        this.close();
-      }
-      if (e.target.closest(".popup-close-js")) {
-        this.close();
-      }
-    });
+    this.closePlyr();
+  }
+  // ==========="
+
+  // =====================
+  start() {
+    this.body.classList.add("lock");
+    setTimeout(() => {
+      this.open();
+    }, 200);
+    this.closePlyr();
+  }
+  // =====================
+  static close() {
+    document.querySelector("body").classList.remove("lock");
+    document.querySelector(".popup-js").classList.remove("_is-active");
+    document
+      .querySelector(".popup-js")
+      .querySelectorAll(".popup__content").forEach(element => {
+        element.classList.remove("_is-active"); 
+      });
+    if (
+      document
+        .querySelector(".popup-js")
+        .querySelector(".popup__inner")
+        .classList.contains("popup__inner--galary")
+    ) {
+      document
+        .querySelector(".popup-js")
+        .querySelector(".popup__inner")
+        .classList.remove("popup__inner--galary");
+
+      document
+        .querySelector(".popup-js")
+        .querySelector(".popup-close-js")
+        .classList.remove("close--galary");
+    }
   }
 }

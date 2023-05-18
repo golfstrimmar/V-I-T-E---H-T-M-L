@@ -1,8 +1,9 @@
 "use ctrict";
-
+import Plyr from "plyr";
 export class Accord {
   constructor(button) {
     this.button = button;
+    this.Accord = this.button.closest(".accord-js");
     this.Nab = [
       ...this.button.closest(".accord-js").querySelectorAll(".accord-item-js"),
     ];
@@ -16,7 +17,25 @@ export class Accord {
         .children,
     ];
     this.nummer = 0;
+    this.simplePlir = "";
   }
+
+  // ================================
+  // openPlyr() {
+  //   if (this.Accord.querySelector("#player-1")) {
+  //     var r = this.Accord.querySelector("#player-1");
+  //     this.simplePlir = new Plyr(r);
+  //     this.simplePlir.play();
+  //   }
+  // }
+  // closePlyr() {
+  //   document.addEventListener("click", (e) => {
+  //     if (this.simplePlir) {
+  //       this.simplePlir.destroy();
+  //       this.simplePlir = "";
+  //     }
+  //   });
+  // }
   // -----------------------------------------------
 
   close() {
@@ -46,9 +65,9 @@ export class Accord {
       },
       false
     );
-
-    // ================================
   }
+
+  // ================================
 
   open() {
     [...document.querySelector(".accord-hidden-js").children].forEach(
@@ -70,6 +89,7 @@ export class Accord {
 
     const activeHEAD = (e) => {
       temp1.style.height = `${temp1.scrollHeight}px`;
+      temp1.style.height = "auto";
     };
     animation.addEventListener(
       "finish",
@@ -97,8 +117,8 @@ export class Accord {
       temp1.classList.remove("_is-active");
       temp2.classList.remove("_is-active");
       temp2.style.height = 0;
-              temp3.classList.add("_is-active");
-              temp4.classList.add("_is-active");
+      temp3.classList.add("_is-active");
+      temp4.classList.add("_is-active");
       var an = temp4.animate(
         [{ height: "0px" }, { height: `${temp4.scrollHeight}px` }],
         {
@@ -109,7 +129,7 @@ export class Accord {
 
       function finischAnim() {
         temp4.style.height = `${temp4.scrollHeight}px`;
-
+        temp4.style.height = "auto";
       }
       an.addEventListener(
         "finish",
@@ -124,7 +144,6 @@ export class Accord {
       "finish",
       function () {
         openHidButton();
-        console.log("finish");
       },
       false
     );

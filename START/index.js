@@ -44,17 +44,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const galeryAll = document.querySelectorAll("._galery-body-js");
+
   if (galeryAll.length > 0) {
-    const tWidth = document.querySelector("._galery-item-js").clientWidth;
-    const tHeight = document.querySelector("._galery-item-js").clientHeight;
+    var tWidth = document.querySelector("._galery-item-js").scrollWidth;
+    var tHeight = document.querySelector("._galery-item-js").scrollHeight;
     document.addEventListener("click", (e) => {
       if (e.target.closest("._galery-nav-item-js")) {
         const target = e.target.closest("._galery-nav-item-js");
         const Galery = new MyGalery(target);
         Galery.start(tWidth, tHeight);
-      } else {if (!e.target.closest("._galery-body-js") ) {
-        MyGalery.resetAll(tWidth, tHeight);
-      }
+      } else {
+        if (!e.target.closest("._galery-body-js")) {
+          MyGalery.resetAll(tWidth, tHeight);
+        }
       }
     });
   }
@@ -72,17 +74,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const popupsInit = document.querySelectorAll(".popups-init-js");
   if (popupsInit.length > 0) {
     const initPopup = (e) => {
-      let target = e.target.closest(".popups-init-js");
-      let newPopup = new Popup(target);
-      newPopup.start();
+      let newPopup = "empty";
+      if (e.target.closest(".popups-init-js")) {
+        let target = e.target.closest(".popups-init-js");
+        newPopup = new Popup(target);
+        newPopup.start();
+      }
+
+      if (e.target.closest("._galery-item-js")) {
+        let plasa = "";
+        let item = "";
+        let itemIndex = 0;
+        item = e.target.closest(".popups-init-js").closest("._galery-item-js");
+        plasa = [...item.closest("._plasa-js").children];
+        plasa = plasa.filter((el) => el.style.width !== "0px");
+        itemIndex = plasa.indexOf(item);
+        plasa = plasa.map((el) => el.querySelector("img").getAttribute("src"));
+        let target = e.target.closest(".popups-init-js");
+        newPopup = new Popup(target);
+        newPopup.startGalary(plasa, itemIndex);
+      }
+
+      if (e.target.closest(".popup-close-js")) {
+        Popup.close();
+      }
+      if (
+        e.target.closest(".popup-overlay-js") &&
+        !e.target.closest(".popup-inner-js")
+      ) {
+        Popup.close();
+      }
     };
 
-    popupsInit.forEach(element => {
-      element.addEventListener("click", (e) => {
-        initPopup(e);
-      });
+    document.addEventListener("click", (e) => {
+      initPopup(e);
     });
-    
   }
 
   if (document.querySelector("header")) {
@@ -93,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (accordAll.length > 0) {
     document.addEventListener("click", (e) => {
       if (e.target.closest(".accord-js")) {
-        
         const target = e.target.closest(".accord-item-js");
         const accord = new Accord(target);
         accord.start();

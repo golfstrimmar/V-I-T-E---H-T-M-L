@@ -36,31 +36,8 @@
             button.slider-arrow.slider-arrow-next.arrow-galery-next(type='button')
               svg.icon
                 use(xlink:href='#chevron-right')
-            //- svg.galeryPopupClose
-            //-   use(xlink:href='#x')
             .slider__wrapper.slider-js-galery.swiper-container
               ul.swiper-wrapper#popupGalerySwiper
-                -
-                  var blocks = [
-                    //- {src: './assets/img/img-3.png',data: 'red',},
-                    //- {src: './assets/img/paralax.jpg',data: 'blue',},
-                    //- {src: './assets/img/img-1.png',data: 'green',},
-                    //- {src: './assets/img/img-1.png',data: 'green',},
-                    //- {src: './assets/img/img-2.png',data: 'coral',},
-                    //- {src: './assets/img/paralax.jpg',data: 'blue',},
-                    //- {src: './assets/img/img-1.png',data: 'green',},
-                    //- {src: './assets/img/img-3.png',data: 'red',},
-                    //- {src: './assets/img/img-1.png',data: 'green',},
-                    //- {src: './assets/img/img-3.png',data: 'red',},
-                    //- {src: './assets/img/img-1.png',data: 'green',},
-                    //- {src: './assets/img/paralax.jpg',data: 'blue',},
-                    //- {src: './assets/img/img-1.png',data: 'green',},
-                    //- {src: './assets/img/img-2.png',data: 'coral',},
-                  ];
-                each block in blocks
-                  li.slider__item.swiper-slide
-                    .imgs
-                      img(src=block.src)
        
       i.popup__close.popup-close-js
         svg
