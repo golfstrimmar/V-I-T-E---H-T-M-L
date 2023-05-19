@@ -228,3 +228,25 @@ footer, #kons {
   }
 }
 
+footer{
+#tabs--common .tabs__body {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 ;
+}
+#tabs--common ul > li {
+        border: none;
+        padding: 0 ;
+}
+.tab__title {
+        padding: 5px ;
+        background-color: rgb(60, 168, 218, 0);
+        border: 1px solid red;
+        justify-content: left;
+        column-gap: 10px;
+        span {
+        color: $white;
+}
+}
+}
+
