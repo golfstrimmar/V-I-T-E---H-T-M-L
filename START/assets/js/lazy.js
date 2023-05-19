@@ -5,7 +5,7 @@ export const Lazy = () => {
     let images = document.querySelectorAll("img");
     const options = {
       root: null,
-      rootMargin: "-255px",
+      rootMargin: "-5px",
       threshold: 0.1,
     };
     function handleImg(myImg, observer) {

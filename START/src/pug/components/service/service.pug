@@ -1,0 +1,142 @@
+section(id='service').service.rel
+  .container
+    .service__title.title
+      h2 Популярные 
+        span услуги
+    .service__body
+      .service__img.rel._a
+        .imgs
+          img(src='../../../../assets/img/service.png' alt='img') 
+      .service__block.s-block._b
+        .s-block__title._a 
+          .s-block__img.rel
+            .imgs
+              img(src='../../../../assets/img/serv-1.svg' alt='img')
+          h3 Нужна быстрая помощь
+
+
+        .s-block__card.s-card._b 
+          .s-card__title 
+            h4 Наркомания
+          -
+            var blocks = [
+              {
+                title: 'УБОД',
+                text1: "от",
+                text: '	30 000 ₽'
+              },
+              {
+                title: 'Снятие ломки',text1: "от",
+                text: '	6 500 ₽'
+              },
+              {
+                title: 'Наркологическая помощь',text1: "от",
+                text: '	6 000 ₽'
+              },
+              {
+                title: 'Детоксикация от наркотиков',text1: "от",
+                text: '	6 000 ₽'
+              },
+
+            ];
+          each block in blocks
+            .s-card__item 
+              div=block.title 
+              span=block.text1
+              span=block.text
+
+        .s-block__card.s-card._c 
+          .s-card__title 
+            h4 Детоксикация от наркотиков
+          -
+            var blocks = [
+              {
+                title: 'Вывод из запоя',text1: "от",
+                text: '3 500 ₽'
+              },
+              {
+                title: 'Капельница от похмелья',text1: "от",
+                text: '3 500 ₽'
+              },
+              {
+                title: 'Нарколог на дом',text1: "от",
+                text: '3 500 ₽'
+              },
+              {
+                title: 'Консультация нарколога',text1: "от",
+                text: '3 500 ₽'
+              },
+
+            ];
+          each block in blocks
+            .s-card__item 
+              div=block.title 
+              span=block.text1
+              span=block.text
+
+
+      .service__block.s-block._c
+        .s-block__title._a
+          .s-block__img.rel
+            .imgs
+              img(src='../../../../assets/img/serv-2.svg' alt='img')
+          h3 Нужно комплексное лечение
+
+
+
+        .s-block__card.s-card._b 
+          .s-card__title
+            h4 Наркомания
+          -
+            var blocks = [
+              {
+                title: 'Реабилитация наркомании',text1: "от",
+                text: '30 000 ₽'
+              },
+              {
+                title: 'Кодирование Налтрексоном',text1: "от",
+                text: '6 500 ₽'
+              },
+              {
+                title: 'Лечение от Соли',text1: "от",
+                text: '6 000 ₽'
+              },
+              {
+                title: 'Лечение от Лирики',text1: "от",
+                text: '6 000 ₽'
+              },
+
+            ];
+          each block in blocks
+            .s-card__item 
+              div=block.title 
+              span=block.text1
+              span=block.text
+        .s-block__card.s-card._c 
+          .s-card__title 
+            h4 Детоксикация от наркотиков
+          -
+            var blocks = [
+              {
+                title: 'Лечение алкоголизма',text1: "от",
+                text: '3 500 ₽'
+              },
+              {
+                title: 'Реабилитация алкоголизма',text1: "от",
+                text: '3 500 ₽'
+              },
+              {
+                title: 'Кодирование от алкоголизма',text1: "от",
+                text: '3 500 ₽'
+              },
+              {
+                title: 'Стационарное',text1: "от",
+                text: '3 500 ₽'
+              },
+
+            ];
+          each block in blocks
+            .s-card__item 
+              div=block.title
+              span=block.text1
+              span=block.text

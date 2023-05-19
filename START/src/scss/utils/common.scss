@@ -4,8 +4,26 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  .imgs {
-    // z-index: +1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $light-sky-blue;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: calc((100vw - 1805px) / 2);
+    z-index: 20;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: $light-sky-blue;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: auto;
+    right: calc((100vw - 1805px) / 2);
   }
 }
 
@@ -34,7 +52,6 @@ body {
 }
 
 .inner {
-  position: relative;
 }
 
 a {
@@ -126,15 +143,17 @@ svg.hidden {
 }
 .title {
   position: relative;
+  padding: 0 0 0 20px;
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -20px;
+    left: -2px;
     width: 5px;
-    height: 112px;
+    height: 100%;
     margin: 0 21px 32px 0;
-    background-color: $azul;
+    background-color: #2770f1;
+    z-index: 39;
   }
   h2 {
     font-size: 44px;
