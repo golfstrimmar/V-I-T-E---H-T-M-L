@@ -8,13 +8,12 @@ import { Button } from "./assets/js/button";
 import { Anim } from "./assets/js/animation";
 import { Marque } from "./assets/js/marque";
 
-
 import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
 import { Header } from "./src/pug/components/header/header";
-import { Popups } from "./src/pug/components/popup/popup";
+import { Popup } from "./src/pug/components/popup/popup";
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
-import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";  
+import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 import { Gal } from "./src/pug/components/galSlider/galSlider";
 import { Accord } from "./src/pug/components/accord/accord";
 import { MyTab } from "./src/pug/components/tabs/tabs";
@@ -25,10 +24,9 @@ import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
 
-
 document.addEventListener("DOMContentLoaded", function () {
-   Look();
-    Anim();
+  Look();
+  Anim();
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
@@ -44,9 +42,25 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#swiperDoubleTop")) {
     Double();
   }
-  if (document.querySelector("#galery")) {
-    MyGalery();
+
+  const galeryAll = document.querySelectorAll("._galery-body-js");
+
+  if (galeryAll.length > 0) {
+    var tWidth = document.querySelector("._galery-item-js").scrollWidth;
+    var tHeight = document.querySelector("._galery-item-js").scrollHeight;
+    document.addEventListener("click", (e) => {
+      if (e.target.closest("._galery-nav-item-js")) {
+        const target = e.target.closest("._galery-nav-item-js");
+        const Galery = new MyGalery(target);
+        Galery.start(tWidth, tHeight);
+      } else {
+        if (!e.target.closest("._galery-body-js")) {
+          MyGalery.resetAll(tWidth, tHeight);
+        }
+      }
+    });
   }
+
   if (document.querySelector("#swiper-scroll")) {
     SwiperScroll();
   }
@@ -59,8 +73,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const popupsInit = document.querySelectorAll(".popups-init-js");
   if (popupsInit.length > 0) {
-    Popups();
+    const initPopup = (e) => {
+      let newPopup = "empty";
+      if (e.target.closest(".popups-init-js")) {
+        let target = e.target.closest(".popups-init-js");
+        newPopup = new Popup(target);
+        newPopup.start();
+      }
+
+      if (e.target.closest("._galery-item-js")) {
+        let plasa = "";
+        let item = "";
+        let itemIndex = 0;
+        item = e.target.closest(".popups-init-js").closest("._galery-item-js");
+        plasa = [...item.closest("._plasa-js").children];
+        plasa = plasa.filter((el) => el.style.width !== "0px");
+        itemIndex = plasa.indexOf(item);
+        plasa = plasa.map((el) => el.querySelector("img").getAttribute("src"));
+        let target = e.target.closest(".popups-init-js");
+        newPopup = new Popup(target);
+        newPopup.startGalary(plasa, itemIndex);
+      }
+
+      if (e.target.closest(".popup-close-js")) {
+        Popup.close();
+      }
+      if (
+        e.target.closest(".popup-overlay-js") &&
+        !e.target.closest(".popup-inner-js")
+      ) {
+        Popup.close();
+      }
+    };
+
+    document.addEventListener("click", (e) => {
+      initPopup(e);
+    });
   }
+
   if (document.querySelector("header")) {
     Header();
   }
@@ -68,46 +118,43 @@ document.addEventListener("DOMContentLoaded", function () {
   const accordAll = document.querySelectorAll(".accord");
   if (accordAll.length > 0) {
     document.addEventListener("click", (e) => {
-      if (
-        e.target.closest(".accord-header-item") ||
-        e.target.closest(".accord-hidden-item")
-      ) {
-        const target = e.target.closest(".accord-header-item");
+      if (e.target.closest(".accord-js")) {
+        const target = e.target.closest(".accord-item-js");
         const accord = new Accord(target);
         accord.start();
       } else {
         Accord.resetAll();
       }
     });
+    document.addEventListener("dblclick", (e) => {
+      if (e.target.closest(".accord-item-js")) {
+        Accord.resetDouble();
+      }
+    });
   }
   const tabs = document.querySelectorAll(".tabs-container-js");
   if (tabs.length > 0) {
     document.addEventListener("click", (e) => {
-      
       if (e.target.closest(".tab-title-js")) {
         const target = e.target.closest(".tab-js");
         const Tab = new MyTab(target);
         Tab.start();
       } else if (!e.target.closest(".tabs-container-js")) {
         MyTab.resetAll();
-      }else if (!e.target.closest(".tab-js")) {
+      } else if (!e.target.closest(".tab-js")) {
         MyTab.resetAll();
       }
     });
   }
-  // const tabcontainers = [...document.querySelectorAll(".tabs-container-js")];
-  // if (tabcontainers.length > 0) {
-  //   MyTab();
-  // }
 
-const ranges = [...document.querySelectorAll(".range-wrap")];
+  const ranges = [...document.querySelectorAll(".range-wrap")];
   if (ranges.length > 0) {
     ranges.forEach((item) => {
       MyRange(item);
     });
   }
 
- const selects = [...document.querySelectorAll(".select-custom")];
+  const selects = [...document.querySelectorAll(".select-custom")];
   if (selects.length > 0) {
     selects.forEach((select) => {
       Select(select);
@@ -122,30 +169,18 @@ const ranges = [...document.querySelectorAll(".range-wrap")];
   //   const player1 = new Plyr(".player-1");
   // }
 
-  const galerys = document.querySelectorAll(".galery");
-
-  if (galerys.length > 0) {
-    galerys.forEach((galery) => {
-      MyGalery(galery);
+  const textTypedAll = [...document.querySelectorAll("._hover-typed")];
+  if (textTypedAll.length > 0) {
+    textTypedAll.forEach((item) => {
+      TypedItem(item);
     });
   }
-
-
-const textTypedAll = [...document.querySelectorAll("._hover-typed")];
-if (textTypedAll.length > 0) {
-  textTypedAll.forEach((item) => {
-    TypedItem(item);
-  });
-}
-
-
 });
-
 
 // ===============================================
 Object.defineProperty(HTMLElement.prototype, "addAct", {
   get: function () {
-    if (!this.classList.contains("_is-active")) {
+    if (!this.matches("_is-active")) {
       return this.classList.add("_is-active");
     }
   },
@@ -153,9 +188,8 @@ Object.defineProperty(HTMLElement.prototype, "addAct", {
 
 Object.defineProperty(HTMLElement.prototype, "remAct", {
   get: function () {
-    if (this.classList.contains("_is-active")) {
+    if (this.matches("_is-active")) {
       return this.classList.remove("_is-active");
     }
   },
 });
-
