@@ -1,0 +1,38 @@
+.pres {
+  &__body {
+    background-color: rgb(35, 187, 21);
+    min-height: 574px;
+    width: 502px;
+  }
+  .pres-img {
+    position: absolute;
+  }
+  &__img1 {
+    width: 296px;
+    height: 546px;
+    box-shadow: 0 0 12px rgb(143, 4, 50);
+    border-radius: 8px;
+    overflow: hidden;
+    top: 13px;
+    left: 11px;
+  }
+  &__img2 {
+    width: 161px;
+    height: 141px;
+    // border: 4px solid rgb(55, 185, 178);
+    box-shadow: 0 0 12px rgb(143, 24, 4);
+    border-radius: 8px;
+    overflow: hidden;
+    top: 13px;
+    left: 321px;
+  }
+  &__img3 {
+    width: 163px;
+    height: 387px;
+    box-shadow: 0 0 12px rgb(143, 24, 4);
+    border-radius: 8px;
+    overflow: hidden;
+    top: 171px;
+    left: 321px;
+  }
+}
