@@ -1,8 +1,6 @@
 "use ctrict";
 import Swiper, { Navigation, Pagination, EffectFade } from "swiper";
 
-
-
 export const Swiper1 =()=>{
   const mySwiper = new Swiper("#swiper-1", {
     spaceBetween: 10,
@@ -25,3 +23,12 @@ export const Swiper1 =()=>{
     grabCursor: true,
   });
 }
+export const Swiper1licens = () => {
+  const mySwiperlicens = new Swiper("#swiper-1licens", {
+    spaceBetween: 48,
+    slidesPerView: 4,
+    loop: "true",
+    speed: 500,
+    grabCursor: true,
+  });
+};

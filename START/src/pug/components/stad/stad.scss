@@ -1,0 +1,73 @@
+.stad {
+  background-color: $dark-slate-blue-three;
+  min-height: 839px;
+  z-index: 50;
+  &__dec{
+position: absolute;
+z-index: 10;
+ width: 105px;
+  height: 327px;
+
+  }
+  &__dec1{
+    bottom: 20px;
+    left: -20px;
+  }
+  &__dec2{
+right: 10px;
+top: -79px;
+  }
+  &__body{
+    padding: 56px 0 140px 60px;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    gap: 40px 32px;
+    margin: 140px 0 0 0;
+  }
+  &__title {
+    h2 {
+      color: $white;
+    }
+  }
+  &__img {
+    position: absolute;
+    width: 629px;
+    height: 700px;
+    top: 176px;
+    right: 0;
+    left: auto;
+    z-index: 50;
+  }
+  &__item {
+    background-color: $white;
+    box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.15);
+    border-top-left-radius: 40px;
+    padding: 16px 16px 24px 16px;
+  }
+  .stad-item {
+    &__numer {
+      width: 84px;
+      height: 84px;
+      box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.15);
+      background-color: $azul;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+
+      span {
+        font-size: 40px;
+        font-weight: bold;
+        color: $white;
+      }
+    }
+    &__text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: $dark-slate-blue-two;
+      margin: 16px 0 0 0;
+    }
+  }
+}

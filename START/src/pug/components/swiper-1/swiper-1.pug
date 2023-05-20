@@ -1,25 +1,49 @@
-h2.t-25(style="margin: 40px 0 0 0;")  swiper-1 + pagination + fade
-.swiper-1
-    .swiper-1__body
-        .slider-arrow.arrow-next-1
-          svg
-            use(xlink:href='#chevron-left') 
-        .slider-arrow.arrow-prev-1 
-          svg
-            use(xlink:href='#chevron-right')
-        #swiper-1.swiper
-          .swiper-wrapper
-            -
-              var blocks = [
-                {src: 'https://swiperjs.com/demos/images/nature-1.jpg' },
-                { src: 'https://swiperjs.com/demos/images/nature-2.jpg'},
-                { src: 'https://swiperjs.com/demos/images/nature-3.jpg'},
-                { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
-                { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
-                { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
-              ];
-            each block in blocks
-              .swiper-slide
-                .imgs
-                    img(src=block.src)
-        .swiper-pagination-1
+if section.licens
+  .swiper-1
+      .swiper-1__body
+          #swiper-1licens.swiper.swiper-container
+            .swiper-wrapper
+              -
+                var blocks = [
+                  {src: 'https://swiperjs.com/demos/images/nature-1.jpg' },
+                  { src: 'https://swiperjs.com/demos/images/nature-2.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-3.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
+                ];
+              each block in blocks
+                .swiper-slide
+                  .imgs
+                      img(src=block.src)
+                  a(href='#!' rel='#popup1').licens__link.popups-init-js.but-wave.btn.btn--success.center 
+                    svg
+                      use(xlink:href='../../../../assets/img/sprite.svg#licens-link')
+
+else
+  h2.t-25(style="margin: 40px 0 0 0;")  swiper-1 + pagination + fade
+  .swiper-1
+      .swiper-1__body
+          .slider-arrow.arrow-next-1
+            svg
+              use(xlink:href='#chevron-left') 
+          .slider-arrow.arrow-prev-1 
+            svg
+              use(xlink:href='#chevron-right')
+          #swiper-1.swiper
+            .swiper-wrapper
+              -
+                var blocks = [
+                  {src: 'https://swiperjs.com/demos/images/nature-1.jpg' },
+                  { src: 'https://swiperjs.com/demos/images/nature-2.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-3.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
+                ];
+              each block in blocks
+                .swiper-slide
+                  .imgs
+                      img(src=block.src)
+          .swiper-pagination-1
+

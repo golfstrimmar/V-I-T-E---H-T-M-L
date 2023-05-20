@@ -1,0 +1,53 @@
+.licens {
+  &__slider {
+    margin: 57px 0 0 0;
+  }
+  #swiper-1licens {
+    padding: 0 0 20px 0;
+    .swiper-slide {
+      box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.15);
+      border: solid 12px $white;
+      position: relative;
+              .licens__link {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 104px;
+          height: 104px;
+          z-index: 50;
+          transform: translate(-50%, -50%);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100px;
+          box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.15);
+          background-color: $azul;
+          opacity: 0;
+        }
+      &::after {
+        content: "";
+        background-color: rgba(21, 47, 96, 0.6);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: all 0.3s;
+      }
+      &:hover {
+        &::after {
+          background-color: rgba(21, 47, 96, 0);
+        }
+        .licens__link {
+         opacity: 1;
+         z-index: 50;
+         svg{
+          width: 50px;
+          height: 50px;
+         }
+        }
+      }
+    }
+  }
+}

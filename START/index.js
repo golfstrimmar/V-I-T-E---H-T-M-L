@@ -12,6 +12,7 @@ import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
 import { Header } from "./src/pug/components/header/header";
 import { Popup } from "./src/pug/components/popup/popup";
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
+import { Swiper1licens } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 import { Gal } from "./src/pug/components/galSlider/galSlider";
@@ -32,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (document.querySelector("#swiper-1")) {
     Swiper1();
+  }
+  if (document.querySelector("#swiper-1licens")) {
+    Swiper1licens();
   }
   if (document.querySelector(".marque")) {
     Marque();

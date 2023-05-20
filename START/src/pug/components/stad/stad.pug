@@ -1,6 +1,49 @@
 section(id='stad').stad.rel
+  .stad__img
+    .imgs
+      img(src='../../../../assets/img/stad.png' alt='img')
+  .stad__dec1.rel.stad__dec
+    .imgs
+      img(src='../../../../assets/img/kons.svg' alt='img')
+  .stad__dec2.rel.stad__dec
+    .imgs
+      img(src='../../../../assets/img/kons.svg' alt='img')
   .container
     .stad__body
       .stad__title.title
         h2 Этапы оказания 
           span помощи
+      ul.stad__items
+        -
+          var blocks = [
+            {
+              numer: '1',
+              text: 'Поступление в клинику вашей заявки или звонка'
+            },
+            {
+              numer: '2',
+              text: 'Наш оператор соберет анамнез и назначит специалиста для выезда'
+            },
+            {
+              numer: '3',
+              text: 'Врач приезжает за 30 минут'
+            },
+            {
+              numer: '4',
+              text: 'Оплата врачу производится перед процедурами (наличные, переводом на карту)'
+            },
+            {
+              numer: '5',
+              text: 'Оказание пациенту медицинской помощи (капельницы, уколы и др.)'
+            },
+            {
+              numer: '6',
+              text: 'Мы обязательно  перезвоним Вам, чтобы проконтролировать качество оказанной услуги'
+            },
+          ];
+        each block in blocks
+          li.stad__item.stad-item
+            .stad-item__numer.center
+              span=block.numer
+            p.stad-item__text=block.text
+
