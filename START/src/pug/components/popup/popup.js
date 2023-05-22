@@ -77,7 +77,15 @@ export class Popup {
     this.closePlyr();
   }
   // ==========="
-
+  startGAL(target) {
+    this.open();
+    var src = target
+      .closest(".GAL-item-js")
+      .querySelector("img")
+      .getAttribute("src");
+    this.content.querySelector("img").setAttribute("src", src);
+    this.content.closest(".popup__inner").classList.add("popup__inner--GAL");
+  }
   // =====================
   start() {
     this.body.classList.add("lock");

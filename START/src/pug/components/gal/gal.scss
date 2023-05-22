@@ -1,0 +1,32 @@
+.gal{
+    &__body{
+  
+
+    }
+    &__title{
+
+    }
+    &__items{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 370px);
+    gap: 32px;
+    margin: 40px 103px 0 ;
+    }
+   .Gal{
+    &__item{
+min-height: 277px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px 0 rgba(39, 112, 241, 0.35);
+  &:hover{
+    & > .common__link{
+      opacity: 1;
+        z-index: 50;
+    }
+  }
+    }
+    &__img{
+    }
+   }
+
+}

@@ -13,10 +13,10 @@ if section.licens
                   { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
                 ];
               each block in blocks
-                .swiper-slide.center 
+                .swiper-slide.center.GAL-item-js 
                   .imgs
                       img(src=block.src)
-                  a(href='#!' rel='#popup1').common__link.popups-init-js.center 
+                  a(href='#!' rel='#popupGal').common__link.popups-init-js.center 
                     svg
                       use(xlink:href='../../../../assets/img/sprite.svg#licens-link')
 

@@ -20,29 +20,7 @@
         transition: all 0.3s;
         opacity: 1;
       }
-      a.common__link {
-        width: 104px;
-        height: 104px;
-        z-index: 50;
-        border-radius: 100px;
-        box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.15);
-        background-color: $azul;
-        opacity: 0;
-        z-index: 50;
-        svg {
-          width: 50px;
-          height: 50px;
-          fill: $white;
-          transition: all 0.3s;
-        }
-        &:hover {
-          background-color: lighten($azul, 5%);
-          box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.15);
-          svg {
-            fill: $hover;
-          }
-        }
-      }
+
     }
     .swiper-slide:hover {
       &::after {

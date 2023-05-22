@@ -3,3 +3,26 @@ section(id='gal').gal.rel
     .gal__body
       .gal__title.title
         h2 Фото клиники 
+      ul.gal__items.Gal#GAL
+        -
+          var blocks = [
+            {src: '../../../../assets/img/img-1.png', },
+            {src: '../../../../assets/img/img-2.png', },
+            {src: '../../../../assets/img/img-3.png', },
+            {src: '../../../../assets/img/img-1.png', },
+            {src: '../../../../assets/img/img-2.png', },
+            {src: '../../../../assets/img/img-3.png', },
+            {src: '../../../../assets/img/img-1.png', },
+            {src: '../../../../assets/img/img-2.png', },
+            {src: '../../../../assets/img/img-3.png', },
+            {src: '../../../../assets/img/img-1.png', },
+            {src: '../../../../assets/img/img-2.png', },
+            {src: '../../../../assets/img/img-3.png', },
+          ];
+        each block in blocks
+          li.Gal__item.rel.center.GAL-item-js
+              .imgs
+                img(src=block.src alt='img')
+              a(href='#!' rel='#popupGal').common__link.popups-init-js.center 
+                    svg
+                      use(xlink:href='../../../../assets/img/sprite.svg#licens-link')

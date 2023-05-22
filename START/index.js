@@ -99,6 +99,15 @@ document.addEventListener("DOMContentLoaded", function () {
         newPopup.startGalary(plasa, itemIndex);
       }
 
+        if (
+          e.target.closest(".GAL-item-js") &&
+          e.target.closest(".popups-init-js")
+        ) {
+          let target = e.target.closest(".popups-init-js");
+          newPopup = new Popup(target);
+          newPopup.startGAL(target);
+        }
+
       if (e.target.closest(".popup-close-js")) {
         Popup.close();
       }
