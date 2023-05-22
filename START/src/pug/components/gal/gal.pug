@@ -1,4 +1,4 @@
-section(id='gal').gal.rel
+section.gal.rel
   .container
     .gal__body
       .gal__title.title
@@ -6,18 +6,18 @@ section(id='gal').gal.rel
       ul.gal__items.Gal#GAL
         -
           var blocks = [
-            {src: '../../../../assets/img/img-1.png', },
-            {src: '../../../../assets/img/img-2.png', },
-            {src: '../../../../assets/img/img-3.png', },
-            {src: '../../../../assets/img/img-1.png', },
-            {src: '../../../../assets/img/img-2.png', },
-            {src: '../../../../assets/img/img-3.png', },
-            {src: '../../../../assets/img/img-1.png', },
-            {src: '../../../../assets/img/img-2.png', },
-            {src: '../../../../assets/img/img-3.png', },
-            {src: '../../../../assets/img/img-1.png', },
-            {src: '../../../../assets/img/img-2.png', },
-            {src: '../../../../assets/img/img-3.png', },
+                  {src: 'https://swiperjs.com/demos/images/nature-1.jpg' },
+                  { src: 'https://swiperjs.com/demos/images/nature-2.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-3.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
+                  {src: 'https://swiperjs.com/demos/images/nature-1.jpg' },
+                  { src: 'https://swiperjs.com/demos/images/nature-2.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-3.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+                  { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
           ];
         each block in blocks
           li.Gal__item.rel.center.GAL-item-js
@@ -26,3 +26,7 @@ section(id='gal').gal.rel
               a(href='#!' rel='#popupGal').common__link.popups-init-js.center 
                     svg
                       use(xlink:href='../../../../assets/img/sprite.svg#licens-link')
+      button.gal__link.but-wave.btn.btn--success 
+        span Загрузить еще
+        svg
+          use(xlink:href='#load')

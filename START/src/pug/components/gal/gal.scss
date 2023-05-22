@@ -1,32 +1,48 @@
-.gal{
-    &__body{
-  
-
-    }
-    &__title{
-
-    }
-    &__items{
+.gal {
+  &__body {
+  }
+  &__title {
+  }
+  &__items {
     display: grid;
     grid-template-columns: repeat(auto-fill, 370px);
     gap: 32px;
-    margin: 40px 103px 0 ;
+    margin: 40px 103px 0;
+    justify-content: center;
+  }
+  .Gal {
+    &__item {
+      min-height: 277px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px 0 rgba(39, 112, 241, 0.35);
+      transition: all .3s;
+      &:hover {
+        & > .common__link {
+          opacity: 1;
+          z-index: 50;
+        }
+      }
+      &._is-hidden{
+        width: 0;
+        height: 0;
+      }
     }
-   .Gal{
-    &__item{
-min-height: 277px;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px 0 rgba(39, 112, 241, 0.35);
-  &:hover{
-    & > .common__link{
-      opacity: 1;
-        z-index: 50;
+    &__img {
     }
   }
+  &__link {
+    width: 208px;
+    height: 56px;
+    border-radius: 4px;
+    margin: 40px auto;
+    span {
+      margin: 0 15px 0 0;
     }
-    &__img{
+    svg {
+      width: 15px;
+      height: 15px;
     }
-   }
-
+  }
+  
 }
