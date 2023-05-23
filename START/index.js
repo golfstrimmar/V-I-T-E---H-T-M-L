@@ -14,7 +14,7 @@ import { Popup } from "./src/pug/components/popup/popup";
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
-import { Gal } from "./src/pug/components/galSlider/galSlider";
+// import { Gal } from "./src/pug/components/galSlider/galSlider";
 import { Accord } from "./src/pug/components/accord/accord";
 import { MyTab } from "./src/pug/components/tabs/tabs";
 import { MyRange } from "./src/pug/components/range/range";
@@ -23,7 +23,6 @@ import { Look } from "./src/pug/components/look/look";
 import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
-import { GAL } from "./src/pug/components/gal/GAL";
 
 document.addEventListener("DOMContentLoaded", function () {
   Look();
@@ -31,14 +30,17 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
-  if (document.querySelector(".Gal")) {
-    [...document.querySelectorAll(".Gal")].forEach((cell) => {
-      var newGAL = new GAL(cell);
-      newGAL.start();
-    });
-  }
+  // if (document.querySelector(".Gal")) {
+  //   [...document.querySelectorAll(".Gal")].forEach((cell) => {
+  //     var newGAL = new GAL(cell);
+  //     newGAL.start();
+  //   });
+  // }
   if (document.querySelector("#swiper-1")) {
     Swiper1();
+  }
+  if (document.querySelector("#swiper-1licens")) {
+    Swiper1licens();
   }
   if (document.querySelector(".marque")) {
     Marque();
@@ -53,16 +55,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const galeryAll = document.querySelectorAll("._galery-body-js");
 
   if (galeryAll.length > 0) {
-    var tWidth = document.querySelector("._galery-item-js").scrollWidth;
-    var tHeight = document.querySelector("._galery-item-js").scrollHeight;
+    // var tWidth = document.querySelector("._galery-item-js").scrollWidth;
+    // var tHeight = document.querySelector("._galery-item-js").scrollHeight;
     document.addEventListener("click", (e) => {
-      if (e.target.closest("._galery-nav-item-js")) {
-        const target = e.target.closest("._galery-nav-item-js");
+          // var tWidth = document.querySelector("._galery-item-js").scrollWidth;
+          // var tHeight = document.querySelector("._galery-item-js").scrollHeight;
+          // console.log(tWidth, tHeight);
+      if (e.target.closest("._galery-body-js")) {
+        const target = e.target.closest("._galery-body-js");
         const Galery = new MyGalery(target);
-        Galery.start(tWidth, tHeight);
-      } else {
+        Galery.start(e);
+      }
+       else {
         if (!e.target.closest("._galery-body-js")) {
-          MyGalery.resetAll(tWidth, tHeight);
+          MyGalery.resetAll();
         }
       }
     });
@@ -71,9 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#swiper-scroll")) {
     SwiperScroll();
   }
-  if (document.querySelector("#galSlider")) {
-    Gal();
-  }
+
   // if (document.querySelector("source")) {
   //   Lazy();
   // }
@@ -101,6 +105,15 @@ document.addEventListener("DOMContentLoaded", function () {
         newPopup = new Popup(target);
         newPopup.startGalary(plasa, itemIndex);
       }
+
+        if (
+          e.target.closest(".GAL-item-js") &&
+          e.target.closest(".popups-init-js")
+        ) {
+          let target = e.target.closest(".popups-init-js");
+          newPopup = new Popup(target);
+          newPopup.startGAL(target);
+        }
 
       if (e.target.closest(".popup-close-js")) {
         Popup.close();

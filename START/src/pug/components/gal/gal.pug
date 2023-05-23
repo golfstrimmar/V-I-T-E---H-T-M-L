@@ -41,7 +41,7 @@
 //-           use(xlink:href='#load')
 
 
-section#galery.galery.gal
+section.galery.gal
   .container
     .galery__title.title.t-25
       h2 Фото galery
@@ -58,20 +58,17 @@ section#galery.galery.gal
             {src: './assets/img/img-3.png',data: 'red',},
             {src: './assets/img/paralax.jpg',data: 'green',},
             {src: './assets/img/img-3.png',data: 'red',},
-            {src: './assets/img/paralax.jpg',data: 'blue',},
-            {src: './assets/img/img-2.png',data: 'coral',},
+            {src: './assets/img/paralax.jpg', data: 'blue',},
+            {src: './assets/img/img-2.png', data: 'coral',},
           ];
         each block in blocks
           li._galery-item-js.rel.center.Gal__item.center.GAL-item-js
             .imgs
                 img(src=block.src alt='img')
-            a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js.common__link
+            a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js.common__link.center 
                 svg
-                      use(xlink:href='../../../../assets/img/sprite.svg#licens-link')
+                      use(xlink:href='#licens-link')
 
-            //- a(href='#!' rel='#popupGalery').common__link.popups-init-js.center 
-            //-         svg
-            //-           use(xlink:href='../../../../assets/img/sprite.svg#licens-link')
     button.gal__link.but-wave.btn.btn--success 
         span Загрузить еще
         svg
