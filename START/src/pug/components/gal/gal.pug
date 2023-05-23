@@ -1,0 +1,78 @@
+//- section.gal.rel
+//-   .container
+//-     .gal__body
+//-       .gal__title.title
+//-         h2 Фото клиники 
+//-       ul.gal__items.Gal#GAL
+//-         -
+//-           var blocks = [
+//-                   {src: 'https://swiperjs.com/demos/images/nature-1.jpg' },
+//-                   { src: 'https://swiperjs.com/demos/images/nature-2.jpg'},
+//-                   { src: 'https://swiperjs.com/demos/images/nature-3.jpg'},
+//-                   { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+//-                   { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+//-                   { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
+//-                   { src: 'https://swiperjs.com/demos/images/nature-1.jpg'},
+//-                   { src: 'https://swiperjs.com/demos/images/nature-2.jpg'},
+//-                   { src: 'https://swiperjs.com/demos/images/nature-3.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+//-                   //- { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
+//-           ];
+//-         each block in blocks
+//-           li.Gal__item.rel.center.GAL-item-js
+//-               .imgs
+//-                 img(src=block.src alt='img')
+//-               a(href='#!' rel='##popupGalery').common__link.popups-init-js.center 
+//-                     svg
+//-                       use(xlink:href='../../../../assets/img/sprite.svg#licens-link')
+//-       button.gal__link.but-wave.btn.btn--success 
+//-         span Загрузить еще
+//-         svg
+//-           use(xlink:href='#load')
+
+
+section#galery.galery.gal
+  .container
+    .galery__title.title.t-25
+      h2 Фото galery
+    ul._plasa-js._galery-body-js.Gal#GAL
+        -
+          var blocks = [
+            {src: './assets/img/img-3.png',data: 'red',},
+            {src: './assets/img/paralax.jpg',data: 'blue',},
+            {src: './assets/img/img-1.png',data: 'green',},
+            {src: './assets/img/img-2.png',data: 'green',},
+            {src: './assets/img/img-2.png',data: 'coral',},
+            {src: './assets/img/paralax.jpg',data: 'blue',},
+            {src: './assets/img/img-3.png',data: 'green',},
+            {src: './assets/img/img-3.png',data: 'red',},
+            {src: './assets/img/paralax.jpg',data: 'green',},
+            {src: './assets/img/img-3.png',data: 'red',},
+            {src: './assets/img/paralax.jpg',data: 'blue',},
+            {src: './assets/img/img-2.png',data: 'coral',},
+          ];
+        each block in blocks
+          li._galery-item-js.rel.center.Gal__item.center.GAL-item-js
+            .imgs
+                img(src=block.src alt='img')
+            a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js.common__link
+                svg
+                      use(xlink:href='../../../../assets/img/sprite.svg#licens-link')
+
+            //- a(href='#!' rel='#popupGalery').common__link.popups-init-js.center 
+            //-         svg
+            //-           use(xlink:href='../../../../assets/img/sprite.svg#licens-link')
+    button.gal__link.but-wave.btn.btn--success 
+        span Загрузить еще
+        svg
+          use(xlink:href='#load')

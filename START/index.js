@@ -23,12 +23,19 @@ import { Look } from "./src/pug/components/look/look";
 import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
+import { GAL } from "./src/pug/components/gal/GAL";
 
 document.addEventListener("DOMContentLoaded", function () {
   Look();
   Anim();
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
+  }
+  if (document.querySelector(".Gal")) {
+    [...document.querySelectorAll(".Gal")].forEach((cell) => {
+      var newGAL = new GAL(cell);
+      newGAL.start();
+    });
   }
   if (document.querySelector("#swiper-1")) {
     Swiper1();
