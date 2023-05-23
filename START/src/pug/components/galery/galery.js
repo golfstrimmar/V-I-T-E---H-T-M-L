@@ -141,7 +141,6 @@ export const MyGalery = () => {
         nextEl: ".arrow-galery-next",
       },
       slidesPerView: 1,
-      // loop: "false",
       speed: 800,
       initialSlide: indexOf,
       modules: [Navigation],
@@ -172,22 +171,5 @@ export const MyGalery = () => {
       TargetPop(target);
       body.classList.add("lock");
     }
-    
-    // else if (!e.target.closest(".galery") && !e.target.closest(".popup")) {
-      
-    //   for (let i = 0; i < navItems.length; ++i) {
-    //     navItems[i].remAct;
-    //   }
-    //   navItems[0].addAct;
-    //   navItems[0].disabled = true;
-    //   remove();
-    //   setTimeout(() => {
-    //     pseudo.forEach((cell) => {
-    //       create(cell);
-    //     });
-    //     temp = "";
-    //     plaza.remAct;
-    //   }, timeout);
-    // }
   });
 };

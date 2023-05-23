@@ -1,15 +1,8 @@
 .gal {
-  &__body {
-  }
-  &__title {
-  }
-  &__items {
-  }
   .Gal {
     display: grid;
     grid-template-columns: repeat(auto-fill, 370px);
     column-gap: 32px;
-
     margin: 40px 103px 0;
     justify-content: center;
     overflow: hidden;
@@ -19,19 +12,12 @@
       border-radius: 4px;
       overflow: hidden;
       box-shadow: 0 4px 24px 0 rgba(39, 112, 241, 0.35);
-      // transition: all .3s;
       &:hover {
         & > .common__link {
           opacity: 1;
           z-index: 50;
         }
       }
-      // &._is-hidden{
-      //   width: 0;
-      //   height: 0;
-      // }
-    }
-    &__img {
     }
   }
   &__link {
@@ -47,24 +33,21 @@
     svg {
       width: 15px;
       height: 15px;
-      transition: all 1s;
-      
-      
+      transition: all 0.5s;
     }
   }
   .gal__link._is-active {
     svg {
-      animation: pulse 1s ease-in-out;
+      animation: pulse 0.5s ease-in-out;
     }
   }
 }
 
-
 @keyframes pulse {
-0% {
-transform: rotate(0deg);
-}
-100% {
-transform: rotate(-520deg);
-}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-520deg);
+  }
 }
