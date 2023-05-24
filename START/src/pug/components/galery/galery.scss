@@ -13,7 +13,7 @@
   color: aliceblue;
   text-transform: uppercase;
   padding: 10px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .galery__nav-item._is-active {
@@ -107,7 +107,7 @@ transition: all .3s;
   cursor: pointer;
   height: 300px;
   width: 200px;
-  transition: all 1s;
+  transition: all .3s;
   .galery__img {
     position: relative;
     width: 90%;
@@ -184,3 +184,6 @@ transition: all .3s;
     max-width: 200px;
   }
 }
+
+
+

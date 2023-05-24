@@ -1,21 +1,16 @@
 "use ctrict";
 import Plyr from "plyr";
 export class Accord {
-  constructor(button) {
-    this.button = button;
-    this.Accord = this.button.closest(".accord-js");
-    this.Nab = [
-      ...this.button.closest(".accord-js").querySelectorAll(".accord-item-js"),
-    ];
+  constructor(accord) {
+    this.Accord = accord;
+    // this.Accord = this.accord.closest(".accord-js");
+    this.Nab = [...this.Accord.querySelectorAll(".accord-item-js")];
     this.Nabours = this.Nab.map((el) => {
       if (!el.classList.contains("accord-hidden-js")) {
         return el;
       }
     });
-    this.Hiddens = [
-      ...this.button.closest(".accord-js").querySelector(".accord-hidden-js")
-        .children,
-    ];
+    this.Hiddens = [...this.Accord.querySelector(".accord-hidden-js").children];
     this.nummer = 0;
     this.simplePlir = "";
   }
@@ -149,14 +144,14 @@ export class Accord {
     );
   }
   // -----------------------------------------------
-  start() {
+  start(target) {
     for (let i = 0; i < this.Nabours.length; i++) {
-      if (this.Nabours[i] == this.button) {
+      if (this.Nabours[i] == target) {
         this.nummer = i;
       }
     }
 
-    if (!this.button.classList.contains("_is-active")) {
+    if (!target.classList.contains("_is-active")) {
       for (let i = 0; i < this.Nabours.length; i++) {
         if (
           this.Nabours[i] !== this.Nabours[this.nummer] &&
@@ -169,10 +164,10 @@ export class Accord {
       this.close();
     }
 
-    if (!this.button.classList.contains("_is-active")) {
+    if (!target.classList.contains("_is-active")) {
       for (let i = 0; i < this.Nabours.length; i++) {
         if (
-          this.Nabours[i] !== this.button &&
+          this.Nabours[i] !== target &&
           this.Nabours[i].classList.contains("_is-active")
         ) {
           return;

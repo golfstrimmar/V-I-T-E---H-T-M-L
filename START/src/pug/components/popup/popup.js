@@ -44,7 +44,7 @@ export class Popup {
   }
   // =====================
   startGalary(plasa, itemIndex) {
-    this.body.classList.add("lock");
+    
     var popupGalerySwiper = this.pop.querySelector("#popupGalerySwiper");
     popupGalerySwiper.innerHTML = "";
     for (var i = 0; i < plasa.length; i++) {

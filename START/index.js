@@ -14,8 +14,8 @@ import { Popup } from "./src/pug/components/popup/popup";
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
-// import { Gal } from "./src/pug/components/galSlider/galSlider";
 import { Accord } from "./src/pug/components/accord/accord";
+import { GAL } from "./src/pug/components/gal/GAL";
 import { MyTab } from "./src/pug/components/tabs/tabs";
 import { MyRange } from "./src/pug/components/range/range";
 import { Select } from "./src/pug/components/select/select";
@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
-  // if (document.querySelector(".Gal")) {
-  //   [...document.querySelectorAll(".Gal")].forEach((cell) => {
-  //     var newGAL = new GAL(cell);
-  //     newGAL.start();
-  //   });
-  // }
+  if (document.querySelector(".Gal")) {
+    [...document.querySelectorAll(".Gal")].forEach((cell) => {
+      var newGAL = new GAL(cell);
+      newGAL.start();
+    });
+  }
   if (document.querySelector("#swiper-1")) {
     Swiper1();
   }
@@ -55,21 +55,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const galeryAll = document.querySelectorAll("._galery-body-js");
 
   if (galeryAll.length > 0) {
-    // var tWidth = document.querySelector("._galery-item-js").scrollWidth;
-    // var tHeight = document.querySelector("._galery-item-js").scrollHeight;
+    
     document.addEventListener("click", (e) => {
-          // var tWidth = document.querySelector("._galery-item-js").scrollWidth;
-          // var tHeight = document.querySelector("._galery-item-js").scrollHeight;
-          // console.log(tWidth, tHeight);
-      if (e.target.closest("._galery-body-js")) {
-        const target = e.target.closest("._galery-body-js");
-        const Galery = new MyGalery(target);
+      const target = e.target;
+      if (e.target.closest("._galery-nav-item-js")) {
+        const Galery = new MyGalery(target.closest("._galery-body-js"));
         Galery.start(e);
-      }
-       else {
-        if (!e.target.closest("._galery-body-js")) {
-          MyGalery.resetAll();
-        }
+      } else  if (!e.target.closest("._galery-body-js")) {
+        MyGalery.resetAll();
       }
     });
   }
@@ -92,13 +85,13 @@ document.addEventListener("DOMContentLoaded", function () {
         newPopup.start();
       }
 
-      if (e.target.closest("._galery-item-js")) {
+      if (e.target.closest("._galery-item-js") ) {
         let plasa = "";
         let item = "";
         let itemIndex = 0;
         item = e.target.closest(".popups-init-js").closest("._galery-item-js");
         plasa = [...item.closest("._plasa-js").children];
-        plasa = plasa.filter((el) => el.style.width !== "0px");
+        plasa = plasa.filter((el) => !el.classList.contains('_is-none') );
         itemIndex = plasa.indexOf(item);
         plasa = plasa.map((el) => el.querySelector("img").getAttribute("src"));
         let target = e.target.closest(".popups-init-js");
@@ -106,14 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
         newPopup.startGalary(plasa, itemIndex);
       }
 
-        if (
-          e.target.closest(".GAL-item-js") &&
-          e.target.closest(".popups-init-js")
-        ) {
-          let target = e.target.closest(".popups-init-js");
-          newPopup = new Popup(target);
-          newPopup.startGAL(target);
-        }
 
       if (e.target.closest(".popup-close-js")) {
         Popup.close();
@@ -138,11 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const accordAll = document.querySelectorAll(".accord");
   if (accordAll.length > 0) {
     document.addEventListener("click", (e) => {
-      if (e.target.closest(".accord-js")) {
-        const target = e.target.closest(".accord-item-js");
+      if (e.target.closest(".accord-item-js")) {
+        const target = e.target.closest(".accord-js");
         const accord = new Accord(target);
-        accord.start();
-      } else {
+        accord.start(e.target.closest(".accord-item-js"));
+      } else if (!e.target.closest(".accord-js")) {
         Accord.resetAll();
       }
     });
