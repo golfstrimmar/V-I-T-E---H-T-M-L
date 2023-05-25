@@ -1,5 +1,19 @@
 section(id='garant').garant.rel
   .container
-    .garant__body
-      .garant__title.title
-        h2 Наши гарантии
+    .garant__title.title
+      h2 Наши гарантии
+    .garant__body.rel
+      .imgs
+        img(src='../../../../assets/img/gar/img-1.png' alt='img')
+      ul.garant__items
+        -
+          var blocks = [
+            {src: '../../../../assets/img/gar/img1.svg',text: 'Гарантируем на 100% результат после лечения'},
+            {src: '../../../../assets/img/gar/img2.svg',text: 'Никто не узнает, кто мы и зачем приходили'},
+            {src: '../../../../assets/img/gar/img3.svg',text: 'Проведем диагностику для исключения нежелательной реакции'},
+            {src: '../../../../assets/img/gar/img4.svg',text: 'Используем только качественные и проверенные препараты'}
+          ];
+        each block in blocks
+          li.garant__item.garant-item
+            img(src=block.src, alt="alt").garant-item__img
+            .garant-item__text=block.text  

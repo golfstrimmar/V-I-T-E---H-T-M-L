@@ -13,6 +13,8 @@ import { Header } from "./src/pug/components/header/header";
 import { Popup } from "./src/pug/components/popup/popup";
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { Swiper1licens } from "./src/pug/components/swiper-1/swiper-1";
+import { Swiperdoctors1 } from "./src/pug/components/swiper-1/swiper-1";
+import { Swiperdoctors2 } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 import { Gal } from "./src/pug/components/galSlider/galSlider";
@@ -35,7 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".Gal")) {
     [...document.querySelectorAll(".Gal")].forEach((cell) => {
       var newGAL = new GAL(cell);
-      newGAL.start();
+      if (cell.classList.contains("GAL-doctors")) {
+        newGAL.startGal();
+      } else {
+        newGAL.start();
+      }
     });
   }
   if (document.querySelector("#swiper-1")) {
@@ -43,6 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (document.querySelector("#swiper-1licens")) {
     Swiper1licens();
+  }
+  if (document.querySelector("#swiper-doctors1")) {
+    Swiperdoctors1();
+  }
+  if (document.querySelector("#swiper-doctors2")) {
+    Swiperdoctors2();
   }
   if (document.querySelector(".marque")) {
     Marque();
@@ -106,14 +118,14 @@ document.addEventListener("DOMContentLoaded", function () {
         newPopup.startGalary(plasa, itemIndex);
       }
 
-        if (
-          e.target.closest(".GAL-item-js") &&
-          e.target.closest(".popups-init-js")
-        ) {
-          let target = e.target.closest(".popups-init-js");
-          newPopup = new Popup(target);
-          newPopup.startGAL(target);
-        }
+      if (
+        e.target.closest(".GAL-item-js") &&
+        e.target.closest(".popups-init-js")
+      ) {
+        let target = e.target.closest(".popups-init-js");
+        newPopup = new Popup(target);
+        newPopup.startGAL(target);
+      }
 
       if (e.target.closest(".popup-close-js")) {
         Popup.close();

@@ -32,3 +32,21 @@ export const Swiper1licens = () => {
     grabCursor: true,
   });
 };
+export const Swiperdoctors1 = () => {
+  const mySwiperdoctors1 = new Swiper("#swiper-doctors1", {
+    spaceBetween: 48,
+    slidesPerView: 6,
+    loop: "true",
+    speed: 500,
+    grabCursor: true,
+  });
+};
+export const Swiperdoctors2 = () => {
+  const mySwiperdoctors2 = new Swiper("#swiper-doctors2", {
+    spaceBetween: 48,
+    slidesPerView: 6,
+    loop: "true",
+    speed: 500,
+    grabCursor: true,
+  });
+};

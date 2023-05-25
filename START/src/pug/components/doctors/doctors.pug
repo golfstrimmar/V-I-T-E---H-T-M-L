@@ -1,5 +1,13 @@
 section(id='doctors').doctors.rel
-  .container
-    .doctors__body
-      .doctors__title.title
+    .doctors__title.title
         h2 Наши доктора
+    .doctors__body.gal.rel
+            ul.gal__items.Gal.GAL-doctors
+              
+              include ../swiper-1/swiper-1
+
+
+            button.gal__link.but-wave.btn.btn--success 
+              span Загрузить еще
+              svg
+                use(xlink:href='#load')
