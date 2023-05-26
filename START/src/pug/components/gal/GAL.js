@@ -1,12 +1,14 @@
 "use strict";
 
 export class GAL {
-  constructor(elem) {
+  constructor(elem, options) {
     this.GAL = elem;
     this.GALitems = [...this.GAL.querySelectorAll(".GAL-item-js")];
     this.GALbutton = this.GAL.nextElementSibling.closest(".gal__link");
-    this.tempHeight = this.GAL.querySelector(".GAL-item-js").scrollHeight;
-    this.numer = 6;
+    this.tempHeight = this.GAL.querySelector(".GAL-item-js").clientHeight;
+    this.OptionsNumer = options.Anzahl * 2;
+    this.Anzahl = options.Anzahl - 1;
+    this.numer = options.Anzahl * 2;
     this.time = 300;
     this.Addtime = 300;
   }
@@ -21,7 +23,7 @@ export class GAL {
 
     if (this.numer <= this.GALitems.length) {
       for (let i = 0; i < this.GALitems.length; i++) {
-        if (2 < i && i < this.numer) {
+        if (this.Anzahl < i && i < this.numer) {
           var animheight = this.GALitems[i].animate(
             [{ height: 0 + "px", height: `${this.tempHeight}px` }],
 
@@ -50,9 +52,9 @@ export class GAL {
           });
         }
       }
-      this.numer = this.numer + 3;
+      this.numer = this.numer + this.OptionsNumer / 2;
     } else {
-      this.numer = 6;
+      this.numer = this.OptionsNumer;
 
       this.close();
     }
@@ -62,7 +64,7 @@ export class GAL {
 
   close() {
     for (let i = 0; i < this.GALitems.length; i++) {
-      if (i > 2) {
+      if (i > this.Anzahl) {
         var anim = this.GALitems[i].animate(
           [{ height: `${this.tempHeight}px`, height: 0 + "px" }],
           {
@@ -102,7 +104,7 @@ export class GAL {
     document.addEventListener("click", (e) => {
       if (!e.target.closest(".gal")) {
         this.close();
-      } else if (e.target.closest('.gal__link') == this.GALbutton) {
+      } else if (e.target.closest(".gal__link") == this.GALbutton) {
         this.GALbutton.classList.add("_is-active");
         if (this.numer > this.GALitems.length) {
           this.Addtime = -300;

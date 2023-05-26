@@ -32,8 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (document.querySelector(".Gal")) {
     [...document.querySelectorAll(".Gal")].forEach((cell) => {
-      var newGAL = new GAL(cell);
-      newGAL.start();
+     
+ [...document.querySelectorAll(".Gal")].forEach((cell) => {
+     var newGAL = new GAL(cell, { Anzahl: 3 });
+   // Anzahl - количество  не скрытых элементов в начвле = количество открываемых элементов за одно нажатие кнопки
+   newGAL.start();
+ });
     });
   }
   if (document.querySelector("#swiper-1")) {
