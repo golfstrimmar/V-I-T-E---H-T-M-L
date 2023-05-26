@@ -37,11 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".Gal")) {
     [...document.querySelectorAll(".Gal")].forEach((cell) => {
       var newGAL = new GAL(cell);
-      if (cell.classList.contains("GAL-doctors")) {
-        newGAL.startGal();
-      } else {
+      // if (cell.classList.contains("GAL-doctors")) {
+      //   // newGAL.startGal();
+      
+      // } else {
         newGAL.start();
-      }
+      // }
     });
   }
   if (document.querySelector("#swiper-1")) {
