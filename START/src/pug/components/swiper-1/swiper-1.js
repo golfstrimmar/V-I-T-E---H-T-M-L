@@ -50,3 +50,17 @@ export const Swiperdoctors2 = () => {
     grabCursor: true,
   });
 };
+export const CallBack = () => {
+  const myswiperCallBack = new Swiper("#swiper-callback", {
+    spaceBetween: 48,
+    navigation: {
+      nextEl: ".arrow-callback-prev",
+      prevEl: ".arrow-callback-next",
+    },
+    modules: [Navigation],
+    slidesPerView: 2,
+    loop: "true",
+    speed: 500,
+    grabCursor: true,
+  });
+};

@@ -15,6 +15,7 @@ textarea {
   background-color: transparent;
   resize: none;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 textarea::placeholder {

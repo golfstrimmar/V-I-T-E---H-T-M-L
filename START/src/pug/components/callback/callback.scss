@@ -1,0 +1,167 @@
+#callback {
+  .callback__body {
+    margin: 56px 0 0 0;
+  }
+  .swiper-1__body {
+    margin: 0 auto;
+  }
+  .swiper {
+    max-width: 1500px;
+  }
+  .slider-arrow {
+    width: 169px;
+    height: 112px;
+    background-color: $ice-blue;
+    top: 50%;
+    transform: translate(0%, -50%);
+    border-radius: 0%;
+    transition: all 0.2s ease-in-out;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.33;
+      color: $azul;
+      transition: all 0.3s;
+    }
+    &:hover {
+      box-shadow: inset 0 0 8px $hover;
+      span {
+        color: $hover;
+        text-shadow: 0 0 4px $hover;
+      }
+    }
+  }
+
+  .arrow-callback-next {
+    justify-content: right;
+    padding: 0 24px 0 0;
+  }
+  .arrow-callback-prev {
+    left: none;
+    right: 0;
+    padding: 0 0 0 24px;
+  }
+  .swiper-1 .swiper-slide {
+    min-height: 317px;
+  }
+  .callback-slide {
+    border-radius: 4px;
+    background-color: $dark-slate-blue-five;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+
+    &__title {
+      h4 {
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1.45;
+        color: $white;
+      }
+    }
+    &__datum {
+      font-size: 18px;
+      line-height: 1.44;
+      color: $white;
+      padding: 0 0 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    &__text {
+      font-size: 16px;
+      line-height: 1.5;
+      color: $white;
+      margin: 10px 0 12px 0;
+      overflow: hidden;
+    }
+    &__img {
+      position: absolute;
+      width: 179px;
+      height: 179px;
+      top: 16px;
+      right: 16px;
+    }
+    &__button {
+      display: inline-flex;
+      background-color: transparent !important;
+      margin: auto 0 0 0;
+      align-items: center;
+      width: max-content;
+      &:hover {
+        span,
+        svg {
+          color: $hover;
+          fill: $hover;
+        }
+      }
+      &._not-visible {
+        display: none;
+      }
+      svg {
+        width: 16px;
+        height: 11px;
+        margin: 0 0 0 8px;
+        fill: $white;
+        transition: all 0.3s;
+      }
+      span {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $white;
+        transition: all 0.3s;
+      }
+    }
+  }
+  .callback__button--order {
+    width: 217px;
+    height: 56px;
+    column-gap: 10px;
+    margin: 56px auto 0;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+    &:hover {
+      svg {
+        stroke: #bb92d9;
+      }
+    }
+  }
+
+ 
+}
+
+ #popupCallBack{
+    .form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.form__item{
+  margin-bottom: 33px;
+  input{
+    min-height: 40px;
+  }
+   label{
+min-height: 40px;
+    display: flex;
+    align-items: center;
+   }
+  &:last-child{
+ margin: auto 0 0 0;
+  }
+}
+.submit-button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+ 
+}
+  }

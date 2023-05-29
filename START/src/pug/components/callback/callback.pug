@@ -1,5 +1,17 @@
 section(id='callback').callback.rel
   .container
-    .callback__body
       .callback__title.title
         h2 За нас говорят наши клиенты
+  .callback__body.rel
+    include ../swiper-1/swiper-1.pug
+    a(href='#!' rel='#popupCallBack').callback__button--order.popups-init-js.but-wave.btn.btn--success 
+      span Оставить отзыв
+      svg
+        use(xlink:href='#Vector')
+
+            //- ul.gal__items.Gal.GAL-doctors
+            //-   include ../swiper-1/swiper-1
+            //- button.gal__link.but-wave.btn.btn--success 
+            //-   span Загрузить еще
+            //-   svg
+            //-     use(xlink:href='#load')

@@ -41,7 +41,22 @@
       #popupGal.popup__content.rel
           .imgs
             img(src='' alt='img')
-       
+      #popupCallBack.popup__content.rel
+        form.form
+          .form__item._c
+            input#name(type='text' required='' placeholder=' Denzel Washington')
+            label(for='name') 
+              span Ваше имя
+          .form__item._c
+            input#datum(type='text' required='' placeholder=' Denzel Washington')
+            label(for='datum') 
+              span Введите дату
+          .form__item
+            textarea#message(type='text' required='' placeholder=' Your awesome message' cols=' 40' rows='6')
+            label(for='message') Write your message
+          .form__item._e
+            button.submit-button.btn.btn--success.but-wave(type='submit') Оставить отзыв
+          
       i.popup__close.popup-close-js
         svg
           use(xlink:href='#x')

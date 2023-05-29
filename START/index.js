@@ -15,9 +15,13 @@ import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { Swiper1licens } from "./src/pug/components/swiper-1/swiper-1";
 import { Swiperdoctors1 } from "./src/pug/components/swiper-1/swiper-1";
 import { Swiperdoctors2 } from "./src/pug/components/swiper-1/swiper-1";
+import { CallBack } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 import { Gal } from "./src/pug/components/galSlider/galSlider";
+import { CallBackAdd } from "./src/pug/components/callback/callback";
+import { CallAdd } from "./src/pug/components/callback/callback";
+
 import { Accord } from "./src/pug/components/accord/accord";
 import { MyTab } from "./src/pug/components/tabs/tabs";
 import { MyRange } from "./src/pug/components/range/range";
@@ -57,11 +61,34 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#swiper-doctors2")) {
     Swiperdoctors2();
   }
+  if (document.querySelector("#swiper-callback")) {
+    CallBack();
+  }
+  if (document.querySelector("#popupCallBack")) {
+   document.addEventListener("click", (e) => {
+    if (e.target.closest(".callback__button--order")) {
+      var tempform = document
+        .querySelector("#popupCallBack")
+        .querySelector("form");
+       var callAdd = new CallAdd(tempform);
+       callAdd.start();
+    }
+   });
+  }
+  if (document.querySelector(".callback-slide")) {
+   [...document.querySelectorAll(".callback-slide")].forEach(elem => {
+    var Call = new CallBackAdd(elem);
+    Call.start();
+   });
+  }
   if (document.querySelector(".marque")) {
     Marque();
   }
   if (document.querySelector("#slider-full")) {
     SwiperFull();
+  }
+  if (document.querySelector("#swiperDoubleTop")) {
+    Double();
   }
   if (document.querySelector("#swiperDoubleTop")) {
     Double();
