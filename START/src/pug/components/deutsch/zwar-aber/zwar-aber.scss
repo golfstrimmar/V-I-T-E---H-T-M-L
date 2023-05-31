@@ -1,0 +1,18 @@
+.tab__title--zwar{
+ background: rgb(38, 23, 182);
+ &._is-active{
+  background: rgb(114, 133, 241);
+ }
+}
+#zwar{
+  .uber-blocks {
+    grid-template-columns: repeat(auto-fill, 33%);
+  }
+  .uber-block {
+    outline: 2px solid rgb(38, 23, 182);
+    &__card {
+      background: rgb(114, 133, 241);
+    }
+  }
+
+} 
