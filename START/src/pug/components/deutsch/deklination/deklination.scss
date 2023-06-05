@@ -1,0 +1,29 @@
+.tab__title--deklination {
+  background: rgb(176, 214, 70);
+  &._is-active {
+    background: rgb(3, 224, 51);
+  }
+}
+#deklination {
+  .uber-blocks {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .uber-block {
+    outline: 2px solid rgb(32, 114, 107);
+    &__card {
+      background: rgb(72, 69, 235);
+    }
+  }
+  .versteckt {
+    width: calc(100%);
+  }
+  .passimg__body{
+    display: grid;
+    grid-template-columns: repeat(2,50%) ;
+    gap: 10px;
+    margin: 0 auto;
+  }
+  .passimg__img{
+    max-width: 100%;
+  }
+}
