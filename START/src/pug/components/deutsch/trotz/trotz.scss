@@ -1,0 +1,21 @@
+.tab__title--trotz {
+  background: rgb(179, 176, 16);
+  &._is-active {
+    background: rgb(138, 168, 4);
+  }
+}
+#trotz {
+  .uber-blocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .uber-block {
+    outline: 2px solid rgb(238, 234, 3);
+    &__card {
+      background: rgb(139, 141, 3);
+    }
+  }
+  .versteckt {
+    width: calc(100%);
+  }
+  
+}
