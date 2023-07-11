@@ -1,0 +1,21 @@
+.tab__title--konjunktiv {
+  background: rgb(179, 89, 16);
+  &._is-active {
+    background: rgb(168, 37, 4);
+  }
+}
+#konjunktiv {
+  .uber-blocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .uber-block {
+    outline: 2px solid rgb(238, 144, 3);
+    &__card {
+      background: rgb(141, 70, 3);
+    }
+  }
+  .versteckt {
+    width: calc(100%);
+  }
+  
+}
