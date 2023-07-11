@@ -23,6 +23,7 @@ import { Look } from "./src/pug/components/look/look";
 import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
+import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
 
 document.addEventListener("DOMContentLoaded", function () {
   Look();
@@ -32,14 +33,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (document.querySelector(".Gal")) {
     [...document.querySelectorAll(".Gal")].forEach((cell) => {
-     
- [...document.querySelectorAll(".Gal")].forEach((cell) => {
-     var newGAL = new GAL(cell, { Anzahl: 3 });
-   // Anzahl - количество  не скрытых элементов в начвле = количество открываемых элементов за одно нажатие кнопки
-   newGAL.start();
- });
+      [...document.querySelectorAll(".Gal")].forEach((cell) => {
+        var newGAL = new GAL(cell, { Anzahl: 3 });
+        // Anzahl - количество  не скрытых элементов в начвле = количество открываемых элементов за одно нажатие кнопки
+        newGAL.start();
+      });
     });
   }
+
+  const tabskurz = document.querySelectorAll(".tabkurz");
+  if (tabskurz.length > 0) {
+
+ [...document.querySelectorAll(".tabkurz")].forEach((cell) => {
+   [...cell.querySelectorAll(".kab-title-js")].forEach((kab) => {
+     kab.addEventListener("click", (e) => {
+       var Tabkurz = new MyTabkurz(kab);
+       Tabkurz.start();
+     });
+   });
+ });
+
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".tabkurz-body-js")) {
+        MyTabkurz.resetAll();
+      }
+    });
+  }
+
   if (document.querySelector("#swiper-1")) {
     Swiper1();
   }
@@ -59,13 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const galeryAll = document.querySelectorAll("._galery-body-js");
 
   if (galeryAll.length > 0) {
-    
     document.addEventListener("click", (e) => {
       const target = e.target;
       if (e.target.closest("._galery-nav-item-js")) {
         const Galery = new MyGalery(target.closest("._galery-body-js"));
         Galery.start(e);
-      } else  if (!e.target.closest("._galery-body-js")) {
+      } else if (!e.target.closest("._galery-body-js")) {
         MyGalery.resetAll();
       }
     });
@@ -89,20 +109,19 @@ document.addEventListener("DOMContentLoaded", function () {
         newPopup.start();
       }
 
-      if (e.target.closest("._galery-item-js") ) {
+      if (e.target.closest("._galery-item-js")) {
         let plasa = "";
         let item = "";
         let itemIndex = 0;
         item = e.target.closest(".popups-init-js").closest("._galery-item-js");
         plasa = [...item.closest("._plasa-js").children];
-        plasa = plasa.filter((el) => !el.classList.contains('_is-none') );
+        plasa = plasa.filter((el) => !el.classList.contains("_is-none"));
         itemIndex = plasa.indexOf(item);
         plasa = plasa.map((el) => el.querySelector("img").getAttribute("src"));
         let target = e.target.closest(".popups-init-js");
         newPopup = new Popup(target);
         newPopup.startGalary(plasa, itemIndex);
       }
-
 
       if (e.target.closest(".popup-close-js")) {
         Popup.close();

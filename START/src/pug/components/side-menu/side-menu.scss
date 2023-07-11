@@ -1,0 +1,37 @@
+#side-menu {
+  .tabkurz {
+    width: 20%;
+    &__body {
+    }
+  }
+  .kab {
+    display: flex;
+    position: relative;
+    min-height: 40px;
+  }
+ 
+  .kab__hidden {
+    position: absolute;
+    transform: translateX(0%);
+    top: 0;
+    width: 100%;
+    grid-template-rows: 1fr;
+    z-index: -1;
+    transition: transform 3s;
+  }
+   .kab__title {
+    position: relative;
+    z-index: 201;
+    width: 100%;
+    transition: background-color 3s;
+  }
+  .kab-js {
+    &._is-active {
+      & > .kab-hidden-js {
+        grid-template-rows: 1fr;
+        transform: translateX(100%);
+        z-index: 100;
+      }
+    }
+  }
+}
