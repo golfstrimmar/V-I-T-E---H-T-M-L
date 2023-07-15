@@ -24,6 +24,7 @@ import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
 import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
+import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
 
 document.addEventListener("DOMContentLoaded", function () {
   Look();
@@ -41,18 +42,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const sideMenu = document.querySelectorAll(".smenu-js");
+  if (sideMenu.length > 0) {
+    [...document.querySelectorAll(".smenu-title-js ")].forEach((kab) => {
+      kab.addEventListener("click", (e) => {
+        var SideMenu = new MySideMenu(kab);
+        SideMenu.start();
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".smenu-js")) {
+        MySideMenu.resetAll();
+      }
+    });
+  }
   const tabskurz = document.querySelectorAll(".tabkurz");
   if (tabskurz.length > 0) {
-
- [...document.querySelectorAll(".tabkurz")].forEach((cell) => {
-   [...cell.querySelectorAll(".kab-title-js")].forEach((kab) => {
-     kab.addEventListener("click", (e) => {
-       var Tabkurz = new MyTabkurz(kab);
-       Tabkurz.start();
-     });
-   });
- });
-
+    [...document.querySelectorAll(".kab-title-js")].forEach((kab) => {
+      kab.addEventListener("click", (e) => {
+        var Tabkurz = new MyTabkurz(kab);
+        Tabkurz.start();
+      });
+    });
 
     document.addEventListener("click", (e) => {
       if (!e.target.closest(".tabkurz-body-js")) {
