@@ -1,5 +1,4 @@
 .gal {
- 
   .Gal {
     display: grid;
     grid-template-columns: repeat(auto-fill, 370px);
@@ -7,7 +6,7 @@
     margin: 40px 103px 0;
     justify-content: center;
     overflow: hidden;
-    
+
     &__item {
       height: 277px;
       border-radius: 4px;
@@ -39,12 +38,12 @@
   }
   .gal__link._is-active {
     svg {
-      animation: pulse 0.5s ease-in-out;
+      animation: pulsesvg 0.5s ease-in;
     }
   }
 }
 
-@keyframes pulse {
+@keyframes pulsesvg {
   0% {
     transform: rotate(0deg);
   }
@@ -53,16 +52,15 @@
   }
 }
 
-
-.galery.gal{
-  .Gal{
-  margin: 20px 0 0 0;
-   justify-content: space-between;
-.Gal__item {
-  box-shadow: none;
-}
-}
-.gal__link {
-  transition: all .3s;
-}
+.galery.gal {
+  .Gal {
+    margin: 20px 0 0 0;
+    justify-content: space-between;
+    .Gal__item {
+      box-shadow: none;
+    }
+  }
+  .gal__link {
+    transition: all 0.3s;
+  }
 }

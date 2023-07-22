@@ -21,12 +21,12 @@ section.galery.gal
         each block in blocks
           li._galery-item-js.rel.center.Gal__item.center.GAL-item-js
             .imgs
-                img(src=block.src alt='img')
+                img(data=block.src alt='img')
             a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js.common__link.center 
                 svg
                       use(xlink:href='#licens-link')
 
-    button.gal__link.but-wave.btn.btn--success 
+    button.gal__link.btn.btn--success 
         span Загрузить еще
         svg
           use(xlink:href='#load')

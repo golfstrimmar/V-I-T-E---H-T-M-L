@@ -4,7 +4,7 @@ import "./assets/css/fonts.css";
 import "./src/scss/main.scss";
 
 import { Button } from "./assets/js/button";
-// import { Lazy } from "./assets/js/lazy";
+import { Lazy } from "./assets/js/lazy";
 import { Anim } from "./assets/js/animation";
 import { Marque } from "./assets/js/marque";
 
@@ -107,9 +107,9 @@ document.addEventListener("DOMContentLoaded", function () {
     SwiperScroll();
   }
 
-  // if (document.querySelector("source")) {
-  //   Lazy();
-  // }
+  if (document.querySelector("source")) {
+    Lazy();
+  }
 
   const popupsInit = document.querySelectorAll(".popups-init-js");
   if (popupsInit.length > 0) {

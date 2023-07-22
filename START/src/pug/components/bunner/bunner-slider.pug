@@ -26,7 +26,7 @@ section#bunner-slider.bunner-slider
       each entry in bunerFaq
           li.slider__item.slider-card.swiper-slide
             .slider-card__img.imgs
-              img(src=entry.src alt='img')
+              img(data=entry.src alt='img')
             .container
               .slider-card__body
                 include ../buttons/bunner-button.pug
