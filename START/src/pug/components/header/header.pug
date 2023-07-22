@@ -9,9 +9,13 @@ header.header
           use(xlink:href='#x')
         ul.menu__list
           li.menu__item
-            a.menu__link.menu-link-js.menu__link--active.t-14(href='#!' ) buy
+            .menu__link.menu-link-js.menu__link--active.t-14 buy
               svg
                 use(xlink:href='#chevron-down')
+            .menu__tab.menu-tab
+                a(href="#!").menu-tab__item Category number one
+                a(href="#!").menu-tab__item Apartments in Dubai
+                a(href="#!").menu-tab__item Category number twenty five
           li.menu__item
             a.menu__link.t-14(href='#!' rel='#posts') Blog
           li.menu__item
@@ -19,16 +23,10 @@ header.header
           li.menu__item
             a.menu__link.t-14(href='#!' rel='#galery') Contact
       .header__info.info
-        a.info__phone(href='#!') +7(000) 123 45 65 67 
-        form.info__search
-          input(placeholder='Поиск')
-          input(type='submit')
-          svg
-            use(xlink:href='#search')
-        
-        a.header__button.btn.btn--success.but-wave.popups-init-js(rel='#popupPlyr2' href='#!')
-            p.t-42.ttu
-              | video2
+        a.header__button.btn.btn--success.but-wave.popups-init-js(rel='#popup1' href='#!')
+            p.t-14
+              | Book a consultation
+        a.info__phone(href='#!').t-16 +7(000) 123 45 65 67 
       
       svg.header__burger.icon
           use(xlink:href='#list')

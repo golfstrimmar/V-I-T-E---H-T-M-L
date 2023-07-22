@@ -39,6 +39,10 @@ a {
   // transition: all 0.2s ease-in-out;
   cursor: pointer;
   // color: rgb(72, 89, 245);
+  &:hover {
+  color: $light-gold-hover;
+  text-shadow: 0px 0px 20px white !important;
+}
 }
 
 .imgs {
@@ -74,6 +78,7 @@ a {
 svg.hidden {
   display: none;
 }
+
 
 /* +++++++++++++++++++++++++++++++++++++ */
 

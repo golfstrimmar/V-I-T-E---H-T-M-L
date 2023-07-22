@@ -14,9 +14,15 @@
   background:  #fb1f1d;
   &:hover {
     box-shadow: 0 10px 20px rgba(250, 38, 36, 0.5), inset 0 0 15px rgba(255, 255, 255, 1);
+    color: $black;
   }
 }
-
+.btn--success{
+  background-color: $light-gold;
+  border-radius: 0;
+  color: $black;
+  transition: all .2s;
+}
 
 /* .btn--success:focus {
   border: 1px solid #2b2b63;
