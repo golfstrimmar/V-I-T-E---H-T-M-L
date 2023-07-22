@@ -29,6 +29,16 @@ import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
 document.addEventListener("DOMContentLoaded", function () {
   // Look();
   Anim();
+if (document.querySelector(".menu-link-js")) {
+  var itemLink = document.querySelector(".menu-link-js");
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".menu-link-js")) {
+       console.log(itemLink);
+    }
+   
+  });
+}
+
   // if (document.querySelector("#bunner-slider")) {
   //   bunnerSwiper();
   // }
