@@ -62,7 +62,7 @@ export const Header = () => {
     const menu = document.querySelector(".menu__list");
     menu.addEventListener("click", (e) => {
       menulinks.forEach((cell) => {
-        cell == e.target
+        cell == e.target.closest(".menu__link")
           ? cell.classList.add("menu__link--active")
           : cell.classList.remove("menu__link--active");
       });
