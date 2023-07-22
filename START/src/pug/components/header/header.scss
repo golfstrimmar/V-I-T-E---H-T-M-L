@@ -3,20 +3,21 @@
   transition: all 0.2s ease-in-out;
   position: fixed;
   width: 100%;
-  height: 80px;
+  height: 63px;
+  padding: 20px 0 26px;
   display: flex;
   align-items: center;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  // background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid transparent;
   // background-image: url("/dist/img/img-1.png")
-  &__button{
-   margin: 0 0 0 20px;
-  }
-  .btn--success{
-    width: 180px;
-    height: 40px;
-  }
+  // &__button{
+  //  margin: 0 0 0 20px;
+  // }
+  // .btn--success{
+  //   width: 180px;
+  //   height: 40px;
+  // }
 }
 
 .header .container {
@@ -27,9 +28,9 @@
   position: relative;
   height: 100%;
   display: grid;
-  grid-template-columns: 100px 1fr 450px;
+  grid-template-columns: 184px 1fr 450px;
   width: 100%;
-  gap: 0 20px;
+  gap: 0 150px;
   justify-content: space-between;
 }
 
@@ -47,27 +48,25 @@
 
 /*=====================*/
 .logo {
-  gap: 0 10px;
   display: flex;
   align-items: center;
 }
 
 .logo__link img {
-  height: 50px;
-  width: 50px;
+  height: 63px;
+  width: 184px;
 }
-.logo__description {
-}
+
 /*=====================*/
 .header__menu {
-  margin: 0 30px 0 30px;
   position: relative;
+   display: flex;
+   align-items: center;
 }
 
 .menu__list {
   display: flex;
   justify-content: space-between;
-  height: 100%;
 }
 
 .menu__item {
@@ -75,28 +74,54 @@
   align-items: center;
   height: 100%;
   /* border: 1px solid transparent; */
-  margin: 0 10px 0 0;
+
+  &:nth-child(1) {
+    margin: 0 37px 0 0;
+  }
+  &:nth-child(2) {
+    margin: 0 50px 0 0;
+  }
+  &:nth-child(3) {
+    margin: 0 50px 0 0;
+  }
 }
 
 .menu__link {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 10px;
   transition: all 0.2s ease-in-out;
   text-transform: uppercase;
-  color: white;
+  font-family: "Lexend", sans-serif;
+  
+  font-weight: 600;
+  color: $white;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+  }
 }
 
 .menu__link:hover {
-  background: #ff9999;
-  box-shadow: 0px 0px 20px white !important;
+  color: $light-gold-hover;
+  text-shadow: 0px 0px 20px white !important;
 }
 
 .menu__link--active {
-  // color: white !important;
-  background: #f73030 !important;
-  box-shadow: 0px 0px 20px white !important;
+  color: $light-gold;
+  &::after {
+    background-color: $light-gold;
+  }
+  &:hover {
+  color: $light-gold;
+  text-shadow: none !important;
+}
 }
 
 /*=====================*/
@@ -273,7 +298,6 @@
     width: 30px;
   }
   .logo__description {
-    
   }
 
   .header__menu {

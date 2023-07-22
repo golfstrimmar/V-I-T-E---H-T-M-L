@@ -4,17 +4,19 @@ header.header
       .header__logo.logo
         a(href='#!').logo__link
           img(src='./assets/img/logo.svg' alt='img') 
-        .logo__description lorem
       nav.header__menu.menu
         svg.icon.header__close
           use(xlink:href='#x')
         ul.menu__list
           li.menu__item
-            a.menu__link.menu__link--active(href='#!' rel='#bunner') Home
+            a.menu__link.menu__link--active.t-14(href='#!' rel='#bunner') Buy 
+              include ../tabkurz/tabkurz.pug                                            
           li.menu__item
-            a.menu__link(href='#!' rel='#posts') Posts
+            a.menu__link.t-14(href='#!' rel='#posts') Blog
           li.menu__item
-            a.menu__link(href='#!' rel='#galery') Projects
+            a.menu__link.t-14(href='#!' rel='#galery') About
+          li.menu__item
+            a.menu__link.t-14(href='#!' rel='#galery') Contact
       .header__info.info
         a.info__phone(href='#!') +7(000) 123 45 65 67 
         form.info__search
