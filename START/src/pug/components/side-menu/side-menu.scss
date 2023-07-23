@@ -46,18 +46,18 @@
       }
     }
 // !!! если нужно открытие пунктов по ховеру а не по клику, то скрипт нужно отключать и добавлять это
-    &:hover {
-      & > .smenu-title-js {
-        background: rgb(147, 240, 185);
-        svg {
-          transform: rotate(90deg);
-        }
-      }
-      & > .smenu__hidden {
-        animation: pulse 0.3s linear;
-        animation-fill-mode: forwards;
-      }
-    }
+    // &:hover {
+    //   & > .smenu-title-js {
+    //     background: rgb(147, 240, 185);
+    //     svg {
+    //       transform: rotate(90deg);
+    //     }
+    //   }
+    //   & > .smenu__hidden {
+    //     animation: pulse 0.3s linear;
+    //     animation-fill-mode: forwards;
+    //   }
+    // }
   }
   &__title {
     border: 1px solid rgb(2, 138, 54);

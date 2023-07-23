@@ -10,7 +10,14 @@ header.header
           use(xlink:href='#x')
         ul.menu__list
           li.menu__item
-            a.menu__link.menu__link--active(href='#!' rel='#bunner') Home
+            .menu__link.menu-link-js.menu__link--active buy
+              svg
+                use(xlink:href='#chevron-down')
+            .menu__tab.menu-tab
+                a(href="#!").menu-tab__item Category number one
+                a(href="#!").menu-tab__item Apartments in Dubai
+                a(href="#!").menu-tab__item Category number twenty five
+                include ../side-menu/side-menu.pug
           li.menu__item
             a.menu__link(href='#!' rel='#posts') Posts
           li.menu__item

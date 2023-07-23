@@ -10,7 +10,6 @@
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid transparent;
   // background-image: url("/dist/img/img-1.png")
-
 }
 
 .header .container {
@@ -80,22 +79,98 @@
   transition: all 0.2s ease-in-out;
   text-transform: uppercase;
   color: white;
+  cursor: pointer;
+  svg {
+    width: 10px;
+    height: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background: #ff9999;
+    box-shadow: 0px 0px 20px white !important;
+  }
+
+  &--active {
+    background: #f73030 !important;
+    box-shadow: 0px 0px 20px white !important;
+  }
+
+  &._is-active {
+    & ~ .menu-tab {
+      background-color: black;
+      max-height: 190px;
+      height: 190px;
+      outline: solid 1px rgb(165, 10, 10);
+      animation: pul .3s linear;
+      animation-fill-mode: forwards;
+      .smenu__item:hover {
+      & > .smenu-title-js {
+        background: rgb(147, 240, 185);
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+      & > .smenu__hidden {
+        animation: pulse 0.3s linear;
+        animation-fill-mode: forwards;
+      }
+    }
+    }
+    svg {
+      fill: rgb(54, 54, 56);
+      transform: rotate(180deg);
+    }
+  }
 }
 
-.menu__link:hover {
-  background: #ff9999;
-  box-shadow: 0px 0px 20px white !important;
+@keyframes pul {
+  0% {
+    overflow: hidden;
+  }
+  99%{
+     overflow: hidden;
+  }
+  100% {
+   overflow: visible;
+  }
 }
 
-.menu__link--active {
-  // color: white !important;
-  background: #f73030 !important;
-  box-shadow: 0px 0px 20px white !important;
+.menu__tab {
+  transition: all .3s;
+  overflow: hidden;
+  position: absolute;
+  width: 247px;
+  height: 148px;
+  bottom: 0px;
+  top: 80px;
+  max-height: 0;
+  border: solid 1px transparent;
 }
 
-.header-lang{
-    input[type="radio"]:checked + label {
-    color: #f10905;;
+.menu-tab {
+  &__item {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    min-height: 36px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgb(54, 54, 56);
+      color: rgb(182, 15, 15);
+    }
+  }
+   .smenu__body {
+        width: 100%;
+      }
+}
+
+.header-lang {
+  input[type="radio"]:checked + label {
+    color: #f10905;
     transition: all 0.2s;
     padding: 0 0 0 0;
   }
@@ -287,7 +362,6 @@
     width: 30px;
   }
   .logo__description {
-    
   }
 
   .header__menu {

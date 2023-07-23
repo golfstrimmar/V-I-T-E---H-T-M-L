@@ -1,12 +1,10 @@
-"use ctrict";
-
 export const Header = () => {
   const menu = document.querySelector(".menu");
   const header = document.querySelector("header");
   const info = document.querySelector(".info");
   const now = info.cloneNode(true);
   const body = document.querySelector("body");
-
+  const menuLink = document.querySelector(".menu-link-js");
   const activeInfo = () => {
     menu.classList.add("menu-active");
     now.classList.add("info-active");
@@ -26,6 +24,15 @@ export const Header = () => {
     }
     if (event.target.closest(".header__close")) {
       normalInfo();
+    }
+    if (event.target.closest(".menu-link-js")) {
+      if (menuLink.classList.contains("_is-active")) {
+        menuLink.classList.remove("_is-active");
+      } else {
+        menuLink.classList.add("_is-active");
+      }
+    } else {
+      menuLink.classList.remove("_is-active");
     }
   });
 
