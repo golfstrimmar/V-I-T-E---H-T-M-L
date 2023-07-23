@@ -73,8 +73,7 @@ input:not([type="range"]):focus ~ span {
   padding: 10px 0;
 }
 
-input[type=checkbox]:checked,
-input[type=checkbox]:not(:checked),
+// =============================
 input[type=radio]:checked,
 input[type=radio]:not(:checked) {
   position: fixed;
@@ -82,9 +81,6 @@ input[type=radio]:not(:checked) {
   height: 0px;
   width: 0px;
 }
-
-input[type=checkbox]:checked + label,
-input[type=checkbox]:not(:checked) + label,
 input[type=radio]:checked + label,
 input[type=radio]:not(:checked) + label {
   display: inline-block;
@@ -93,9 +89,6 @@ input[type=radio]:not(:checked) + label {
   line-height: 20px;
   cursor: pointer;
 }
-
-input[type=checkbox]:checked + label:before,
-input[type=checkbox]:not(:checked) + label:before,
 input[type=radio]:checked + label:before,
 input[type=radio]:not(:checked) + label:before {
   content: "";
@@ -107,19 +100,10 @@ input[type=radio]:not(:checked) + label:before {
   border: 1px solid #bcaaa4;
   background-color: #fbe9e7;
 }
-
-input[type=checkbox]:checked + label:before,
-input[type=checkbox]:not(:checked) + label:before {
-  border-radius: 2px;
-}
-
 input[type=radio]:checked + label:before,
 input[type=radio]:not(:checked) + label:before {
   border-radius: 100%;
 }
-
-input[type=checkbox]:checked + label:after,
-input[type=checkbox]:not(:checked) + label:after,
 input[type=radio]:checked + label:after,
 input[type=radio]:not(:checked) + label:after {
   content: "";
@@ -129,6 +113,76 @@ input[type=radio]:not(:checked) + label:after {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+
+input[type=radio]:checked + label:after,
+input[type=radio]:not(:checked) + label:after {
+  left: 0;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #2979ff;
+  transform: translate(5px, -50%);
+}
+input[type=radio]:not(:checked) + label:after {
+  opacity: 0;
+}
+input[type=radio]:checked + label:after {
+  opacity: 1;
+}
+// =============================
+input[type=checkbox]:checked,
+input[type=checkbox]:not(:checked){
+  position: fixed;
+  left: -9999px !important;
+  height: 0px;
+  width: 0px;
+}
+
+
+
+input[type=checkbox]:checked + label,
+input[type=checkbox]:not(:checked) + label{
+  display: inline-block;
+  position: relative;
+  padding-left: 28px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+
+
+input[type=checkbox]:checked + label:before,
+input[type=checkbox]:not(:checked) + label:before{
+   content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #bcaaa4;
+  background-color: #fbe9e7;
+}
+
+
+
+input[type=checkbox]:checked + label:before,
+input[type=checkbox]:not(:checked) + label:before {
+  border-radius: 2px;
+}
+
+
+input[type=checkbox]:checked + label:after,
+input[type=checkbox]:not(:checked) + label:after{
+ content: "";
+  position: absolute;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+
 
 input[type=checkbox]:checked + label:after,
 input[type=checkbox]:not(:checked) + label:after {
@@ -146,26 +200,16 @@ input[type=checkbox]:not(:checked) + label:after {
   transform: rotate(-45deg);
 }
 
-input[type=radio]:checked + label:after,
-input[type=radio]:not(:checked) + label:after {
-  left: 0;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  background-color: #2979ff;
-  transform: translate(5px, -50%);
-}
 
-input[type=checkbox]:not(:checked) + label:after,
-input[type=radio]:not(:checked) + label:after {
+
+input[type=checkbox]:not(:checked) + label:after{
   opacity: 0;
 }
 
-input[type=checkbox]:checked + label:after,
-input[type=radio]:checked + label:after {
-  opacity: 1;
+input[type=checkbox]:checked + label:after{
+   opacity: 1;
 }
+
 
 .contacts-form__item {
   min-height: 30px;

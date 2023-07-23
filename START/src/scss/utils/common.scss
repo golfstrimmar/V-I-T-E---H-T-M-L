@@ -17,9 +17,10 @@
 body {
   font-family: "Work Sans", sans-serif;
   font-size: 18px;
+  font-weight: 600;
   line-height: 1.6;
   color: $white-two;
-   background-color: $black;
+  background-color: $black;
 }
 
 .container {
@@ -36,15 +37,20 @@ body {
 
 a {
   display: inline-block;
-  // transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   // color: rgb(72, 89, 245);
   &:hover {
-  color: $light-gold-hover;
-  text-shadow: 0px 0px 20px white !important;
+    color: $light-gold-hover;
+    text-shadow: 0px 0px 20px white ;
+  }
 }
+._hover{
+  &:hover {
+    color: $light-gold-hover!important;
+    text-shadow: 0px 0px 20px white ;
+  }
 }
-
 .imgs {
   overflow: hidden;
   position: relative;
@@ -78,7 +84,6 @@ a {
 svg.hidden {
   display: none;
 }
-
 
 /* +++++++++++++++++++++++++++++++++++++ */
 
