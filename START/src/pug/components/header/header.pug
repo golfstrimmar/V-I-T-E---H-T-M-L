@@ -22,10 +22,10 @@ header.header
           input(type='submit')
           svg
             use(xlink:href='#search')
-        form.header__lang.header-lang
-          input(type="radio" id="boxen" name='boxlang'  )
+        .header__lang.header-lang
+          input(type="radio" id="boxen" name='boxlang'  val='en' checked)
           label(for="boxen")._hover.ttu.t-16  en
-          input(type="radio" id="boxru" name='boxlang')
+          input(type="radio" id="boxru" name='boxlang' val='ru')
           label(for="boxru")._hover.ttu.t-16  ru
         a.header__button.btn.btn--success.but-wave.popups-init-js(rel='#popupPlyr2' href='#!')
             p.t-42.ttu

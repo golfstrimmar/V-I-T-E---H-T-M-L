@@ -10,30 +10,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid transparent;
   // background-image: url("/dist/img/img-1.png")
-  &__button{
-   margin: 0 0 0 20px;
-  }
-  .btn--success{
-    width: 180px;
-    height: 40px;
-  }
 
-  input[type="radio"]:checked + label {
-    color: #fb1f1d;;
-    transition: all 0.2s;
-    padding: 0 0 0 0;
-  }
-  input[type="radio"]:not(:checked) + label {
-    color: #f7a7a7;
-    transition: all 0.2s;
-    padding: 0 0 0 0;
-  }
-  input[type="radio"]:checked + label:after,
-  input[type="radio"]:checked + label::before,
-  input[type="radio"]:not(:checked) + label:after,
-  input[type="radio"]:not(:checked) + label::before {
-    display: none;
-  }
 }
 
 .header .container {
@@ -115,7 +92,26 @@
   background: #f73030 !important;
   box-shadow: 0px 0px 20px white !important;
 }
-
+.header-lang{
+    input[type="radio"]:checked + label {
+    color: #f10905;;
+    transition: all 0.2s;
+    padding: 0 0 0 0;
+  }
+  input[type="radio"]:not(:checked) + label {
+    color: #f7a7a7;
+    transition: all 0.2s;
+    padding: 0 0 0 0;
+  }
+  input[type="radio"]:checked + label:after,
+  input[type="radio"]:checked + label::before,
+  input[type="radio"]:not(:checked) + label:after,
+  input[type="radio"]:not(:checked) + label::before {
+    display: none;
+  }
+  display: flex;
+  column-gap: 5px;
+}
 /*=====================*/
 .info {
   display: flex;
