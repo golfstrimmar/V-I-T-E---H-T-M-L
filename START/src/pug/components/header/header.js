@@ -4,7 +4,6 @@ export const Header = () => {
   const info = document.querySelector(".info");
   const now = info.cloneNode(true);
   const body = document.querySelector("body");
-  const menuLink = document.querySelector(".menu-link-js");
   const activeInfo = () => {
     menu.classList.add("menu-active");
     now.classList.add("info-active");
@@ -18,24 +17,44 @@ export const Header = () => {
     body.classList.remove("lock");
   };
 
-  document.addEventListener("click", function (event) {
-    if (event.target.closest(".header__burger")) {
-      activeInfo();
-    }
-    if (event.target.closest(".header__close")) {
-      normalInfo();
-    }
-    if (event.target.closest(".menu-link-js")) {
-      if (menuLink.classList.contains("_is-active")) {
-        menuLink.classList.remove("_is-active");
-      } else {
-        menuLink.classList.add("_is-active");
-      }
-    } else {
-      menuLink.classList.remove("_is-active");
-    }
-  });
+   const activeItemHEAD = (event) => {
+     var temp = event.target.closest(".menu__link");
+     [...document.querySelectorAll(".menu__link ")].forEach((cell) => {
+      temp == cell
+        ? cell.classList.add("menu__link--active")
+        : cell.classList.remove("menu__link--active");
+     });
+   };
 
+     document.addEventListener("click", function (event) {
+       if (event.target.closest(".header__burger")) {
+         activeInfo();
+       }
+       if (event.target.closest(".header__close")) {
+         normalInfo();
+       }
+
+       if (event.target.closest(".menu__link")) {
+         activeItemHEAD(event);
+       }
+
+       if (event.target.closest(".menu-link-js")) {
+         var temp = event.target.closest(".menu-link-js");
+         [...document.querySelectorAll(".menu-link-js")].forEach((cell) => {
+           if (temp == cell) {
+             cell.classList.contains("_is-active")
+               ? cell.classList.remove("_is-active")
+               : cell.classList.add("_is-active");
+           } else {
+             cell.classList.remove("_is-active");
+           }
+         });
+       } else {
+         [...document.querySelectorAll(".menu-link-js")].forEach((cell) => {
+           cell.classList.remove("_is-active");
+         });
+       }
+     });
   // --------------------------
   if (window.pageYOffset > 100) {
     header.classList.add("responciveHeader");
@@ -64,19 +83,4 @@ export const Header = () => {
 
   // -----------------------------------
 
-  const menulinks = document.querySelectorAll(".menu__link ");
-  const activeItemHEAD = (menulinks) => {
-    const menu = document.querySelector(".menu__list");
-    menu.addEventListener("click", (e) => {
-      menulinks.forEach((cell) => {
-        cell == e.target.closest(".menu__link")
-          ? cell.classList.add("menu__link--active")
-          : cell.classList.remove("menu__link--active");
-      });
-    });
-  };
-
-  if (menulinks.length > 0) {
-    activeItemHEAD(menulinks);
-  }
 };
