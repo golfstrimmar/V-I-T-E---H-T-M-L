@@ -27,29 +27,27 @@
   input[type="radio"]:not(:checked) + label::before {
     display: none;
   }
-.container {
-  height: 100%;
-}
+  .container {
+    height: 100%;
+  }
 
-&__body {
-  position: relative;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 184px 1fr 450px;
-  width: 100%;
-  gap: 0 150px;
-  justify-content: space-between;
-}
+  &__body {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 184px 1fr 450px;
+    width: 100%;
+    gap: 0 150px;
+    justify-content: space-between;
+  }
 
-&__burger {
-  display: none;
+  &__burger {
+    display: none;
+  }
+  &__close {
+    display: none;
+  }
 }
-&__close {
-  display: none;
-}
-
-}
-
 
 /*=====================*/
 .logo {
