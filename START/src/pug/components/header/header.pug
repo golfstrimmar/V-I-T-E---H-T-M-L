@@ -27,11 +27,12 @@ header.header
             p.t-14
               | Book a consultation
         
-        form.header__lang.header-lang
-          input(type="radio" id="boxen" name='boxlang'  )
+        .header__lang.header-lang
+          input(type="radio" id="boxen" name='boxlang'  val='en' checked)
           label(for="boxen")._hover.ttu.t-16  en
-          input(type="radio" id="boxru" name='boxlang')
+          input(type="radio" id="boxru" name='boxlang' val='ru')
           label(for="boxru")._hover.ttu.t-16  ru
+          
         a.info__phone(href='#!').t-16 +7(000) 123 45 65 67 
       
       svg.header__burger.icon
