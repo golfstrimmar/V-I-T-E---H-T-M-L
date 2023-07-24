@@ -8,11 +8,11 @@ import { Lazy } from "./assets/js/lazy";
 import { Anim } from "./assets/js/animation";
 // import { Marque } from "./assets/js/marque";
 
-// import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
+import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
 import { Header } from "./src/pug/components/header/header";
 import { Popup } from "./src/pug/components/popup/popup";
 // import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
-// import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
+import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 // import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 // import { Accord } from "./src/pug/components/accord/accord";
 // import { GAL } from "./src/pug/components/gal/GAL";
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
   Anim();
 
 
-  // if (document.querySelector("#bunner-slider")) {
-  //   bunnerSwiper();
-  // }
+  if (document.querySelector("#bunner-slider")) {
+    bunnerSwiper();
+  }
   // if (document.querySelector(".Gal")) {
   //   [...document.querySelectorAll(".Gal")].forEach((cell) => {
   //     [...document.querySelectorAll(".Gal")].forEach((cell) => {
@@ -59,21 +59,21 @@ document.addEventListener("DOMContentLoaded", function () {
   //     }
   //   });
   // }
-  const tabskurz = document.querySelectorAll(".tabkurz");
-  if (tabskurz.length > 0) {
-    [...document.querySelectorAll(".kab-title-js")].forEach((kab) => {
-      kab.addEventListener("click", (e) => {
-        var Tabkurz = new MyTabkurz(kab);
-        Tabkurz.start();
-      });
-    });
+  // const tabskurz = document.querySelectorAll(".tabkurz");
+  // if (tabskurz.length > 0) {
+  //   [...document.querySelectorAll(".kab-title-js")].forEach((kab) => {
+  //     kab.addEventListener("click", (e) => {
+  //       var Tabkurz = new MyTabkurz(kab);
+  //       Tabkurz.start();
+  //     });
+  //   });
 
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".tabkurz-body-js")) {
-        MyTabkurz.resetAll();
-      }
-    });
-  }
+  //   document.addEventListener("click", (e) => {
+  //     if (!e.target.closest(".tabkurz-body-js")) {
+  //       MyTabkurz.resetAll();
+  //     }
+  //   });
+  // }
 
   // if (document.querySelector("#swiper-1")) {
   //   Swiper1();
@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // if (document.querySelector(".marque")) {
   //   Marque();
   // }
-  // if (document.querySelector("#slider-full")) {
-  //   SwiperFull();
-  // }
+  if (document.querySelector("#slider-full")) {
+    SwiperFull();
+  }
   // if (document.querySelector("#swiperDoubleTop")) {
   //   Double();
   // }

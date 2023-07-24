@@ -1,37 +1,79 @@
 section#bunner-slider.bunner-slider
-  .swiper-pagination
-  .slider-bunner.slider-bunner-js.swiper-container
-    ul.bunner-slider__body.swiper-wrapper
-      -
-        var bunerFaq = [
-          {
-            src: './assets/img/paralax.jpg',
-            title: "Title slide 1. ",
-            title1: "Molestias, provident.",
-          },
+  .container
+    ul.bunner-slider__soc.soc
+      li.soc__item
+        a(href="#!")
+          svg
+            use(xlink:href='#fb')
+      li.soc__item
+        a(href="#!")
+          svg
+            use(xlink:href='#tv')
+      li.soc__item
+        a(href="#!")
+          svg
+            use(xlink:href='#youtube')
+      li.soc__item
+        a(href="#!")
+          svg
+            use(xlink:href='#instagram')
+      li.soc__item
+        a(href="#!")
+          svg
+            use(xlink:href='#icd')
+ 
 
-          {
-            src: './assets/img/img-2.png',
-            title: "Title slide 2.  ",
-            title1: 'Lorem ipsum dolor.'
-          },
-          {
-            src: './assets/img/img-1.png',
-            title: "Title slide 3.  ",
-            title1: 'Lorem ipsum dolor.'
-          },
 
-        ];
-      
-      each entry in bunerFaq
-          li.slider__item.slider-card.swiper-slide
-            .slider-card__img.imgs
-              img(data=entry.src alt='img')
-            .container
-              .slider-card__body
-                include ../buttons/bunner-button.pug
-  form.bunner-slider__search.bunner-search
-    input(type='text' placeholder='Leškoti...')
-    button(type='submit')
-      svg.icon
-        use(xlink:href='#search')
+
+  .container
+    .swiper-pagination
+    #swiper-pagination-js
+          span 
+            b 01
+            p Lorem ipsum <br> dolor, sit 
+          span 
+            b 02
+            p Lorem ipsum <br> dolor, sit
+          span 
+            b 03
+            p Lorem ipsum <br> dolor, sit 
+    .bunner-slider__arrows
+      .bunner-slider__arrow.bunner-slider__arrow--prev prev
+      .bunner-slider__arrow.bunner-slider__arrow--next next
+  
+    .slider-bunner.slider-bunner-js.swiper-container
+        ul.bunner-slider__body.swiper-wrapper
+          li.slider__item.swiper-slide.slider-card
+
+              .slider-card__body.rel
+                .slider-card__img.imgs
+                  img(src='./assets/img/bunner/i-1.png' alt='img')
+                .slider-card__content
+                  p logisch deutsch
+                  h1 Welcome Home <span>To</span> Luxury
+                  a.btn.btn--empty.popups-init-js(rel='#popup1' href='#!') Book a consultation
+                    svg
+                      use(xlink:href='#Arrow')
+          li.slider__item.swiper-slide.slider-card
+
+              .slider-card__body.rel
+                .slider-card__img.imgs
+                  img(src='./assets/img/bunner/i-2.png' alt='img')
+                .slider-card__content
+                  p deutsch
+                  h1 <span>To</span> Luxury
+                  a.btn.btn--empty.popups-init-js(rel='#popup1' href='#!') Book a consultation
+                    svg
+                      use(xlink:href='#Arrow')
+          li.slider__item.swiper-slide.slider-card
+
+              .slider-card__body.rel
+                .slider-card__img.imgs
+                  img(src='./assets/img/bunner/i-2.png' alt='img')
+                .slider-card__content
+                  p deutsch
+                  h1 <span>To</span> Luxury
+                  a.btn.btn--empty.popups-init-js(rel='#popup1' href='#!') Book a consultation
+                    svg
+                      use(xlink:href='#Arrow')
+

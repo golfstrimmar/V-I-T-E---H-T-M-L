@@ -3,7 +3,7 @@
   transition: all 0.2s ease-in-out;
   position: fixed;
   width: 100%;
-  height: 63px;
+  min-height: 63px;
   padding: 20px 0 26px;
   display: flex;
   align-items: center;
@@ -120,6 +120,7 @@
     & ~ .menu-tab {
       max-height: 108px;
       border: solid 1px $warm-grey;
+      background-color: $black;
     }
     svg {
       fill: $light-gold;
@@ -152,8 +153,6 @@
   border: solid 1px transparent;
 }
 .menu-tab {
-  background-color: $black;
-
   &__item {
     font-size: 14px;
     font-weight: 600;
@@ -185,11 +184,13 @@
 .responciveHeader {
   position: fixed;
   width: 100%;
-  height: 70px;
+  height: 69px;
   background: rgba(15, 18, 22, 0.65);
   border: 1px solid #1e2329;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(15px);
+  padding: 0 0 0 0;
+  z-index: 10000;
 }
 .header__button {
   width: 165px;
