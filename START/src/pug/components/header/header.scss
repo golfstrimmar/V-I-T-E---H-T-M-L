@@ -43,14 +43,17 @@
   gap: 0 10px;
   display: flex;
   align-items: center;
+  a {
+    img {
+      height: 50px;
+      width: 50px;
+    }
+  }
+  p{
+    color: aliceblue;
+  }
 }
 
-.logo__link img {
-  height: 50px;
-  width: 50px;
-}
-.logo__description {
-}
 /*=====================*/
 .header__menu {
   margin: 0 30px 0 30px;
@@ -102,20 +105,20 @@
       max-height: 190px;
       height: 190px;
       outline: solid 1px rgb(165, 10, 10);
-      animation: pul .3s linear;
+      animation: pul 0.3s linear;
       animation-fill-mode: forwards;
       .smenu__item:hover {
-      & > .smenu-title-js {
-        background: rgb(147, 240, 185);
-        svg {
-          transform: rotate(90deg);
+        & > .smenu-title-js {
+          background: rgb(147, 240, 185);
+          svg {
+            transform: rotate(90deg);
+          }
+        }
+        & > .smenu__hidden {
+          animation: pulse 0.3s linear;
+          animation-fill-mode: forwards;
         }
       }
-      & > .smenu__hidden {
-        animation: pulse 0.3s linear;
-        animation-fill-mode: forwards;
-      }
-    }
     }
     svg {
       fill: rgb(54, 54, 56);
@@ -128,16 +131,16 @@
   0% {
     overflow: hidden;
   }
-  99%{
-     overflow: hidden;
+  99% {
+    overflow: hidden;
   }
   100% {
-   overflow: visible;
+    overflow: visible;
   }
 }
 
 .menu__tab {
-  transition: all .3s;
+  transition: all 0.3s;
   overflow: hidden;
   position: absolute;
   width: 247px;
@@ -163,9 +166,9 @@
       color: rgb(182, 15, 15);
     }
   }
-   .smenu__body {
-        width: 100%;
-      }
+  .smenu__body {
+    width: 100%;
+  }
 }
 
 .header-lang {
