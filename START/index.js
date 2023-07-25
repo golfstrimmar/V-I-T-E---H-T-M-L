@@ -25,13 +25,18 @@ import { MyGalery } from "./src/pug/components/galery/galery";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
 import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
 import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
-
+import { CasesInit } from "./src/pug/components/cases/cases";
 document.addEventListener("DOMContentLoaded", function () {
   Look();
   Anim();
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
+  // ========Cases=============
+  if (document.querySelector(".cases")) {
+    CasesInit();
+  }
+// =========
   if (document.querySelector(".Gal")) {
     [...document.querySelectorAll(".Gal")].forEach((cell) => {
       [...document.querySelectorAll(".Gal")].forEach((cell) => {
