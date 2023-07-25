@@ -168,7 +168,7 @@ export class MyGalery {
             foto.style.width = `${fotoWidth}` + "px";
             foto.style.height = `${fotoHeight}` + "px";
 
-            img.style.outlineWidth = 1 + "px";
+            // img.style.outlineWidth = 1 + "px";
           };
           animopen.addEventListener("finish", (e) => {
             beendetopenALL();

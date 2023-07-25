@@ -43,6 +43,24 @@
 
 .btn--empty {
   display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        color: $white;
+      
+        svg {
+          width: 20px;
+          height: 22px;
+          margin: 0 0 0 5px;
+          stroke: white;
+          transition: all 0.2s;
+        }
+        &:hover {
+          color: $light-gold-hover;
+          text-shadow: 0px 0px 20px white;
+          svg {
+            stroke: $light-gold-hover;
+          }
+        }
 }
 
 .btn--empty:hover {

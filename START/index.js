@@ -12,7 +12,9 @@ import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
 import { Header } from "./src/pug/components/header/header";
 import { Popup } from "./src/pug/components/popup/popup";
 // import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
-import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
+// import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
+import { CasesInit } from "./src/pug/components/cases/cases";
+// import { Cases } from "./src/pug/components/cases/cases";
 // import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 // import { Accord } from "./src/pug/components/accord/accord";
 // import { GAL } from "./src/pug/components/gal/GAL";
@@ -23,17 +25,21 @@ import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 // import { Double } from "./src/pug/components/slider-double/sdouble.js";
 // import { MyGalery } from "./src/pug/components/galery/galery";
 // import { TypedItem } from "./src/pug/components/typed/typedHover";
-import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
+// import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
 // import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
 
 document.addEventListener("DOMContentLoaded", function () {
   // Look();
   Anim();
 
-
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
+  // ========Cases=============
+  if (document.querySelector(".cases")) {
+    CasesInit();
+  }
+  // =====================
   // if (document.querySelector(".Gal")) {
   //   [...document.querySelectorAll(".Gal")].forEach((cell) => {
   //     [...document.querySelectorAll(".Gal")].forEach((cell) => {
@@ -84,9 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // if (document.querySelector(".marque")) {
   //   Marque();
   // }
-  if (document.querySelector("#slider-full")) {
-    SwiperFull();
-  }
+  // if (document.querySelector("#slider-full")) {
+  //   SwiperFull();
+  // }
   // if (document.querySelector("#swiperDoubleTop")) {
   //   Double();
   // }
