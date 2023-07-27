@@ -21,7 +21,7 @@ import { CasesInit } from "./src/pug/components/cases/cases";
 // import { MyTab } from "./src/pug/components/tabs/tabs";
 // import { MyRange } from "./src/pug/components/range/range";
 // import { Select } from "./src/pug/components/select/select";
-// import { Look } from "./src/pug/components/look/look";
+import { Look } from "./src/pug/components/look/look";
 // import { Double } from "./src/pug/components/slider-double/sdouble.js";
 // import { MyGalery } from "./src/pug/components/galery/galery";
 // import { TypedItem } from "./src/pug/components/typed/typedHover";
@@ -29,7 +29,7 @@ import { CasesInit } from "./src/pug/components/cases/cases";
 // import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Look();
+  Look();
   Anim();
 
   if (document.querySelector("#bunner-slider")) {
