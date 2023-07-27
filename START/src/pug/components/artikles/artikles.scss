@@ -1,0 +1,11 @@
+#artikles{
+.Gal__item{
+&:hover{
+  &>{
+    .cases__info{
+      transform: scaleY(1);
+    }
+  }
+}
+}
+}

@@ -17,13 +17,13 @@ import { CasesInit } from "./src/pug/components/cases/cases";
 // import { Cases } from "./src/pug/components/cases/cases";
 // import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 // import { Accord } from "./src/pug/components/accord/accord";
-// import { GAL } from "./src/pug/components/gal/GAL";
+import { GAL } from "./src/pug/components/gal/GAL";
 // import { MyTab } from "./src/pug/components/tabs/tabs";
 // import { MyRange } from "./src/pug/components/range/range";
 // import { Select } from "./src/pug/components/select/select";
 import { Look } from "./src/pug/components/look/look";
 // import { Double } from "./src/pug/components/slider-double/sdouble.js";
-// import { MyGalery } from "./src/pug/components/galery/galery";
+import { MyGalery } from "./src/pug/components/galery/galery";
 // import { TypedItem } from "./src/pug/components/typed/typedHover";
 // import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
 // import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
@@ -40,15 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
     CasesInit();
   }
   // =====================
-  // if (document.querySelector(".Gal")) {
-  //   [...document.querySelectorAll(".Gal")].forEach((cell) => {
-  //     [...document.querySelectorAll(".Gal")].forEach((cell) => {
-  //       var newGAL = new GAL(cell, { Anzahl: 3 });
-  //       // Anzahl - количество  не скрытых элементов в начвле = количество открываемых элементов за одно нажатие кнопки
-  //       newGAL.start();
-  //     });
-  //   });
-  // }
+  if (document.querySelector(".Gal")) {
+    [...document.querySelectorAll(".Gal")].forEach((cell) => {
+      [...document.querySelectorAll(".Gal")].forEach((cell) => {
+        var newGAL = new GAL(cell, { Anzahl: 3 });
+        // Anzahl - количество  не скрытых элементов в начвле = количество открываемых элементов за одно нажатие кнопки
+        newGAL.start();
+      });
+    });
+  }
 
   // const sideMenu = document.querySelectorAll(".smenu-js");
   // if (sideMenu.length > 0) {
