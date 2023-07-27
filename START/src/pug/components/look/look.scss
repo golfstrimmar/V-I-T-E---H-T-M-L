@@ -19,14 +19,17 @@
       width: auto;
       height: 100%;
 
-      &__controls {
-        display: none;
+      &.plyr--stopped {
+        & > .plyr__controls {
+           display: none;
+        }
       }
       &.plyr--playing {
         & > .plyr__controls {
           display: flex;
         }
       }
+     
     }
   }
 }
