@@ -1,6 +1,6 @@
 .look {
   margin: 50px 0;
-  .title-Second{
+  .title-Second {
     margin: 0 0 10px 0;
   }
   &__video {
@@ -20,8 +20,16 @@
       height: auto;
       width: auto;
       height: 100%;
+
+      &__controls {
+        display: none;
+      }
+      &.plyr--playing {
+        & > .plyr__controls {
+          display: flex;
+        }
+      }
+
     }
+  }
 }
-}
-
-

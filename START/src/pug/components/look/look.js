@@ -7,4 +7,8 @@ export const Look = () => {
      const r = document.querySelector("#player-1");
      const simplePlir = new Plyr(r);
   }
+  if (document.querySelector("#player-2")) {
+     const r = document.querySelector("#player-2");
+     const simplePlir = new Plyr(r);
+  }
 };
