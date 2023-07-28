@@ -2,12 +2,15 @@ export const Header = () => {
   const menu = document.querySelector(".menu");
   const header = document.querySelector("header");
   const info = document.querySelector(".info");
+  // const logo = document.querySelector(".logo");
+  // const nowLogo = logo.cloneNode(true);
   const now = info.cloneNode(true);
   const body = document.querySelector("body");
   const activeInfo = () => {
     menu.classList.add("menu-active");
     now.classList.add("info-active");
-    menu.appendChild(now);
+    // menu.prepend(nowLogo);
+    menu.append(now);
     body.classList.add("lock");
   };
   const normalInfo = () => {
