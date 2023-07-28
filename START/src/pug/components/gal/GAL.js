@@ -16,97 +16,48 @@ export class GAL {
   //  ===============================
 
   open() {
-    // if (this.numer === this.GALitems.length) {
+    if (this.numer === this.GALitems.length) {
       this.GALbutton.querySelector("span").innerHTML = "Свернуть";
       this.GALbutton.querySelector("svg").style.display = "none";
-    // }
+    }
 
+    if (this.numer <= this.GALitems.length) {
+      for (let i = 0; i < this.GALitems.length; i++) {
+        if (this.Anzahl < i && i < this.numer) {
+          var animheight = this.GALitems[i].animate(
+            [{ height: 0 + "px", height: `${this.tempHeight}px` }],
 
-  //  if (this.numer <= this.GALitems.length) {
-     for (let i = 0; i < this.GALitems.length; i++) {
-      //  if (this.Anzahl < i) {
-         var animheight = this.GALitems[i].animate(
-           [{ height: 0 + "px", height: `${this.tempHeight}px` }],
+            {
+              duration: this.time,
+              easing: "ease-in-out",
+            }
+          );
+          var animmargin = this.GALitems[i].animate(
+            [{ marginTop: 0 + "px", marginTop: `30px` }],
 
-           {
-             duration: this.time,
-             easing: "ease-in-out",
-           }
-         );
-         var animmargin = this.GALitems[i].animate(
-           [{ marginTop: 0 + "px", marginTop: `30px` }],
+            {
+              duration: this.time,
+              easing: "ease-in-out",
+            }
+          );
+          const beendet = () => {
+            this.GALitems[i].style.height = `${this.tempHeight}px`;
+            this.GALitems[i].style.marginTop = `30px`;
+          };
+          animheight.addEventListener("finish", (e) => {
+            beendet();
+          });
+          animmargin.addEventListener("finish", (e) => {
+            beendet();
+          });
+        }
+      }
+      this.numer = this.numer + this.OptionsNumer / 2;
+    } else {
+      this.numer = this.OptionsNumer;
 
-           {
-             duration: this.time,
-             easing: "ease-in-out",
-           }
-         );
-         const beendet = () => {
-           this.GALitems[i].style.height = `${this.tempHeight}px`;
-           this.GALitems[i].style.marginTop = `30px`;
-         };
-         animheight.addEventListener("finish", (e) => {
-           beendet();
-         });
-         animmargin.addEventListener("finish", (e) => {
-           beendet();
-         });
-      //  }
-    //  }
-    //  this.numer = this.numer + this.OptionsNumer / 2;
-   }
-   
-  //  else {
-  //    this.numer = this.OptionsNumer;
-
-  //    this.close();
-  //  }
-
-
-
-
-
-
-
-
-
-    // if (this.numer <= this.GALitems.length) {
-    //   for (let i = 0; i < this.GALitems.length; i++) {
-    //     if (this.Anzahl < i ) {
-    //       var animheight = this.GALitems[i].animate(
-    //         [{ height: 0 + "px", height: `${this.tempHeight}px` }],
-
-    //         {
-    //           duration: this.time,
-    //           easing: "ease-in-out",
-    //         }
-    //       );
-    //       var animmargin = this.GALitems[i].animate(
-    //         [{ marginTop: 0 + "px", marginTop: `30px` }],
-
-    //         {
-    //           duration: this.time,
-    //           easing: "ease-in-out",
-    //         }
-    //       );
-    //       const beendet = () => {
-    //         this.GALitems[i].style.height = `${this.tempHeight}px`;
-    //         this.GALitems[i].style.marginTop = `30px`;
-    //       };
-    //       animheight.addEventListener("finish", (e) => {
-    //         beendet();
-    //       });
-    //       animmargin.addEventListener("finish", (e) => {
-    //         beendet();
-    //       });
-    //     }
-    //   }
-    //   this.numer = this.numer + this.OptionsNumer / 2;
-    // } else {
-    //   this.numer = this.OptionsNumer;
-
-    //   this.close();
-    // }
+      this.close();
+    }
   }
 
   //  ===============================

@@ -1,0 +1,36 @@
+section(id='galCases1').galCases
+  .container
+    .galCases__title.ttu
+      h2 galCases
+    .galCases__body.rel
+      ul._galCases-plaza-js
+        -
+          var blocks = [
+            {src: './assets/img/img-3.png',title:'title1',text:'text1'},
+            {src: './assets/img/paralax.jpg',title:'title2',text:'text2'},
+            {src: './assets/img/img-1.png',title:'title3',text:'text3'},
+            {src: './assets/img/img-2.png',title:'title4',text:'text4'},
+            {src: './assets/img/img-2.png',title:'title5',text:'text5'},
+            {src: './assets/img/paralax.jpg',title:'title6',text:'text6'},
+            {src: './assets/img/img-3.png',title:'title7',text:'text7'},
+            {src: './assets/img/img-3.png',title:'title8',text:'text8'},
+            {src: './assets/img/paralax.jpg',title:'title9',text:'text9'},
+            {src: './assets/img/img-3.png',title:'title10',text:'text10'},
+            {src: './assets/img/paralax.jpg',title:'title11',text:'text11'},
+            {src: './assets/img/img-2.png',title:'title12',text:'text12'},
+          ];
+        each block in blocks
+          li._galCases-item-js.rel.center
+            .imgs
+              img(src=block.src alt='img')
+            .galCases__info
+              h3=block.title
+              p=block.text
+              a.btn.btn--empty(href='!#') See project
+                svg
+                  use(xlink:href='#Arrow')
+
+      button._galCases-button-js.btn.btn--success.but-wave
+        span more
+        svg
+          use(xlink:href='#load')

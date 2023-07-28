@@ -17,7 +17,7 @@ import { CasesInit } from "./src/pug/components/cases/cases";
 // import { Cases } from "./src/pug/components/cases/cases";
 // import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 // import { Accord } from "./src/pug/components/accord/accord";
-import { GAL } from "./src/pug/components/gal/GAL";
+import { GalCases } from "./src/pug/components/galCases/galCases";
 // import { MyTab } from "./src/pug/components/tabs/tabs";
 // import { MyRange } from "./src/pug/components/range/range";
 // import { Select } from "./src/pug/components/select/select";
@@ -39,17 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".cases")) {
     CasesInit();
   }
-  // =====================
-  if (document.querySelector(".Gal")) {
-    [...document.querySelectorAll(".Gal")].forEach((cell) => {
-      [...document.querySelectorAll(".Gal")].forEach((cell) => {
-        var newGAL = new GAL(cell, { Anzahl: 3 });
-        // Anzahl - количество  не скрытых элементов в начвле = количество открываемых элементов за одно нажатие кнопки
-        newGAL.start();
-      });
-    });
-  }
 
+  // ===========galCases=======================
+  if (document.querySelector("._galCases-plaza-js")) {
+    GalCases();
+  }
+  // =====================
   // const sideMenu = document.querySelectorAll(".smenu-js");
   // if (sideMenu.length > 0) {
   //   [...document.querySelectorAll(".smenu-title-js ")].forEach((kab) => {
