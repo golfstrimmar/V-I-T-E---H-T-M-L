@@ -37,6 +37,10 @@
 
 .btn--empty {
   border: 1px solid #ef316b;
+  svg{
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .btn--empty:hover {
