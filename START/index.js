@@ -21,8 +21,7 @@ import { Select } from "./src/pug/components/select/select";
 import { Look } from "./src/pug/components/look/look";
 import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { GalCases } from "./src/pug/components/galCases/galCases";
-// import { MyGalery } from "./src/pug/components/galery/galery";
-import { GalSlider } from "./src/pug/components/galSlider/galSlider";
+// import { GalSlider } from "./src/pug/components/galSlider/galSlider";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
 import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
 import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
@@ -54,10 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // ====GalCases=====
   if (document.querySelector("._galCases-plaza-js")) {
     GalCases();
-  }
-  // ======GalSlider==================
-  if (document.querySelector("#galSlider")) {
-    GalSlider();
   }
 
   // =======================
@@ -116,10 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#swiperDoubleTop")) {
     Double();
   }
-  // =======================
-  // if (document.querySelector("._galery-body-js")) {
-  //   MyGalery();
-  // }
 
   // ========popup===============
 
@@ -130,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("header")) {
     Header();
   }
-  // =======================
 
   // =======================
   const tabs = document.querySelectorAll(".tabs-container-js");
@@ -174,6 +164,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+  // =======================
+
+  // // ======GalSlider==================
+  // if (document.querySelector("#galSlider")) {
+  //   GalSlider();
+  // }
 
 // ===============================================
 Object.defineProperty(HTMLElement.prototype, "addAct", {
