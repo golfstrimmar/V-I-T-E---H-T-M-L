@@ -1,20 +1,90 @@
-section#galery.galery
+section.accord#accord3.accord--galery
   .container
-    .galery__title.title.t-25
-      h2 galery + lazy
-    .galery__body.galery-body._galery-body-js
-      .galery__nav._galery-nav-js
-        //- button.galery__nav-item._galery-nav-item-js._is-active(type='button' data='all' disabled='') all
-        .galery__nav-item._galery-nav-item-js._is-active( data='all' ) all
-        .galery__nav-item._galery-nav-item-js( data='red') red
-        .galery__nav-item._galery-nav-item-js( data='blue') blue
-        .galery__nav-item._galery-nav-item-js( data='green') green
-        .galery__nav-item._galery-nav-item-js( data='coral') coral
-      
+    .accord__body.accord-js.accord-galery-js
+        button(type='button' disabled).accord-item.accord-item-js._galery-item-js.center._is-active  red
+        button(type='button' ).accord-item.accord-item-js._galery-item-js.center  blue
+        button(type='button' ).accord-item.accord-item-js._galery-item-js.center  green
+        button(type='button' ).accord-item.accord-item-js._galery-item-js.center  coral
+        button(type='button' ).accord-item.accord-item-js._galery-item-js.center  all
 
-      ._plasa-js._is-active
-        div 
-          p ppppppppppppppppp
+
+        .accord-hidden.accord-hidden-js._is-active
+            .accord-hidden__wrap
+              ul.accord__content.accord-content-js._is-active
+                  -
+                    var blocks = [
+                      {src: './assets/img/img-3.png',data: 'red',},
+                      {src: './assets/img/img-1.png',data: 'red',},
+                      {src: './assets/img/img-2.png',data: 'red',},
+                      
+                    ];
+                  each block in blocks
+                    li.galery__item.rel.center
+                      a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js
+                        .imgs
+                          img(src=block.src alt='img')
+              ul.accord__content.accord-content-js
+                  -
+                    var blocks = [
+                      {src: './assets/img/paralax.jpg',data: 'blue',},
+                      {src: './assets/img/paralax.jpg',data: 'blue',},
+                      {src: './assets/img/img-2.png',data: 'blue',},
+                    ];
+                  each block in blocks
+                    li.galery__item.rel.center
+                      a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js
+                        .imgs
+                          img(src=block.src alt='img')
+              ul.accord__content.accord-content-js
+                  -
+                    var blocks = [
+                      {src: './assets/img/img-1.png',data: 'green',},
+                      {src: './assets/img/img-2.png',data: 'green',},
+                      {src: './assets/img/img-3.png',data: 'green',},
+                      {src: './assets/img/paralax.jpg',data: 'green',},
+                    ];
+                  each block in blocks
+                    li.galery__item.rel.center
+                      a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js
+                        .imgs
+                          img(src=block.src alt='img')
+              ul.accord__content.accord-content-js
+                  -
+                    var blocks = [
+                      {src: './assets/img/img-2.png',data: 'coral',},
+                      {src: './assets/img/img-2.png',data: 'coral',},
+                    ];
+                  each block in blocks
+                    li.galery__item.rel.center
+                      a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js
+                        .imgs
+                          img(src=block.src alt='img')
+              ul.accord__content.accord-content-js
+
+
+
+
+
+
+//- section#galery.galery
+//-   .container
+//-     .galery__title.title.t-25
+//-       h2 galery + lazy
+//-     .galery__body.galery-body.accord.accord-js
+
+//-       .galery__nav
+//-         //- button.galery__nav-item._is-active(type='button' data='all' disabled='') all
+//-         .galery__nav-item.accord-item-js._is-active all
+//-         .galery__nav-item.accord-item-js  red
+//-         .galery__nav-item.accord-item-js blue
+//-         .galery__nav-item.accord-item-js green
+//-         .galery__nav-item.accord-item-js coral
+//-       .accord-hidden-js
+//-             .accord-hidden__wrap
+
+      //- ._plasa-js._is-active
+      //-   div 
+      //-     p ppppppppppppppppp
           //- ul.galery__items
             -
               var blocks = [

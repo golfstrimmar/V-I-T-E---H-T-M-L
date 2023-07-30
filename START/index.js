@@ -21,7 +21,8 @@ import { Select } from "./src/pug/components/select/select";
 import { Look } from "./src/pug/components/look/look";
 import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { GalCases } from "./src/pug/components/galCases/galCases";
-import { MyGalery } from "./src/pug/components/galery/galery";
+// import { MyGalery } from "./src/pug/components/galery/galery";
+import { GalSlider } from "./src/pug/components/galSlider/galSlider";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
 import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
 import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
@@ -41,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
+  // ====Accords=====
+  if (document.querySelector(".accord")) {
+    Accords();
+  }
+
   // ========Cases=============
   if (document.querySelector(".cases")) {
     CasesInit();
@@ -49,10 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("._galCases-plaza-js")) {
     GalCases();
   }
-  // ====Accords=====
-  if (document.querySelector(".accord")) {
-    Accords();
+  // ======GalSlider==================
+  if (document.querySelector("#galSlider")) {
+    GalSlider();
   }
+
   // =======================
   const sideMenu = document.querySelectorAll(".smenu-js");
   if (sideMenu.length > 0) {
@@ -110,9 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
     Double();
   }
   // =======================
-  if (document.querySelector("._galery-body-js")) {
-    MyGalery();
-  }
+  // if (document.querySelector("._galery-body-js")) {
+  //   MyGalery();
+  // }
 
   // ========popup===============
 

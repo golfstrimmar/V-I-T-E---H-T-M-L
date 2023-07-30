@@ -45,8 +45,9 @@ export const Popup = () => {
 
       for (var i = 0; i < plasa.length; i++) {
         var temp = document.createElement("li");
-        temp.classList.add("slider__item", "swiper-slide");
-        temp.innerHTML = ` <div class="imgs">
+        temp.classList.add("slider__item", "swiper-slide", "rel");
+
+        temp.innerHTML = `<p>ffffffffffffffffff </p> <div class="imgs">
         <img src= "${plasa[i]}"> </img>
       </div>`;
         popupGalerySwiper.append(temp);
@@ -74,8 +75,9 @@ export const Popup = () => {
   const popupsInit = [...document.querySelectorAll(".popups-init-js")];
   var newPopup = {};
   var mySwiperGalary = {};
-  if (document.querySelector("#slider-galery")) {
-    mySwiperGalary = new Swiper(".slider-js-galery", {
+
+  const SliderGalery = () => {
+    mySwiperGalary = new Swiper("#slider-galery", {
       slidesPerView: 1,
       speed: 500,
       modules: [Navigation],
@@ -85,6 +87,10 @@ export const Popup = () => {
       },
       grabCursor: true,
     });
+  };
+
+  if (document.querySelector("#slider-galery")) {
+    SliderGalery();
   }
 
   document.addEventListener("click", (e) => {
@@ -104,16 +110,26 @@ export const Popup = () => {
       document.querySelector(".popup__content").classList.remove("_is-active");
     }
 
-    if (e.target.closest("._galery-item-js")) {
-      let plasa = "";
-      let item = "";
-      let itemIndex = 0;
-      item = e.target.closest(".popups-init-js").closest("._galery-item-js");
-      plasa = [...item.closest("._plasa-js").children];
-      plasa = plasa.filter((el) => el.classList.contains("_is-active"));
-      itemIndex = plasa.indexOf(item);
-      plasa = plasa.map((el) => el.querySelector("img").getAttribute("src"));
-      newPopup.startGalary(plasa, itemIndex);
+    if (e.target.closest(".galery__item")) {
+      var temp = [
+        ...e.target
+          .closest(".accord-content-js")
+          .querySelectorAll(".galery__item img"),
+      ];
+
+      var plasa = [
+        ...e.target
+          .closest(".accord-js")
+          .querySelector(".accord-content-js._is-active")
+          .querySelectorAll(".galery__item "),
+      ];
+
+      temp = temp.map((el) => {
+        return el.getAttribute("src");
+      });
+
+      var itemIndex = plasa.indexOf(e.target.closest(".galery__item"));
+      newPopup.startGalary(temp, itemIndex);
     }
   });
 };

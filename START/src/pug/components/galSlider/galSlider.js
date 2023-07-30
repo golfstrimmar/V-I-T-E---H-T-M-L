@@ -6,8 +6,7 @@ import Swiper, {
   // EffectFlip,
   // EffectCoverflow,
 } from "swiper";
-export const Gal = () => {
-  if (document.querySelector("#galSlider")) {
+export const GalSlider = () => {
     var s2 = new Swiper(".s2swiper", {
       spaceBetween: 0,
       modules: [
@@ -73,7 +72,6 @@ export const Gal = () => {
         },
       },
     });
-  }
 
   let temp;
   let duble = [];
@@ -102,6 +100,4 @@ export const Gal = () => {
       }
     });
   }
-
-  
 };
