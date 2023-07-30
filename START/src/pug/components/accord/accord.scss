@@ -7,7 +7,7 @@
 }
 .accord-item {
   background: rgb(230, 237, 243);
-  transition: all .2s ease-in-out;
+  transition: all .3s ease-in-out;
   cursor: pointer;
   outline: 1px solid rgb(51, 120, 180);
   padding: 10px;
@@ -23,13 +23,24 @@
   grid-column: 1/4;
   background: rgb(134, 231, 125);
   overflow: hidden;
-
 }
-.accord__content{
-   height: 0;
-   overflow: hidden;
+.accord__content {
+  height: 0;
+  overflow: hidden;
   &._is-active {
-     height: auto;
+    height: auto;
     background: rgb(146, 17, 71);
+  }
+}
+.accord-hidden-js {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: all .3s;
+  .accord-hidden__wrap {
+    min-height: 0;
+  }
+  &._is-active {
+    grid-template-rows: 1fr;
   }
 }

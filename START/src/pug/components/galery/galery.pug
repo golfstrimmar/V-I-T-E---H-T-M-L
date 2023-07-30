@@ -5,68 +5,39 @@ section#galery.galery
     .galery__body.galery-body._galery-body-js
       .galery__nav._galery-nav-js
         //- button.galery__nav-item._galery-nav-item-js._is-active(type='button' data='all' disabled='') all
-        button.galery__nav-item._galery-nav-item-js._is-active(type='button' data='all' disabled) all
-        button.galery__nav-item._galery-nav-item-js(type='button' data='red') red
-        button.galery__nav-item._galery-nav-item-js(type='button' data='blue') blue
-        button.galery__nav-item._galery-nav-item-js(type='button' data='green') green
-        button.galery__nav-item._galery-nav-item-js(type='button' data='coral') coral
-      ul.galery__items._plasa-js
-        -
-          var blocks = [
-            {src: './assets/img/img-3.png',data: 'red',},
-            {src: './assets/img/paralax.jpg',data: 'blue',},
-            {src: './assets/img/img-1.png',data: 'green',},
-            {src: './assets/img/img-2.png',data: 'green',},
-            {src: './assets/img/img-2.png',data: 'coral',},
-            {src: './assets/img/paralax.jpg',data: 'blue',},
-            {src: './assets/img/img-3.png',data: 'green',},
-            {src: './assets/img/img-3.png',data: 'red',},
-            {src: './assets/img/paralax.jpg',data: 'green',},
-            {src: './assets/img/img-3.png',data: 'red',},
-            {src: './assets/img/paralax.jpg',data: 'blue',},
-            {src: './assets/img/img-2.png',data: 'coral',},
-            {src: './assets/img/paralax.jpg',data: 'blue',},
-          ];
-        each block in blocks
-          li.galery__item._galery-item-js.rel.center(data=block.data)._is-active
-            a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js
-              .imgs
-                img(src=block.src alt='img')
+        .galery__nav-item._galery-nav-item-js._is-active( data='all' ) all
+        .galery__nav-item._galery-nav-item-js( data='red') red
+        .galery__nav-item._galery-nav-item-js( data='blue') blue
+        .galery__nav-item._galery-nav-item-js( data='green') green
+        .galery__nav-item._galery-nav-item-js( data='coral') coral
+      
 
-section#galery.galery
-  .container
-    .galery__title.title.t-25
-      h2 galery + lazy
-    .galery__body.galery-body._galery-body-js
-      .galery__nav._galery-nav-js
-        //- button.galery__nav-item._galery-nav-item-js._is-active(type='button' data='all' disabled='') all
-        button.galery__nav-item._galery-nav-item-js._is-active(type='button' data='all' disabled) all
-        button.galery__nav-item._galery-nav-item-js(type='button' data='red') red
-        button.galery__nav-item._galery-nav-item-js(type='button' data='blue') blue
-        button.galery__nav-item._galery-nav-item-js(type='button' data='green') green
-        button.galery__nav-item._galery-nav-item-js(type='button' data='coral') coral
-      ul.galery__items._plasa-js
-        -
-          var blocks = [
-            {src: './assets/img/img-3.png',data: 'red',},
-            {src: './assets/img/paralax.jpg',data: 'blue',},
-            {src: './assets/img/img-1.png',data: 'green',},
-            {src: './assets/img/img-2.png',data: 'green',},
-            {src: './assets/img/img-2.png',data: 'coral',},
-            {src: './assets/img/paralax.jpg',data: 'blue',},
-            {src: './assets/img/img-3.png',data: 'green',},
-            {src: './assets/img/img-3.png',data: 'red',},
-            {src: './assets/img/paralax.jpg',data: 'green',},
-            {src: './assets/img/img-3.png',data: 'red',},
-            {src: './assets/img/paralax.jpg',data: 'blue',},
-            {src: './assets/img/img-2.png',data: 'coral',},
-            {src: './assets/img/paralax.jpg',data: 'blue',},
-          ];
-        each block in blocks
-          li.galery__item._galery-item-js.rel.center(data=block.data)._is-active
-            a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js
-              .imgs
-                img(data=block.src alt='img')
- 
+      ._plasa-js._is-active
+        div 
+          p ppppppppppppppppp
+          //- ul.galery__items
+            -
+              var blocks = [
+                {src: './assets/img/img-3.png',data: 'red',},
+                {src: './assets/img/paralax.jpg',data: 'blue',},
+                {src: './assets/img/img-1.png',data: 'green',},
+                {src: './assets/img/img-2.png',data: 'green',},
+                {src: './assets/img/img-2.png',data: 'coral',},
+                {src: './assets/img/paralax.jpg',data: 'blue',},
+                {src: './assets/img/img-3.png',data: 'green',},
+                {src: './assets/img/img-3.png',data: 'red',},
+                {src: './assets/img/paralax.jpg',data: 'green',},
+                {src: './assets/img/img-3.png',data: 'red',},
+                {src: './assets/img/paralax.jpg',data: 'blue',},
+                {src: './assets/img/img-2.png',data: 'coral',},
+                {src: './assets/img/paralax.jpg',data: 'blue',},
+              ];
+            each block in blocks
+              li.galery__item._galery-item-js.rel.center(data=block.data)
+                a(href="!#" rel='#popupGalery').galery__img.but-wave.popups-init-js
+                  .imgs
+                    img(src=block.src alt='img')
+
+
 
 

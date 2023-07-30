@@ -1,221 +1,101 @@
 "use ctrict";
-import Plyr from "plyr";
-export class Accord {
-  constructor(accord) {
-    this.Accord = accord;
-    // this.Accord = this.accord.closest(".accord-js");
-    this.Nab = [...this.Accord.querySelectorAll(".accord-item-js")];
-    this.Nabours = this.Nab.map((el) => {
-      if (!el.classList.contains("accord-hidden-js")) {
-        return el;
-      }
-    });
-    this.Hiddens = [...this.Accord.querySelector(".accord-hidden-js").children];
-    this.nummer = 0;
-    this.simplePlir = "";
-  }
 
-  // ================================
-  // openPlyr() {
-  //   if (this.Accord.querySelector("#player-1")) {
-  //     var r = this.Accord.querySelector("#player-1");
-  //     this.simplePlir = new Plyr(r);
-  //     this.simplePlir.play();
-  //   }
-  // }
-  // closePlyr() {
-  //   document.addEventListener("click", (e) => {
-  //     if (this.simplePlir) {
-  //       this.simplePlir.destroy();
-  //       this.simplePlir = "";
-  //     }
-  //   });
-  // }
-  // -----------------------------------------------
-
-  close() {
-    var temp1 = this.Hiddens[this.nummer];
-    var temp2 = this.Nabours[this.nummer];
-
-    var animation = this.Hiddens[this.nummer].animate(
-      [
-        { height: `${this.Hiddens[this.nummer].scrollHeight}px` },
-        { height: "0px" },
-      ],
-      {
-        duration: 200,
-        easing: "ease-in-out",
-      }
-    );
-
-    const activeHEAD = (e) => {
-      temp2.classList.remove("_is-active");
-      temp1.classList.remove("_is-active");
-      temp1.style.height = 0;
-    };
-    animation.addEventListener(
-      "finish",
-      function () {
-        activeHEAD();
-      },
-      false
-    );
-  }
-
-  // ================================
-
-  open() {
-    [...document.querySelector(".accord-hidden-js").children].forEach(
-      (item) => {
-        item.style.display = "block";
-      }
-    );
-    this.Nabours[this.nummer].classList.add("_is-active");
-    var temp1 = this.Hiddens[this.nummer];
-    temp1.classList.add("_is-active");
-
-    var animation = temp1.animate(
-      [{ height: "0px" }, { height: `${temp1.scrollHeight}px` }],
-      {
-        duration: 200,
-        easing: "ease-in-out",
-      }
-    );
-
-    const activeHEAD = (e) => {
-      temp1.style.height = `${temp1.scrollHeight}px`;
-      temp1.style.height = "auto";
-    };
-    animation.addEventListener(
-      "finish",
-      function () {
-        activeHEAD();
-      },
-      false
-    );
-  }
-
-  Change(i, nummer) {
-    var temp1 = this.Nabours[i];
-    var temp2 = this.Hiddens[i];
-    var temp3 = this.Nabours[nummer];
-    var temp4 = this.Hiddens[nummer];
-
-    var animation = temp2.animate(
-      [{ height: `${temp2.scrollHeight}px` }, { height: "0px" }],
-      {
-        duration: 200,
-        easing: "ease-in-out",
-      }
-    );
-    function openHidButton() {
-      temp1.classList.remove("_is-active");
-      temp2.classList.remove("_is-active");
-      temp2.style.height = 0;
-      temp3.classList.add("_is-active");
-      temp4.classList.add("_is-active");
-      var an = temp4.animate(
-        [{ height: "0px" }, { height: `${temp4.scrollHeight}px` }],
-        {
-          duration: 200,
-          easing: "ease-in-out",
-        }
-      );
-
-      function finischAnim() {
-        temp4.style.height = `${temp4.scrollHeight}px`;
-        temp4.style.height = "auto";
-      }
-      an.addEventListener(
-        "finish",
-        function () {
-          finischAnim();
-        },
-        false
-      );
+export const Accords = () => {
+  class Accord {
+    constructor(accord) {
+      this.Accord = accord;
+      this.Nab = [...this.Accord.querySelectorAll(".accord-item-js")];
+      this.Hidden = this.Accord.querySelector(".accord-hidden-js");
+      this.Hiddens = [...this.Accord.querySelectorAll(".accord-content-js")];
     }
 
-    animation.addEventListener(
-      "finish",
-      function () {
-        openHidButton();
-      },
-      false
-    );
-  }
-  // -----------------------------------------------
-  start(target) {
-    for (let i = 0; i < this.Nabours.length; i++) {
-      if (this.Nabours[i] == target) {
-        this.nummer = i;
-      }
-    }
-
-    if (!target.classList.contains("_is-active")) {
-      for (let i = 0; i < this.Nabours.length; i++) {
-        if (
-          this.Nabours[i] !== this.Nabours[this.nummer] &&
-          this.Nabours[i].classList.contains("_is-active")
-        ) {
-          this.Change(i, this.nummer);
-        }
-      }
-    } else {
-      this.close();
-    }
-
-    if (!target.classList.contains("_is-active")) {
-      for (let i = 0; i < this.Nabours.length; i++) {
-        if (
-          this.Nabours[i] !== target &&
-          this.Nabours[i].classList.contains("_is-active")
-        ) {
-          return;
-        }
-      }
-      this.open();
-    }
-  }
-  // -----------------------------------------------
-  static resetDouble() {
-    [...document.querySelectorAll(".accord-item-js")].forEach((item) => {
-      item.classList.remove("_is-active");
-    });
-    [...document.querySelector(".accord-hidden-js").children].forEach(
-      (item) => {
+    navLogik(item) {
+      if (item.classList.contains("_is-active")) {
         item.classList.remove("_is-active");
-        item.style.height = 0;
-        item.style.display = "none";
+      } else {
+        item.classList.add("_is-active");
       }
-    );
-  }
-  // -----------------------------------------------
-  static resetAll() {
-    [...document.querySelectorAll(".accord-item-js")].forEach((item) => {
-      item.classList.remove("_is-active");
-    });
+      [...document.querySelectorAll(".accord-item-js")].forEach((el) => {
+        if (el.classList.contains("_is-active") && el !== item) {
+          el.classList.remove("_is-active");
+        }
+      });
+    }
 
-    [...document.querySelector(".accord-hidden-js").children].forEach(
-      (item) => {
-        if (item.classList.contains("_is-active")) {
-          var animation = item.animate(
-            [{ height: `${item.scrollHeight}px` }, { height: "0px" }],
-            {
-              duration: 200,
-              easing: "ease-in-out",
-            }
-          );
-          animation.addEventListener(
-            "finish",
-            function () {
-              item.classList.remove("_is-active");
-              item.style.height = 0;
-            },
-            false
-          );
+    actHidden(indexItem) {
+
+      for (let i = 0; i < this.Hiddens.length; ++i) {
+        if (i === indexItem) {
+          this.Hiddens[i].classList.add("_is-active");
+        } else if (this.Hiddens[i].classList.contains("_is-active")) {
+          this.Hiddens[i].classList.remove("_is-active");
         }
       }
-    );
+    }
+
+    activ(indexItem) {
+      if (this.Hidden.classList.contains("_is-active")) {
+        this.Hidden.classList.remove("_is-active");
+        
+        setTimeout(() => {
+          this.Hidden.classList.add("_is-active");
+          this.actHidden(indexItem);
+        }, 300);
+
+      } else {
+        this.Hidden.classList.add("_is-active");
+        this.actHidden(indexItem);
+      }
+
+     [...document.querySelectorAll(".accord-hidden-js")].forEach((item) => {
+       if (item.classList.contains("_is-active") && item !== this.Hidden) {
+         item.classList.remove("_is-active");
+       }
+     });
+    }
+
+    start() {
+      document.addEventListener("click", (e) => {
+        if (
+          e.target.closest(".accord-item-js") &&
+          e.target.closest(".accord-item-js").closest(".accord-js") ==
+            this.Accord
+        ) {
+          var item = e.target.closest(".accord-item-js");
+          var indexItem = this.Nab.indexOf(item);
+          this.navLogik(item);
+          this.activ(indexItem);
+          setTimeout(() => {
+             var temp = this.Nab.filter(function (el) {
+               return el.classList.contains("_is-active");
+             });
+             if (temp.length === 0) {
+               Accord.resetAll();
+             }
+           }, 300);
+        }
+
+        if (!e.target.closest(".accord-js")) {
+          Accord.resetAll();
+        }
+      });
+    }
+
+    static resetAll() {
+      [...document.querySelectorAll(".accord-item-js")].forEach((item) => {
+        if (item.classList.contains("_is-active")) {
+          item.classList.remove("_is-active");
+        }
+      });
+      [...document.querySelectorAll(".accord-hidden-js")].forEach((item) => {
+        if (item.classList.contains("_is-active")) {
+          item.classList.remove("_is-active");
+        }
+      });
+    }
   }
-  // -----------------------------------------------
-}
+  const accordAll = document.querySelectorAll(".accord-js");
+  accordAll.forEach((cell) => {
+    new Accord(cell).start();
+  });
+};

@@ -14,7 +14,7 @@ import { Popup } from "./src/pug/components/popup/popup";
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
-import { Accord } from "./src/pug/components/accord/accord";
+import { Accords } from "./src/pug/components/accord/accord";
 import { MyTab } from "./src/pug/components/tabs/tabs";
 import { MyRange } from "./src/pug/components/range/range";
 import { Select } from "./src/pug/components/select/select";
@@ -27,14 +27,12 @@ import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
 import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
 import { CasesInit } from "./src/pug/components/cases/cases";
 
-
 document.addEventListener("DOMContentLoaded", function () {
- 
   Anim();
   // ==========
-     if (document.querySelector("video")) {
-       Look();
-     }
+  if (document.querySelector("video")) {
+    Look();
+  }
   // =======================
   if (document.querySelector("source")) {
     Lazy();
@@ -50,6 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // ====GalCases=====
   if (document.querySelector("._galCases-plaza-js")) {
     GalCases();
+  }
+  // ====Accords=====
+  if (document.querySelector(".accord")) {
+    Accords();
   }
   // =======================
   const sideMenu = document.querySelectorAll(".smenu-js");
@@ -110,35 +112,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // =======================
   if (document.querySelector("._galery-body-js")) {
     MyGalery();
-  };
-  
+  }
+
   // ========popup===============
 
   if (document.querySelector(".popups-init-js")) {
-     Popup(); 
+    Popup();
   }
   // =======================
   if (document.querySelector("header")) {
     Header();
   }
   // =======================
-  const accordAll = document.querySelectorAll(".accord");
-  if (accordAll.length > 0) {
-    document.addEventListener("click", (e) => {
-      if (e.target.closest(".accord-item-js")) {
-        const target = e.target.closest(".accord-js");
-        const accord = new Accord(target);
-        accord.start(e.target.closest(".accord-item-js"));
-      } else if (!e.target.closest(".accord-js")) {
-        Accord.resetAll();
-      }
-    });
-    document.addEventListener("dblclick", (e) => {
-      if (e.target.closest(".accord-item-js")) {
-        Accord.resetDouble();
-      }
-    });
-  }
+
   // =======================
   const tabs = document.querySelectorAll(".tabs-container-js");
   if (tabs.length > 0) {
@@ -173,7 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cell.addEventListener("click", Button);
   });
   // =======================
-
 
   const textTypedAll = [...document.querySelectorAll("._hover-typed")];
   if (textTypedAll.length > 0) {

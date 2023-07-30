@@ -3,6 +3,7 @@
 export const GalCases = () => {
   class GALCASE {
     constructor(elem, options) {
+      this.elem = elem;
       this.GAL = elem.querySelector("._galCases-plaza-js");
       this.Button = elem.querySelector("._galCases-button-js");
       this.Columns = options.numberColumns;
@@ -41,17 +42,19 @@ export const GalCases = () => {
         return el.classList.contains("_is-active");
       });
     }
+    close() {
+      this.tempActive = [];
+      this.NumberAddItems = this.Columns;
+      this.startOrigin();
+      this.Button.innerHTML =
+        '<span>more</span><svg><use xlink:href="#load"></use></svg>';
+    }
 
     addItems() {
       this.checkNummbersItems();
 
       if (this.tempActive.length === this.elements.length) {
-        this.tempActive = [];
-        this.NumberAddItems = this.Columns;
-        this.startOrigin();
-        this.Button.innerHTML =
-          '<span>more</span><svg><use xlink:href="#load"></use></svg>';
-
+        this.close();
       } else {
         this.NumberAddItems = this.NumberAddItems + this.Items;
         for (let i = 0; i < this.elements.length; ++i) {
@@ -69,25 +72,31 @@ export const GalCases = () => {
 
     start() {
       this.startOrigin();
-      this.Button.addEventListener(
-        "click",
-        (e) => (
+
+      // this.Button.addEventListener("click", (e) => {});
+      document.addEventListener("click", (e) => {
+        if (e.target.closest(".galCases") !== this.elem) {
+          this.close();
+        } else if (e.target.closest("._galCases-button-js ") == this.Button) {
           this.buttonActive(),
-          setTimeout(() => {
-            this.addItems();
-          }, 300)
-        )
-      );
+            setTimeout(() => {
+              this.addItems();
+            }, 300);
+        }
+      });
     }
   }
 
   // ============
-  const galCases1 = document.querySelector("#galCases1 ");
-  const galCases1Act = new GALCASE(galCases1, {
-    numberColumns: 3,
-    numberItems: 3,
-  });
-  galCases1Act.start();
-  // =================
+  if (document.querySelector("#galCases1 ")) {
+    const galCases1 = document.querySelector("#galCases1 ");
+    const galCases1Act = new GALCASE(galCases1, {
+      numberColumns: 3,
+      numberItems: 3,
+    });
+    galCases1Act.start();
+  }
  
+
+  // =================
 };
