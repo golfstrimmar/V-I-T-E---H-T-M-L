@@ -4,134 +4,124 @@ export const Accords = () => {
   class Accord {
     constructor(accord) {
       this.Accord = accord;
-      this.Nab = [...this.Accord.querySelectorAll(".accord-item-js")];
-      this.Hidden = this.Accord.querySelector(".accord-hidden-js");
-      this.Hiddens = [...this.Accord.querySelectorAll(".accord-content-js")];
+      this.NavButtons = [
+        ...this.Accord.querySelectorAll("._accord-nav-js button"),
+      ];
+      this.Hidden = this.Accord.querySelector("._accord-hidden-js");
+      this.Default = this.Accord.querySelector("._accord-default-js");
+      this.HiddenWrap = this.Accord.querySelector("._accord-hidden-wrap-js");
+      this.Hiddens = [...this.Accord.querySelectorAll("._accord-content-js")];
+      this.Index = this.Hiddens.indexOf(this.Default);
+      this.resetTime = 0;
     }
 
-    navLogik(item) {
-      if (item.classList.contains("_is-active")) {
-        item.classList.remove("_is-active");
-        item.removeAttribute("disabled");
-      } else {
-        item.classList.add("_is-active");
-        item.setAttribute("disabled", true);
-      }
-      [...document.querySelectorAll(".accord-item-js")].forEach((el) => {
-        if (el.classList.contains("_is-active") && el !== item) {
-          el.classList.remove("_is-active");
-          el.removeAttribute("disabled");
-        }
-      });
-    }
+    activItem() {
 
-    actHidden(indexItem) {
-      for (let i = 0; i < this.Hiddens.length; ++i) {
-        if (i === indexItem) {
-          this.Hiddens[i].classList.add("_is-active");
-        } else if (this.Hiddens[i].classList.contains("_is-active")) {
-          this.Hiddens[i].classList.remove("_is-active");
+      this.resetTime = 0;
+      for (let i = 0; i < this.NavButtons.length; ++i) {
+        if (this.NavButtons[i].classList.contains("_is-active")) {
+          this.resetTime = 200;
         }
       }
-    }
 
-    activ(indexItem) {
-      if (this.Hidden.classList.contains("_is-active")) {
-        this.Hidden.classList.remove("_is-active");
 
-        setTimeout(() => {
-          this.Hidden.classList.add("_is-active");
-          this.actHidden(indexItem);
-        }, 300);
-      } else {
+      for (let i = 0; i < this.NavButtons.length; ++i) {
+        if (this.NavButtons[i].classList.contains("_is-active")) {
+          this.NavButtons[i].classList.remove("_is-active");
+          this.NavButtons[i].removeAttribute("disabled");
+        }
+      }
+      this.NavButtons[this.Index].classList.add("_is-active");
+      this.NavButtons[this.Index].setAttribute("disabled", true);
+
+
+
+      setTimeout(() => {
+        for (let i = 0; i < this.Hiddens.length; ++i) {
+          if (this.Hiddens[i].classList.contains("_is-active")) {
+            this.Hiddens[i].classList.remove("_is-active");
+          }
+        }
+        this.Hiddens[this.Index].classList.add("_is-active");
         this.Hidden.classList.add("_is-active");
-        this.actHidden(indexItem);
-      }
+      }, this.resetTime);
+      
+    }
 
-      [...document.querySelectorAll(".accord-hidden-js")].forEach((item) => {
-        if (item.classList.contains("_is-active") && item !== this.Hidden) {
-          item.classList.remove("_is-active");
+    resetNull() {
+      for (let i = 0; i < this.NavButtons.length; ++i) {
+        if (this.NavButtons[i].classList.contains("_is-active")) {
+          this.NavButtons[i].classList.remove("_is-active");
+          this.NavButtons[i].removeAttribute("disabled");
         }
-      });
+      }
+      setTimeout(() => {
+        for (let i = 0; i < this.Hiddens.length; ++i) {
+          if (this.Hiddens[i].classList.contains("_is-active")) {
+            this.Hiddens[i].classList.remove("_is-active");
+          }
+        }
+      }, 1000);
+      this.Hidden.classList.remove("_is-active");
     }
 
     start() {
-      document.addEventListener("click", (e) => {
-        
-        if (
-          e.target.closest(".accord-item-js") &&
-          e.target.closest(".accord-item-js").closest(".accord-js") ==
-            this.Accord
-        ) {
-          var item = e.target.closest(".accord-item-js");
-          var indexItem = this.Nab.indexOf(item);
-          this.navLogik(item);
-          this.activ(indexItem);
-          setTimeout(() => {
-            var temp = this.Nab.filter(function (el) {
-              return el.classList.contains("_is-active");
-            });
-            if (temp.length === 0) {
-              Accord.resetAll();
-            }
-          }, 300);
-        }
-
-        if (!e.target.closest(".accord-js")) {
-          Accord.resetAll();
-          // if (document.querySelector(".accord-galery-js")) {
-          //   Accord.open0(document.querySelector(".accord-galery-js"));
-          // }
-        }
-      });
-    }
-
-    static resetAll() {
-      [...document.querySelectorAll(".accord-item-js")].forEach((item) => {
-        if (item.classList.contains("_is-active")) {
-          item.classList.remove("_is-active");
-          item.removeAttribute("disabled");
-        }
-      });
-      [...document.querySelectorAll(".accord-hidden-js")].forEach((item) => {
-        if (item.classList.contains("_is-active")) {
-          item.classList.remove("_is-active");
-        }
-      });
-      setTimeout(() => {
-        [...document.querySelectorAll(".accord-content-js")].forEach((item) => {
-          if (item.classList.contains("_is-active")) {
-            item.classList.remove("_is-active");
+      if (this.Index !== -1) {
+        this.activItem();
+      }
+      for (let i = 0; i < this.NavButtons.length; ++i) {
+        this.NavButtons[i].addEventListener("click", (e) => {
+          this.Index = i;
+          if (this.Index !== -1) {
+            this.Hidden.classList.remove("_is-active");
           }
+          this.activItem();
         });
-      }, 300);
-    }
+      }
 
-    // static open0(el) {
-    //   var temp = [];
-    //   var tempContent = [];
-    //   setTimeout(() => {
-    //         temp = [...el.querySelectorAll("._galery-item-js")];
-    //         temp[0].classList.add("_is-active");
-    //         temp[0].setAttribute("disabled", true);
-    //         tempContent = [...el.querySelectorAll(".accord-content-js")];
-    //         tempContent[0].classList.add("_is-active");
-    //         el.querySelector(".accord-hidden-js").classList.add("_is-active");
-    //   }, 300);
-    // }
+      document.addEventListener("click", (e) => {
+        if (
+          !e.target.closest("._accord-js") &&
+          this.Hiddens.indexOf(this.Default) === -1
+        ) {
+          this.resetNull();
+        } else if (
+          !e.target.closest("._accord-js") &&
+          this.Index !== this.Hiddens.indexOf(this.Default)
+        ) {
+          this.Index = this.Hiddens.indexOf(this.Default);
+          this.Hidden.classList.remove("_is-active");
+          this.activItem();
+        }
+
+        if (
+          e.target.closest("._accord-js") !== this.Accord &&
+          this.Index !== this.Hiddens.indexOf(this.Default)
+        ) {
+          if (this.Hiddens.indexOf(this.Default) !== -1) {
+            this.Index = this.Hiddens.indexOf(this.Default);
+            this.Hidden.classList.remove("_is-active");
+            this.activItem();
+          } else {
+            this.resetNull();
+          }
+        }
+      });
+    }
   }
-  const accordAll = document.querySelectorAll(".accord-js");
+
+  const accordAll = document.querySelectorAll("._accord-js");
   accordAll.forEach((cell) => {
-    new Accord(cell).start();
+    var newAccord = new Accord(cell);
+    newAccord.start();
   });
 
   const contentGallery = () => {
     var allcontentGallery = [
       ...document
-        .querySelector(".accord--galery")
-        .querySelectorAll(".accord-content-js "),
+        .querySelector("._accord-galery-js")
+        .querySelectorAll("._accord-content-js "),
     ];
-
     var temp1 = [];
     for (let i = 0; i < allcontentGallery.length; ++i) {
       temp1[i] = allcontentGallery[i].innerHTML;
@@ -140,7 +130,7 @@ export const Accords = () => {
     allcontentGallery[allcontentGallery.length - 1].innerHTML = temp1;
   };
 
-  if (document.querySelector(".accord--galery")) {
+  if (document.querySelector("._accord-galery-js")) {
     contentGallery();
   }
 };

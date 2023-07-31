@@ -47,7 +47,7 @@ export const Popup = () => {
         var temp = document.createElement("li");
         temp.classList.add("slider__item", "swiper-slide", "rel");
 
-        temp.innerHTML = `<p>ffffffffffffffffff </p> <div class="imgs">
+        temp.innerHTML = ` <div class="imgs">
         <img src= "${plasa[i]}"> </img>
       </div>`;
         popupGalerySwiper.append(temp);
@@ -113,14 +113,14 @@ export const Popup = () => {
     if (e.target.closest(".galery__item")) {
       var temp = [
         ...e.target
-          .closest(".accord-content-js")
+          .closest("._accord-content-js")
           .querySelectorAll(".galery__item img"),
       ];
 
       var plasa = [
         ...e.target
-          .closest(".accord-js")
-          .querySelector(".accord-content-js._is-active")
+          .closest("._accord-js")
+          .querySelector("._accord-content-js._is-active")
           .querySelectorAll(".galery__item "),
       ];
 

@@ -1,46 +1,45 @@
 .accord {
-  border: 1px solid #7ab764;
   &__body {
+    border: 1px solid #7ab764;
+  }
+  &__nav {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    button {
+      border: 1px solid #120a81;
+      background: #7268fa;
+      transition: all 0.2s ease-in-out;
+      padding: 10px;
+      &:hover {
+        background: #a09af7;
+      }
+      &._is-active {
+        background: #550a81;
+      }
+    }
   }
-}
-.accord-item {
-  background: rgb(230, 237, 243);
-  transition: all .3s ease-in-out;
-  cursor: pointer;
-  outline: 1px solid rgb(51, 120, 180);
-  padding: 10px;
-  &:hover {
-    background: rgb(248, 68, 143);
+  &__hidden {
+    background: rgb(134, 231, 125);
   }
-  &._is-active {
-    background: rgb(146, 17, 71);
+  &__content {
+    height: 0;
+    overflow: hidden;
+    &._is-active {
+      height: auto;
+      background: rgb(146, 17, 71);
+    }
   }
 }
 
-.accord-hidden {
-  grid-column: 1/4;
-  background: rgb(134, 231, 125);
-  overflow: hidden;
-}
-.accord__content {
-  height: 0;
-  overflow: hidden;
-  &._is-active {
-    height: auto;
-    background: rgb(146, 17, 71);
-  }
-}
-.accord-hidden-js {
+._accord-hidden-js {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  transition: all .3s;
-  .accord-hidden__wrap {
-    min-height: 0;
-  }
+  transition: all .2s;
   &._is-active {
     grid-template-rows: 1fr;
   }
+}
+._accord-hidden-wrap-js {
+  min-height: 0;
 }
