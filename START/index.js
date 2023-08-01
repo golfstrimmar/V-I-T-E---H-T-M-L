@@ -40,20 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
-  // ====Accords=====
-  if (document.querySelector(".accord")) {
-    Accords();
-  }
-
-  // ========Cases=============
-  if (document.querySelector(".cases")) {
-    CasesInit();
-  }
-  // ====GalCases=====
-  if (document.querySelector("._galCases-plaza-js")) {
-    GalCases();
-  }
-
   // ========popup===============
   if (document.querySelector(".popups-init-js")) {
     Popup();
@@ -65,9 +51,32 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // =========sideMenu==============
- if (document.querySelector("._tabs-container-js")) {
-   SideMenu();
- }
+  if (document.querySelector("._smenu-js")) {
+    SideMenu();
+  }
+  // ====GalCases=====
+  if (document.querySelector("._galCases-plaza-js")) {
+    GalCases();
+  }
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ====Accords=====
+  if (document.querySelector(".accord")) {
+    Accords();
+  }
+
+  // ========Cases=============
+  if (document.querySelector("._cases-js")) {
+    CasesInit();
+  }
+
   // =======================
   if (document.querySelector("#swiper-1")) {
     Swiper1();

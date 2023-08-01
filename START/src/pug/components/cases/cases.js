@@ -110,7 +110,6 @@ export const CasesInit = () => {
 
     start(swiperCases) {
       this.navOrdnung();
-
       var anim = this.sliderBlock.animate([{ opacity: 1 }, { opacity: 0 }], {
         duration: 200,
       });
