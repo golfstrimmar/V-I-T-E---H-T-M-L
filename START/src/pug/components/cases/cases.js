@@ -144,6 +144,8 @@ export const CasesInit = () => {
     }
   }
 
+
+  // ============
   document.addEventListener("click", (e) => {
     if (e.target.closest("._cases-nav-item-js")) {
       var tempCase = e.target.closest("._cases-nav-item-js");

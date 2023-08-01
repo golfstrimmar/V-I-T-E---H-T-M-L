@@ -11,25 +11,24 @@ import { Marque } from "./assets/js/marque";
 import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
 import { Header } from "./src/pug/components/header/header";
 import { Popup } from "./src/pug/components/popup/popup";
+import { Tab } from "./src/pug/components/tab/tab";
+
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
 import { Accords } from "./src/pug/components/accord/accord";
-import { MyTab } from "./src/pug/components/tabs/tabs";
 import { MyRange } from "./src/pug/components/range/range";
 import { Select } from "./src/pug/components/select/select";
 import { Look } from "./src/pug/components/look/look";
 import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { GalCases } from "./src/pug/components/galCases/galCases";
-// import { GalSlider } from "./src/pug/components/galSlider/galSlider";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
-import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
-import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
+import { SideMenu } from "./src/pug/components/side-menu/side-menu";
 import { CasesInit } from "./src/pug/components/cases/cases";
 
 document.addEventListener("DOMContentLoaded", function () {
   Anim();
-  // ==========
+  // ===Look=======
   if (document.querySelector("video")) {
     Look();
   }
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("source")) {
     Lazy();
   }
-  // =======================
+  // =========bunnerSwiper==============
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
   }
@@ -55,38 +54,20 @@ document.addEventListener("DOMContentLoaded", function () {
     GalCases();
   }
 
-  // =======================
-  const sideMenu = document.querySelectorAll(".smenu-js");
-  if (sideMenu.length > 0) {
-    [...document.querySelectorAll(".smenu-title-js ")].forEach((kab) => {
-      kab.addEventListener("click", (e) => {
-        var SideMenu = new MySideMenu(kab);
-        SideMenu.start();
-      });
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".smenu-js")) {
-        MySideMenu.resetAll();
-      }
-    });
+  // ========popup===============
+  if (document.querySelector(".popups-init-js")) {
+    Popup();
   }
-  // =======================
-  const tabskurz = document.querySelectorAll(".tabkurz");
-  if (tabskurz.length > 0) {
-    [...document.querySelectorAll(".kab-title-js")].forEach((kab) => {
-      kab.addEventListener("click", (e) => {
-        var Tabkurz = new MyTabkurz(kab);
-        Tabkurz.start();
-      });
-    });
 
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".tabkurz-body-js")) {
-        MyTabkurz.resetAll();
-      }
-    });
+  // ======Tab=================
+  if (document.querySelector("._tabs-container-js")) {
+    Tab();
   }
+
+  // =========sideMenu==============
+ if (document.querySelector("._tabs-container-js")) {
+   SideMenu();
+ }
   // =======================
   if (document.querySelector("#swiper-1")) {
     Swiper1();
@@ -112,31 +93,11 @@ document.addEventListener("DOMContentLoaded", function () {
     Double();
   }
 
-  // ========popup===============
-
-  if (document.querySelector(".popups-init-js")) {
-    Popup();
-  }
   // =======================
   if (document.querySelector("header")) {
     Header();
   }
 
-  // =======================
-  const tabs = document.querySelectorAll(".tabs-container-js");
-  if (tabs.length > 0) {
-    document.addEventListener("click", (e) => {
-      if (e.target.closest(".tab-title-js")) {
-        const target = e.target.closest(".tab-js");
-        const Tab = new MyTab(target);
-        Tab.start();
-      } else if (!e.target.closest(".tabs-container-js")) {
-        MyTab.resetAll();
-      } else if (!e.target.closest(".tab-js")) {
-        MyTab.resetAll();
-      }
-    });
-  }
   // =======================
   const ranges = [...document.querySelectorAll(".range-wrap")];
   if (ranges.length > 0) {
@@ -164,25 +125,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-  // =======================
-  // =======================
-  // =======================
-  // =======================
-  // =======================
-  // =======================
-  // =======================
-  // =======================
-  // =======================
-  // =======================
-  // =======================
-  // =======================
-  // =======================
+// =======================
+// =======================
+// =======================
+// =======================
+// =======================
+// =======================
+// =======================
+// =======================
+// =======================
+// =======================
+// =======================
+// =======================
+// =======================
 
-  // // ======GalSlider==================
-  // if (document.querySelector("#galSlider")) {
-  //   GalSlider();
-  // }
-
+// // ======GalSlider==================
+// if (document.querySelector("#galSlider")) {
+//   GalSlider();
+// }
+// const tabs = document.querySelectorAll(".tabs-container-js");
+// if (tabs.length > 0) {
+//   document.addEventListener("click", (e) => {
+//     if (e.target.closest(".tab-title-js")) {
+//       const target = e.target.closest(".tab-js");
+//       const Tab = new MyTab(target);
+//       Tab.start();
+//     } else if (!e.target.closest(".tabs-container-js")) {
+//       MyTab.resetAll();
+//     } else if (!e.target.closest(".tab-js")) {
+//       MyTab.resetAll();
+//     }
+//   });
+// }
 // ===============================================
 Object.defineProperty(HTMLElement.prototype, "addAct", {
   get: function () {

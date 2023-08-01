@@ -56,7 +56,9 @@ export const Popup = () => {
       mySwiperGalary.slideTo(itemIndex, 0);
     }
     // =====================
-    start() {
+    start(tempPopup) {
+      this.popInit = tempPopup;
+      this.rel = this.popInit.getAttribute("rel");
       this.body.classList.add("lock");
       setTimeout(() => {
         this.open();
@@ -72,10 +74,52 @@ export const Popup = () => {
     }
   }
 
-  const popupsInit = [...document.querySelectorAll(".popups-init-js")];
-  var newPopup = {};
   var mySwiperGalary = {};
 
+  const logikPopup = () => {
+    var newPopup = new Popup(document.querySelector(".popups-init-js"));
+    var tempPopup = [];
+
+    document.addEventListener("click", (e) => {
+      if (e.target.closest(".popups-init-js")) {
+        tempPopup = e.target.closest(".popups-init-js");
+        newPopup.start(tempPopup);
+      }
+
+      if (
+        e.target == document.querySelector(".popup-overlay-js") ||
+        e.target.closest(".popup-close-js")
+      ) {
+        newPopup.closePlyr();
+        Popup.close();
+        document
+          .querySelector(".popup__content")
+          .classList.remove("_is-active");
+      }
+
+      if (e.target.closest(".galery__item")) {
+        var temp = [
+          ...e.target
+            .closest("._accord-content-js")
+            .querySelectorAll(".galery__item img"),
+        ];
+
+        var plasa = [
+          ...e.target
+            .closest("._accord-js")
+            .querySelector("._accord-content-js._is-active")
+            .querySelectorAll(".galery__item "),
+        ];
+
+        temp = temp.map((el) => {
+          return el.getAttribute("src");
+        });
+
+        var itemIndex = plasa.indexOf(e.target.closest(".galery__item"));
+        newPopup.startGalary(temp, itemIndex);
+      }
+    });
+  };
   const SliderGalery = () => {
     mySwiperGalary = new Swiper("#slider-galery", {
       slidesPerView: 1,
@@ -89,47 +133,8 @@ export const Popup = () => {
     });
   };
 
+  logikPopup();
   if (document.querySelector("#slider-galery")) {
     SliderGalery();
   }
-
-  document.addEventListener("click", (e) => {
-    popupsInit.forEach((popup) => {
-      if (e.target.closest(".popups-init-js") == popup) {
-        newPopup = new Popup(popup);
-        newPopup.start();
-      }
-    });
-
-    if (
-      e.target == document.querySelector(".popup-overlay-js") ||
-      e.target.closest(".popup-close-js")
-    ) {
-      newPopup.closePlyr();
-      Popup.close();
-      document.querySelector(".popup__content").classList.remove("_is-active");
-    }
-
-    if (e.target.closest(".galery__item")) {
-      var temp = [
-        ...e.target
-          .closest("._accord-content-js")
-          .querySelectorAll(".galery__item img"),
-      ];
-
-      var plasa = [
-        ...e.target
-          .closest("._accord-js")
-          .querySelector("._accord-content-js._is-active")
-          .querySelectorAll(".galery__item "),
-      ];
-
-      temp = temp.map((el) => {
-        return el.getAttribute("src");
-      });
-
-      var itemIndex = plasa.indexOf(e.target.closest(".galery__item"));
-      newPopup.startGalary(temp, itemIndex);
-    }
-  });
 };

@@ -1,4 +1,4 @@
-.tabkurz {
+.tab {
   background-color: bisque;
   .kab {
     display: inline-table;
@@ -46,18 +46,18 @@
   }
 }
 
-.kab-js {
-  & > .kab-hidden-js {
+._kab-js {
+  & > ._kab-hidden-js {
     overflow: hidden;
     transition: all 0.3s;
     display: grid;
     grid-template-rows: 0fr;
-    .kab-wrap-js {
+    ._kab-wrap-js {
       min-height: 0;
     }
   }
   &._is-active {
-    & > .kab-hidden-js {
+    & > ._kab-hidden-js {
       grid-template-rows: 1fr;
     }
   }
