@@ -1,66 +1,179 @@
-section#cases.cases
+section.accord#accord--cases
   .container
-    .cases__body._cases-js
-      .cases__nav.cases-nav-js
-        .cases__title
-          h2 Latest projects
-        button.cases__nav-item._cases-nav-item-js(type='button' data='blue') All
-        button.cases__nav-item._cases-nav-item-js(type='button' data='green') Building
-        button.cases__nav-item._cases-nav-item-js._is-active(type='button' data='all' disabled='true') View all projects
-      ul.cases__items._plasa-js
-              li(data='blue')._cases-item-js
-                h4 title blue11 
-                p Lorem ipsum blue11
-                span #footer
-                b ./assets/img/bg.png
-              li(data='blue')._cases-item-js
-                h4 title blue12 
-                p Lorem ipsum blue12
-                span #footer
-                b ./assets/img/img-1.png
-              li(data='blue')._cases-item-js
-                h4 title blue13 
-                p Lorem ipsum blue13
-                span #footer
-                b ./assets/img/img-2.png
-              li(data='blue')._cases-item-js
-                h4 title blue14 
-                p Lorem ipsum blue14
-                span '#footer'
-                b ./assets/img/img-3.png
-              li(data='blue')._cases-item-js
-                h4 title blue15 
-                p Lorem ipsum blue15
-                span #footer
-                b ./assets/img/bg.png
-              li(data='green')._cases-item-js
-                h4 title green11 
-                p Lorem ipsum green11
-                span #footer
-                b ./assets/img/img-1.png
-              li(data='green')._cases-item-js
-                h4 title green12 
-                p Lorem ipsum green12
-                span #footer
-                b ./assets/img/img-2.png
-              li(data='green')._cases-item-js
-                h4 title green13 
-                p Lorem ipsum green13
-                span #footer
-                b ./assets/img/img-3.png
-              li(data='green')._cases-item-js
-                h4 title green14 
-                p Lorem ipsum green14
-                span #footer
-                b ./assets/img/bg.png
-              li(data='green')._cases-item-js
-                h4 title green15 
-                p Lorem ipsum green15
-                span #footer
-                b ./assets/img/paralax.jpg
+    .accord__body._accord-js._accord-galery-js._accord-cases-js
+      nav.accord__nav._accord-nav-js
+        button(type='button')  s
+        button(type='button')  l
+        button(type='button')  i
+        button(type='button')  d
+        button(type='button')  all
 
-      include ./slider.pug
-    
+      .accord__hidden._accord-hidden-js
+        .accord-hidden__wrap._accord-hidden-wrap-js
+          ul.accord__content._accord-content-js._accord-default-js
+            -
+              var blocks = [
+                {src: './assets/img/img-3.png',data: 'red',},
+                {src: './assets/img/img-1.png',data: 'red',},
+                {src: './assets/img/img-2.png',data: 'red',},
+
+              ];
+            each block in blocks
+              li.galery__item.rel.center
+                  .imgs
+                    img(src=block.src alt='img')
+          ul.accord__content._accord-content-js
+            -
+              var blocks = [
+                {src: './assets/img/paralax.jpg',data: 'blue',},
+                {src: './assets/img/paralax.jpg',data: 'blue',},
+                {src: './assets/img/img-2.png',data: 'blue',},
+              ];
+            each block in blocks
+              li.galery__item.rel.center
+                  .imgs
+                    img(src=block.src alt='img')
+          ul.accord__content._accord-content-js
+            -
+              var blocks = [
+                {src: './assets/img/img-1.png',data: 'green',},
+                {src: './assets/img/img-2.png',data: 'green',},
+                {src: './assets/img/img-3.png',data: 'green',},
+                {src: './assets/img/paralax.jpg',data: 'green',},
+              ];
+            each block in blocks
+              li.galery__item.rel.center
+                  .imgs
+                    img(src=block.src alt='img')
+          ul.accord__content._accord-content-js
+            -
+              var blocks = [
+                {src: './assets/img/img-2.png',data: 'coral',},
+                {src: './assets/img/img-2.png',data: 'coral',},
+              ];
+            each block in blocks
+              li.galery__item.rel.center
+                  .imgs
+                    img(src=block.src alt='img')
+          ul.accord__content._accord-content-js
+          .slider-cases.swiper-container
+              ul.swiper-wrapper
+              .swiper-pagination-cases
+
+
+
+
+
+//- section#cases.cases
+//-   .container
+//-     .cases__body._cases-js
+//-       .cases__nav._cases-nav-js
+//-         .cases__title
+//-           h2 Latest projects
+//-         button.cases__nav-item._cases-nav-item-js(type='button' data='blue') All
+//-         button.cases__nav-item._cases-nav-item-js(type='button' data='green') Building
+//-         button.cases__nav-item._cases-nav-item-js._is-active(type='button' data='all' disabled='true') View all projects
+//-       ul.cases__items._plasa-js
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue11 
+//-           p Lorem ipsum blue11
+//-           span #footer
+//-           b ./assets/img/bg.png
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue12 
+//-           p Lorem ipsum blue12
+//-           span #footer
+//-           b ./assets/img/img-1.png
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue13 
+//-           p Lorem ipsum blue13
+//-           span #footer
+//-           b ./assets/img/img-2.png
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue14 
+//-           p Lorem ipsum blue14
+//-           span '#footer'
+//-           b ./assets/img/img-3.png
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue15 
+//-           p Lorem ipsum blue15
+//-           span #footer
+//-           b ./assets/img/bg.png
+//-         li(data='green')._cases-item-js
+//-           h4 title green11 
+//-           p Lorem ipsum green11
+//-           span #footer
+//-           b ./assets/img/img-1.png
+//-         li(data='green')._cases-item-js
+//-           h4 title green12 
+//-           p Lorem ipsum green12
+//-           span #footer
+//-           b ./assets/img/img-2.png
+//-         li(data='green')._cases-item-js
+//-           h4 title green13 
+//-           p Lorem ipsum green13
+//-           span #footer
+//-           b ./assets/img/img-3.png
+//-         li(data='green')._cases-item-js
+//-           h4 title green14 
+//-           p Lorem ipsum green14
+//-           span #footer
+//-           b ./assets/img/bg.png
+//-         li(data='green')._cases-item-js
+//-           h4 title green15 
+//-           p Lorem ipsum green15
+//-           span #footer
+//-           b ./assets/img/paralax.jpg
+
+//-       .slider-cases.swiper-container
+//-         ul.swiper-wrapper
+//-         .swiper-pagination-cases
+//- section#cases.cases
+//-   .container
+//-     .cases__body._cases-js
+//-       .cases__nav._cases-nav-js
+//-         .cases__title
+//-           h2 Latest projects
+//-         button.cases__nav-item._cases-nav-item-js(type='button' data='blue') All
+//-         button.cases__nav-item._cases-nav-item-js(type='button' data='green') Building
+//-         button.cases__nav-item._cases-nav-item-js._is-active(type='button' data='all' disabled='true') View all projects
+//-       ul.cases__items._plasa-js
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue11 
+//-           p Lorem ipsum blue11
+//-           span #footer
+//-           b ./assets/img/bg.png
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue12 
+//-           p Lorem ipsum blue12
+//-           span #footer
+//-           b ./assets/img/img-1.png
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue13 
+//-           p Lorem ipsum blue13
+//-           span #footer
+//-           b ./assets/img/img-2.png
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue14 
+//-           p Lorem ipsum blue14
+//-           span '#footer'
+//-           b ./assets/img/img-3.png
+//-         li(data='blue')._cases-item-js
+//-           h4 title blue15 
+//-           p Lorem ipsum blue15
+//-           span #footer
+//-           b ./assets/img/bg.png
+//-         li(data='green')._cases-item-js
+//-           h4 title green11 
+//-           p Lorem ipsum green11
+//-           span #footer
+//-           b ./assets/img/img-1.png
+
+
+//-       .slider-cases.swiper-container
+//-         ul.swiper-wrapper
+//-         .swiper-pagination-cases
+
     //- #slider-cases.slider-cases.swiper-container
     //-       .swiper-wrapper
     //-         -
@@ -83,7 +196,7 @@ section#cases.cases
     //-             {
     //-               src: './assets/img/bg.png',
     //-             },
-  
+
     //-           ];
     //-         each block in blocks
     //-           .slider__item.swiper-slide
@@ -97,7 +210,7 @@ section#cases.cases
     //-                   use(xlink:href='#Arrow')
 
     //-       .swiper-pagination-cases
-  
- 
+
+
 
 

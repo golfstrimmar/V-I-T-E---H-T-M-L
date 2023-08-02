@@ -16,14 +16,12 @@ export const Accords = () => {
     }
 
     activItem() {
-
       this.resetTime = 0;
       for (let i = 0; i < this.NavButtons.length; ++i) {
         if (this.NavButtons[i].classList.contains("_is-active")) {
           this.resetTime = 200;
         }
       }
-
 
       for (let i = 0; i < this.NavButtons.length; ++i) {
         if (this.NavButtons[i].classList.contains("_is-active")) {
@@ -34,8 +32,6 @@ export const Accords = () => {
       this.NavButtons[this.Index].classList.add("_is-active");
       this.NavButtons[this.Index].setAttribute("disabled", true);
 
-
-
       setTimeout(() => {
         for (let i = 0; i < this.Hiddens.length; ++i) {
           if (this.Hiddens[i].classList.contains("_is-active")) {
@@ -45,7 +41,6 @@ export const Accords = () => {
         this.Hiddens[this.Index].classList.add("_is-active");
         this.Hidden.classList.add("_is-active");
       }, this.resetTime);
-      
     }
 
     resetNull() {
@@ -112,25 +107,82 @@ export const Accords = () => {
 
   const accordAll = document.querySelectorAll("._accord-js");
   accordAll.forEach((cell) => {
-    var newAccord = new Accord(cell);
-    newAccord.start();
+    new Accord(cell).start();
   });
-
-  const contentGallery = () => {
-    var allcontentGallery = [
-      ...document
-        .querySelector("._accord-galery-js")
-        .querySelectorAll("._accord-content-js "),
-    ];
-    var temp1 = [];
-    for (let i = 0; i < allcontentGallery.length; ++i) {
-      temp1[i] = allcontentGallery[i].innerHTML;
+  // ====================================
+  class contentGallery {
+    constructor(cell) {
+      this.allcontentGallery = [
+        ...cell.querySelectorAll("._accord-content-js "),
+      ];
+      this.temp1 = [];
     }
-    temp1 = temp1.join(" ");
-    allcontentGallery[allcontentGallery.length - 1].innerHTML = temp1;
-  };
+
+    start() {
+      for (let i = 0; i < this.allcontentGallery.length; ++i) {
+        this.temp1[i] = this.allcontentGallery[i].innerHTML;
+      }
+      this.temp1 = this.temp1.join(" ");
+      this.allcontentGallery[this.allcontentGallery.length - 1].innerHTML =
+        this.temp1;
+    }
+  }
 
   if (document.querySelector("._accord-galery-js")) {
-    contentGallery();
+    [...document.querySelectorAll("._accord-galery-js")].forEach((cell) => {
+      new contentGallery(cell).start();
+    });
+  }
+  // ==========================================
+  class contentCases {
+    constructor(cell) {
+      this.cell = cell;
+      this.allcontentCases = [...cell.querySelectorAll("._accord-content-js ")];
+      this.content = {};
+      this.temp = [];
+      this.CaseSrc ='';
+      this.StoreElement ={}
+    }
+
+    createSlide(StoreElement) {
+      var tempSlide = document.createElement("li");
+      tempSlide.classList.add("slider__item", "swiper-slide");
+      tempSlide.innerHTML = `<div class="imgs"><img src="${StoreElement.src}"></div>`;
+      this.cell.querySelector(".swiper-wrapper").append(tempSlide);
+
+    }
+
+    start() {
+
+      // this.allcontentCases.forEach((sell) => {
+      //   console.log(sell);
+      //   if (sell.classList.contains("_is-active")) {
+      //     this.content = sell;
+      //     console.log(this.content);
+      //   }
+      // });
+
+console.log(this.allcontentCases);
+
+      //  [... this.content.querySelectorAll("img")].forEach((cell) => {
+      //    this.CaseSrc = cell.getAttribute("src");
+      //    this.StoreElement = {
+      //      src: this.CaseSrc,
+      //    };
+      //    this.createSlide(this.StoreElement);
+      //  });
+    }
+  }
+
+  if (document.querySelector("._accord-galery-js")) {
+    [...document.querySelectorAll("._accord-galery-js")].forEach((cell) => {
+      new contentGallery(cell).start();
+    });
+  }
+
+  if (document.querySelector("._accord-cases-js")) {
+    [...document.querySelectorAll("._accord-cases-js")].forEach((cell) => {
+      new contentCases(cell).start();
+    });
   }
 };

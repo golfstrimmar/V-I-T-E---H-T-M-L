@@ -24,7 +24,7 @@ import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { GalCases } from "./src/pug/components/galCases/galCases";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
 import { SideMenu } from "./src/pug/components/side-menu/side-menu";
-import { CasesInit } from "./src/pug/components/cases/cases";
+// import { CasesInit } from "./src/pug/components/cases/cases";
 
 document.addEventListener("DOMContentLoaded", function () {
   Anim();
@@ -58,19 +58,19 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("._galCases-plaza-js")) {
     GalCases();
   }
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
   // ====Accords=====
   if (document.querySelector(".accord")) {
     Accords();
   }
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
+  // ========================
 
   // ========Cases=============
   if (document.querySelector("._cases-js")) {
