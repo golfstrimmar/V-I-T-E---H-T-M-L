@@ -1,95 +1,37 @@
-.cases {
-  &__body {
-    margin: 100px 0 0;
-    overflow: hidden;
-  }
-  &__items {
-    position: absolute;
-    // padding: 30px 0;
-    height: 0;
-    z-index: -2;
-    opacity: 0;
-  }
-  &__item {
-    height: auto;
-    width: 100%;
-  }
-  &__title {
-    white-space: nowrap;
-    margin: 0 50px 0 0;
-  }
-  &__nav {
-    display: flex;
-    // grid-template-columns: repeat(4, auto);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-  &__nav-item {
-    transition: all 0.3s ease-in-out;
-    max-height: 30px;
-    background-color: transparent;
-    &._is-active {
-      color: gold;
-    }
-  }
-
-  &__info {
-    z-index: 5;
-    background-color: gold;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 47px 30px;
-    display: flex;
-    flex-direction: column;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: all 0.3s;
-    h3 {
-      font-family: "Lexend", sans-serif;
-      font-size: 32px;
-      font-weight: bold;
-      line-height: 1.41;
-      color: black;
-    }
-    p {
-      font-size: 22px;
-      line-height: 1.18;
-      color: black;
-      margin: 40px 0 0 0;
-    }
-    a {
-      font-size: 20px;
-      font-weight: bold;
-      color: black;
-      margin: auto 0 0 0;
-      &:hover {
-        color: #775d0f;
-        svg {
-          stroke: #775d0f;
-        }
-      }
-      svg {
-        width: 20px;
-        height: 22px;
-        margin: 0 0 0 5px;
-        stroke: black;
-      }
-    }
+#accord--cases{
+  .accord__body {
+  border: none;
+}
+.accord__hidden {
+  background: transparent;
+}
+  .accord__nav button {
+  border: none;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  padding: 10px;
+  font-size: 20px;
+  &[disabled]{
+    background-color: dimgrey;
+    color: coral;
+    text-shadow: 0 0 8px  rgb(252, 251, 251);
   }
 }
 
+}
 .slider-cases {
   .slider__item {
     min-height: 373px;
   }
-  .slider__item {
-    // &:hover {
-    //   & > .cases__info {
-    //     transform: scaleY(1);
-    //   }
-    // }
+  
+  .slider-arrow {
+  }
+  .cases-prev {
+    left: 20px;
+  }
+  .cases-next {
+    left: auto;
+    right: 20px;
   }
   .swiper-pagination-cases {
     display: flex;

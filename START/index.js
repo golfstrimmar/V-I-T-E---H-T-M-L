@@ -12,22 +12,33 @@ import { bunnerSwiper } from "./src/pug/components/bunner/bunner";
 import { Header } from "./src/pug/components/header/header";
 import { Popup } from "./src/pug/components/popup/popup";
 import { Tab } from "./src/pug/components/tab/tab";
+import { Accords } from "./src/pug/components/accord/accord";
+import { SideMenu } from "./src/pug/components/side-menu/side-menu";
+import { CasesInit } from "./src/pug/components/cases/cases";
+import { GalleryInit } from "./src/pug/components/galery/galery";
+import { GalCases } from "./src/pug/components/galCases/galCases";
+
+
 
 import { Swiper1 } from "./src/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "./src/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "./src/pug/components/slider-scroll/slider-scroll";
-import { Accords } from "./src/pug/components/accord/accord";
+import { Double } from "./src/pug/components/slider-double/sdouble.js";
+
+
 import { MyRange } from "./src/pug/components/range/range";
 import { Select } from "./src/pug/components/select/select";
 import { Look } from "./src/pug/components/look/look";
-import { Double } from "./src/pug/components/slider-double/sdouble.js";
-import { GalCases } from "./src/pug/components/galCases/galCases";
 import { TypedItem } from "./src/pug/components/typed/typedHover";
-import { SideMenu } from "./src/pug/components/side-menu/side-menu";
-// import { CasesInit } from "./src/pug/components/cases/cases";
 
 document.addEventListener("DOMContentLoaded", function () {
   Anim();
+
+  // =====Header==================
+  if (document.querySelector("header")) {
+    Header();
+  }
+
   // ===Look=======
   if (document.querySelector("video")) {
     Look();
@@ -54,34 +65,29 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("._smenu-js")) {
     SideMenu();
   }
-  // ====GalCases=====
-  if (document.querySelector("._galCases-plaza-js")) {
-    GalCases();
-  }
+
   // ====Accords=====
   if (document.querySelector(".accord")) {
     Accords();
   }
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-  // ========================
-
   // ========Cases=============
-  if (document.querySelector("._cases-js")) {
+  if (document.querySelector("._accord-cases-js")) {
     CasesInit();
+  }
+  // ======Gallery======================
+  if (document.querySelector("._accord-galery-js")) {
+    GalleryInit();
+  }
+  // ====GalCases=====
+  if (document.querySelector("._galCases-plaza-js")) {
+    GalCases();
   }
 
   // =======================
   if (document.querySelector("#swiper-1")) {
     Swiper1();
   }
-  // =======================
+  // ========swiper-1licens===============
   if (document.querySelector("#swiper-1licens")) {
     Swiper1licens();
   }
@@ -89,22 +95,17 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".marque")) {
     Marque();
   }
-  // =======================
+  // ======slider-full=================
   if (document.querySelector("#slider-full")) {
     SwiperFull();
   }
-  // =======================
+  // =====swiper-scroll==================
   if (document.querySelector("#swiper-scroll")) {
     SwiperScroll();
   }
-  // =======================
+  // ========swiperDouble===============
   if (document.querySelector("#swiperDoubleTop")) {
     Double();
-  }
-
-  // =======================
-  if (document.querySelector("header")) {
-    Header();
   }
 
   // =======================
@@ -134,18 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-// =======================
-// =======================
-// =======================
-// =======================
-// =======================
-// =======================
-// =======================
-// =======================
-// =======================
-// =======================
-// =======================
-// =======================
 // =======================
 
 // // ======GalSlider==================

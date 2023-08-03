@@ -1,5 +1,4 @@
 "use ctrict";
-
 export const Accords = () => {
   class Accord {
     constructor(accord) {
@@ -56,7 +55,7 @@ export const Accords = () => {
             this.Hiddens[i].classList.remove("_is-active");
           }
         }
-      }, 1000);
+      }, 200);
       this.Hidden.classList.remove("_is-active");
     }
 
@@ -110,79 +109,6 @@ export const Accords = () => {
     new Accord(cell).start();
   });
   // ====================================
-  class contentGallery {
-    constructor(cell) {
-      this.allcontentGallery = [
-        ...cell.querySelectorAll("._accord-content-js "),
-      ];
-      this.temp1 = [];
-    }
+ 
 
-    start() {
-      for (let i = 0; i < this.allcontentGallery.length; ++i) {
-        this.temp1[i] = this.allcontentGallery[i].innerHTML;
-      }
-      this.temp1 = this.temp1.join(" ");
-      this.allcontentGallery[this.allcontentGallery.length - 1].innerHTML =
-        this.temp1;
-    }
-  }
-
-  if (document.querySelector("._accord-galery-js")) {
-    [...document.querySelectorAll("._accord-galery-js")].forEach((cell) => {
-      new contentGallery(cell).start();
-    });
-  }
-  // ==========================================
-  class contentCases {
-    constructor(cell) {
-      this.cell = cell;
-      this.allcontentCases = [...cell.querySelectorAll("._accord-content-js ")];
-      this.content = {};
-      this.temp = [];
-      this.CaseSrc ='';
-      this.StoreElement ={}
-    }
-
-    createSlide(StoreElement) {
-      var tempSlide = document.createElement("li");
-      tempSlide.classList.add("slider__item", "swiper-slide");
-      tempSlide.innerHTML = `<div class="imgs"><img src="${StoreElement.src}"></div>`;
-      this.cell.querySelector(".swiper-wrapper").append(tempSlide);
-
-    }
-
-    start() {
-
-      // this.allcontentCases.forEach((sell) => {
-      //   console.log(sell);
-      //   if (sell.classList.contains("_is-active")) {
-      //     this.content = sell;
-      //     console.log(this.content);
-      //   }
-      // });
-
-console.log(this.allcontentCases);
-
-      //  [... this.content.querySelectorAll("img")].forEach((cell) => {
-      //    this.CaseSrc = cell.getAttribute("src");
-      //    this.StoreElement = {
-      //      src: this.CaseSrc,
-      //    };
-      //    this.createSlide(this.StoreElement);
-      //  });
-    }
-  }
-
-  if (document.querySelector("._accord-galery-js")) {
-    [...document.querySelectorAll("._accord-galery-js")].forEach((cell) => {
-      new contentGallery(cell).start();
-    });
-  }
-
-  if (document.querySelector("._accord-cases-js")) {
-    [...document.querySelectorAll("._accord-cases-js")].forEach((cell) => {
-      new contentCases(cell).start();
-    });
-  }
 };

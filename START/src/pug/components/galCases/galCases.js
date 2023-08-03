@@ -72,9 +72,11 @@ export const GalCases = () => {
 
     start() {
       this.startOrigin();
-
-      // this.Button.addEventListener("click", (e) => {});
       document.addEventListener("click", (e) => {
+        if (!e.target.closest(".galCases__body")) {
+          this.close();
+        }
+
         if (e.target.closest(".galCases") !== this.elem) {
           this.close();
         } else if (e.target.closest("._galCases-button-js ") == this.Button) {
@@ -96,7 +98,7 @@ export const GalCases = () => {
     });
     galCases1Act.start();
   }
- 
+
   if (document.querySelector("#galCases2 ")) {
     const galCases2 = document.querySelector("#galCases2 ");
     const galCases2Act = new GALCASE(galCases2, {
@@ -105,7 +107,7 @@ export const GalCases = () => {
     });
     galCases2Act.start();
   }
- 
+
   if (document.querySelector("#galCases3 ")) {
     const galCases3 = document.querySelector("#galCases3 ");
     const galCases3Act = new GALCASE(galCases3, {
@@ -114,7 +116,6 @@ export const GalCases = () => {
     });
     galCases3Act.start();
   }
- 
 
   // =================
 };
