@@ -66,10 +66,12 @@ document.addEventListener("DOMContentLoaded", function () {
     SideMenu();
   }
 
+
   // ====Accords=====
   if (document.querySelector(".accord")) {
     Accords();
   }
+
   // ========Cases=============
   if (document.querySelector("._accord-cases-js")) {
     CasesInit();
