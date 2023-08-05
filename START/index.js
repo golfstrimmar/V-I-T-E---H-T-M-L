@@ -24,6 +24,7 @@ import { GalCases } from "./src/pug/components/galCases/galCases";
 import { Look } from "./src/pug/components/look/look";
 // import { Double } from "./src/pug/components/slider-double/sdouble.js";
 import { MyGalery } from "./src/pug/components/galery/galery";
+import { fidback } from "./src/pug/components/best/best";
 // import { TypedItem } from "./src/pug/components/typed/typedHover";
 // import { MyTabkurz } from "./src/pug/components/tabkurz/tabkurz";
 // import { MySideMenu } from "./src/pug/components/side-menu/side-menu";
@@ -34,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (document.querySelector("#bunner-slider")) {
     bunnerSwiper();
+  }
+  if (document.querySelector("#fidback-1")) {
+    fidback();
   }
   // ========Cases=============
   if (document.querySelector(".cases")) {
