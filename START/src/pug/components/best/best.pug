@@ -16,30 +16,31 @@ section(id='limit').limit.rel
 
 
 section(id='fidback').fidback.rel
-   .fidback__body
-        #fidback-1.swiper.fidback__swiper
-          .swiper-wrapper
-            -
-              var blocks = [
-                {src: '../../../../assets/img/fidback/i-1.png',name: 'Paul' ,disc: 'Owner in ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
-                {src: '../../../../assets/img/fidback/i-2.png',name: 'Robert' ,disc: 'Founder in ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
-                {src: '../../../../assets/img/fidback/i-1.png',name: 'Paul' ,disc: 'Owner ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
-                {src: '../../../../assets/img/fidback/i-2.png',name: 'Robert' ,disc: 'Founder ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
-                {src: '../../../../assets/img/fidback/i-1.png',name: 'Paul' ,disc: 'Owner ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
-                //- {src: '../../../../assets/img/fidback/i-2.png',name: 'Robert' ,disc: 'Founder in ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
-                //- {src: '../../../../assets/img/fidback/i-1.png',name: 'Robert' ,disc: 'Founder ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
-            
-              ];
-            each block in blocks
-              .swiper-slide.fidback-slide
-                .fidback-slide__body
-                  .fidback-slide__img.rel
-                    .imgs
-                      img(src=block.src)
-                  svg.fidback-slide__icon 
-                    use(xlink:href='#quer')
-                  .fidback-slide__name=block.name
-                  .fidback-slide__disc=block.disc
-                    span=block.span
-                  .fidback-slide__text=block.text
-        .swiper-pagination-fidback
+  
+        .fidback__body
+          #fidback-1.swiper.fidback__swiper.swiper-container
+            .swiper-wrapper
+              -
+                var blocks = [
+                  {src: '../../../../assets/img/fidback/i-1.png',name: 'Paul' ,disc: 'Owner in ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
+                  {src: '../../../../assets/img/fidback/i-2.png',name: 'Robert' ,disc: 'Founder in ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
+                  {src: '../../../../assets/img/fidback/i-1.png',name: 'Paul' ,disc: 'Owner ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
+                  {src: '../../../../assets/img/fidback/i-2.png',name: 'Robert' ,disc: 'Founder ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
+                  {src: '../../../../assets/img/fidback/i-1.png',name: 'Paul' ,disc: 'Owner ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
+                  {src: '../../../../assets/img/fidback/i-2.png',name: 'Robert' ,disc: 'Founder in ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
+                  {src: '../../../../assets/img/fidback/i-1.png',name: 'Robert' ,disc: 'Founder ',text:'Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.',span: 'Paul.com'},
+
+                ];
+              each block in blocks
+                .swiper-slide.fidback-slide
+                  .fidback-slide__body
+                    .fidback-slide__img.rel
+                      .imgs
+                        img(src=block.src)
+                    svg.fidback-slide__icon 
+                      use(xlink:href='#quer')
+                    .fidback-slide__name=block.name
+                    .fidback-slide__disc=block.disc
+                      span=block.span
+                    .fidback-slide__text=block.text
+          .swiper-pagination-fidback

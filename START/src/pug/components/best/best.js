@@ -10,7 +10,7 @@ var temp;
     initialSlide: 0,
     //  centeredSlidesBounds: true,
     //  centerInsufficientSlides: true,
-    speed: 200,
+    speed: 500,
     watchSlidesProgress: true,
     modules: [Pagination],
     loop: true,
@@ -22,7 +22,6 @@ var temp;
     grabCursor: true,
     on: {
       init: (e) => {
-        console.log("Swiperfidback");
         e.slides.forEach((item) => {
           if (item.matches(".swiper-slide-next")) {
             temp = item.nextElementSibling;
@@ -35,6 +34,13 @@ var temp;
   });
 
   
+  Swiperfidback.on("sliderMove", (e) => {
+    e.slides.forEach((item) => {
+      setTimeout(() => {
+        item.classList.remove("_is-active");
+      }, 0);
+    });
+  });
   Swiperfidback.on("transitionStart", (e) => {
     e.slides.forEach((item) => {
       setTimeout(() => {
