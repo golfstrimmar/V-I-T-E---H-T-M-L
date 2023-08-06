@@ -11,6 +11,7 @@ var temp;
     //  centeredSlidesBounds: true,
     //  centerInsufficientSlides: true,
     speed: 200,
+    watchSlidesProgress: true,
     modules: [Pagination],
     loop: true,
     // centeredSlides: true,
