@@ -6,10 +6,12 @@ export const SideMenu = () => {
       this.title = document.querySelector("._smenu-title-js");
       this.tab = {};
       this.neibours = [];
+      this.action = {};
     }
 
     start(el) {
       this.title = el;
+      this.action = this.title.querySelector("._smenu-action");
       this.tab = this.title.closest("._smenu-item-js");
       this.neibours = [...this.tab.closest("._smenu-js ").children];
 
@@ -18,23 +20,39 @@ export const SideMenu = () => {
           if (this.tab.classList.contains("_is-active")) {
             this.tab.classList.remove("_is-active");
             this.tab.classList.add("_not-active");
+            if (this.action) {
+              this.action.innerHTML = "развернуть";
+            }
+
             cell.querySelectorAll("._smenu-item-js").forEach((kab) => {
               kab.classList.add("_not-active");
               kab.classList.remove("_is-active");
+              if (kab.querySelector("._smenu-action")) {
+                kab.querySelector("._smenu-action").innerHTML = "развернуть";
+              }
             });
           } else {
             this.tab.classList.add("_is-active");
             this.tab.classList.remove("_not-active");
+            if (this.action) {
+              this.action.innerHTML = "свернуть";
+            }
           }
         } else {
           if (cell.classList.contains("_is-active")) {
             cell.classList.remove("_is-active");
             cell.classList.add("_not-active");
+            if (cell.querySelector("._smenu-action")) {
+              cell.querySelector("._smenu-action").innerHTML = "развернуть";
+            }
           }
 
           cell.querySelectorAll("._smenu-item-js").forEach((kab) => {
             kab.classList.remove("_is-active");
             kab.classList.add("_not-active");
+            if (kab.querySelector("._smenu-action")) {
+              kab.querySelector("._smenu-action").innerHTML = "развернуть";
+            }
           });
         }
       });
@@ -45,6 +63,9 @@ export const SideMenu = () => {
         if (item.classList.contains("_is-active")) {
           item.classList.remove("_is-active");
           item.classList.add("_not-active");
+          if (item.querySelector("._smenu-action")) {
+            item.querySelector("._smenu-action").innerHTML = "развернуть";
+          }
           setTimeout(() => {
             item.classList.remove("_not-active");
           }, 4000);
