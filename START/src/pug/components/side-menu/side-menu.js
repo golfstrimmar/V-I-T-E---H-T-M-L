@@ -77,7 +77,7 @@ export const SideMenu = () => {
   var SideMenu = new Side();
 
   document.addEventListener("click", (e) => {
-    if (e.target.closest("._smenu-title-js")) {
+    if (e.target.closest("._smenu-title-js ._smenu-action")) {
       SideMenu.start(e.target.closest("._smenu-title-js"));
     }
 
