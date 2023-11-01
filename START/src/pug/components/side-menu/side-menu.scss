@@ -40,7 +40,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    padding: 5px 5px 5px 25px;
+    padding: 5px 5px 5px 20px;
     z-index: 10;
     transition: all 0.2s;
 
@@ -85,6 +85,10 @@
 }
 
 ._smenu-item-js {
+  ._smenu-hidden-js {
+    padding: 0 0 0 5px;
+    margin: 2px 0;
+  }
   &._is-active {
     & > ._smenu-title-js {
       background-color: rgba(128, 128, 128, 0.4);
@@ -96,13 +100,6 @@
         }
       }
 
-      & ~ ._smenu-hidden-js {
-        padding: 0 0 0 5px;
-        margin: 2px 0;
-        a {
-          margin: 0 5px;
-        }
-      }
       ._smenu-action {
         color: white;
         &:hover {
