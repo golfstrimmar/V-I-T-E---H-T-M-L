@@ -1,0 +1,64 @@
+.tab {
+  background-color: bisque;
+  .kab {
+    display: inline-table;
+    width: 50%;
+    outline: 1px solid grey;
+    background-color: rgb(159, 159, 252);
+    &__title {
+      padding: 10px;
+      transition: all 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      svg{
+        width: 15px;
+        height: 15px;
+        transition: all .3s;
+      }
+      &:hover {
+        box-shadow: inset 0 0 5px grey;
+        cursor: pointer;
+      }
+    }
+    &__hidden {
+        p {
+          padding: 10px;
+        }
+    }
+    &._is-active {
+      & > .kab__title {
+        background-color: rgb(8, 8, 243);
+        box-shadow: inset 0 0 15px rgb(245, 245, 247);
+        border-bottom: 1px solid grey;
+        h4 {
+          color: white;
+        }
+        svg{
+          transform: rotate(180deg);
+          fill: white;
+        }
+      }
+      & > .kab__hidden {
+        background-color: rgb(229, 229, 248);
+      }
+    }
+  }
+}
+
+._kab-js {
+  & > ._kab-hidden-js {
+    overflow: hidden;
+    transition: all 0.3s;
+    display: grid;
+    grid-template-rows: 0fr;
+    ._kab-wrap-js {
+      min-height: 0;
+    }
+  }
+  &._is-active {
+    & > ._kab-hidden-js {
+      grid-template-rows: 1fr;
+    }
+  }
+}

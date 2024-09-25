@@ -1,0 +1,143 @@
+.bunner-slider {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.bunner-slider .slider,
+.bunner-slider .slider__body,
+.bunner-slider .slider__item {
+  min-height: 100vh;
+}
+
+.bunner-slider .slider {
+  position: relative;
+}
+
+.bunner-slider .slider__body {
+  width: 100%;
+  height: 100%;
+}
+
+.bunner-slider .slider__item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bunner-slider .slider-card {
+  position: relative;
+}
+
+.bunner-slider .slider-card__img {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+}
+
+.bunner-slider .slider-card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 276px 0 0;
+  position: relative;
+  z-index: 5;
+}
+
+
+
+
+
+.bunner-slider .swiper-pagination {
+  position: absolute;
+  left: calc((100vw - 1240px)/2);
+  display: inline-block;
+  width: auto;
+  bottom: 22%;
+  z-index: 40;
+  display: flex;
+  column-gap: 10px;
+}
+
+.bunner-slider .swiper-pagination span {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  background: transparent;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+.bunner-slider .swiper-pagination span.swiper-pagination-bullet-active {
+  background: rgb(28, 25, 194);
+
+}
+
+// ==================================
+
+.bunner-search {
+  position: relative;
+  width: 527px;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translate(-50%, 0);
+  z-index: 100;
+}
+
+.bunner-search input {
+  border-bottom: 1px solid white;
+  height: 48px;
+  padding: 0 0 0 10px;
+}
+
+.bunner-search input::placeholder {
+}
+
+.bunner-search button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -17px;
+  top: 53%;
+  transform: translate(-20px, -50%);
+  background: transparent;
+}
+
+.bunner-search button svg {
+  fill: white;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+// .slider--1 {
+//   position: relative;
+// }
+
+// .slider--1 .content-slider-arrow {
+//   left: 100px;
+//   top: 115%;
+//   width: 61px;
+//   height: 61px;
+//   box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+//   border: none;
+// }
+
+// .slider--1 .content-slider-arrow svg {
+//   stroke: red;
+// }
+
+// .slider--1 .content-slider-next {
+//   left: 177px;
+//   transform: rotate(180deg) translateY(50%);
+// }

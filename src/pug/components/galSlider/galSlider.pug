@@ -1,0 +1,42 @@
+h2 galSlider
+section#galSlider.galSlider
+
+  .container
+    
+    .slider.s2
+      button.slider-arrow.slider-arrow-prev.s2-prev(type='button')
+        svg
+          use(xlink:href='#chevron-left')
+      button.slider-arrow.slider-arrow-next.s2-next(type='button')
+        svg
+          use(xlink:href='#chevron-right')
+      .swiper-pagination-s2
+
+      .swiper-container.s2swiper
+        .swiper-wrapper
+          .slide.slide--1.swiper-slide.rel(data-id='0')
+            .imgs
+              img(data='./assets/img/img-1.png' alt='img')     
+            h2 slide--0
+          .slide.slide--2.swiper-slide.rel(data-id='1')
+            .imgs
+              img(data='./assets/img/img-2.png' alt='img')
+            h2 slide--1
+          .slide.slide--3.swiper-slide.rel(data-id='2')
+            .imgs
+              img(data='./assets/img/img-3.png' alt='img')
+            h2 slide--2
+          .slide.slide--4.swiper-slide.rel(data-id='3')
+            .imgs
+              img(data='./assets/img/paralax.jpg' alt='img')
+            h2 slide--3
+    //- ul.slider.s1
+      li.slide.slide--1._is-active.rel slide00000000000
+          .imgs
+            img(src='../src/assets/img/paralax.jpg' alt='img')
+      li.slide.slide--2 slide111111111
+          .imgs
+            img(src='../src/assets/img/paralax.jpg' alt='img')
+      li.slide.slide--3 slide222222222
+          .imgs
+            img(src='../src/assets/img/paralax.jpg' alt='img')

@@ -1,0 +1,54 @@
+h2.center  lazy для демонстрации сделан слишком низко. нужно изменить нп скрипте  lazy.js высоту на -5px  
+section(id='do').do.rel
+  .imgs
+    img(data='./assets/img/bg.png' alt='img')
+  .container
+    .do__body
+
+      -
+        var blocks = [
+          {
+            class: '',
+            src: '#sheet',
+            title: 'Дипломные работы',
+            t1: 'от 80 страниц',
+            t2: '10-30 дней',
+            t3: 'Преподаватель / кандидат наук',
+            t4: '1 месяц',
+            t5: 'План, презентация, речь, отчет об уникальности',
+            nummer: 'от 4100 $'
+          },
+          {
+            class: '',
+            src: '#sheet',
+            title: 'Курсовые работы',
+            t2: '10-30 дней',
+            nummer: 'от 100 $'
+          },
+          
+        ];
+      each block in blocks
+        .do__item.do-item
+          .do-item__head(class=block.class) 
+            h3=block.title
+            svg
+              use(xlink:href=block.src)
+          .do-item__body 
+            if block.t1
+              .do-item__line 
+                h5 Объем работы:
+                p=block.t1
+                p=block.t2
+                p=block.t3
+                p=block.t4
+                p=block.t5
+            if block.t2
+              .do-item__line 
+                h5 Сроки выполнения:
+                p=block.t2
+
+          .do-item__footer
+            .do-item__price  Цена: 
+            .do-item__nummer=block.nummer 
+            a(href="").do-item__button.btn.btn--success.but-wave Заказать
+

@@ -1,0 +1,29 @@
+.bunner {
+  min-height: 100vh;
+  position: relative;
+
+}
+
+.bunner .container {
+  z-index: 2;
+  position: relative;
+}
+
+.bunner__body {
+  display: flex;
+  flex-direction: column;
+  padding: 300px 300px 0 0px;
+}
+
+.bunner__text {
+  margin: 50px 0 30px 0;
+}
+
+.bunner__text p {
+  margin: 0 0 10px 0;
+  text-shadow: 0px 0px 4px #1763b2;
+}
+
+.slider-main-js {
+  max-height: 100%;
+}
