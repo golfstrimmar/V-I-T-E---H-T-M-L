@@ -3,13 +3,14 @@ footer#footer.footer
     .footer__body
       .footer__logo.logo
         a(href='#!')
-          img(src='./assets/img/logo.svg' alt='img') 
+          svg
+            use(xlink:href='#logo')
         p lorem
       .footer__col
         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, error.
       .footer__col
         span Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, error.
-       
+
       .footer__col.footer__col--info.info
         a.info__phone(href='#!') +7(000) 123 45 65 67 
         form.info__search.info__search--footer
@@ -17,6 +18,7 @@ footer#footer.footer
           input(type='submit')
           svg
             use(xlink:href='#search')
-      img.footer__cheap(src='./assets/img/footer-cheap.svg' alt='ïmg')
+      svg.footer__cheap
+        use(xlink:href='#footer-cheap')
     .footer__low
       a.footer__pol(href='#!') @Lorem ipsum dolor sit amet.

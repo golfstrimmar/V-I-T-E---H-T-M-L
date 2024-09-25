@@ -8,7 +8,7 @@ export const TypedItemscroll = (item) => {
   if (item.matches("._scroll-typed--1")) {
     typed = new Typed(".scrolledTyped-1", {
       stringsElement: ".scrolledTyped-strings--1",
-      typeSpeed: 30,
+      typeSpeed: 10,
       onComplete: (self) => {
         text.style.display = "block";
         typed.destroy();

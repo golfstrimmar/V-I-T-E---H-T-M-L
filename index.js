@@ -1,14 +1,15 @@
-import "@/assets/css/plyr.css";
-import "@/assets/css/swiper-bundle.min.css";
-import "@/assets/css/fonts.css";
+import "./assets/css/plyr.css";
+import "./assets/css/swiper-bundle.min.css";
+import "./assets/css/fonts.css";
 import "@/scss/main.scss";
 
-import { Button } from "@/assets/js/button";
-import { Lazy } from "@/assets/js/lazy";
-import { Anim } from "@/assets/js/animation";
-import { Marque } from "@/assets/js/marque";
+import { Button } from "./assets/js/button";
+import { Lazy } from "./assets/js/lazy";
+import { Anim } from "./assets/js/animation";
+import { Marque } from "./assets/js/marque";
 
 import { bunnerSwiper } from "@/pug/components/bunner/bunner";
+
 import { Header } from "@/pug/components/header/header";
 import { Popup } from "@/pug/components/popup/popup";
 import { Tab } from "@/pug/components/tab/tab";
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Look();
   }
   // =======================
-  if (document.querySelector("source")) {
+  if (document.querySelector("img")) {
     Lazy();
   }
   // =========bunnerSwiper==============
