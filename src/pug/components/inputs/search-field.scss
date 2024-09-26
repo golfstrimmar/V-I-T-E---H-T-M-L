@@ -1,0 +1,89 @@
+.search-field {
+  @include flex-center;
+  position: relative;
+
+  height: 100%;
+  label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    @include transition;
+  }
+  input[type="text"] {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    background: transparent;
+    @include transition;
+    z-index: 5;
+    border: 1px solid grey;
+    // border: none;
+    &::placeholder {
+      opacity: 0;
+    }
+    padding: 0px 20px 0px;
+    &:hover {
+      & + label {
+        color: lighten(green, 25%);
+      }
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + label {
+        transform: translateY(-150%);
+      }
+    }
+  }
+
+  &__submit {
+    position: relative;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    left: auto;
+    right: 4px;
+    @include flex-center;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 0;
+      left: 0;
+      background: lighten(green, 65%);
+    }
+  }
+  input[type="submit"] {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    z-index: 10;
+    background-color: transparent;
+    cursor: pointer;
+    & + svg {
+      display: block;
+      cursor: pointer;
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      @include transition;
+    }
+
+    &:hover {
+      & + svg {
+        fill: lighten(green, 25%);
+      }
+    }
+  }
+}

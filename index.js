@@ -8,6 +8,9 @@ import { Lazy } from "./assets/js/lazy";
 import { Anim } from "./assets/js/animation";
 import { Marque } from "./assets/js/marque";
 
+import { Lang } from "./assets/js/lang";
+import { Search } from "./assets/js/search";
+
 import { bunnerSwiper } from "@/pug/components/bunner/bunner";
 
 import { Header } from "@/pug/components/header/header";
@@ -18,13 +21,12 @@ import { SideMenu } from "@/pug/components/side-menu/side-menu";
 import { CasesInit } from "@/pug/components/cases/cases";
 import { GalleryInit } from "@/pug/components/galery/galery";
 import { GalCases } from "@/pug/components/galCases/galCases";
-
 import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "@/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "@/pug/components/slider-scroll/slider-scroll";
 import { Double } from "@/pug/components/slider-double/sdouble.js";
 
-import { MyRange } from "@/pug/components/range/range";
+import { Range } from "@/pug/components/range/range";
 import { Select } from "@/pug/components/select/select";
 import { Look } from "@/pug/components/look/look";
 import { TypedItem } from "@/pug/components/typed/typedHover";
@@ -106,12 +108,22 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#swiperDoubleTop")) {
     Double();
   }
+  // ========lang===============
+  if (document.querySelector('input[name="lang"]')) {
+    document.querySelectorAll('input[name="lang"]').forEach(function (radio) {
+      Lang(radio);
+    });
+  }
+  // ========Search===============
+  if (document.querySelector("#search")) {
+    Search();
+  }
 
   // =======================
-  const ranges = [...document.querySelectorAll(".range-wrap")];
+  const ranges = [...document.querySelectorAll("._range-wrap-js")];
   if (ranges.length > 0) {
     ranges.forEach((item) => {
-      MyRange(item);
+      Range(item);
     });
   }
   // =======================

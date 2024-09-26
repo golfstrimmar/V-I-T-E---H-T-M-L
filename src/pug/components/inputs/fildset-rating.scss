@@ -1,0 +1,64 @@
+.fildset-rating {
+  position: relative;
+  font-size: 30px;
+  display: inline-block;
+  &__items {
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    column-gap: 5px;
+  }
+
+  input[type="radio"]:checked,
+  input[type="radio"]:not(:checked) {
+    position: absolute !important;
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0 !important;
+  }
+
+  &__stars {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  input[type="radio"]:checked + label,
+  input[type="radio"]:not(:checked) + label {
+    height: 100%;
+    cursor: pointer;
+    z-index: 4;
+    padding: 0 0 0 0;
+    padding-bottom: 0;
+    svg {
+      display: block;
+      @include transition;
+      fill: #d9d9d9;
+      width: 50px;
+      height: 50px;
+    }
+    &:hover {
+      svg {
+        fill: lighten(#ffb802, 20%);
+      }
+      & ~ label > svg {
+        fill: lighten(#ffb802, 20%);
+      }
+    }
+  }
+  input[type="radio"]:checked ~ label {
+    svg {
+      fill: #ffb802;
+    }
+
+    &:hover,
+    &:hover ~ label {
+      svg {
+        fill: lighten(#ffb802, 20%);
+      }
+    }
+  }
+}

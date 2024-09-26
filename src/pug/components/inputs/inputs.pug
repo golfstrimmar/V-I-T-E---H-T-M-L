@@ -1,0 +1,107 @@
+.input-field
+  input#text1(type='text' name='text1' value='' placeholder=' Denzel Washington')
+  label.text-field__label(for='text1') обычный инпут text
+
+
+
+
+form.search-field
+  input#search1(type='text' placeholder='search' name="" )
+  label(for='search1') search
+  .search-field__submit
+    input(type='submit')
+    svg
+      use(xlink:href='#search')
+
+
+form.header__search.search-field(method='GET' action='/search' onsubmit='return false;')
+  input#search1(type='text' placeholder='search' name='query')
+  label(for='search1') search
+  .search-field__submit
+    input(type='submit')
+    svg
+      use(xlink:href='#search')
+
+
+
+
+.textarea-field
+  textarea#textarea4(name="textarea4" row='20' placeholder="Введите текст" )
+  label(for='textarea4') textarea
+
+
+
+
+
+.fildset-checkbox
+  .form-check
+    input#5(type='checkbox' name="")
+    label(for='5') Любимое место
+  .form-check
+    input#6(type='checkbox' name="")
+    label(for='6') Месторасположение
+  .form-check
+    input#7(type='checkbox' name="")
+    label(for='7') Гость торжественного события
+  .form-check
+    input#8(type='checkbox' name="")
+    label(for='8') Корпоративные мероприятия
+  .form-check
+    input#9(type='checkbox' name="")
+    label(for='9') СПА комплекс
+fildset.fildset-radio
+  .form-check
+    input(type="radio" id="10" name='a' value='16-25' checked)
+    label(for="10")  от 16-25
+  .form-check
+    input(type="radio" id="11" name='a' value='26-35')
+    label(for="11")  от 26-35
+  .form-check
+    input(type="radio" id="12" name='a' value='36-45')
+    label(for="12")  36-45
+  .form-check
+    input(type="radio" id="13" name='a' value='55')
+    label(for="13")  от 45 и старше
+fildset.fildset-radio.fildset-radio--lang
+  .form-check
+    input(type="radio" id="14" name='s' value='man' checked)
+    label(for="14")  EN
+      svg
+        use(xlink:href='#Union')
+  .form-check
+    input(type="radio" id="15" name='s' value='frau')
+    label(for="15")  DE
+      svg
+        use(xlink:href='#Union')
+.fildset-radio.fildset-radio--tiers
+  input(type="radio" id="tieresyes" name='tieres' value='yes' checked)
+  label(for="tieresyes")  Да
+  span /
+  input(type="radio" id="tieresnot" name='tieres' value='not')
+  label(for="tieresnot")  Нет
+fildset.fildset-rating
+  .fildset-rating__items
+    input(type="radio" id="rating5" name='rating' value='5' )
+    label(for="rating5")
+      svg
+        use(xlink:href='#Star')  
+    input(type="radio" id="rating4" name='rating' value='4' )
+    label(for="rating4")
+      svg
+        use(xlink:href='#Star') 
+    input(type="radio" id="rating3" name='rating' value='3' )
+    label(for="rating3") 
+      svg
+        use(xlink:href='#Star') 
+    input(type="radio" id="rating2" name='rating' value='2' )
+    label(for="rating2") 
+      svg
+        use(xlink:href='#Star') 
+    input(type="radio" id="rating1" name='rating' value='1' )
+    label(for="rating1") 
+      svg
+        use(xlink:href='#Star') 
+
+._range-wrap-js
+  .rangeValue 0
+  input.Range(type='range' name='myRange' min='0' max='100' value='0' step='1')

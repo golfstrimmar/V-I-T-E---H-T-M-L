@@ -1,5 +1,7 @@
 header.header
   .container
+    .burger  
+      span
     .header__body 
       .header__logo.logo
         a(href='#!')
@@ -7,45 +9,56 @@ header.header
             use(xlink:href='#logo')
         p lorem
       nav.header__menu.menu
-        svg.icon.header__close
-          use(xlink:href='#x')
-
         ul.menu__list
           li.menu__item.rel
-            .menu__link.menu-link-js.menu__link--active buy
-              svg
-                use(xlink:href='#chevron-down')
-            .menu__tab.menu-tab
-              a(href="#!").menu-tab__item Category number one
-              a(href="#!").menu-tab__item Apartments in Dubai
-              a(href="#!").menu-tab__item Category number twenty five
-              include ../side-menu/side-menu.pug
+            a.menu__link.menu__link--active(href='#!' rel='#') Home
+            //- a.menu__link.menu-link-js.menu__link--active(href='#!' rel='#') Home
+            //-   svg
+            //-     use(xlink:href='#chevron-down')
+            //-   .menu__tab.menu-tab
+            //-     a(href="#!").menu-tab__item Category number one
+            //-     a(href="#!").menu-tab__item Apartments in Dubai
+            //-     a(href="#!").menu-tab__item Category number twenty five
+            //-     include ../side-menu/side-menu.pug
 
           li.menu__item
             a.menu__link(href='#!' rel='#posts') Posts
           li.menu__item
             a.menu__link(href='#!' rel='#galery') Projects
           li.menu__item.rel
-            .menu__link.menu-link-js buy
+            a.menu__link(href='#!' rel='#') Contacts
+            //- .menu__link.menu-link-js buy
+            //-   svg
+            //-     use(xlink:href='#chevron-down')
+            //- .menu__tab.menu-tab
+            //-   a(href="#!").menu-tab__item Category number one
+            //-   include ../side-menu/side-menu.pug
+      form#languageForm(method='GET' action='/lang' onsubmit='return false;')
+        fieldset.fildset-radio.fildset-radio--lang
+          .form-check
+            input(type="radio" id="14" name="lang" value="EN" checked)
+            label(for="14") EN
               svg
-                use(xlink:href='#chevron-down')
-            .menu__tab.menu-tab
-              a(href="#!").menu-tab__item Category number one
-              include ../side-menu/side-menu.pug
+                use(xlink:href='#check')
+          .form-check
+            input(type="radio" id="15" name="lang" value="DE")
+            label(for="15") DE
+              svg
+                use(xlink:href='#check')
+
       .header__info.info
-        a.info__phone(href='#!')._hover +7(000) 123 45 65 67 
-        form.info__search
-          input(placeholder='Поиск')
+        a.info__phone(href='#!') +7(000) 123 45 65 67 
+        a.header__button.btn.btn--success.but-wave.popups-init-js(rel='#popup1' href='#!') form
+      form#search.header__search.search-field(method='GET' action='/search' onsubmit='return false;')
+        input#search1(type='text' placeholder='search' name='query')
+        label(for='search1') search
+        .search-field__submit
           input(type='submit')
           svg
             use(xlink:href='#search')
-        .header__lang.header-lang
-          input(type="radio" id="boxen" name='boxlang' val='en' checked)
-          label(for="boxen")._hover.ttu  en
-          input(type="radio" id="boxru" name='boxlang' val='ru')
-          label(for="boxru")._hover.ttu  ru
-        a.header__button.btn.btn--success.but-wave.popups-init-js(rel='#popup1' href='#!') form
 
-      svg.header__burger.icon
-        use(xlink:href='#list')
+
+
+
+
 

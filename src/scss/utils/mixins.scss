@@ -1,3 +1,22 @@
-// @mixin d-flex {
-//   display: flex;
-// }
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-aligne-center {
+  display: flex;
+  align-items: center;
+}
+@mixin hover {
+  &:hover {
+    color: $dark-primary;
+    text-shadow: 0 0 14px lighten(purple, 25%);
+  }
+}
+@mixin transition {
+  transition: all 0.2s;
+}
