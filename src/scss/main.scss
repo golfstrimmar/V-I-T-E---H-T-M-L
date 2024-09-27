@@ -1,12 +1,17 @@
 @import "./utils/null.scss";
-@import "./utils/const.scss";
 @import "./utils/fonts.scss";
 @import "./utils/colors.scss";
 @import "./utils/mixins.scss";
 @import "./utils/common.scss";
-@import "./utils/buttons.scss";
 @import "./utils/sliders-swiper.scss";
 @import "./utils/marque.scss";
+@import "./utils/typography.scss";
+
+@import "./../pug/components/buttons/btn.scss";
+@import "./../pug/components/buttons/btn-success.scss";
+@import "./../pug/components/buttons/btn-blue.scss";
+@import "./../pug/components/buttons/btn-empty.scss";
+@import "./../pug/components/buttons/btn-wave.scss";
 
 @import "./../pug/components/inputs/input-field.scss";
 @import "./../pug/components/inputs/search-field.scss";
@@ -26,9 +31,8 @@
 // @import './../pug/components/galSlider/galSlider.scss';
 
 @import "./../pug/components/galery/galery.scss";
-@import "./../pug/components/buttons/button.scss";
 @import "./../pug/components/popup/popup.scss";
-@import "./../pug/components/form/form.scss";
+
 @import "./../pug/components/accord/accord.scss";
 @import "./../pug/components/look/look.scss";
 @import "./../pug/components/select/select.scss";
@@ -41,3 +45,4 @@
 @import "./../pug/components/side-menu/side-menu.scss";
 @import "./../pug/components/cases/cases.scss";
 @import "./../pug/components/galCases/galCases.scss";
+@import "./../pug/components/form/form.scss";

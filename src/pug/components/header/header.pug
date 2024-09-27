@@ -4,34 +4,38 @@ header.header
       span
     .header__body 
       .header__logo.logo
-        a(href='#!')
+        a(href='javascript:void(0);')
           svg
             use(xlink:href='#logo')
         p lorem
       nav.header__menu.menu
         ul.menu__list
-          li.menu__item.rel
-            a.menu__link.menu__link--active(href='#!' rel='#') Home
-            //- a.menu__link.menu-link-js.menu__link--active(href='#!' rel='#') Home
-            //-   svg
-            //-     use(xlink:href='#chevron-down')
-            //-   .menu__tab.menu-tab
-            //-     a(href="#!").menu-tab__item Category number one
-            //-     a(href="#!").menu-tab__item Apartments in Dubai
-            //-     a(href="#!").menu-tab__item Category number twenty five
-            //-     include ../side-menu/side-menu.pug
+          li.menu__item
+            .tab.menu-tab._tabs-container-js.menu__link.menu-link-js.menu__link--active 
+              .tab__body._tab-body-js
+                .kab._kab-js
+                  .kab__title._kab-title-js
+                    h4 Home
+                    svg
+                      use(xlink:href='#chevron-down')
+                  .kab__hidden._kab-hidden-js 
+                    ._kab-wrap-js
+                      a(href="javascript:void(0);").menu-tab__item Apartments in Dubai
+                      a(href="javascript:void(0);").menu-tab__item Apartments in Paris
+                      a(href="javascript:void(0);").menu-tab__item Apartments in Berlin
+                      include ../side-menu/side-menu.pug
 
           li.menu__item
-            a.menu__link(href='#!' rel='#posts') Posts
+            a.menu__link(href='javascript:void(0);' rel='#posts') Posts
           li.menu__item
-            a.menu__link(href='#!' rel='#galery') Projects
+            a.menu__link(href='javascript:void(0);' rel='#galery') Projects
           li.menu__item.rel
-            a.menu__link(href='#!' rel='#') Contacts
+            a.menu__link(href='javascript:void(0);' rel='#') Contacts
             //- .menu__link.menu-link-js buy
             //-   svg
             //-     use(xlink:href='#chevron-down')
             //- .menu__tab.menu-tab
-            //-   a(href="#!").menu-tab__item Category number one
+            //-   a(href="javascript:void(0);").menu-tab__item Category number one
             //-   include ../side-menu/side-menu.pug
       form#languageForm(method='GET' action='/lang' onsubmit='return false;')
         fieldset.fildset-radio.fildset-radio--lang
@@ -47,8 +51,8 @@ header.header
                 use(xlink:href='#check')
 
       .header__info.info
-        a.info__phone(href='#!') +7(000) 123 45 65 67 
-        a.header__button.btn.btn--success.but-wave.popups-init-js(rel='#popup1' href='#!') form
+        a.info__phone(href='javascript:void(0);') +7(000) 123 45 65 67 
+        a.header__button.btn.btn--success.but-wave.popups-init-js(rel='#popup1' href='javascript:void(0);') form
       form#search.header__search.search-field(method='GET' action='/search' onsubmit='return false;')
         input#search1(type='text' placeholder='search' name='query')
         label(for='search1') search

@@ -1,9 +1,7 @@
 import "./assets/css/plyr.css";
 import "./assets/css/swiper-bundle.min.css";
-import "./assets/css/fonts.css";
 import "@/scss/main.scss";
-
-import { Button } from "./assets/js/button";
+import { Button } from "@/pug/components/buttons/btn-wave";
 import { Lazy } from "./assets/js/lazy";
 import { Anim } from "./assets/js/animation";
 import { Marque } from "./assets/js/marque";
@@ -11,9 +9,9 @@ import { Marque } from "./assets/js/marque";
 import { Lang } from "./assets/js/lang";
 import { Search } from "./assets/js/search";
 
-import { bunnerSwiper } from "@/pug/components/bunner/bunner";
-
 import { Header } from "@/pug/components/header/header";
+
+import { bunnerSwiper } from "@/pug/components/bunner/bunner";
 import { Popup } from "@/pug/components/popup/popup";
 import { Tab } from "@/pug/components/tab/tab";
 import { Accords } from "@/pug/components/accord/accord";
@@ -25,11 +23,11 @@ import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "@/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "@/pug/components/slider-scroll/slider-scroll";
 import { Double } from "@/pug/components/slider-double/sdouble.js";
-
 import { Range } from "@/pug/components/range/range";
 import { Select } from "@/pug/components/select/select";
 import { Look } from "@/pug/components/look/look";
 import { TypedItem } from "@/pug/components/typed/typedHover";
+import { Form } from "@/pug/components/form/form";
 
 document.addEventListener("DOMContentLoaded", function () {
   Anim();
@@ -43,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("video")) {
     Look();
   }
-  // =======================
+  // =========Lazy==============
   if (document.querySelector("img")) {
     Lazy();
   }
@@ -84,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     GalCases();
   }
 
-  // =======================
+  // =========Swiper1==============
   if (document.querySelector("#swiper-1")) {
     Swiper1();
   }
@@ -92,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#swiper-1licens")) {
     Swiper1licens();
   }
-  // =======================
+  // =========Marque==============
   if (document.querySelector(".marque")) {
     Marque();
   }
@@ -119,24 +117,35 @@ document.addEventListener("DOMContentLoaded", function () {
     Search();
   }
 
-  // =======================
+  // ========Range===============
   const ranges = [...document.querySelectorAll("._range-wrap-js")];
   if (ranges.length > 0) {
     ranges.forEach((item) => {
       Range(item);
     });
   }
-  // =======================
+  // =========Select==============
   const selects = [...document.querySelectorAll(".select-custom")];
   if (selects.length > 0) {
     selects.forEach((select) => {
       Select(select);
     });
   }
-  // =======================
-  [...document.querySelectorAll(".but-wave")].forEach((cell) => {
-    cell.addEventListener("click", Button);
-  });
+
+  // ========Form===============
+
+  if (document.querySelector(".send-form")) {
+    Form();
+  }
+  // =========Button==============
+  if (document.querySelector(".but-wave")) {
+    const wave = [...document.querySelectorAll(".but-wave")];
+    wave.forEach((cell) => {
+      cell.addEventListener("click", (e) => {
+        Button(e);
+      });
+    });
+  }
   // =======================
 
   const textTypedAll = [...document.querySelectorAll("._hover-typed")];

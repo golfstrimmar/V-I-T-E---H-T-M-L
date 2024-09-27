@@ -1,4 +1,4 @@
-"use ctrict";
+"use strict";
 
 export const SideMenu = () => {
   class Side {
@@ -11,14 +11,17 @@ export const SideMenu = () => {
     start(el) {
       this.title = el;
       this.tab = this.title.closest("._smenu-item-js");
-      this.neibours = [...this.tab.closest("._smenu-js ").children];
+      this.neibours = [...this.tab.parentElement.children];
 
       this.neibours.forEach((cell) => {
-        if (cell == this.tab) {
-          if (this.tab.classList.contains("_is-active")) {
+        const isActive = cell.classList.contains("_is-active");
+        const nestedItems = cell.querySelectorAll("._smenu-item-js");
+
+        if (cell === this.tab) {
+          if (isActive) {
             this.tab.classList.remove("_is-active");
             this.tab.classList.add("_not-active");
-            cell.querySelectorAll("._smenu-item-js").forEach((kab) => {
+            nestedItems.forEach((kab) => {
               kab.classList.add("_not-active");
               kab.classList.remove("_is-active");
             });
@@ -27,12 +30,12 @@ export const SideMenu = () => {
             this.tab.classList.remove("_not-active");
           }
         } else {
-          if (cell.classList.contains("_is-active")) {
+          if (isActive) {
             cell.classList.remove("_is-active");
             cell.classList.add("_not-active");
           }
 
-          cell.querySelectorAll("._smenu-item-js").forEach((kab) => {
+          nestedItems.forEach((kab) => {
             kab.classList.remove("_is-active");
             kab.classList.add("_not-active");
           });
@@ -47,17 +50,17 @@ export const SideMenu = () => {
           item.classList.add("_not-active");
           setTimeout(() => {
             item.classList.remove("_not-active");
-          }, 4000);
+          }, 4000); // Таймаут можно вынести в константу
         }
       });
     }
   }
 
-  var SideMenu = new Side();
+  const sideMenu = new Side();
 
   document.addEventListener("click", (e) => {
     if (e.target.closest("._smenu-title-js")) {
-      SideMenu.start(e.target.closest("._smenu-title-js"));
+      sideMenu.start(e.target.closest("._smenu-title-js"));
     }
 
     if (!e.target.closest("._smenu-js")) {

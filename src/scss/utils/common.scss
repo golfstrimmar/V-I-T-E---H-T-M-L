@@ -4,9 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  .imgs {
-    // z-index: +1;
-  }
 }
 
 * {
@@ -89,7 +86,7 @@ svg.hidden {
 ._hover {
   &:hover {
     color: lighten(rgba(9, 72, 207), 25%);
-    text-shadow: 0 0  14px white;
+    text-shadow: 0 0 14px white;
   }
 }
 /* +++++++++++++++++++++++++++++++++++++ */
