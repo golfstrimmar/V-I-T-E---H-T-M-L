@@ -55,8 +55,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ======Tab=================
-  if (document.querySelector("._tabs-container-js")) {
-    Tab();
+  if (document.querySelector(".tabs-container")) {
+    let tabs = document.querySelectorAll(".tabs-container");
+    tabs.forEach((car) => {
+      car.addEventListener("click", (e) => {
+        Tab(e);
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".tabs-container")) {
+        Array.from(document.querySelectorAll(".tab")).forEach((item) => {
+          item.classList.remove("_is-active");
+        });
+      }
+    });
   }
 
   // =========sideMenu==============

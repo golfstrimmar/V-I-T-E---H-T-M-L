@@ -43,6 +43,54 @@
   &__info {
     margin: 0 0 0 0;
   }
+
+  .tab-header.menu__link {
+    background: transparent;
+    &:hover {
+      background: #ff9999;
+    }
+  }
+  .tab-header.menu__link.menu__link--active {
+    background: #f73030;
+  }
+  .tab > .tab-content {
+    position: absolute;
+    margin: 5px 0 0 0;
+    border: none;
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: top;
+    grid-template-rows: 1fr;
+  }
+  .tab._is-active > .tab-content {
+    grid-template-rows: 1fr;
+    transform: scaleY(1);
+    transform-origin: top;
+    z-index: 1;
+    border: 1px solid #ccc;
+    overflow: visible;
+    .tab-wrap {
+      border: none;
+      a {
+        width: 100%;
+      }
+    }
+  }
+  .tab .tab .tab-content {
+    position: relative;
+    grid-template-rows: 0fr;
+    border: none;
+    margin: 0 0 0 0;
+  }
+
+  .tab._is-active > .tab-content {
+    grid-template-rows: 1fr;
+  }
+
+  .smenu__body {
+    width: 100%;
+    position: relative;
+  }
 }
 
 .logo {

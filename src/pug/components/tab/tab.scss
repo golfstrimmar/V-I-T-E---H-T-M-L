@@ -1,64 +1,62 @@
-.tab {
-  background-color: bisque;
-  .kab {
-    display: inline-table;
-    width: 50%;
-    outline: 1px solid grey;
-    background-color: rgb(159, 159, 252);
-    &__title {
-      padding: 10px;
-      transition: all 0.3s;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      svg{
-        width: 15px;
-        height: 15px;
-        transition: all .3s;
-      }
-      &:hover {
-        box-shadow: inset 0 0 5px grey;
-        cursor: pointer;
-      }
-    }
-    &__hidden {
-        p {
-          padding: 10px;
-        }
-    }
-    &._is-active {
-      & > .kab__title {
-        background-color: rgb(8, 8, 243);
-        box-shadow: inset 0 0 15px rgb(245, 245, 247);
-        border-bottom: 1px solid grey;
-        h4 {
-          color: white;
-        }
-        svg{
-          transform: rotate(180deg);
-          fill: white;
-        }
-      }
-      & > .kab__hidden {
-        background-color: rgb(229, 229, 248);
-      }
-    }
-  }
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 
-._kab-js {
-  & > ._kab-hidden-js {
-    overflow: hidden;
-    transition: all 0.3s;
-    display: grid;
-    grid-template-rows: 0fr;
-    ._kab-wrap-js {
-      min-height: 0;
+.tab {
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &-header {
+    padding: 10px 30px 10px 10px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    position: relative;
+    white-space: nowrap;
+    &:hover {
+      background-color: #e1e1e1;
+    }
+    svg {
+      transition: all 0.2s;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 50%;
+      transform: translate(0%, -50%);
+      right: 10px;
     }
   }
-  &._is-active {
-    & > ._kab-hidden-js {
-      grid-template-rows: 1fr;
+
+  &-content {
+    overflow: hidden;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all 0.2s;
+  }
+  &-wrap {
+    transition: all 0.2s;
+    min-height: 0;
+    padding: 0 10px;
+  }
+  &._is-active > .tab-header {
+    background-color: #a7a5a5;
+  }
+  &._is-active > .tab-content {
+    grid-template-rows: 1fr;
+
+    & > .tab-wrap {
+      padding: 10px;
     }
+  }
+  &._is-active > .tab-header svg {
+    transform: translate(0%, -50%) rotate(180deg);
   }
 }
