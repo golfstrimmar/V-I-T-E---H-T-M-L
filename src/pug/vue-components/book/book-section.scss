@@ -14,7 +14,7 @@
 
     &__field {
       padding: 20px 0 20px 0;
-      border-top: 1px solid $white-three;
+      border-top: 1px solid white;
       a {
         margin: 0 0 0 10px;
       }
@@ -41,9 +41,6 @@
       .form-field {
         margin: 0 20px 15px 0;
         float: left;
-        &:last-child {
-          min-width: 320px;
-        }
       }
     }
   }

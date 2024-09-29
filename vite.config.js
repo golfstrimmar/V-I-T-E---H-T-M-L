@@ -6,15 +6,18 @@ import { resolve } from "path";
 import createSvgSpritePlugin from "vite-plugin-svg-spriter";
 import postcss from "@vituum/vite-plugin-postcss";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import vue from "@vitejs/plugin-vue";
 const pagesInput = {};
 const pages = [{ name: "index", path: resolve(__dirname, "index.html") }];
 pages.forEach((page) => {
   pagesInput[page.name] = page.path;
 });
 const SVG_FOLDER_PATH = path.resolve("assets", "svg");
+
 export default defineConfig({
   base: "./",
   plugins: [
+    vue(),
     vitePugPlugin({
       pretty: true,
     }),

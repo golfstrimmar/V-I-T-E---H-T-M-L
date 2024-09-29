@@ -1,3 +1,4 @@
+import "./assets/css/datepicker.css";
 import "./assets/css/plyr.css";
 import "./assets/css/swiper-bundle.min.css";
 import "@/scss/main.scss";
@@ -28,6 +29,7 @@ import { Select } from "@/pug/components/select/select";
 import { Look } from "@/pug/components/look/look";
 import { TypedItem } from "@/pug/components/typed/typedHover";
 import { Form } from "@/pug/components/form/form";
+import { FormFields } from "@/pug/vue-components/book/book";
 
 document.addEventListener("DOMContentLoaded", function () {
   Anim();
@@ -129,6 +131,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector("#search")) {
     Search();
   }
+  // ========vue book===============
+  if (document.querySelector(".book")) {
+    FormFields();
+  }
 
   // ========Range===============
   const ranges = [...document.querySelectorAll("._range-wrap-js")];
@@ -208,12 +214,12 @@ Object.defineProperty(HTMLElement.prototype, "remAct", {
 // ===============================
 import { createApp } from "vue";
 import VueDatePicker from "@vuepic/vue-datepicker";
-// import CheckIn from "@/pug/vue-components/book/CheckIn.vue";
-// import CheckOut from "@/pug/vue-components/book/CheckOut.vue";
+import CheckIn from "@/pug/vue-components/book/CheckIn.vue";
+import CheckOut from "@/pug/vue-components/book/CheckOut.vue";
 
-// const checkInBook = document.querySelector("#check-in-book");
-// createApp(CheckIn).component("VueDatePicker", VueDatePicker).mount(cell);
-
-// [...document.querySelectorAll(".check-out-vue")].forEach((cell) => {
-//   createApp(CheckOut).component("VueDatePicker", VueDatePicker).mount(cell);
-// });
+[...document.querySelectorAll(".check-in-vue")].forEach((cell) => {
+  createApp(CheckIn).component("VueDatePicker", VueDatePicker).mount(cell);
+});
+[...document.querySelectorAll(".check-out-vue")].forEach((cell) => {
+  createApp(CheckOut).component("VueDatePicker", VueDatePicker).mount(cell);
+});
