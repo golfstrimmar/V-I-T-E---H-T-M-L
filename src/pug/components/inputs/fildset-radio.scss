@@ -21,7 +21,7 @@
     padding: 0 0 0 28px;
     @include transition;
     &:hover {
-      color: lighten(green, 25%);
+      color: rgb(29, 128, 1, 25%);
     }
   }
   input[type="radio"]:checked + label > svg,

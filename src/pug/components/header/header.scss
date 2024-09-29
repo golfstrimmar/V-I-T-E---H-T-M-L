@@ -286,7 +286,7 @@
         span,
         &::after,
         &::before {
-          background: lighten(green, 25%);
+          background: rgb(29, 128, 1, 25%);
         }
       }
       &._is-active {

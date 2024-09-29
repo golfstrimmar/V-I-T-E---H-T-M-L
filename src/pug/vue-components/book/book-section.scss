@@ -1,0 +1,126 @@
+.book {
+  &__title {
+    margin: 24px 0 19px 0;
+    h2 {
+    }
+  }
+}
+
+.book-section {
+  &-form {
+    h3 {
+      margin: 18px 0 20px 0;
+    }
+
+    &__field {
+      padding: 20px 0 20px 0;
+      border-top: 1px solid $white-three;
+      a {
+        margin: 0 0 0 10px;
+      }
+    }
+    .text-block {
+      display: table;
+      width: 100%;
+      margin: 0 0 40px 0;
+      &:last-child {
+        margin: 0 0 0 0;
+        span._text-block-span {
+          width: 100%;
+          display: inline-block;
+
+          opacity: 0.5;
+        }
+      }
+      .text-field {
+        float: left;
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+      .form-field {
+        margin: 0 20px 15px 0;
+        float: left;
+        &:last-child {
+          min-width: 320px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 833px) {
+  .text-field {
+    width: 100%;
+    max-width: 350px;
+    border: none;
+  }
+  .book-section-form .text-field,
+  .book-section-form .form-field {
+    clear: both;
+  }
+  .book-section-form .form-field {
+    width: 328px;
+    margin: 0 0 30px 0;
+  }
+  .book-section-form .form-field--select {
+    width: 348px;
+  }
+  .book-section-form .form-field--select .dropdown-button {
+    min-width: 348px;
+  }
+}
+
+@media (max-width: 767px) {
+  .book {
+    &__title {
+      display: none;
+    }
+  }
+  .book-section-form__field {
+    // max-width: 350px;
+    border-top: none;
+    width: 100%;
+    padding: 33px 0 27px 0;
+  }
+  .book-section-form__field--text {
+    margin: 0 0 0 0;
+    padding: 40px 0 27px 0;
+  }
+  .book-section-form__field--text .form-fild-text {
+    line-height: 29px;
+    &--green {
+      line-height: 24px;
+      margin: 0 0 0 0;
+    }
+  }
+  .book-section-form__field--text .form-fild-text a {
+    margin: 0 0 0 0;
+  }
+
+  .book-section-form .text-field {
+    width: 100%;
+    max-width: 353px;
+  }
+  .book-section-form .text-field,
+  .book-section-form .form-field {
+    margin: 0 0 16px 0;
+  }
+  .book-section-form .form-field {
+    width: 100%;
+    max-width: 353px;
+    min-width: 0;
+  }
+  .book-section-form .text-block .form-field {
+    margin: 0 0 30px 0;
+  }
+  .book-section-form .form-field--select {
+    max-width: 351px;
+    width: 100%;
+  }
+  .book-section-form .text-block {
+    @include flex-column;
+    width: 100%;
+    margin: 0 0 58px 0;
+  }
+}

@@ -204,3 +204,16 @@ Object.defineProperty(HTMLElement.prototype, "remAct", {
     }
   },
 });
+
+// ===============================
+import { createApp } from "vue";
+import VueDatePicker from "@vuepic/vue-datepicker";
+// import CheckIn from "@/pug/vue-components/book/CheckIn.vue";
+// import CheckOut from "@/pug/vue-components/book/CheckOut.vue";
+
+// const checkInBook = document.querySelector("#check-in-book");
+// createApp(CheckIn).component("VueDatePicker", VueDatePicker).mount(cell);
+
+// [...document.querySelectorAll(".check-out-vue")].forEach((cell) => {
+//   createApp(CheckOut).component("VueDatePicker", VueDatePicker).mount(cell);
+// });

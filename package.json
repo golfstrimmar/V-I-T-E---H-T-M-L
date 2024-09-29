@@ -22,6 +22,7 @@
   "dependencies": {
     "@vitejs/plugin-legacy": "^2.2.0",
     "@vituum/vite-plugin-postcss": "^1.1.0",
+    "@vuepic/vue-datepicker": "^9.0.3",
     "plyr": "^3.7.2",
     "postcss-nesting": "^10.2.0",
     "sass": "^1.54.9",
@@ -31,6 +32,11 @@
     "vite-plugin-fonts": "^0.7.0",
     "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-pug-transformer": "^1.0.5",
-    "vite-plugin-svg-spriter": "^1.0.0"
+    "vite-plugin-static-copy": "^1.0.6",
+    "vite-plugin-svg-spriter": "^1.0.0",
+    "vue": "^3.5.10",
+    "vue-loader": "^17.4.2",
+    "vue-pug-loader": "^1.1.29",
+    "vue-template-compiler": "^2.7.16"
   }
 }

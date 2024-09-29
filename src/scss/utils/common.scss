@@ -12,7 +12,6 @@
 }
 
 body {
-  // font-family: "Manrope", sans-serif;
   background: white;
 }
 
@@ -85,7 +84,7 @@ svg.hidden {
 }
 ._hover {
   &:hover {
-    color: lighten(rgba(9, 72, 207), 25%);
+    color: rgba(9, 72, 207, 25%);
     text-shadow: 0 0 14px white;
   }
 }
@@ -157,7 +156,7 @@ a.common__link {
     transition: all 0.3s;
   }
   &:hover {
-    background-color: lighten(rgba(9, 72, 207), 25%);
+    background-color: rgba(9, 72, 207, 25%);
     box-shadow: 0 4px 24px 0 rgba(9, 72, 207, 0.45);
     svg {
       fill: rgba(9, 72, 207);

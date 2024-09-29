@@ -21,7 +21,7 @@
     cursor: pointer;
     @include transition;
     &:hover {
-      color: lighten(green, 25%);
+      color: rgb(29, 128, 1, 25%);
     }
   }
 

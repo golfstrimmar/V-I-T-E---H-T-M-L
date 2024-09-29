@@ -1,8 +1,12 @@
 любые ресурсы переносятся на dist только если они заведены в верстку
-lazy нужно делать отдельно в папке dist
-autoprefixer отдельно
 
-npm run dev
 
+в css надо 
+менять путь к шрифтам на ../fonts/DrukCyr-Bold.eot
+
+в js 
+удалять type="module" crossorigin
+<script  src="./assets/index.js"></script>
+и перекидывать его вниз
 
 

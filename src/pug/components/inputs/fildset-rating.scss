@@ -42,10 +42,10 @@
     }
     &:hover {
       svg {
-        fill: lighten(#ffb802, 20%);
+        fill: rgb(29, 128, 1, 25%);
       }
       & ~ label > svg {
-        fill: lighten(#ffb802, 20%);
+        fill: rgb(29, 128, 1, 25%);
       }
     }
   }
@@ -57,7 +57,7 @@
     &:hover,
     &:hover ~ label {
       svg {
-        fill: lighten(#ffb802, 20%);
+        fill: rgb(29, 128, 1, 25%);
       }
     }
   }

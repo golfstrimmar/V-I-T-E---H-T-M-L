@@ -1,0 +1,43 @@
+section(id='book').book.rel
+  .container
+    .book__title
+      h2 vue component book
+
+    div.book-section
+      form#book-form.book-section-form(action="#" name="book-form")
+        .text-block
+          .form-field
+            .check-in-vue#check-in-book
+          .form-field
+            .check-out-vue#check-out-book
+        button.btn.btn-success.submit-button#book-submit.but-wave( type='submit' name='send' ) Send
+
+
+
+          //- .form-field.form-field--select
+          //-   .select
+          //-     .dropdown-button
+          //-       p *Place of residence 
+          //-       input#plase-of-living(type="hidden" name='place'  )
+
+          //-         ];
+          //-       each block in blocks
+          //-         li.dropdown-list__item(data-value=block.text)=block.text
+          //- span._text-block-span *Fields are required
+
+        //- include ./info.pug
+        //- include ./choise.pug
+        //- section(id='contacts').contacts.rel
+        //-   .contacts__title
+        //-     h2 If you want to receive information about our events, please leave your contact information
+        //-   .contacts__body
+        //-     .text-field
+        //-       input#phone(type="tel" name='phone' value='' placeholder=' Denzel Washington')
+        //-       label.text-field__label(for='phone') Telephone
+        //-     .text-field
+        //-       input#email(type="email" name='Email' value='' placeholder=' Denzel Washington')
+        //-       label.text-field__label(for='email') E-mail
+        //-     button.btn.btn--empty.submit-button#book-submit.but-wave( type='submit' name='send' ) Send
+
+
+

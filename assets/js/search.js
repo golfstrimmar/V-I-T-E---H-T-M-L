@@ -1,20 +1,21 @@
 "use ctrict";
 export const Search = () => {
   const form = document.querySelector(".header__search");
+
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-      const query = document.getElementById("search1").value;
+      const query = form.querySelector("#search1").value;
+      const params = new URLSearchParams({
+        search: query.trim(),
+      });
 
-      // Обновляем URL в адресной строке с содержимым инпута
-      const newUrl = form.action + "?query=" + encodeURIComponent(query);
-      window.history.pushState({ path: newUrl }, "", newUrl);
+      history.pushState(null, "", `?${params.toString()}`);
 
-      // AJAX-запрос с использованием fetch
-      fetch(newUrl)
+      fetch(params)
         .then((response) => response.text())
         .then((data) => {
-          document.getElementById("search1").value = "";
+          form.querySelector("#search1").value = "";
         })
         .catch((error) => {
           console.error("error:", error);

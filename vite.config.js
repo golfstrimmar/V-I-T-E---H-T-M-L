@@ -5,13 +5,12 @@ import path from "path";
 import { resolve } from "path";
 import createSvgSpritePlugin from "vite-plugin-svg-spriter";
 import postcss from "@vituum/vite-plugin-postcss";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 const pagesInput = {};
 const pages = [{ name: "index", path: resolve(__dirname, "index.html") }];
 pages.forEach((page) => {
   pagesInput[page.name] = page.path;
 });
-// const SRC_PATH = path.resolve(__dirname, "/");
-// const SVG_FOLDER_PATH = path.resolve(SRC_PATH, "assets", "svg");
 const SVG_FOLDER_PATH = path.resolve("assets", "svg");
 export default defineConfig({
   base: "./",
@@ -46,6 +45,14 @@ export default defineConfig({
         ],
       },
     }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: "./assets/fonts/*", // Путь к шрифтам
+          dest: "assets/fonts", // Папка назначения в dist
+        },
+      ],
+    }),
   ],
   resolve: {
     alias: {
@@ -66,7 +73,7 @@ export default defineConfig({
           if (/\.(svg|gif|jpe?g|png)$/.test(name ?? "")) {
             return "assets/img/[name][extname]";
           }
-          if (/\.(ttf|otf|eot|fnt|woff)$/.test(name ?? "")) {
+          if (/\.(ttf|otf|eot|woff|woff2)$/.test(name ?? "")) {
             return "assets/fonts/[name][extname]";
           }
           if (/\.(mp3|mp4)$/.test(name ?? "")) {
