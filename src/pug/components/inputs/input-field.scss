@@ -1,46 +1,167 @@
-.input-field {
-  // float: left;
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  @include flex-center;
+  position: relative;
+  background: transparent;
+  @include transition;
+  z-index: 5;
+  border: 1px solid transparent;
+
+  // & ~ span {
+  //   @include transition;
+  // }
+
+  // & + i {
+  //   @include transition;
+  // }
+  &::placeholder {
+    opacity: 0;
+  }
+  // & ~ div {
+  //   display: none;
+  // }
+  // & ~ svg {
+  //   display: none;
+  // }
+}
+
+.text-field {
   position: relative;
   @include transition;
   width: 100%;
-
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"] {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    position: relative;
-    background: transparent;
-    @include transition;
-    z-index: 5;
-    border: 1px solid grey;
-    // border: none;
-    &::placeholder {
-      opacity: 0;
-    }
-    padding: 0px 20px 0px;
-    &:not(:placeholder-shown) + label,
-    &:focus + label {
-      transform: translateY(-150%);
-    }
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"] {
-    & + label {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 20px;
-      @include transition;
-      z-index: 2;
-    }
-  }
+  max-width: 320px;
   &:hover {
     label {
-      color: rgb(29, 128, 1, 25%);
+      color: #00eb76;
     }
+  }
+  &:last-of-type {
+    margin: 0 0 0 0;
+  }
+  input {
+    min-height: 52px;
+    border-radius: 5px;
+    font-family: "PT Serif", serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 34px;
+  }
+  label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    @include transition;
+
+    opacity: 0.5;
+    z-index: 2;
+  }
+  span {
+    position: absolute;
+    top: calc(100% + 10px);
+    width: 100%;
+    left: 0;
+    display: inline-block;
+
+    opacity: 0.5;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    padding: 0px 20px 8px;
+    border: solid 1px #b4b4b4;
+    &:hover {
+      border: solid 1px #00eb76;
+    }
+    &:focus {
+      padding: 30px 20px 8px;
+      color: black;
+      border: solid 1px #00eb76;
+      & ~ label {
+        z-index: 4;
+        padding-bottom: 30px;
+      }
+    }
+    &:not(:placeholder-shown) {
+      color: black;
+      padding: 30px 20px 8px;
+      background: transparent !important;
+      & ~ label {
+        z-index: 4;
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  input[type="text"].input_invalid,
+  input[type="tel"].input_invalid,
+  input[type="email"].input_invalid {
+    border: solid 1px #ff0000;
+    & ~ label ~ span {
+      color: #ff0000;
+      opacity: 1;
+    }
+    &:hover {
+      border: solid 1px #00eb76;
+    }
+  }
+
+  input[type="text"].input_valueid,
+  input[type="tel"].input_valueid,
+  input[type="email"].input_valueid {
+    border: solid 1px #03944b;
+    & ~ label ~ span {
+      color: #03944b;
+      opacity: 1;
+    }
+    &:hover {
+      border: solid 1px #00eb76;
+    }
+  }
+}
+.span_invalid {
+  position: absolute;
+  top: calc(100% + 10px);
+  min-width: 100%;
+  white-space: nowrap;
+  left: 0;
+  font-family: "PTSans-Regular";
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 1;
+  display: none;
+}
+.form-field._check_invalid {
+  border: solid 1px #ff0000;
+  & ~ label ~ span {
+    color: #ff0000;
+    opacity: 1;
+  }
+  &:hover {
+    border: solid 1px #00eb76;
+  }
+  p,
+  .select .dropdown-button p {
+    color: #ff0000;
+    opacity: 1;
+  }
+}
+.text-field._check_invalid {
+  border: solid 1px #ff0000;
+  border-radius: 5px;
+  label {
+    color: #ff0000;
+    opacity: 1;
+  }
+  input {
+    border: none !important;
   }
 }

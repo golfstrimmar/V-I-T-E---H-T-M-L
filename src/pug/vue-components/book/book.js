@@ -1,52 +1,79 @@
-"use strict";
+"use ctrict";
 
 export const FormFields = () => {
+  let FirstName = document.querySelector("#firstname");
   let dateIn = document.querySelector("#date-in");
   let dateOut = document.querySelector("#date-out");
   let BookForm = document.querySelector("#book-form");
+  let PlaseOfLiving = document.querySelector("#plase-of-living");
 
-  if (BookForm) {
-    BookForm.addEventListener("submit", (e) => {
-      // Предотвращаем перезагрузку страницы
+  BookForm.addEventListener("submit", (e) => {
+    if (!FirstName.value) {
+      FirstName.closest(".text-field").classList.add("_check_invalid");
+      setTimeout(() => {
+        window.scrollTo({
+          top: 175,
+          left: 0,
+          behavior: "smooth",
+        });
+      }, 200);
+
       e.preventDefault();
+    } else if (
+      FirstName.closest(".text-field").classList.contains("_check_invalid")
+    ) {
+      FirstName.closest(".text-field").classList.remove("_check_invalid");
+    }
 
-      // Очищаем параметры в адресной строке
-      const baseUrl = window.location.pathname;
-      window.history.pushState(null, "", baseUrl);
+    if (!dateIn.value) {
+      dateIn.closest(".form-field").classList.add("_check_invalid");
+      setTimeout(() => {
+        window.scrollTo({
+          top: 175,
+          left: 0,
+          behavior: "smooth",
+        });
+      }, 200);
 
-      let hasError = false;
+      e.preventDefault();
+    } else if (
+      dateIn.closest(".form-field").classList.contains("_check_invalid")
+    ) {
+      dateIn.closest(".form-field").classList.remove("_check_invalid");
+    }
 
-      // Проверка поля "Дата заезда"
-      if (!dateIn.value) {
-        dateIn.closest(".form-field").classList.add("_check_invalid");
-        hasError = true;
-      } else {
-        dateIn.closest(".form-field").classList.remove("_check_invalid");
-      }
+    if (!dateOut.value) {
+      dateOut.closest(".form-field").classList.add("_check_invalid");
+      setTimeout(() => {
+        window.scrollTo({
+          top: 175,
+          left: 0,
+          behavior: "smooth",
+        });
+      }, 200);
 
-      // Проверка поля "Дата выезда"
-      if (!dateOut.value) {
-        dateOut.closest(".form-field").classList.add("_check_invalid");
-        hasError = true;
-      } else {
-        dateOut.closest(".form-field").classList.remove("_check_invalid");
-      }
+      e.preventDefault();
+    } else if (
+      dateOut.closest(".form-field").classList.contains("_check_invalid")
+    ) {
+      dateOut.closest(".form-field").classList.remove("_check_invalid");
+    }
 
-      // Если есть ошибки, адресная строка остаётся очищенной и выполняем прокрутку
-      if (hasError) {
-        return;
-      }
+    if (!PlaseOfLiving.value) {
+      PlaseOfLiving.closest(".form-field").classList.add("_check_invalid");
+      setTimeout(() => {
+        window.scrollTo({
+          top: 175,
+          left: 0,
+          behavior: "smooth",
+        });
+      }, 200);
 
-      // Если ошибок нет, добавляем новые параметры в адресную строку
-      const params = new URLSearchParams({
-        "date-in": dateIn.value,
-        "date-out": dateOut.value,
-      });
-
-      history.pushState(null, "", `?${params.toString()}`);
-
-      // const newUrl = `${baseUrl}?${params.toString()}`;
-      // window.history.pushState(null, "", newUrl);
-    });
-  }
+      e.preventDefault();
+    } else if (
+      PlaseOfLiving.closest(".form-field").classList.contains("_check_invalid")
+    ) {
+      PlaseOfLiving.closest(".form-field").classList.remove("_check_invalid");
+    }
+  });
 };

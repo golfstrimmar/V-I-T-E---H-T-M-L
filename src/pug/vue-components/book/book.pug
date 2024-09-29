@@ -1,17 +1,76 @@
 section(id='book').book.rel
   .container
     .book__title
-      h2 vue component book
+      h2 PLEASE FILL OUT THE FORM
 
     div.book-section
-      form#book-form.book-section-form(method='GET' action='/check' onsubmit='return false;')
-        .text-block
-          .form-field
-            .check-in-vue#check-in-book
-          .form-field
-            .check-out-vue#check-out-book
-        button.btn.btn-success.submit-button#book-submit.but-wave( type='submit' name='send' ) Send
+      form#book-form.book-section-form(action="#" name="book-form")
+        .book-section-form__field
+          .text-block
+            .text-field
+              input#firstname(type='text' name='firstname' placeholder=' Denzel Washington')
+              label.text-field__label(for='firstname') Name Surname*
+              //- span.span_invalid *This field is required
 
 
+          .text-block
+            .form-field
+              .check-in-vue#check-in-book
+            .form-field
+              .check-out-vue#check-out-book
+            .form-field.form-field--select
+              //- .select
+              //-   .dropdown-button
+              //-     p *Place of residence 
+              //-     input#plase-of-living(type="hidden" name='place'  )
+              //-     span
+              //-     .form-field__area-svg
+              //-       svg
+              //-         use(xlink:href='#arrow-down')
+              .select-custom.select
+                button.dropdown-button
+                  span *Place of residence 
+                  input#plase-of-living(type="hidden" name='place'  )
+                  svg.icon
+                    use(xlink:href='#chevron-down')
+                ul.dropdown-list
+                  -
+                    var blocks = [
+                      {text: '2-bed cottages' },
+                      {text: 'Forester\'s house' },
+                      {text: 'Hunter\'s house' },
+                      {text: 'Fisherman\'s House No. 1' },
+                      {text: 'Fisherman\'s House No. 2' },
+                      {text: 'hotel "Manor Surname"'},
+                      {text: 'hotel zone barbecue' },
+                      {text: 'Lafe Arena Hotel' },
+                      {text: 'SPA hotel' },
+                      {text: 'VIP hotel' },
+                      {text: 'VIP house №1' },
+                      {text: 'VIP house №2' },
+                      {text: 'VIP house №3' },
+                    ];
+                  each block in blocks
+                    li.dropdown-list__item(data-value=block.text)=block.text
+            span._text-block-span *Fields are required
 
+        include ./info.pug
+        include ./choise.pug
+        section(id='contacts').contacts.rel
+          .contacts__title
+            h2 If you want to receive information about our events, please leave your contact information
+          .contacts__body
+            .text-field
+              input#phone(type="tel" name='phone' value='' placeholder=' Denzel Washington')
+              label.text-field__label(for='phone') Telephone
+            .text-field
+              input#email(type="email" name='Email' value='' placeholder=' Denzel Washington')
+              label.text-field__label(for='email') E-mail
+            button.btn.btn--empty.submit-button#book-submit.but-wave( type='submit' name='send' ) Send
+
+        .book-section-form__field.book-section-form__field--text
+          p.form-fild-text Thank You for <br class='_sm-visible'> completing the questionnaire.
+          p.form-fild-text This will help make your holiday exactly the way you want it to be.
+          p.form-fild-text You can communicate all your wishes and suggestions by phone number
+            a(href="#!") +4 (000)000-00-00
 

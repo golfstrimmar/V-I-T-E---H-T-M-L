@@ -1,0 +1,35 @@
+.shild {
+  margin: 8px 0 0 0;
+  &__title {
+    h1 {
+      text-align: center;
+    }
+  }
+
+  &__body {
+    background-color: #e3f6ed;
+    min-height: 168px;
+    @include flex-column;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  &__text {
+    text-align: center;
+    margin: 14px 0 0 0;
+    font-family: "PTSerif-Bold", sans-serif;
+  }
+}
+
+@media (max-width: 767px) {
+  .shild__body {
+    min-height: 184px;
+    padding: 20px 0;
+  }
+  .shild__title {
+    padding: 0 38px;
+  }
+  .shild__text {
+    margin: 8px 10px 0 10px;
+  }
+}

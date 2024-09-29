@@ -1,0 +1,50 @@
+.contacts {
+  margin: 11px 0 0 0;
+  &__title {
+    h2 {
+    }
+  }
+  &__body {
+    margin: 20px 0 0 0;
+    display: table;
+  }
+  .text-field {
+    float: left;
+    margin: 0 20px 0px 0;
+  }
+  .submit-button {
+    min-height: 52px;
+    width: 220px;
+    float: left;
+  }
+}
+br {
+  display: none;
+}
+@media (max-width: 1259px) {
+  .contacts {
+    margin: 40px 0 0 0;
+    max-width: 320px;
+    .book-section-form .text-field {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+  .contacts .text-field {
+    margin: 0 0px 0px 0;
+  }
+  .contacts__body {
+    @include flex-column;
+    row-gap: 20px;
+    max-width: 320px;
+  }
+  .contacts .submit-button {
+    margin: -12px 0 0 0px;
+    min-height: 52px;
+    max-width: 320px;
+    width: 100%;
+  }
+  br {
+    display: block;
+  }
+}
