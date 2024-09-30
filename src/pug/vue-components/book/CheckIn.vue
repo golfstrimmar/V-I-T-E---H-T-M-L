@@ -72,25 +72,40 @@ watch(date, (count, prevCount) => {
 
 <style lang="scss">
 ._check {
+  p {
+    opacity: 0.5;
+  }
+
   &._is-active {
     .Picker {
       background: #00eb76;
+      border-color: #00eb76;
+
+      &:hover {
+        border-color: #4c8e3b;
+      }
     }
 
     .dp__main input {
       padding: 30px 5px 5px 5px;
+      color: white;
     }
   }
 }
 
+.dp--clear-btn {
+  border-radius: 100%;
+  padding: 0 0 0 0;
+}
 
-
-
+.dp__input_icons {
+  padding: 6px 6px;
+}
 
 .Picker {
   position: relative;
   border: 1px solid #959595;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: all 0.2s;
 
 
@@ -169,6 +184,8 @@ watch(date, (count, prevCount) => {
   transition: all 0.2s;
 
   svg {
+    stroke: black;
+    opacity: .5;
     width: 20px;
     height: 30px;
     transition: all 0.2s;

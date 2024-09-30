@@ -132,30 +132,36 @@ document.addEventListener("DOMContentLoaded", function () {
     Search();
   }
   // ========vue book===============
-  if (document.querySelector(".book")) {
-    FormFields();
-  }
+  // if (document.querySelector(".book")) {
+  //   FormFields();
+  // }
 
   // ========Range===============
-  const ranges = [...document.querySelectorAll("._range-wrap-js")];
-  if (ranges.length > 0) {
-    ranges.forEach((item) => {
-      Range(item);
-    });
-  }
+  // const ranges = [...document.querySelectorAll("._range-wrap-js")];
+  // if (ranges.length > 0) {
+  //   ranges.forEach((item) => {
+  //     Range(item);
+  //   });
+  // }
   // =========Select==============
-  const selects = [...document.querySelectorAll(".select-custom")];
+  const selects = [...document.querySelectorAll(".select")];
   if (selects.length > 0) {
-    selects.forEach((select) => {
-      Select(select);
+    document.addEventListener("click", (e) => {
+      event.preventDefault();
+      if (e.target.closest(".select")) {
+        Select(e.target.closest(".select"), e);
+      } else {
+        Array.from(document.querySelectorAll(".select")).forEach((item) => {
+          item.classList.remove("_is-active");
+        });
+      }
     });
   }
-
   // ========Form===============
 
-  if (document.querySelector(".send-form")) {
-    Form();
-  }
+  // if (document.querySelector(".send-form")) {
+  //   Form();
+  // }
   // =========Button==============
   if (document.querySelector(".but-wave")) {
     const wave = [...document.querySelectorAll(".but-wave")];
@@ -167,12 +173,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // =======================
 
-  const textTypedAll = [...document.querySelectorAll("._hover-typed")];
-  if (textTypedAll.length > 0) {
-    textTypedAll.forEach((item) => {
-      TypedItem(item);
-    });
-  }
+  // const textTypedAll = [...document.querySelectorAll("._hover-typed")];
+  // if (textTypedAll.length > 0) {
+  //   textTypedAll.forEach((item) => {
+  //     TypedItem(item);
+  //   });
+  // }
 });
 // =======================
 
