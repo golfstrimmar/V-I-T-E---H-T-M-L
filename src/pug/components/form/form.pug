@@ -1,19 +1,17 @@
-h2 form
-
 form#send-form(action="#" method="post" name="send-form").send.send-form
-  .send__linia.input-field
+  .send__linia.input-field.text-field 
     input#firstname(type='text' name='name' value='' placeholder='Denzel Washington')
-    label.text-field__label(for='name') *инпут name
+    label.text-field__label(for='name') *input name
     span *поле обязательное для заполнения
-  .send__linia.input-field
+  .send__linia.input-field.text-field 
     input#email(type='email' name='email' value='' placeholder='Denzel Washington')
-    label.text-field__label(for='email') *инпут email
+    label.text-field__label(for='email') *input email
     span *поле обязательное для заполнения
-  .send__linia.input-field
+  .send__linia.input-field.text-field 
     input#tel(type='tel' name='tel' value='' placeholder='Denzel Washington')
-    label.text-field__label(for='tel') *инпут tel
+    label.text-field__label(for='tel') *input tel
     span *поле обязательное для заполнения
-  .send__linia.textarea-field
+  .send__linia.textarea-field.text-field 
     textarea#textarea4(name="textarea4" row='20' placeholder="Введите текст" )
     label(for='textarea4') *textarea
   .send__linia
@@ -52,7 +50,7 @@ form#send-form(action="#" method="post" name="send-form").send.send-form
   .fildset-checkbox
     .form-check
       input#agree(type='checkbox' name="agree")
-      label(for='agree') Согласен с правилами публикации отзывов
+      label(for='agree') I agree with the rules for publishing reviews
   p.but-wave
     button.btn.btn-success(type='submit' ) Sent
 

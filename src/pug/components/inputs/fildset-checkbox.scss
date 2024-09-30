@@ -21,7 +21,7 @@
     cursor: pointer;
     @include transition;
     &:hover {
-      color: rgb(29, 128, 1, 25%);
+      color: #b4b4b4;
     }
   }
 
@@ -39,13 +39,13 @@
     border-radius: 50%;
     width: 26px;
     height: 26px;
-    border: solid 2.4px #bababa;
+    border: solid 2.4px #b4b4b4;
   }
   input[type="checkbox"]:checked + label::before {
     border-radius: 50%;
     width: 26px;
     height: 26px;
-    border: solid 2px green;
+    border: solid 2px $activ;
   }
 
   input[type="checkbox"]:checked + label::after,
@@ -58,8 +58,8 @@
     top: 0;
     left: 0;
     transform: translate(6px, 6px);
-    border: solid 2px green;
-    background-color: green;
+    border: solid 2px $activ;
+    background-color: $activ;
     @include transition;
   }
   input[type="checkbox"]:checked + label::after {

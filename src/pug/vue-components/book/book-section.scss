@@ -12,7 +12,20 @@
 
     &__field {
       padding: 20px 0 20px 0;
-      border-top: 1px solid white;
+
+      &--text {
+        margin: 20px 0 0 0;
+        background-color: #e3f6ed;
+        border-radius: 5px;
+
+        p {
+          text-align: center;
+          font-family: "PTSerif-Bold", sans-serif;
+        }
+        a {
+          margin: 0 0 0 10px;
+        }
+      }
     }
     .text-block {
       display: table;

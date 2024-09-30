@@ -13,7 +13,7 @@ import { Search } from "./assets/js/search";
 import { Header } from "@/pug/components/header/header";
 
 // import { bunnerSwiper } from "@/pug/components/bunner/bunner";
-// import { Popup } from "@/pug/components/popup/popup";
+import { Popup } from "@/pug/components/popup/popup";
 // import { Tab } from "@/pug/components/tab/tab";
 // import { Accords } from "@/pug/components/accord/accord";
 // import { SideMenu } from "@/pug/components/side-menu/side-menu";
@@ -52,9 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
   //   bunnerSwiper();
   // }
   // ========popup===============
-  // if (document.querySelector(".popups-init-js")) {
-  //   Popup();
-  // }
+  if (document.querySelector(".popups-init-js")) {
+    Popup();
+  }
 
   // ======Tab=================
   // if (document.querySelector(".tabs-container")) {
@@ -147,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const selects = [...document.querySelectorAll(".select")];
   if (selects.length > 0) {
     document.addEventListener("click", (e) => {
-      event.preventDefault();
       if (e.target.closest(".select")) {
         Select(e.target.closest(".select"), e);
       } else {
@@ -159,9 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // ========Form===============
 
-  // if (document.querySelector(".send-form")) {
-  //   Form();
-  // }
+  if (document.querySelector(".send-form")) {
+    Form();
+  }
   // =========Button==============
   if (document.querySelector(".but-wave")) {
     const wave = [...document.querySelectorAll(".but-wave")];

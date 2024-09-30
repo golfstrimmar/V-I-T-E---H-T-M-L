@@ -1,5 +1,7 @@
 .send {
-  padding: 0 20px;
+  padding: 20px;
+  background: $white;
+  border-radius: 5px;
   &__linia {
     margin: 0 0 20px 0;
   }
@@ -8,7 +10,7 @@
     color: red;
   }
   .input-field {
-    border: 4px solid gray;
+    border: 1px solid #b4b4b4;
     position: relative;
     span {
       position: absolute;
@@ -20,10 +22,14 @@
       display: none;
     }
   }
+
   p.but-wave {
     button {
       width: 100%;
       height: 100%;
+      min-width: 200px;
+      min-height: 40px;
+      border-radius: 5px;
     }
   }
   .input-field input[type="text"],
@@ -31,6 +37,13 @@
   .input-field input[type="tel"] {
     border: none;
   }
+
+  .text-field input[type="text"],
+  .text-field input[type="tel"],
+  .text-field input[type="email"] {
+    padding: 15px 15px 0px 15px;
+  }
+
   .input-field._check_invalid {
     border: 1px solid red;
     input[type="text"] + label,
@@ -43,8 +56,17 @@
       display: block;
     }
   }
+  .text-field label {
+    left: 10px;
+  }
   .textarea-field {
-    border: 4px solid gray;
+    border: 1px solid #b4b4b4;
+  }
+  .fildset-checkbox {
+    margin: 10px 0;
+  }
+  .textarea-field textarea + label {
+    padding: 0px;
   }
   .textarea-field._check_invalid {
     border: 1px solid red;

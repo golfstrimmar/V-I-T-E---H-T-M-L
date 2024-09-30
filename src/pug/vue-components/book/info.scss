@@ -2,7 +2,8 @@
   &__field--info {
     padding: 0 0 0 0;
   }
-  &__title {
+  .textarea-field {
+    margin: 20px 0 0 0;
   }
   &-line {
     @include flex-aligne-center;

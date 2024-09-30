@@ -11,22 +11,12 @@ section(id='book').book.rel
               input#firstname(type='text' name='firstname' placeholder=' Denzel Washington')
               label.text-field__label(for='firstname') Name Surname*
               //- span.span_invalid *This field is required
-
-
           .text-block
             .form-field
               .check-in-vue#check-in-book
             .form-field
               .check-out-vue#check-out-book
             .form-field.form-field--select
-              //- .select
-              //-   .dropdown-button
-              //-     p *Place of residence 
-              //-     input#plase-of-living(type="hidden" name='place'  )
-              //-     span
-              //-     .form-field__area-svg
-              //-       svg
-              //-         use(xlink:href='#arrow-down')
               .select
                 button.dropdown-button
                   span *Place of residence 
@@ -66,11 +56,11 @@ section(id='book').book.rel
             .text-field
               input#email(type="email" name='Email' value='' placeholder=' Denzel Washington')
               label.text-field__label(for='email') E-mail
-            button.btn.btn--empty.submit-button#book-submit.but-wave( type='submit' name='send' ) Send
+            button.btn.btn-empty.submit-button#book-submit.but-wave( type='submit' name='send' ) Send
 
         .book-section-form__field.book-section-form__field--text
-          p.form-fild-text Thank You for <br class='_sm-visible'> completing the questionnaire.
-          p.form-fild-text This will help make your holiday exactly the way you want it to be.
-          p.form-fild-text You can communicate all your wishes and suggestions by phone number
+          p Thank You for <br class='_sm-visible'> completing the questionnaire.
+          p This will help make your holiday exactly the way you want it to be.
+          p You can communicate all your wishes and suggestions by phone number
             a(href="#!") +4 (000)000-00-00
 

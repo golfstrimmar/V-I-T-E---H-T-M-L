@@ -1,13 +1,9 @@
 .textarea-field {
-  // position: relative;
-  // @include transition;
-  // width: 100%;
-  // max-width: 320px;
-  // border: none;
-  // &:last-of-type {
-  // margin: 0 0 0 0;
-  // }
-  background: whitesmoke;
+  position: relative;
+  @include transition;
+  width: 100%;
+  border: none;
+  border: 1px solid #959595;
   width: 100%;
   position: relative;
   textarea {
@@ -17,8 +13,7 @@
     resize: none;
     @include transition;
     display: block;
-    padding: 0px 20px 0px;
-    border: 1px solid grey;
+    padding: 0px 15px 0px;
     cursor: pointer;
     z-index: 5;
     background: transparent;
@@ -30,9 +25,10 @@
       position: absolute;
       transform: translateY(0%);
       @include transition;
-      padding: 0px 20px 0px;
+      padding: 0px 15px 0px;
       top: 0;
       z-index: 2;
+      opacity: 0.5;
     }
     &:focus,
     &:not(:placeholder-shown) {
@@ -44,7 +40,7 @@
 
   &:hover {
     label {
-      color: rgb(29, 128, 1, 25%);
+      opacity: 0.3;
     }
   }
 }

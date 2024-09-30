@@ -25,13 +25,17 @@ body {
 
 .inner {
   position: relative;
+  padding: 80px 0 20px 0;
 }
 
 a {
   display: inline-block;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  color: rgb(72, 89, 245);
+  color: $activ;
+  &:hover {
+    color: #70f7b4;
+  }
 }
 
 .imgs {
