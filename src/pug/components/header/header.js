@@ -4,9 +4,11 @@ export const Header = () => {
   const header = document.querySelector("header");
   const menu = header.querySelector(".menu");
   const info = header.querySelector(".info");
+  const headerSearch = header.querySelector(".header__search");
   const burger = header.querySelector(".burger");
   const HeaderBody = header.querySelector(".header__body");
   const now = info.cloneNode(true);
+  const search = headerSearch.cloneNode(true);
   const body = document.querySelector("body");
   // ---------------------------------------------
   const activeItemHEAD = (event) => {
@@ -42,6 +44,7 @@ export const Header = () => {
     menu.classList.remove("menu-active");
     now.classList.add("info-active");
     menu.append(now);
+    menu.append(headerSearch);
     burger.classList.remove("_is-active");
     body.classList.remove("lock");
   };
@@ -52,17 +55,24 @@ export const Header = () => {
     if (menu.querySelector(".info")) {
       menu.querySelector(".info").remove();
       now.classList.remove("info-active");
-      HeaderBody.append(now);
+
+      HeaderBody.querySelector("#languageForm").insertAdjacentElement(
+        "afterend",
+        now
+      );
+      header
+        .querySelector(".info")
+        .insertAdjacentElement("afterend", headerSearch);
     }
   };
 
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 1270) {
     lgMenu();
   } else {
     smMenu();
   }
   window.onresize = function () {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1270) {
       lgMenu();
     } else {
       if (!burger.classList.contains("_is-active")) {

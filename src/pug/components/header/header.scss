@@ -21,9 +21,9 @@
     position: relative;
     height: 100%;
     display: grid;
-    grid-template-columns: 100px repeat(5, max-content);
+    grid-template-columns: 100px repeat(4, max-content);
     width: 100%;
-    gap: 0 40px;
+    gap: 0 20px;
     justify-content: space-between;
   }
   #languageForm {
@@ -32,13 +32,21 @@
     }
   }
   &__search {
-    margin: 0 10px;
     input[type="text"] {
       background: rgba(187, 186, 186, 0.63);
     }
+    label {
+      color: $white;
+    }
+  }
+  .search-field input[type="text"]:hover + label {
+    color: $activ;
   }
   &__button {
     padding: 10px 5px;
+    min-height: 30px;
+    border-radius: 5px;
+    min-width: 60px;
   }
   &__info {
     margin: 0 0 0 0;
@@ -47,17 +55,21 @@
   .tab-header.menu__link {
     background: transparent;
     &:hover {
-      background: #ff9999;
+      background: $activ;
     }
   }
   .tab-header.menu__link.menu__link--active {
-    background: #f73030;
+    background: #4e8f3c;
+    &:hover {
+      background: $activ;
+    }
   }
   .tab > .tab-content {
     position: absolute;
     margin: 5px 0 0 0;
     border: none;
     z-index: -1;
+
     transform: scaleY(0);
     transform-origin: top;
     grid-template-rows: 1fr;
@@ -66,7 +78,7 @@
     grid-template-rows: 1fr;
     transform: scaleY(1);
     transform-origin: top;
-    z-index: 1;
+    z-index: 20;
     border: 1px solid #ccc;
     overflow: visible;
     .tab-wrap {
@@ -87,10 +99,10 @@
     grid-template-rows: 1fr;
   }
 
-  .smenu__body {
-    width: 100%;
-    position: relative;
-  }
+  // .smenu__body {
+  //   width: 100%;
+  //   position: relative;
+  // }
 }
 
 .logo {
@@ -123,11 +135,6 @@
     height: 100%;
   }
 
-  .header * {
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    transition: all 0.2s;
-  }
   &__link {
     display: flex;
     align-items: center;
@@ -141,38 +148,38 @@
       height: 10px;
     }
     &:hover {
-      background: #ff9999;
+      background: $activ;
     }
     &--active {
-      background: #f73030;
+      background: #4e8f3c;
       box-shadow: 0px 0px 20px white;
     }
 
     &._is-active {
-      & ~ .menu-tab {
-        background-color: black;
-        max-height: 190px;
-        height: 190px;
-        outline: solid 1px rgb(165, 10, 10);
-        animation: pul 0.3s linear;
-        animation-fill-mode: forwards;
-        .smenu__item:hover {
-          & > .smenu-title-js {
-            background: rgb(147, 240, 185);
-            svg {
-              transform: rotate(90deg);
-            }
-          }
-          & > .smenu__hidden {
-            animation: pulse 0.3s linear;
-            animation-fill-mode: forwards;
-          }
-        }
-      }
-      svg {
-        fill: rgb(54, 54, 56);
-        transform: rotate(180deg);
-      }
+      // & ~ .menu-tab {
+      //   background-color: black;
+      //   max-height: 190px;
+      //   height: 190px;
+      //   outline: solid 1px rgb(165, 10, 10);
+      //   animation: pul 0.3s linear;
+      //   animation-fill-mode: forwards;
+      //   .smenu__item:hover {
+      //     & > .smenu-title-js {
+      //       background: $activ;
+      //       svg {
+      //         transform: rotate(90deg);
+      //       }
+      //     }
+      //     & > .smenu__hidden {
+      //       animation: pulse 0.3s linear;
+      //       animation-fill-mode: forwards;
+      //     }
+      //   }
+      // }
+      // svg {
+      //   fill: rgb(54, 54, 56);
+      //   transform: rotate(180deg);
+      // }
     }
   }
 }
@@ -241,7 +248,7 @@
 
 // /*===========*/
 
-@media (max-width: 768px) {
+@media (max-width: 1270px) {
   .header {
     .burger {
       display: inline-block;
@@ -286,7 +293,7 @@
         span,
         &::after,
         &::before {
-          background: rgb(29, 128, 1, 25%);
+          background: $activ;
         }
       }
       &._is-active {
@@ -336,6 +343,9 @@
         justify-items: end;
         row-gap: 15px;
         margin: 0 0 30px 0;
+        .tab > .tab-content {
+          right: 0;
+        }
       }
     }
   }
@@ -349,5 +359,12 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 10px 0;
+  }
+  .header__search {
+    margin: 10px 0;
+    min-height: 50px;
+    input {
+      min-height: 50px;
+    }
   }
 }

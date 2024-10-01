@@ -7,9 +7,6 @@
   }
 }
 .book-section-form-column {
-  &:last-child {
-    margin: -10px 0 0 0;
-  }
   .form-column-title {
     margin: 0 0 20px 0;
     h3 {
@@ -41,9 +38,6 @@
     margin: 30px 0 0 0;
     column-gap: 0px;
     row-gap: 30px;
-  }
-  .book-section-form-column:last-child {
-    margin: -42px 0 0 0;
   }
 
   .book-section-form-column {

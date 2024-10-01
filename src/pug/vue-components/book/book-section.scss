@@ -50,6 +50,7 @@
         margin: 0 20px 0 0;
         float: left;
         min-height: 48px;
+        border-radius: 5px;
         .select {
           height: 100%;
         }
@@ -98,7 +99,7 @@
     padding: 33px 0 27px 0;
   }
   .book-section-form__field--text {
-    margin: 0 0 0 0;
+    margin: 20px 0 0 0;
     padding: 40px 0 27px 0;
   }
   .book-section-form__field--text .form-fild-text {

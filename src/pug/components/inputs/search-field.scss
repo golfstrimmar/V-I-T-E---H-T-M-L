@@ -1,7 +1,6 @@
 .search-field {
   @include flex-center;
   position: relative;
-
   height: 100%;
   label {
     position: absolute;
@@ -19,7 +18,7 @@
     @include transition;
     z-index: 5;
     border: 1px solid grey;
-    // border: none;
+    display: block;
     &::placeholder {
       opacity: 0;
     }

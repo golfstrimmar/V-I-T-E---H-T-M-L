@@ -31,6 +31,34 @@
       background: #b4b4b4;
     }
   }
+  &._check_invalid {
+    border: solid 2px #ff0000;
+    .dropdown-button {
+      span {
+        color: #ff0000;
+        opacity: 1;
+      }
+      svg {
+        stroke: #ff0000;
+      }
+    }
+    &:hover {
+      border: solid 2px #ff0000;
+      .dropdown-button {
+        span {
+          color: #ff0000;
+          opacity: 1;
+        }
+        svg {
+          stroke: #ff0000;
+        }
+      }
+    }
+    p {
+      color: #ff0000;
+      opacity: 1;
+    }
+  }
   &._is-active {
     border-color: $activ;
     span {
@@ -96,7 +124,7 @@
     border-radius: 5px;
     border: none;
     padding: 13px 46px 13px 20px;
-    z-index: 225;
+    z-index: 25;
     span {
       opacity: 0.5;
     }

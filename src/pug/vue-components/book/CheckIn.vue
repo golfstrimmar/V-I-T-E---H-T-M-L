@@ -15,22 +15,22 @@
       :offset='10' 
       auto-apply='' 
       @closed='closedFn'   
-      @focus='focusFn'
-      @click='clickFn'
       @open='openFn'
+      @click='clickFn'
       )
     div(:class="fildFocus ? 'form-field__area-svg _is-active'   : 'form-field__area-svg'")
       svg
         use(xlink:href='#chevron-down')
+  span.departure(:class="[(departure == true) ? '_is-active' : '' ]") The departure date must be later than the arrival date.
 </template>
 <script setup>
-import { ref, onMounted, reactive, watch } from 'vue';
+import { ref, onMounted, reactive, watch, onUnmounted } from 'vue';
 const date = ref('');
 var fildFocus = ref(false);
 const some = ref(null)
 let Filled = ref(false);
 let pointer = reactive()
-
+let departure = ref(false);
 
 const format = (date) => {
   const day = date.getDate();
@@ -62,11 +62,54 @@ onMounted(() => {
 
 
 watch(date, (count, prevCount) => {
-  Filled.value = true;
-  if (count == null) {
-    Filled.value = false;
+  localStorage.setItem("DateIn", count);
+  const DateOut = localStorage.getItem("DateOut");
+  const date1 = new Date(DateOut);
+  if (count) {
+    departure.value = false;
+    const date2 = new Date(count);
+    if (date2 > date1) {
+      Filled.value = false;
+      date.value = '';
+      departure.value = true;
+    }
+
   }
+  if (count == '' || count == null) {
+    Filled.value = false;
+  } else {
+    Filled.value = true;
+  }
+
+
 })
+
+
+
+
+
+
+let intervalId = null;
+const checkLocalStorage = () => {
+  const resetFlag = localStorage.getItem("resetDatepickerIn");
+  if (resetFlag === "true") {
+    Filled.value = false;
+    date.value = '';
+    localStorage.setItem("resetDatepickerIn", "false");
+  }
+};
+
+onMounted(() => {
+  localStorage.setItem("DateIn", null);
+  intervalId = setInterval(() => {
+    checkLocalStorage();
+  }, 500);
+});
+
+onUnmounted(() => {
+  clearInterval(intervalId);
+
+});
 
 </script>
 
@@ -166,7 +209,7 @@ watch(date, (count, prevCount) => {
 .dp--clear-btn {
   position: absolute;
   top: 50%;
-  right: 3px;
+  right: 6px;
   z-index: 2;
   transform: translate(0%, -50%);
 }
@@ -178,6 +221,10 @@ watch(date, (count, prevCount) => {
   right: 15px;
   z-index: -1;
   transform: translate(0%, -50%);
+}
+
+.form-field {
+  max-width: 209px;
 }
 
 .form-field__area-svg {
@@ -197,9 +244,27 @@ watch(date, (count, prevCount) => {
   }
 }
 
-.form-field._check_invalid {
+._check._check_invalid {
+  border: 1px solid red;
+  border-radius: 5px;
+
+  .Picker {
+    border: 1px solid red;
+  }
+
   p {
+    opacity: 1;
     color: red;
+  }
+
+  svg {
+    stroke: red;
+  }
+
+  &:hover {
+    svg {
+      stroke: red;
+    }
   }
 }
 </style>

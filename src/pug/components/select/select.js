@@ -21,6 +21,7 @@ export const Select = (select, e) => {
       this.span.innerText = e.target.getAttribute("data-value");
       this.input.value = e.target.getAttribute("data-value");
       this.select.classList.add("_is-filled");
+      this.select.classList.remove("_check_invalid");
     }
   }
   const NewSelect = new newSelect(select, e);

@@ -22,15 +22,17 @@
       )
     div(:class="fildFocus ? 'form-field__area-svg _is-active'   : 'form-field__area-svg'")
       svg
-        use(xlink:href='#chevron-down') 
+        use(xlink:href='#chevron-down')
+  span.departure(:class="[(departure == true) ? '_is-active' : '' ]") The departure date must be later than the arrival date.
 </template>
 
 <script setup>
-import { ref, onMounted, reactive, watch } from 'vue';
+import { ref, onMounted, reactive, watch, onUnmounted } from 'vue';
 const date = ref('');
 var fildFocus = ref(false);
 const some = ref(null)
 let Filled = ref(false);
+let departure = ref(false);
 let pointer = reactive()
 
 
@@ -64,10 +66,63 @@ onMounted(() => {
 
 
 watch(date, (count, prevCount) => {
-  Filled.value = true;
-  if (count == null) {
+  localStorage.setItem("DateOut", count);
+  const DateIn = localStorage.getItem("DateIn");
+  const date1 = new Date(DateIn);
+
+  if (count) {
+    departure.value = false;
+    const date2 = new Date(count);
+    if (date2 < date1) {
+      // alert("The departure date must be later than the arrival date.");
+      Filled.value = false;
+      date.value = '';
+      departure.value = true;
+    }
+
+  }
+  if (count == '' || count == null) {
     Filled.value = false;
+  } else {
+    Filled.value = true;
   }
 })
 
+
+// -----------------------------------------
+let intervalId = null;
+const checkLocalStorage = () => {
+  const resetFlag = localStorage.getItem("resetDatepickerOut");
+  if (resetFlag === "true") {
+    date.value = '';
+    localStorage.setItem("resetDatepickerOut", "false");
+  }
+};
+
+onMounted(() => {
+  localStorage.setItem("DateOut", null);
+  intervalId = setInterval(() => {
+    checkLocalStorage();
+  }, 500);
+});
+
+onUnmounted(() => {
+  clearInterval(intervalId);
+
+});
 </script>
+
+
+<style lang="scss">
+.departure {
+  display: none;
+  opacity: 0;
+  transition: all 0.2s;
+
+  &._is-active {
+    display: block;
+    opacity: 1;
+    color: red;
+  }
+}
+</style>

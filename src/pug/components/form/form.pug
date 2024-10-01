@@ -38,9 +38,10 @@ form#send-form(action="#" method="post" name="send-form").send.send-form
         label(for="ratingForm1") 
           svg
             use(xlink:href='#Star')
-  .send__linia.select-custom.select#wal
+  .send__linia.select#wal
     button.dropdown-button
       span custom
+      input(type="hidden" name='place'  )
       svg.icon
         use(xlink:href='#chevron-down')
     ul.dropdown-list

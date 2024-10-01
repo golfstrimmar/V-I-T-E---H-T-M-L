@@ -14,7 +14,7 @@ import { Header } from "@/pug/components/header/header";
 
 // import { bunnerSwiper } from "@/pug/components/bunner/bunner";
 import { Popup } from "@/pug/components/popup/popup";
-// import { Tab } from "@/pug/components/tab/tab";
+import { Tab } from "@/pug/components/tab/tab";
 // import { Accords } from "@/pug/components/accord/accord";
 // import { SideMenu } from "@/pug/components/side-menu/side-menu";
 // import { CasesInit } from "@/pug/components/cases/cases";
@@ -57,22 +57,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ======Tab=================
-  // if (document.querySelector(".tabs-container")) {
-  //   let tabs = document.querySelectorAll(".tabs-container");
-  //   tabs.forEach((car) => {
-  //     car.addEventListener("click", (e) => {
-  //       Tab(e);
-  //     });
-  //   });
+  if (document.querySelector(".tabs-container")) {
+    let tabs = document.querySelectorAll(".tabs-container");
+    tabs.forEach((car) => {
+      car.addEventListener("click", (e) => {
+        Tab(e);
+      });
+    });
 
-  //   document.addEventListener("click", (e) => {
-  //     if (!e.target.closest(".tabs-container")) {
-  //       Array.from(document.querySelectorAll(".tab")).forEach((item) => {
-  //         item.classList.remove("_is-active");
-  //       });
-  //     }
-  //   });
-  // }
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".tabs-container")) {
+        Array.from(document.querySelectorAll(".tab")).forEach((item) => {
+          item.classList.remove("_is-active");
+        });
+      }
+    });
+  }
 
   // =========sideMenu==============
   // if (document.querySelector("._smenu-js")) {
@@ -132,9 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
     Search();
   }
   // ========vue book===============
-  // if (document.querySelector(".book")) {
-  //   FormFields();
-  // }
+  if (document.querySelector(".book")) {
+    FormFields();
+  }
 
   // ========Range===============
   // const ranges = [...document.querySelectorAll("._range-wrap-js")];
@@ -228,3 +228,12 @@ import CheckOut from "@/pug/vue-components/book/CheckOut.vue";
 [...document.querySelectorAll(".check-out-vue")].forEach((cell) => {
   createApp(CheckOut).component("VueDatePicker", VueDatePicker).mount(cell);
 });
+
+// if (event.key === "resetDatepicker" && event.newValue === "true") {
+// date.value = "";
+// localStorage.setItem("resetDatepicker", "false");
+// alert("true");
+// }
+// window.addEventListener("storage", (event) => {
+//   alert("true");
+// });

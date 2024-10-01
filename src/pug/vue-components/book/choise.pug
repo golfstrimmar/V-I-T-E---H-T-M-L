@@ -1,8 +1,9 @@
 .book-section-form__field.book-section-form__field--info
-  .book-section-form__title 
-    h3 Reasons for choosing a club
+
   .field--body
     .book-section-form-column
+      .form-column-title 
+        h3 Reasons for choosing a club
       .fildset-checkbox
         .form-check
           input#cb1(type='checkbox' name="cb1")
@@ -28,11 +29,7 @@
         .form-check
           input#cb8(type='checkbox' name="cb8")
           label(for='cb8') Restaurant
-      .book-section-form-line.book-section-form-line--text
-        p Your suggestions/wishes
-        .textarea-field
-          textarea#form-line-4(name="form-line-4" row='20' placeholder="Enter text" )
-          label(for='#form-line-4') Enter text
+
     .book-section-form-column
       .form-column-title 
         h3 Please indicate your age
@@ -63,4 +60,8 @@
             svg
               use(xlink:href='#Union')
 
-
+  .book-section-form-line.book-section-form-line--text
+    p Your suggestions/wishes
+    .textarea-field
+      textarea#form-line-4(name="form-line-4" row='20' placeholder="Enter text" )
+      label(for='#form-line-4') Enter text
