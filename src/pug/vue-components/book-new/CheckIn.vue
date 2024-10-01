@@ -15,9 +15,8 @@
       :offset='10' 
       auto-apply='' 
       @closed='closedFn'   
-      @focus='focusFn'
-      @click='clickFn'
       @open='openFn'
+      @click='clickFn'
       )
     div(:class="fildFocus ? 'form-field__area-svg _is-active'   : 'form-field__area-svg'")
       svg
@@ -25,7 +24,7 @@
   span.departure(:class="[(departure == true) ? '_is-active' : '' ]") The departure date must be later than the arrival date.
 </template>
 <script setup>
-import { ref, onMounted, reactive, watch, onUnmounted } from "vue";
+import { ref, onMounted, reactive, watch, onUnmounted } from 'vue';
 const date = ref('');
 var fildFocus = ref(false);
 const some = ref(null)
@@ -33,10 +32,12 @@ let Filled = ref(false);
 let pointer = reactive()
 let departure = ref(false);
 
-
-
-
-
+const format = (date) => {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
 const openFn = () => {
   fildFocus.value = !fildFocus.value
 }
@@ -44,6 +45,8 @@ const openFn = () => {
 const closedFn = () => {
   fildFocus.value = !fildFocus.value
 }
+
+
 
 const Fn = () => {
   const pointerElement = some.value?.querySelector('.dp__pointer');
@@ -70,13 +73,21 @@ watch(date, (count, prevCount) => {
       date.value = '';
       departure.value = true;
     }
+
   }
   if (count == '' || count == null) {
     Filled.value = false;
   } else {
     Filled.value = true;
   }
+
+
 })
+
+
+
+
+
 
 let intervalId = null;
 const checkLocalStorage = () => {
@@ -97,12 +108,11 @@ onMounted(() => {
 
 onUnmounted(() => {
   clearInterval(intervalId);
+
 });
 
-
-
-
 </script>
+
 <style lang="scss">
 ._check {
   p {

@@ -144,13 +144,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   // =========Select==============
-  const selects = [...document.querySelectorAll(".select-custom")];
+  // const selects = [...document.querySelectorAll(".select-custom")];
+  // if (selects.length > 0) {
+  //   selects.forEach((select) => {
+  //     Select(select);
+  //   });
+  // }
+  const selects = [...document.querySelectorAll(".select")];
   if (selects.length > 0) {
-    selects.forEach((select) => {
-      Select(select);
+    document.addEventListener("click", (e) => {
+      if (e.target.closest(".select")) {
+        Select(e.target.closest(".select"), e);
+      } else {
+        Array.from(document.querySelectorAll(".select")).forEach((item) => {
+          item.classList.remove("_is-active");
+        });
+      }
     });
   }
-
   // ========Form===============
 
   if (document.querySelector(".send-form")) {

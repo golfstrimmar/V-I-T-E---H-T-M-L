@@ -68,22 +68,7 @@
   }
   .fildset-checkbox {
     margin: 10px 0;
-    &._check_invalid {
-      label {
-        color: red;
-      }
-      input[type="checkbox"]:not(:checked) + label::before {
-        border-color: red;
-      }
-    }
   }
-
-  .fildset-checkbox._check_invalid
-    input[type="checkbox"]:not(:checked)
-    + label:hover {
-    color: red;
-  }
-
   .textarea-field textarea + label {
     padding: 0px;
   }

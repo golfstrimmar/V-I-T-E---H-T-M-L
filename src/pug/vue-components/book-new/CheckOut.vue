@@ -5,6 +5,7 @@
     name='date-out'
     v-model= 'date' 
     )
+
   #check-in-header.Picker(ref='some')
     p(:class="[(fildFocus == true) ? '_is-active' : '',(Filled == true) ? '_unvisible' : '' ]") Check-out*
     VueDatePicker(
@@ -35,7 +36,12 @@ let departure = ref(false);
 let pointer = reactive()
 
 
-
+const format = (date) => {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
 const openFn = () => {
   fildFocus.value = !fildFocus.value
 }
@@ -43,6 +49,7 @@ const openFn = () => {
 const closedFn = () => {
   fildFocus.value = !fildFocus.value
 }
+
 
 
 const Fn = () => {
@@ -104,6 +111,8 @@ onUnmounted(() => {
 
 });
 </script>
+
+
 <style lang="scss">
 .departure {
   display: none;

@@ -14,7 +14,7 @@ export const Form = () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     let hasError = false;
-    // ==================================================
+
     if (!firstName.value.trim()) {
       firstName.closest(".input-field").classList.add("_check_invalid");
       hasError = true;
@@ -24,7 +24,7 @@ export const Form = () => {
     } else {
       firstName.closest(".input-field").classList.remove("_check_invalid");
     }
-    // ==================================================
+
     if (!email.value.trim()) {
       email.closest(".input-field").classList.add("_check_invalid");
       email.addEventListener("input", (e) => {
@@ -34,7 +34,7 @@ export const Form = () => {
     } else {
       email.closest(".input-field").classList.remove("_check_invalid");
     }
-    // ==================================================
+
     if (!tel.value.trim()) {
       tel.closest(".input-field").classList.add("_check_invalid");
       hasError = true;
@@ -44,7 +44,7 @@ export const Form = () => {
     } else {
       tel.closest(".input-field").classList.remove("_check_invalid");
     }
-    // ==================================================
+
     selectedRating = "";
     rating.forEach((radio) => {
       if (radio.checked) {
@@ -56,17 +56,17 @@ export const Form = () => {
       hasError = true;
       alert("Пожалуйста, выберите оценку.");
     }
-    // ==================================================
+
     if (!textarea.value.trim()) {
       textarea.closest(".textarea-field").classList.add("_check_invalid");
       textarea.addEventListener("input", (e) => {
-        textarea.closest(".textarea-field").classList.remove("_check_invalid");
+        textarea.closest(".input-field").classList.remove("_check_invalid");
       });
       hasError = true;
     } else {
       textarea.closest(".textarea-field").classList.remove("_check_invalid");
     }
-    // ==================================================
+
     if (wal.innerHTML == "custom") {
       wal.closest(".send__linia").classList.add("_check_invalid");
       wal.addEventListener("input", (e) => {
@@ -76,16 +76,9 @@ export const Form = () => {
     } else {
       wal.closest(".send__linia").classList.remove("_check_invalid");
     }
-    // ==================================================
+
     if (!checkbox.checked) {
       checkbox.closest(".fildset-checkbox").classList.add("_check_invalid");
-      checkbox.addEventListener("change", function () {
-        if (checkbox.checked) {
-          checkbox
-            .closest(".fildset-checkbox")
-            .classList.remove("_check_invalid");
-        }
-      });
       hasError = true;
     } else {
       checkbox.closest(".fildset-checkbox").classList.remove("_check_invalid");
@@ -106,7 +99,7 @@ export const Form = () => {
         tel: tel.value.trim(),
         rating: selectedRating,
         textarea: textarea.value.trim(),
-        checkbox: checkbox.checked,
+        checkbox: agree,
         wal: wal.innerHTML,
       });
 
