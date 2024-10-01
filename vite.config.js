@@ -26,7 +26,6 @@ export default defineConfig({
     }),
     postcss(),
     viteImagemin({
-      // Настройки для минификации изображений
       gifsicle: {
         optimizationLevel: 7,
         interlaced: false,
@@ -51,15 +50,15 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: "./assets/fonts/*", // Путь к шрифтам
-          dest: "assets/fonts", // Папка назначения в dist
+          src: "./assets/fonts/*",
+          dest: "assets/fonts",
         },
       ],
     }),
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // Алиас для src
+      "@": path.resolve(__dirname, "src"),
     },
   },
   build: {
@@ -68,10 +67,8 @@ export default defineConfig({
         ...pagesInput,
       },
       output: {
-        // manualChunks: undefined, // Отключает разбивку на чанки
-        // entryFileNames: "assets/index.js", // Имя файла для основного скрипта
-        entryFileNames: "assets/[name].js", // Имя файла без хэша
-        chunkFileNames: "assets/[name].js", // Для чанков
+        entryFileNames: "assets/[name].js",
+        chunkFileNames: "assets/[name].js",
         assetFileNames: ({ name }) => {
           if (/\.(svg|gif|jpe?g|png)$/.test(name ?? "")) {
             return "assets/img/[name][extname]";
@@ -89,12 +86,11 @@ export default defineConfig({
         },
       },
     },
-    cssCodeSplit: false, // Объединяем все стили в один файл
-    // chunkSizeWarningLimit: 60000, // Увеличиваем лимит предупреждения для размера чанков
+    cssCodeSplit: false,
   },
   server: {
-    port: 3000, // Порт для локального сервера
-    host: "0.0.0.0", // Доступ извне (по сети)
+    port: 3000,
+    host: "0.0.0.0",
     hmr: true,
   },
 });
