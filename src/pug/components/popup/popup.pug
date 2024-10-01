@@ -1,55 +1,8 @@
 .popup.popup-js
   .popup__overlay.popup-overlay-js
     .popup__inner.popup-inner-js
-      #popupPlyr1.popup__content.popup__content--plyr
-        video#playerFull1.slider-video.playerFull1(playsinline='' controls='')
-          source(src='assets/video/video-1.mp4' type='video/mp4')
-      #popupPlyr2.popup__content.popup__content--plyr
-        video#playerFull2.slider-video.playerFull1(playsinline='' controls='')
-          source(src='assets/video/video-2.mp4' type='video/mp4')
-
       #popup1.popup__content
         include ../form/form.pug
-
-      //- #popup2.popup__content
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //- #popup3.popup__content
-      //-   p popup3
-      //-   p popup3
-      //-   p popup3
-      #popupGalery.popup__content
-        .slider__body
-          button.slider-arrow.slider-arrow-prev.arrow-galery-prev(type='button')
-            svg.icon
-              use(xlink:href='#chevron-left')
-
-          button.slider-arrow.slider-arrow-next.arrow-galery-next(type='button')
-            svg.icon
-              use(xlink:href='#chevron-right')
-          #slider-galery.slider__wrapper.slider-js-galery.swiper-container
-            ul#popupGalerySwiper.swiper-wrapper
-          //-     li.slider__item.swiper-slide
-          //-       .imgs
-          //-         img(src='/assets/img/img-3.png')
-          //-     li.slider__item.swiper-slide
-          //-       .imgs
-          //-         img(src='/assets/img/img-1.png')
-          //-     li.slider__item.swiper-slide
-          //-       .imgs
-          //-         img(src='/assets/img/img-2.png')
-
-
-      //- #popupGal.popup__content.rel
-      //-     .imgs
-      //-       img(src='' alt='img')
     i.popup__close.popup-close-js
       svg
         use(xlink:href='#close')

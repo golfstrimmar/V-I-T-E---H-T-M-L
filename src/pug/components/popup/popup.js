@@ -1,6 +1,4 @@
 "use strict";
-import Plyr from "plyr";
-import Swiper, { Navigation } from "swiper";
 
 export const Popup = () => {
   class Popup {
@@ -13,48 +11,13 @@ export const Popup = () => {
       this.body = document.querySelector("body");
     }
 
-    newPlyr(arg) {
-      let r = `#${arg}`;
-      this.newPlayer = new Plyr(r);
-      this.newPlayer.play();
-    }
-    // =====================
-    closePlyr() {
-      if (this.newPlayer) {
-        this.newPlayer.destroy();
-        this.newPlayer = "";
-      }
-    }
     // =====================
     open() {
       this.pop.classList.add("_is-active");
       this.content = this.pop.querySelector(this.rel);
       this.content.classList.add("_is-active");
-      if (this.content.matches(".popup__content--plyr")) {
-        this.linkPlyr = this.content.querySelector("video").getAttribute("id");
-        if (this.linkPlyr) {
-          this.newPlyr(this.linkPlyr);
-        }
-      }
     }
 
-    // =====================
-    startGalary(plasa, itemIndex) {
-      var popupGalerySwiper = this.pop.querySelector("#popupGalerySwiper");
-      popupGalerySwiper.innerHTML = "";
-
-      for (var i = 0; i < plasa.length; i++) {
-        var temp = document.createElement("li");
-        temp.classList.add("slider__item", "swiper-slide", "rel");
-
-        temp.innerHTML = ` <div class="imgs">
-        <img src= "${plasa[i]}"> </img>
-      </div>`;
-        popupGalerySwiper.append(temp);
-      }
-      mySwiperGalary.update();
-      mySwiperGalary.slideTo(itemIndex, 0);
-    }
     // =====================
     start(tempPopup) {
       this.popInit = tempPopup;
@@ -90,51 +53,13 @@ export const Popup = () => {
         e.target == document.querySelector(".popup-overlay-js") ||
         e.target.closest(".popup-close-js")
       ) {
-        newPopup.closePlyr();
         Popup.close();
         document
           .querySelector(".popup__content")
           .classList.remove("_is-active");
       }
-
-      if (e.target.closest(".galery__item")) {
-        var temp = [
-          ...e.target
-            .closest("._accord-content-js")
-            .querySelectorAll(".galery__item img"),
-        ];
-
-        var plasa = [
-          ...e.target
-            .closest("._accord-js")
-            .querySelector("._accord-content-js._is-active")
-            .querySelectorAll(".galery__item "),
-        ];
-
-        temp = temp.map((el) => {
-          return el.getAttribute("src");
-        });
-
-        var itemIndex = plasa.indexOf(e.target.closest(".galery__item"));
-        newPopup.startGalary(temp, itemIndex);
-      }
-    });
-  };
-  const SliderGalery = () => {
-    mySwiperGalary = new Swiper("#slider-galery", {
-      slidesPerView: 1,
-      speed: 500,
-      modules: [Navigation],
-      navigation: {
-        nextEl: ".arrow-galery-next",
-        prevEl: ".arrow-galery-prev",
-      },
-      grabCursor: true,
     });
   };
 
   logikPopup();
-  if (document.querySelector("#slider-galery")) {
-    SliderGalery();
-  }
 };
