@@ -7,20 +7,17 @@
 
 .tab {
   margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   overflow: hidden;
 
   &-header {
-    padding: 10px 30px 10px 10px;
-    background-color: #f1f1f1;
+    padding: 3px 30px 3px 10px;
+
     cursor: pointer;
     font-weight: bold;
     transition: all 0.2s;
     position: relative;
     white-space: nowrap;
     &:hover {
-      background-color: #e1e1e1;
     }
     svg {
       transition: all 0.2s;
@@ -44,16 +41,13 @@
   &-wrap {
     transition: all 0.2s;
     min-height: 0;
-    padding: 0 10px;
   }
   &._is-active > .tab-header {
-    background-color: #a7a5a5;
   }
   &._is-active > .tab-content {
     grid-template-rows: 1fr;
 
     & > .tab-wrap {
-      padding: 10px;
     }
   }
   &._is-active > .tab-header svg {

@@ -6,7 +6,7 @@
   z-index: 50;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: $bg;
   @include transition;
   * {
     @include transition;
@@ -21,10 +21,11 @@
     position: relative;
     height: 100%;
     display: grid;
-    grid-template-columns: 100px repeat(5, max-content);
+    grid-template-columns: 185px repeat(5, max-content);
     width: 100%;
     gap: 0 40px;
     justify-content: space-between;
+    padding: 18px 0;
   }
   #languageForm {
     fieldset {
@@ -38,7 +39,9 @@
     }
   }
   &__button {
-    padding: 10px 5px;
+    width: 165px;
+    height: 40px;
+    white-space: nowrap;
   }
   &__info {
     margin: 0 0 0 0;
@@ -47,15 +50,14 @@
   .tab-header.menu__link {
     background: transparent;
     &:hover {
-      background: #ff9999;
+      // background: #ff9999;
     }
   }
   .tab-header.menu__link.menu__link--active {
-    background: #f73030;
   }
   .tab > .tab-content {
     position: absolute;
-    margin: 5px 0 0 0;
+    margin: 15px 0 0 0;
     border: none;
     z-index: -1;
     transform: scaleY(0);
@@ -67,12 +69,22 @@
     transform: scaleY(1);
     transform-origin: top;
     z-index: 1;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(151, 151, 151);
+    background: rgb(39, 39, 39);
     overflow: visible;
+    min-width: 247px;
     .tab-wrap {
       border: none;
       a {
         width: 100%;
+        font-size: 14px;
+        line-height: 17px;
+        padding: 9px;
+        color: rgb(255, 255, 255);
+        &:hover {
+          color: $black;
+          background: $act;
+        }
       }
     }
   }
@@ -96,7 +108,20 @@
 .logo {
   gap: 0 10px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  padding: 0 0 0 15px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    border: 2px solid $act;
+    border-right: 0px;
+    transform: translate(0%, -50%);
+    top: 50%;
+    width: 40px;
+    height: 63px;
+    left: 0;
+  }
   a {
     svg {
       height: 50px;
@@ -104,7 +129,20 @@
     }
   }
   p {
-    color: aliceblue;
+    color: rgb(255, 255, 255);
+    font-family: "Gilroy-Bold", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+  }
+  span {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+    opacity: 0.6;
+    font-family: "Work Sans", sans-serif;
   }
 }
 
@@ -131,34 +169,39 @@
   &__link {
     display: flex;
     align-items: center;
-    height: 100%;
-    padding: 0 10px;
+    padding: 3px 0px 3px 0px;
     text-transform: uppercase;
     color: white;
+    font-family: "Gilroy-SemiBold", sans-serif;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17px;
     svg {
       width: 10px;
       height: 10px;
     }
+    a {
+    }
     &:hover {
-      background: #ff9999;
+      color: $act-hover;
     }
     &--active {
-      background: #f73030;
-      box-shadow: 0px 0px 20px white;
+      color: $act;
+      border-bottom: 2px solid $act;
     }
 
     &._is-active {
       & ~ .menu-tab {
         background-color: black;
-        max-height: 190px;
-        height: 190px;
-        outline: solid 1px rgb(165, 10, 10);
+        // max-height: 190px;
+        // height: 190px;
+        // outline: solid 1px rgb(165, 10, 10);
         animation: pul 0.3s linear;
         animation-fill-mode: forwards;
         .smenu__item:hover {
           & > .smenu-title-js {
-            background: rgb(147, 240, 185);
+            // background: rgb(147, 240, 185);
             svg {
               transform: rotate(90deg);
             }
@@ -185,6 +228,12 @@
   column-gap: 15px;
   .info__phone {
     white-space: nowrap;
+    font-size: 16px;
+    line-height: 20px;
+    color: $white;
+    &:hover {
+      color: $act-hover;
+    }
   }
 }
 // ==========================================

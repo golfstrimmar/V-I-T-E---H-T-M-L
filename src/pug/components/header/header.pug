@@ -4,60 +4,42 @@ header.header
       span
     .header__body 
       .header__logo.logo
-        a(href='javascript:void(0);')
-          svg
-            use(xlink:href='#logo')
-        p lorem
+        p DubaiRealty
+        span Real Estate
       nav.header__menu.menu
         ul.menu__list
           li.menu__item
             .tabs-container
               .tab
-                .tab-header.menu__link Home
+                .tab-header.menu__link Buy
                   svg
                     use(xlink:href='#chevron-down')
                 .tab-content
                   .tab-wrap
-                    a(href="javascript:void(0);") Apartments 
-                    .tab
-                      .tab-header in Dubai
-                        svg
-                          use(xlink:href='#chevron-down')
-                      .tab-content
-                        .tab-wrap
-                          a(href="javascript:void(0);") West
-                          a(href="javascript:void(0);") Ost
-                          .tab
-                            .tab-header Suid
-                              svg
-                                use(xlink:href='#chevron-down')
-                            .tab-content
-                              .tab-wrap
-                                a(href="javascript:void(0);") Suid 1
-                                a(href="javascript:void(0);") Suid 2
-                                a(href="javascript:void(0);") Suid 3
+                    a(href="javascript:void(0);") Category number one 
+                    a(href="javascript:void(0);") Apartments in Dubai 
+                    a(href="javascript:void(0);") Category number twenty five 
+
           li.menu__item
-            a.menu__link(href='javascript:void(0);' rel='#posts') Posts
+            a.menu__link(href='javascript:void(0);' rel='#posts') Blog
           li.menu__item
-            a.menu__link(href='javascript:void(0);' rel='#galery') Projects
+            a.menu__link(href='javascript:void(0);' rel='#galery') About
           li.menu__item.rel
-            a.menu__link(href='javascript:void(0);' rel='#') Contacts
+            a.menu__link(href='javascript:void(0);' rel='#') Contact
       form#languageForm(method='GET' action='/lang' onsubmit='return false;')
         fieldset.fildset-radio.fildset-radio--lang
           .form-check
             input(type="radio" id="14" name="lang" value="EN" checked)
-            label(for="14") EN
-              svg
-                use(xlink:href='#check')
+            label(for="14")._hover EN
+
           .form-check
             input(type="radio" id="15" name="lang" value="DE")
-            label(for="15") DE
-              svg
-                use(xlink:href='#check')
+            label(for="15")._hover DE
+
 
       .header__info.info
-        a.info__phone(href='javascript:void(0);') +7(000) 123 45 65 67 
-        a.header__button.btn.btn-success.but-wave.popups-init-js(rel='#popup1' href='javascript:void(0);') form
+        a.info__phone._hover(href='javascript:void(0);') +7(000) 123 45 65 67 
+        a.header__button.btn.btn-success.but-wave.popups-init-js(rel='#popup1' href='javascript:void(0);') Book a consultation
       form.search.header__search.search-field(method='GET' action='/search' onsubmit='return false;')
         input#search1(type='text' placeholder='search' name='query' )
         label(for='search1') search

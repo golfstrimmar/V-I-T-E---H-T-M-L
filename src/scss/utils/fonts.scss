@@ -1,35 +1,64 @@
-// @import url('https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800');
-
 @font-face {
-  font-family: "DrukCyr";
-  src: url("../assets/fonts/DrukCyr-Medium.eot");
-  src: url("../assets/fonts/DrukCyr-Medium.otf");
-  src: url("../assets/fonts/DrukCyr-Medium.woff");
-  src: url("../assets/fonts/DrukCyr-Medium.ttf");
+  font-family: "Gilroy-Regular";
+  src: url("../assets/fonts/Gilroy-Regular.eot");
+  src: url("../assets/fonts/Gilroy-Regular.woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url("../assets/fonts/Gilroy-Medium.eot");
+  src: url("../assets/fonts/Gilroy-Medium.woff");
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
 }
 
 @font-face {
-  font-family: "DrukCyr-Bold";
-  src: url("../assets/fonts/DrukCyr-Bold.eot");
-  src: url("../assets/fonts/DrukCyr-Bold.woff2");
-  src: url("../assets/fonts/DrukCyr-Bold.woff");
-  src: url("../assets/fonts/DrukCyr-Bold.ttf");
+  font-family: "Gilroy-SemiBold";
+  src: url("../assets/fonts/Gilroy-SemiBold.eot");
+  src: url("../assets/fonts/Gilroy-SemiBold.woff");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Gilroy-SemiBoldItalic";
+  src: url("../assets/fonts/Gilroy-SemiBoldItalic.eot");
+  src: url("../assets/fonts/Gilroy-SemiBoldItalic.woff");
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("../assets/fonts/Gilroy-Bold.eot");
+  src: url("../assets/fonts/Gilroy-Bold.woff");
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Serif:wght@700&family=PT+Sans&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&family=Roboto+Slab:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-// font-family: 'DrukCyr', sans-serif;
-// font-family: 'DrukCyr-Bold', sans-serif;
-// font-family: 'Arial-Bold', sans-serif;
-// font-family: 'Inter', sans-serif;
-// font-family: 'Noto Serif', serif;
-// font-family: 'PT Sans', sans-serif;
-// font-family: 'PT Serif', serif;
-// font-family: 'Roboto Flex', sans-serif;
-// font-family: 'Roboto Slab', serif;
+// font-family: "Space Grotesk", sans-serif;
+// font-family: "Lexend", sans-serif;
+// font-family: "Roboto", sans-serif;
+// font-family: "Work Sans", sans-serif;
+// font-family: "Gilroy-Regular", sans-serif;
+// font-family: "Gilroy-Medium", sans-serif;
+// font-family: "Gilroy-SemiBold", sans-serif;
+// font-family: "Gilroy-SemiBoldItalic", sans-serif;
+// font-family: "Gilroy-Bold", sans-serif;
+// 100 — Thin
+// 200 — Extra Light (Ultra Light)
+// 300 — Light
+// 400 — Regular (Normal)
+// 500 — Medium
+// 600 — Semi Bold (Demi Bold)
+// 700 — Bold
+// 800 — Extra Bold (Ultra Bold)
+// 900 — Black (Heavy)

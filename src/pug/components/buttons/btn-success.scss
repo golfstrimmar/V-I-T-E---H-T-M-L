@@ -1,8 +1,14 @@
 .btn-success {
-  background: rgb(81, 185, 137);
+  background: $act;
+  color: rgb(0, 0, 0);
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 2px 14px;
   &:hover {
-    color: rgb(29, 128, 1, 25%);
-    border: solid 1px rgb(29, 128, 1, 25%);
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 1);
+    color: $act-hover;
+    border: solid 1px $act;
+    box-shadow: inset 0 0 15px $act-hover;
   }
 }
