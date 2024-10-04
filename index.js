@@ -1,11 +1,11 @@
-import "./assets/css/datepicker.css";
-import "./assets/css/plyr.css";
+// import "./assets/css/datepicker.css";
+// import "./assets/css/plyr.css";
 import "./assets/css/swiper-bundle.min.css";
 import "@/scss/main.scss";
 import { Button } from "@/pug/components/buttons/btn-wave";
 import { Lazy } from "./assets/js/lazy";
-import { Anim } from "./assets/js/animation";
-import { Marque } from "./assets/js/marque";
+// import { Anim } from "./assets/js/animation";
+// import { Marque } from "./assets/js/marque";
 
 import { Lang } from "./assets/js/lang";
 import { Search } from "./assets/js/search";
@@ -15,24 +15,24 @@ import { Header } from "@/pug/components/header/header";
 import { bunnerSwiper } from "@/pug/components/bunner/bunner";
 import { Popup } from "@/pug/components/popup/popup";
 import { Tab } from "@/pug/components/tab/tab";
-import { Accords } from "@/pug/components/accord/accord";
-import { SideMenu } from "@/pug/components/side-menu/side-menu";
-import { CasesInit } from "@/pug/components/cases/cases";
-import { GalleryInit } from "@/pug/components/galery/galery";
-import { GalCases } from "@/pug/components/galCases/galCases";
-import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
-import { SwiperFull } from "@/pug/components/slider-full/slider-full";
-import { SwiperScroll } from "@/pug/components/slider-scroll/slider-scroll";
-import { Double } from "@/pug/components/slider-double/sdouble.js";
-import { Range } from "@/pug/components/range/range";
+// import { Accords } from "@/pug/components/accord/accord";
+// import { SideMenu } from "@/pug/components/side-menu/side-menu";
+// import { CasesInit } from "@/pug/components/cases/cases";
+// import { GalleryInit } from "@/pug/components/galery/galery";
+// import { GalCases } from "@/pug/components/galCases/galCases";
+// import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
+// import { SwiperFull } from "@/pug/components/slider-full/slider-full";
+// import { SwiperScroll } from "@/pug/components/slider-scroll/slider-scroll";
+// import { Double } from "@/pug/components/slider-double/sdouble.js";
+// import { Range } from "@/pug/components/range/range";
 import { Select } from "@/pug/components/select/select";
-import { Look } from "@/pug/components/look/look";
-import { TypedItem } from "@/pug/components/typed/typedHover";
+// import { Look } from "@/pug/components/look/look";
+// import { TypedItem } from "@/pug/components/typed/typedHover";
 import { Form } from "@/pug/components/form/form";
-import { FormFields } from "@/pug/vue-components/book/book";
+// import { FormFields } from "@/pug/vue-components/book/book";
 
 document.addEventListener("DOMContentLoaded", function () {
-  Anim();
+  //   Anim();
 
   // =====Header==================
   if (document.querySelector("header")) {
@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ===Look=======
-  if (document.querySelector("video")) {
-    Look();
-  }
+  // if (document.querySelector("video")) {
+  //   Look();
+  // }
   // =========Lazy==============
   if (document.querySelector("img")) {
     Lazy();
@@ -75,52 +75,52 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // =========sideMenu==============
-  if (document.querySelector("._smenu-js")) {
-    SideMenu();
-  }
+  // if (document.querySelector("._smenu-js")) {
+  //   SideMenu();
+  // }
 
   // ====Accords=====
-  if (document.querySelector(".accord")) {
-    Accords();
-  }
+  // if (document.querySelector(".accord")) {
+  //   Accords();
+  // }
 
   // ========Cases=============
-  if (document.querySelector("._accord-cases-js")) {
-    CasesInit();
-  }
+  // if (document.querySelector("._accord-cases-js")) {
+  //   CasesInit();
+  // }
   // ======Gallery======================
-  if (document.querySelector("._accord-galery-js")) {
-    GalleryInit();
-  }
+  // if (document.querySelector("._accord-galery-js")) {
+  //   GalleryInit();
+  // }
   // ====GalCases=====
-  if (document.querySelector("._galCases-plaza-js")) {
-    GalCases();
-  }
+  // if (document.querySelector("._galCases-plaza-js")) {
+  //   GalCases();
+  // }
 
   // =========Swiper1==============
-  if (document.querySelector("#swiper-1")) {
-    Swiper1();
-  }
+  // if (document.querySelector("#swiper-1")) {
+  //   Swiper1();
+  // }
   // ========swiper-1licens===============
-  if (document.querySelector("#swiper-1licens")) {
-    Swiper1licens();
-  }
+  // if (document.querySelector("#swiper-1licens")) {
+  //   Swiper1licens();
+  // }
   // =========Marque==============
-  if (document.querySelector(".marque")) {
-    Marque();
-  }
+  // if (document.querySelector(".marque")) {
+  //   Marque();
+  // }
   // ======slider-full=================
-  if (document.querySelector("#slider-full")) {
-    SwiperFull();
-  }
+  // if (document.querySelector("#slider-full")) {
+  //   SwiperFull();
+  // }
   // =====swiper-scroll==================
-  if (document.querySelector("#swiper-scroll")) {
-    SwiperScroll();
-  }
+  // if (document.querySelector("#swiper-scroll")) {
+  //   SwiperScroll();
+  // }
   // ========swiperDouble===============
-  if (document.querySelector("#swiperDoubleTop")) {
-    Double();
-  }
+  // if (document.querySelector("#swiperDoubleTop")) {
+  //   Double();
+  // }
   // ========lang===============
   if (document.querySelector('input[name="lang"]')) {
     document.querySelectorAll('input[name="lang"]').forEach(function (radio) {
@@ -132,17 +132,17 @@ document.addEventListener("DOMContentLoaded", function () {
     Search();
   }
   // ========vue book===============
-  if (document.querySelector(".book")) {
-    FormFields();
-  }
+  // if (document.querySelector(".book")) {
+  //   FormFields();
+  // }
 
   // ========Range===============
-  const ranges = [...document.querySelectorAll("._range-wrap-js")];
-  if (ranges.length > 0) {
-    ranges.forEach((item) => {
-      Range(item);
-    });
-  }
+  // const ranges = [...document.querySelectorAll("._range-wrap-js")];
+  // if (ranges.length > 0) {
+  //   ranges.forEach((item) => {
+  //     Range(item);
+  //   });
+  // }
   // =========Select==============
   // const selects = [...document.querySelectorAll(".select-custom")];
   // if (selects.length > 0) {
@@ -178,12 +178,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // =======================
 
-  const textTypedAll = [...document.querySelectorAll("._hover-typed")];
-  if (textTypedAll.length > 0) {
-    textTypedAll.forEach((item) => {
-      TypedItem(item);
-    });
-  }
+  // const textTypedAll = [...document.querySelectorAll("._hover-typed")];
+  // if (textTypedAll.length > 0) {
+  //   textTypedAll.forEach((item) => {
+  //     TypedItem(item);
+  //   });
+  // }
 });
 // =======================
 
@@ -206,31 +206,31 @@ document.addEventListener("DOMContentLoaded", function () {
 //   });
 // }
 // ===============================================
-Object.defineProperty(HTMLElement.prototype, "addAct", {
-  get: function () {
-    if (!this.matches("_is-active")) {
-      return this.classList.add("_is-active");
-    }
-  },
-});
+// Object.defineProperty(HTMLElement.prototype, "addAct", {
+//   get: function () {
+//     if (!this.matches("_is-active")) {
+//       return this.classList.add("_is-active");
+//     }
+//   },
+// });
 
-Object.defineProperty(HTMLElement.prototype, "remAct", {
-  get: function () {
-    if (this.matches("_is-active")) {
-      return this.classList.remove("_is-active");
-    }
-  },
-});
+// Object.defineProperty(HTMLElement.prototype, "remAct", {
+//   get: function () {
+//     if (this.matches("_is-active")) {
+//       return this.classList.remove("_is-active");
+//     }
+//   },
+// });
 
 // ===============================
-import { createApp } from "vue";
-import VueDatePicker from "@vuepic/vue-datepicker";
-import CheckIn from "@/pug/vue-components/book/CheckIn.vue";
-import CheckOut from "@/pug/vue-components/book/CheckOut.vue";
+// import { createApp } from "vue";
+// import VueDatePicker from "@vuepic/vue-datepicker";
+// import CheckIn from "@/pug/vue-components/book/CheckIn.vue";
+// import CheckOut from "@/pug/vue-components/book/CheckOut.vue";
 
-[...document.querySelectorAll(".check-in-vue")].forEach((cell) => {
-  createApp(CheckIn).component("VueDatePicker", VueDatePicker).mount(cell);
-});
-[...document.querySelectorAll(".check-out-vue")].forEach((cell) => {
-  createApp(CheckOut).component("VueDatePicker", VueDatePicker).mount(cell);
-});
+// [...document.querySelectorAll(".check-in-vue")].forEach((cell) => {
+//   createApp(CheckIn).component("VueDatePicker", VueDatePicker).mount(cell);
+// });
+// [...document.querySelectorAll(".check-out-vue")].forEach((cell) => {
+//   createApp(CheckOut).component("VueDatePicker", VueDatePicker).mount(cell);
+// });

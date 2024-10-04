@@ -1,24 +1,52 @@
 section#bunner-slider.bunner-slider
   .swiper-pagination
+  .bunner__nav
+    .bunner-next NEXT
+    span |
+    .bunner-prev PREV
+  ul.soc.bunner__soc 
+    li 
+      a(href="#!") 
+        svg
+          use(xlink:href='#fb')
+    li 
+      a(href="#!") 
+        svg
+          use(xlink:href='#teleg')
+    li 
+      a(href="#!") 
+        svg
+          use(xlink:href='#youtube')
+    li 
+      a(href="#!") 
+        svg
+          use(xlink:href='#instagram')
+    li 
+      a(href="#!") 
+        svg
+          use(xlink:href='#lind')
   .slider-bunner.slider-bunner-js.swiper-container
     ul.bunner-slider__body.swiper-wrapper
       -
         var bunerFaq = [
           {
-            src: 'assets/img/paralax.jpg',
-            title: "Title slide 1. ",
-            title1: "Molestias, provident.",
+            src: 'assets/img/slider1.png',
+            title1: "Welcome Home",
+            title2: "To ",
+            title3: " Luxury",
           },
 
           {
-            src: 'assets/img/img-2.png',
-            title: "Title slide 2.  ",
-            title1: 'Lorem ipsum dolor.'
+            src: 'assets/img/slider1.png',
+            title1: "Welcome Home",
+            title2: "To ",
+            title3: " Luxury",
           },
           {
-            src: 'assets/img/img-1.png',
-            title: "Title slide 3.  ",
-            title1: 'Lorem ipsum dolor.'
+            src: 'assets/img/slider1.png',
+            title1: "Welcome Home",
+            title2: "To ",
+            title3: " Luxury",
           },
 
         ];
@@ -27,13 +55,12 @@ section#bunner-slider.bunner-slider
         li.slider__item.slider-card.swiper-slide
           .slider-card__img.imgs
             img(src=entry.src alt='img')
-          .container
-            .slider-card__body
-              h2=entry.title
-              a.btn.btn--success.but-wave.popups-init-js(rel='#popup1' href='#!')
-                p form
-  form.bunner-slider__search.bunner-search
-    input(type='text' placeholder='Leškoti...')
-    button(type='submit')
-      svg.icon
-        use(xlink:href='#search')
+          .slider-card__body
+            .slider-card__title
+              h1=entry.title1
+              span=entry.title2
+              p &nbsp;
+              p=entry.title3
+            button.slider-card__button.btn.btn-empty.popups-init-js(rel='#popup1' href='#!') Book a consultation
+              svg
+                use(xlink:href='#Arrow')

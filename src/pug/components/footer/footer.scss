@@ -1,30 +1,44 @@
 .footer {
   position: relative;
-  background: rgb(161, 190, 243);
-  margin: auto 0 0 0;
-  padding: 30px 0;
 }
 
 .footer__body {
   display: grid;
-  grid-template-columns: 10% 20% 20% 20% 5%;
+  grid-template-columns: repeat(5, 1fr);
   column-gap: 10px;
-  align-items: center;
+  margin: 70px 0 0 0;
   justify-content: space-between;
 }
-
-.footer__cheap {
-  justify-self: right;
-  width: 50px;
-  height: 50px;
+.footer__logo {
+  grid-column: 1/6;
+  margin: 0 auto 50px auto;
 }
-
-.footer__col--info {
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
+.footer__col {
+  ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin: 40px 0 0 0;
+  }
+  li a {
+    color: rgb(232, 232, 232);
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 21px;
+    &:hover {
+      color: $act-hover;
+      text-shadow: 0 0 14px white;
+    }
+  }
 }
-
+.email-button {
+  color: rgb(232, 232, 232);
+  font-family: "Gilroy-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+}
 .footer__low {
   text-align: center;
   margin: 20px 0 0 0;

@@ -28,6 +28,7 @@ body {
 
 .inner {
   position: relative;
+  margin: 84px 0 0 0;
 }
 
 a {
@@ -166,6 +167,27 @@ a.common__link {
     }
   }
 }
+
+.soc {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  li {
+    a {
+      color: #e8e8e8;
+      svg {
+        width: 17px;
+        height: 16px;
+        // fill: #e8e8e8;
+      }
+      &:hover {
+        color: $act;
+      }
+    }
+  }
+}
+
 @media (min-width: 901px) and (max-width: 1259px) {
   .container {
     margin: 0 20px;

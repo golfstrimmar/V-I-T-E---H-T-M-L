@@ -38,11 +38,7 @@
       background: rgba(187, 186, 186, 0.63);
     }
   }
-  &__button {
-    width: 165px;
-    height: 40px;
-    white-space: nowrap;
-  }
+
   &__info {
     margin: 0 0 0 0;
   }
@@ -221,6 +217,12 @@
 }
 
 /*=====================*/
+.book-button {
+  width: 165px;
+  height: 40px;
+  white-space: nowrap;
+}
+/*=====================*/
 .info {
   display: flex;
   align-items: center;
@@ -242,6 +244,9 @@
   background: rgba(15, 18, 22, 0.65);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(15px);
+  .header__body {
+    padding: 10px 0;
+  }
 }
 
 // @keyframes pul {
