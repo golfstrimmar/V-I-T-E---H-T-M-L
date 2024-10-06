@@ -10,12 +10,11 @@
 // ===============
 
 .swiper-1__body {
-  
+  height: 100%;
   position: relative;
-  
 }
 .swiper-1 .swiper-slide {
-min-height: 200px;
+  min-height: 250px;
 }
 .arrow-next-1 {
   left: 40px;

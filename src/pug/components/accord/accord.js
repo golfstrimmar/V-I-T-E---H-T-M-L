@@ -27,27 +27,35 @@ export const Accords = () => {
       this.units[this.index].classList.add("_is-active");
       this.button.classList.add("_is-active");
       const anim = this.hidden.animate(
-        [{ gridTemplateRows: "0fr" }, { gridTemplateRows: "1fr" }],
+        [
+          { gridTemplateRows: "0fr", minHeight: "0px" },
+          { gridTemplateRows: "1fr", minHeight: "300px" },
+        ],
         {
-          duration: 200,
+          duration: 2000,
           easing: "ease-in-out",
         }
       );
       anim.finished.then(() => {
         this.hidden.style.gridTemplateRows = "1fr";
+        this.hidden.style.minHeight = "300px";
       });
     }
 
     isClose() {
       const anim = this.hidden.animate(
-        [{ gridTemplateRows: "1fr" }, { gridTemplateRows: "0fr" }],
+        [
+          { gridTemplateRows: "1fr", minHeight: "300px" },
+          { gridTemplateRows: "0fr", minHeight: "0px" },
+        ],
         {
-          duration: 200,
+          duration: 2000,
           easing: "ease-in-out",
         }
       );
       anim.finished.then(() => {
         this.hidden.style.gridTemplateRows = "0fr";
+        this.hidden.style.minHeight = "0px";
         this.button.classList.remove("_is-active");
         this.units[this.index].classList.remove("_is-active");
       });
@@ -59,16 +67,20 @@ export const Accords = () => {
           this.isOpen();
         } else if (this.nabours.length > 0) {
           const anim = this.hidden.animate(
-            [{ gridTemplateRows: "1fr" }, { gridTemplateRows: "0fr" }],
+            [
+              { gridTemplateRows: "1fr", minHeight: "300px" },
+              { gridTemplateRows: "0fr", minHeight: "0px" },
+            ],
             {
-              duration: 200,
+              duration: 2000,
               easing: "ease-in-out",
             }
           );
           anim.finished.then(() => {
+            this.hidden.style.gridTemplateRows = "0fr";
+            this.hidden.style.minHeight = "0px";
             this.nabour.classList.remove("_is-active");
             this.button.classList.add("_is-active");
-            this.hidden.style.gridTemplateRows = "0fr";
             this.indexNabour = this.buttons.indexOf(this.nabour);
             this.units[this.indexNabour].classList.remove("_is-active");
             this.units[this.index].classList.add("_is-active");

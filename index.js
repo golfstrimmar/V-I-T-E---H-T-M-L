@@ -1,6 +1,7 @@
 // import "./assets/css/datepicker.css";
 import "./assets/css/plyr.css";
 import "./assets/css/swiper-bundle.min.css";
+import "./assets/js/swiper-bundle.min.js";
 import "@/scss/main.scss";
 import { Button } from "@/pug/components/buttons/btn-wave";
 import { Lazy } from "./assets/js/lazy";
@@ -81,23 +82,31 @@ document.addEventListener("DOMContentLoaded", function () {
   //   SideMenu();
   // }
 
+  // =========
   // ====Accords=====
+  // =========
+
   if (document.querySelector("._accord-js")) {
     Accords();
-  }
-
-  // ========Cases=============
-  if (document.querySelector("._accord-cases-js")) {
-    CasesInit();
   }
   // ======Gallery======================
   if (document.querySelector("._accord-galery-js")) {
     GalleryInit();
   }
   // ======GalSlider==================
-  if (document.querySelector("#galSlider")) {
+  if (document.querySelector(".galSlider")) {
     GalSlider();
   }
+
+  // =========
+  // =========
+  // =========
+
+  // ========Cases=============
+  if (document.querySelector("._accord-cases-js")) {
+    CasesInit();
+  }
+
   // ====GalCases=====
   // if (document.querySelector("._galCases-plaza-js")) {
   //   GalCases();

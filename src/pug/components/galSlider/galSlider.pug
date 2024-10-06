@@ -1,35 +1,143 @@
-h2 galSlider
-section#galSlider.galSlider
 
+section.galSlider.accord.accord--galery
   .container
+    h2 galSlider
+    .accord__body._accord-js._accord-galery-js
+      nav.accord__nav._accord-nav-js
+        button(type='button')  blue
+        button(type='button')  green
+        button(type='button')  coral
+        button(type='button')  red
+        button(type='button')  all
 
-    .slider.s2
-      button.slider-arrow.slider-arrow-prev.s2-prev(type='button')
-        svg
-          use(xlink:href='#chevron-left')
-      button.slider-arrow.slider-arrow-next.s2-next(type='button')
-        svg
-          use(xlink:href='#chevron-right')
-      .swiper-pagination-s2
+      .accord__hidden._accord-hidden-js
+        ul._accord-hidden-wrap
+          li.rel 
+            .swiper-1
+              .swiper-1__body
+                .slider-arrow.arrow-next-1
+                  svg
+                    use(xlink:href='#chevron-left') 
+                .slider-arrow.arrow-prev-1 
+                  svg
+                    use(xlink:href='#chevron-right')
+                #swiper-1.swiper.swiper-container
+                  .swiper-wrapper
+                    -
+                      var blocks = [
+                        {src: 'https://swiperjs.com/demos/images/nature-1.jpg' },
+                        { src: 'https://swiperjs.com/demos/images/nature-2.jpg'},
+                        { src: 'https://swiperjs.com/demos/images/nature-3.jpg'},
+                        { src: 'https://swiperjs.com/demos/images/nature-4.jpg'},
+                        { src: 'https://swiperjs.com/demos/images/nature-5.jpg'},
+                        { src: 'https://swiperjs.com/demos/images/nature-6.jpg'},
+                      ];
+                    each block in blocks
+                      .swiper-slide
+                        .imgs
+                          img(src=block.src)
+          li.rel 
+            .swiper-1
+              .swiper-1__body
+                .slider-arrow.arrow-next-1
+                  svg
+                    use(xlink:href='#chevron-left') 
+                .slider-arrow.arrow-prev-1 
+                  svg
+                    use(xlink:href='#chevron-right')
+                #swiper-1.swiper.swiper-container
+                  .swiper-wrapper
+                    -
+                      var blocks = [
+                        {src: 'assets/img/paralax.jpg'},
+                        {src: 'assets/img/paralax.jpg',},
+                        {src: 'assets/img/img-2.png'},
+                      ];
+                    each block in blocks
+                      .swiper-slide
+                        .imgs
+                          img(src=block.src)
 
-      .swiper-container.s2swiper
-        .swiper-wrapper
-          .slide.slide--1.swiper-slide.rel(data-id='0')
-            .imgs
-              img(src='assets/img/img-1.png' alt='img')     
-            h2 slide--0
-          .slide.slide--2.swiper-slide.rel(data-id='1')
-            .imgs
-              img(src='assets/img/img-2.png' alt='img')
-            h2 slide--1
-          .slide.slide--3.swiper-slide.rel(data-id='2')
-            .imgs
-              img(src='assets/img/img-3.png' alt='img')
-            h2 slide--2
-          .slide.slide--4.swiper-slide.rel(data-id='3')
-            .imgs
-              img(src='assets/img/paralax.jpg' alt='img')
-            h2 slide--3
+
+          li 
+            ul
+              -
+                var blocks = [
+                  {src: 'assets/img/img-1.png'},
+                  {src: 'assets/img/img-2.png'},
+                  {src: 'assets/img/img-3.png'},
+                  {src: 'assets/img/paralax.jpg'},
+                ];
+              each block in blocks
+                li.galery__item.rel
+                  .galery__img.but-wave.popups-init-js
+                    .imgs
+                      img(src=block.src alt='img')
+          li 
+            ul
+              -
+                var blocks = [
+                  {src: 'assets/img/paralax.jpg'},
+                  {src: 'assets/img/paralax.jpg',},
+                  {src: 'assets/img/img-2.png'},
+                ];
+              each block in blocks
+                li.galery__item.rel
+                  .galery__img.but-wave.popups-init-js
+                    .imgs
+                      img(src=block.src alt='img')
+          li._allBlocks 
+            ul
+              -
+                var blocks = [
+                  {src: 'assets/img/paralax.jpg'},
+                  {src: 'assets/img/paralax.jpg',},
+                  {src: 'assets/img/img-2.png'},
+                ];
+              each block in blocks
+                li.galery__item.rel
+                  .galery__img.but-wave.popups-init-js
+                    .imgs
+                      img(src=block.src alt='img')
+
+
+
+
+
+
+
+
+
+
+
+
+    //- .slider.s2
+    //-   button.slider-arrow.slider-arrow-prev.s2-prev (type='button')
+    //-     svg
+    //-       use(xlink:href='#chevron-left')
+    //-   button.slider-arrow.slider-arrow-next.s2-next (type='button')
+    //-     svg
+    //-       use(xlink:href='#chevron-right')
+    //-   .swiper-pagination-s2
+
+    //-   .swiper-container.s2swiper
+    //-     .swiper-wrapper
+    //-       .slide.slide--1.swiper-slide.rel(data-id='0')
+    //-         .imgs
+    //-           img(src='assets/img/img-1.png' alt='img')     
+    //-         h2 slide--0
+    //-       .slide.slide--2.swiper-slide.rel(data-id='1')
+    //-         .imgs
+    //-           img(src='assets/img/img-2.png' alt='img')
+    //-         h2 slide--1
+    //-       .slide.slide--3.swiper-slide.rel(data-id='2')
+    //-         .imgs
+    //-           img(src='assets/img/img-3.png' alt='img')
+    //-         h2 slide--2
+    //-       .slide.slide--4.swiper-slide.rel(data-id='3')
+    //-         .imgs
+    //-           img(src='assets/img/paralax.jpg' alt='img')
+    //-         h2 slide--3
     //- ul.slider.s1
       li.slide.slide--1._is-active.rel slide00000000000
         .imgs

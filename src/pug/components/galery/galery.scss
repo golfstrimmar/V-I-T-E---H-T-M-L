@@ -1,18 +1,4 @@
-#accord--galery {
-  //  min-height: 360px;
-  // .accord__body {
-  //   grid-template-columns: repeat(5, 1fr);
-
-  // }
-  // .accord-hidden {
-  //   grid-column: 1/6;
-  // }
-  // .accord__content {
-  //   display: grid;
-  //   grid-template-columns: repeat(auto-fit, 200px);
-  //   gap: 0px 20px;
-  //   justify-content: center;
-  // }
+.accord--galery {
   li ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
