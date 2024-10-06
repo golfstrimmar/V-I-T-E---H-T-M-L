@@ -21,7 +21,7 @@
     position: relative;
     height: 100%;
     display: grid;
-    grid-template-columns: 185px repeat(5, max-content);
+    grid-template-columns: 185px repeat(4, max-content);
     width: 100%;
     gap: 0 40px;
     justify-content: space-between;
@@ -33,7 +33,6 @@
     }
   }
   &__search {
-    margin: 0 10px;
     input[type="text"] {
       background: rgba(187, 186, 186, 0.63);
     }
@@ -45,12 +44,8 @@
 
   .tab-header.menu__link {
     background: transparent;
-    &:hover {
-      // background: #ff9999;
-    }
   }
-  .tab-header.menu__link.menu__link--active {
-  }
+
   .tab > .tab-content {
     position: absolute;
     margin: 15px 0 0 0;
@@ -190,14 +185,10 @@
     &._is-active {
       & ~ .menu-tab {
         background-color: black;
-        // max-height: 190px;
-        // height: 190px;
-        // outline: solid 1px rgb(165, 10, 10);
         animation: pul 0.3s linear;
         animation-fill-mode: forwards;
         .smenu__item:hover {
           & > .smenu-title-js {
-            // background: rgb(147, 240, 185);
             svg {
               transform: rotate(90deg);
             }
@@ -249,18 +240,6 @@
   }
 }
 
-// @keyframes pul {
-//   0% {
-//     overflow: hidden;
-//   }
-//   99% {
-//     overflow: hidden;
-//   }
-//   100% {
-//     overflow: visible;
-//   }
-// }
-
 .menu__tab {
   transition: all 0.3s;
   overflow: hidden;
@@ -272,26 +251,6 @@
   max-height: 0;
   border: solid 1px transparent;
 }
-
-// .menu-tab {
-//   &__item {
-//     font-size: 14px;
-//     font-weight: 600;
-//     color: white;
-//     min-height: 36px;
-//     padding: 0 20px;
-//     display: flex;
-//     align-items: center;
-//     transition: all 0.3s;
-//     &:hover {
-//       background-color: rgb(54, 54, 56);
-//       color: rgb(182, 15, 15);
-//     }
-//   }
-//   .smenu__body {
-//     width: 100%;
-//   }
-// }
 
 // /*===========*/
 

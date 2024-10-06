@@ -98,19 +98,18 @@ export const CasesInit = () => {
     }
   }
 
-
-    if (document.querySelector("#accord--cases1 ")) {
-      const accordCases1 = document.querySelector("#accord--cases1 ");
-      const accordCases1Act = new contentCases(accordCases1, {
-        numberItems: 2,
-      });
-      accordCases1Act.start();
-    }
-    if (document.querySelector("#accord--cases2 ")) {
-      const accordCases2 = document.querySelector("#accord--cases2 ");
-      const accordCases2Act = new contentCases(accordCases2, {
-        numberItems: 3,
-      });
-      accordCases2Act.start();
-    }
+  if (document.querySelector("#accord--cases1 ")) {
+    const accordCases1 = document.querySelector("#accord--cases1 ");
+    const accordCases1Act = new contentCases(accordCases1, {
+      numberItems: 4,
+    });
+    accordCases1Act.start();
+  }
+  // if (document.querySelector("#accord--cases2 ")) {
+  //   const accordCases2 = document.querySelector("#accord--cases2 ");
+  //   const accordCases2Act = new contentCases(accordCases2, {
+  //     numberItems: 3,
+  //   });
+  //   accordCases2Act.start();
+  // }
 };

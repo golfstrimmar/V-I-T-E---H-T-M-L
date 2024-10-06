@@ -1,5 +1,5 @@
 // import "./assets/css/datepicker.css";
-// import "./assets/css/plyr.css";
+import "./assets/css/plyr.css";
 import "./assets/css/swiper-bundle.min.css";
 import "@/scss/main.scss";
 import { Button } from "@/pug/components/buttons/btn-wave";
@@ -15,10 +15,11 @@ import { Header } from "@/pug/components/header/header";
 import { bunnerSwiper } from "@/pug/components/bunner/bunner";
 import { Popup } from "@/pug/components/popup/popup";
 import { Tab } from "@/pug/components/tab/tab";
-// import { Accords } from "@/pug/components/accord/accord";
+
+import { Accords } from "@/pug/components/accord/accord";
 // import { SideMenu } from "@/pug/components/side-menu/side-menu";
-// import { CasesInit } from "@/pug/components/cases/cases";
-// import { GalleryInit } from "@/pug/components/galery/galery";
+import { CasesInit } from "@/pug/components/cases/cases";
+import { GalleryInit } from "@/pug/components/galery/galery";
 // import { GalCases } from "@/pug/components/galCases/galCases";
 // import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
 // import { SwiperFull } from "@/pug/components/slider-full/slider-full";
@@ -26,7 +27,7 @@ import { Tab } from "@/pug/components/tab/tab";
 // import { Double } from "@/pug/components/slider-double/sdouble.js";
 // import { Range } from "@/pug/components/range/range";
 import { Select } from "@/pug/components/select/select";
-// import { Look } from "@/pug/components/look/look";
+import { Look } from "@/pug/components/look/look";
 // import { TypedItem } from "@/pug/components/typed/typedHover";
 import { Form } from "@/pug/components/form/form";
 // import { FormFields } from "@/pug/vue-components/book/book";
@@ -40,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ===Look=======
-  // if (document.querySelector("video")) {
-  //   Look();
-  // }
+  if (document.querySelector("video")) {
+    Look();
+  }
   // =========Lazy==============
   if (document.querySelector("img")) {
     Lazy();
@@ -80,14 +81,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // }
 
   // ====Accords=====
-  // if (document.querySelector(".accord")) {
-  //   Accords();
-  // }
+  if (document.querySelector(".accord")) {
+    Accords();
+  }
 
   // ========Cases=============
-  // if (document.querySelector("._accord-cases-js")) {
-  //   CasesInit();
-  // }
+  if (document.querySelector("._accord-cases-js")) {
+    CasesInit();
+  }
   // ======Gallery======================
   // if (document.querySelector("._accord-galery-js")) {
   //   GalleryInit();
@@ -164,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // ========Form===============
 
-  if (document.querySelector(".send-form")) {
+  if (document.querySelector(".send")) {
     Form();
   }
   // =========Button==============

@@ -4,9 +4,8 @@ section.accord#accord--cases1
       nav.accord__nav._accord-nav-js
         button(type='button')  All
         button(type='button')  Building
-        button(type='button')  i
-        button(type='button')  d
-        button(type='button')  all
+        button(type='button')  Interior
+
 
       .accord__hidden._accord-hidden-js
         .accord-hidden__wrap._accord-hidden-wrap-js
@@ -34,25 +33,8 @@ section.accord#accord--cases1
             each block in blocks
               li
                 img(src=block.src alt='img')
-          ul.accord__content._accord-content-js
-            -
-              var blocks = [
-                {src: 'assets/img/img-1.png',data: 'green',},
-                {src: 'assets/img/img-2.png',data: 'green',},
-                {src: 'assets/img/img-3.png',data: 'green',},
-              ];
-            each block in blocks
-              li
-                img(src=block.src alt='img')
-          ul.accord__content._accord-content-js
-            -
-              var blocks = [
-                {src: 'assets/img/img-2.png',data: 'coral',},
-                {src: 'assets/img/img-2.png',data: 'coral',},
-              ];
-            each block in blocks
-              li
-                img(src=block.src alt='img')
+
+
           ul.accord__content._accord-content-js
           .slider-cases.swiper-container
             button.slider-arrow.cases-prev.js-cases-prev(type='button')

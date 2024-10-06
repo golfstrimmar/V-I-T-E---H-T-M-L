@@ -1,18 +1,30 @@
 .look {
-  margin: 50px 0;
-  .title-Second {
-    margin: 0 0 10px 0;
+  padding: 0 0 115px 0;
+
+  &__body {
+    max-width: 730px;
+    margin: 0 auto;
   }
+  &__content {
+    margin: 33px 0 0 0;
+  }
+  &__text {
+    color: $act;
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  &__title {
+    margin: 40px 0 0 0;
+  }
+
   &__video {
+    margin: 90px 0 0 0;
     width: 100%;
     position: relative;
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 40px $black;
-    // div {
-    //   overflow: hidden;
-    //   border-radius: 80px !important;
-    // }
+    max-height: 920px;
     .plyr {
       display: block;
       height: auto;
@@ -35,19 +47,19 @@
     background-size: cover;
   }
   .plyr__control--overlaid {
-    // opacity: 0;
     width: 122px;
     height: 122px;
     flex-grow: 0;
     border-radius: 100px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgb(88, 31, 180);
+    background-color: $act;
     svg {
       display: none;
     }
     transition: all 1s;
     &:hover {
+      background-color: $act-hover;
       transform: translate(-50%, -50%) rotate(720deg);
     }
     &::after {
@@ -62,6 +74,43 @@
       left: 50%;
       transform: translate(-50%, -50%);
       // background-color: $black;
+    }
+  }
+}
+.look__info {
+  p.look__bage {
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 160%;
+    margin: 115px auto 0;
+    border: 1px solid $act;
+    width: 1110px;
+    padding: 70px 97px;
+    text-align: center;
+    span {
+      color: $act;
+    }
+  }
+  ul.look__blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 23px;
+    max-width: 1110px;
+    margin: 64px auto 0;
+    li {
+      p {
+        color: rgb(232, 232, 232);
+        font-family: "Work Sans", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 70px 0 0 0;
+      }
+      .look__img {
+        height: 312px;
+        position: relative;
+      }
     }
   }
 }
