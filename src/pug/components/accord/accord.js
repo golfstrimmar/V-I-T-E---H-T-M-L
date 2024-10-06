@@ -1,153 +1,117 @@
 "use ctrict";
 export const Accords = () => {
   class Accord {
-    constructor(accord) {
-      this.Accord = accord;
-      this.NavButtons = [
-        ...this.Accord.querySelectorAll("._accord-nav-js button"),
-      ];
-      this.Hidden = this.Accord.querySelector("._accord-hidden-js");
-      this.HiddenWrap = this.Accord.querySelector("._accord-hidden-wrap-js");
-      this.Hiddens = [...this.Accord.querySelectorAll("._accord-content-js")];
-      this.Index;
+    constructor(e) {
+      this.Accord = e.target.closest("._accord-js");
+      this.button = e.target.closest("._accord-nav-js button");
+      this.nav = e.target.closest("._accord-nav-js");
+      this.buttons = [...this.nav.querySelectorAll("button")];
+      this.nabours = [...this.nav.querySelectorAll("button")].filter(
+        (el) => el !== this.button && el.classList.contains("_is-active")
+      );
+      this.nabour = this.nabours[0];
+      this.index = [...this.nav.querySelectorAll("button")].indexOf(
+        this.button
+      );
+      this.hidden = this.Accord.querySelector("._accord-hidden-js");
+      this.units = [...this.hidden.querySelectorAll("._accord-hidden-wrap li")];
+      this.indexNabour = 0;
     }
 
-    activItem() {
-      for (let i = 0; i < this.NavButtons.length; ++i) {
-        this.NavButtons[i].addEventListener("click", (e) => {
-          this.resetClasses();
-          this.itemsReset();
-          this.NavButtons[i].classList.add("_is-active");
-          this.NavButtons[i].setAttribute("disabled", true);
-
-          if (!this.Hidden.classList.contains("_is-active")) {
-            this.Hidden.classList.add("_is-active");
-            for (let k = 0; k < this.Hiddens.length; ++k) {
-              this.Hiddens[k].classList.remove("_is-active");
-              this.Hiddens[i].classList.add("_is-active");
-            }
-          } else {
-            this.Hidden.classList.remove("_is-active");
-
-            setTimeout(() => {
-              for (let l = 0; l < this.Hiddens.length; ++l) {
-                this.Hiddens[l].classList.remove("_is-active");
-                this.Hiddens[i].classList.add("_is-active");
-              }
-              this.Hidden.classList.add("_is-active");
-            }, 200);
-          }
-        });
-      }
-    }
-
-    itemsReset() {
-      for (let i = 0; i < this.NavButtons.length; ++i) {
-        this.NavButtons[i].classList.remove("_is-active");
-        this.NavButtons[i].removeAttribute("disabled");
-      }
-    }
-
-    hiddenReset() {
-      this.Hidden.classList.remove("_is-active");
-      setTimeout(() => {
-        for (let i = 0; i < this.Hiddens.length; ++i) {
-          this.Hiddens[i].classList.remove("_is-active");
+    isOpen() {
+      this.units[this.index].classList.add("_is-active");
+      this.button.classList.add("_is-active");
+      const anim = this.hidden.animate(
+        [{ gridTemplateRows: "0fr" }, { gridTemplateRows: "1fr" }],
+        {
+          duration: 200,
+          easing: "ease-in-out",
         }
-      }, 200);
-    }
-    resetAll() {
-      document.addEventListener("click", (e) => {
-        if (!e.target.closest("._accord-js")) {
-          this.itemsReset();
-          this.hiddenReset();
-        }
+      );
+      anim.finished.then(() => {
+        this.hidden.style.gridTemplateRows = "1fr";
       });
     }
 
-    resetClasses() {
-      for (let j = 0; j < allClassAccords.length; ++j) {
-        if (allClassAccords[j].el !== this.Accord) {
-          if (allClassAccords[j].el.querySelector("._accord-default-js")) {
-            var ddd = allClassAccords[j].el.querySelector(
-              "._accord-default-js"
-            );
-
-            if (!ddd.classList.contains("_is-active")) {
-              allClassAccords[j].elClass.itemsReset();
-              allClassAccords[j].elClass.hiddenReset();
-              setTimeout(() => {
-                allClassAccords[j].elClass.openDefault();
-              }, 200);
-            }
-          } else {
-            allClassAccords[j].elClass.itemsReset();
-            allClassAccords[j].elClass.hiddenReset();
-          }
+    isClose() {
+      const anim = this.hidden.animate(
+        [{ gridTemplateRows: "1fr" }, { gridTemplateRows: "0fr" }],
+        {
+          duration: 200,
+          easing: "ease-in-out",
         }
-      }
+      );
+      anim.finished.then(() => {
+        this.hidden.style.gridTemplateRows = "0fr";
+        this.button.classList.remove("_is-active");
+        this.units[this.index].classList.remove("_is-active");
+      });
     }
 
     start() {
-      this.activItem();
-      this.resetAll();
-    }
-  }
-
-  // ====================================
-
-  const accordAll = [...document.querySelectorAll("._accord-js")];
-  var allClassAccords = [];
-  var temp = {};
-  
-  class AccordGefault extends Accord {
-    constructor(accord) {
-      super(accord);
-      this.Default = this.Accord.querySelector("._accord-default-js");
-      this.Index = this.Hiddens.indexOf(this.Default);
-    }
-    openDefault() {
-      this.NavButtons[this.Index].classList.add("_is-active");
-      this.NavButtons[this.Index].setAttribute("disabled", true);
-      this.Hiddens[this.Index].classList.add("_is-active");
-      this.Hidden.classList.add("_is-active");
-    }
-
-    resetAll() {
-      document.addEventListener("click", (e) => {
-        if (!e.target.closest("._accord-js")) {
-          allClassAccords.forEach((cell) => {
-            if (cell.el.querySelector("._accord-default-js")) {
-              var ddd = cell.el.querySelector("._accord-default-js");
-              if (!ddd.classList.contains("_is-active")) {
-                cell.elClass.itemsReset();
-                cell.elClass.hiddenReset();
-                setTimeout(() => {
-                  cell.elClass.openDefault();
-                }, 200);
-              }
+      if (!this.button.classList.contains("_is-active")) {
+        if (this.nabours.length == 0) {
+          this.isOpen();
+        } else if (this.nabours.length > 0) {
+          const anim = this.hidden.animate(
+            [{ gridTemplateRows: "1fr" }, { gridTemplateRows: "0fr" }],
+            {
+              duration: 200,
+              easing: "ease-in-out",
             }
+          );
+          anim.finished.then(() => {
+            this.nabour.classList.remove("_is-active");
+            this.button.classList.add("_is-active");
+            this.hidden.style.gridTemplateRows = "0fr";
+            this.indexNabour = this.buttons.indexOf(this.nabour);
+            this.units[this.indexNabour].classList.remove("_is-active");
+            this.units[this.index].classList.add("_is-active");
+            this.isOpen();
           });
         }
+      } else if (this.button.classList.contains("_is-active")) {
+        this.isClose();
+      }
+    }
+
+    static closeAll(item) {
+      const accordAll = [...document.querySelectorAll("._accord-js")];
+      const anderenAll = accordAll.filter((el) => el !== item);
+      anderenAll.forEach((cell) => {
+        const anim = cell
+          .querySelector("._accord-hidden-js")
+          .animate([{ gridTemplateRows: "1fr" }, { gridTemplateRows: "0fr" }], {
+            duration: 200,
+            easing: "ease-in-out",
+          });
+        anim.finished.then(() => {
+          [...cell.querySelectorAll("button")].forEach((car) => {
+            car.classList.remove("_is-active");
+          });
+
+          [...cell.querySelectorAll("._accord-hidden-wrap li")].forEach(
+            (car) => {
+              car.classList.remove("_is-active");
+            }
+          );
+        });
       });
     }
   }
 
-  accordAll.forEach((cell) => {
-    if (cell.querySelector("._accord-default-js")) {
-      temp = new AccordGefault(cell);
-      temp.openDefault();
-    } else {
-      temp = new Accord(cell);
-    }
-    allClassAccords.push({
-      el: cell,
-      elClass: temp,
+  // ==================================
+  const accordAll = [...document.querySelectorAll("._accord-js")];
+  if (accordAll.length > 0) {
+    document.addEventListener("click", (e) => {
+      if (e.target.closest("._accord-nav-js button")) {
+        Accord.closeAll(e.target.closest("._accord-js"));
+        const NewAccord = new Accord(e);
+        NewAccord.start();
+      } else if (!e.target.closest("._accord-js")) {
+        Accord.closeAll(e.target);
+      }
     });
-  });
-
-  allClassAccords.forEach((cell) => {
-    Object.assign(Accord.prototype, allClassAccords);
-    cell.elClass.start();
-  });
+  }
+  // ==================================
 };

@@ -1,7 +1,4 @@
 .accord {
-  &__body {
-    border: 1px solid #7ab764;
-  }
   &__nav {
     display: grid;
     grid-auto-flow: column;
@@ -21,26 +18,20 @@
   &__hidden {
     background: rgb(134, 231, 125);
   }
-  &__content {
-    height: 0;
-    overflow: hidden;
-    &._is-active {
-      height: auto;
-    }
-  }
 }
 
 ._accord-hidden-js {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  transition: all .2s;
-  
-  &._is-active {
-    grid-template-rows: 1fr;
+  li {
+    display: none;
+    &._is-active {
+      display: block;
+    }
   }
 }
-._accord-hidden-wrap-js {
+
+._accord-hidden-wrap {
   min-height: 0;
-  min-width: 0;
 }
