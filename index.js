@@ -20,6 +20,7 @@ import { Accords } from "@/pug/components/accord/accord";
 // import { SideMenu } from "@/pug/components/side-menu/side-menu";
 import { CasesInit } from "@/pug/components/cases/cases";
 import { GalleryInit } from "@/pug/components/galery/galery";
+import { GalSlider } from "@/pug/components/GalSlider/GalSlider";
 // import { GalCases } from "@/pug/components/galCases/galCases";
 // import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
 // import { SwiperFull } from "@/pug/components/slider-full/slider-full";
@@ -81,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // }
 
   // ====Accords=====
-  if (document.querySelector(".accord")) {
+  if (document.querySelector("._accord-js")) {
     Accords();
   }
 
@@ -90,9 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
     CasesInit();
   }
   // ======Gallery======================
-  // if (document.querySelector("._accord-galery-js")) {
-  //   GalleryInit();
-  // }
+  if (document.querySelector("._accord-galery-js")) {
+    GalleryInit();
+  }
+  // ======GalSlider==================
+  if (document.querySelector("#galSlider")) {
+    GalSlider();
+  }
   // ====GalCases=====
   // if (document.querySelector("._galCases-plaza-js")) {
   //   GalCases();
@@ -188,10 +193,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // =======================
 
-// // ======GalSlider==================
-// if (document.querySelector("#galSlider")) {
-//   GalSlider();
-// }
 // const tabs = document.querySelectorAll(".tabs-container-js");
 // if (tabs.length > 0) {
 //   document.addEventListener("click", (e) => {

@@ -14,7 +14,12 @@ export const Accords = () => {
         this.button
       );
       this.hidden = this.Accord.querySelector("._accord-hidden-js");
-      this.units = [...this.hidden.querySelectorAll("._accord-hidden-wrap li")];
+
+      this.units = [
+        ...this.hidden
+          .querySelector("._accord-hidden-wrap")
+          .querySelectorAll(":scope > li"),
+      ];
       this.indexNabour = 0;
     }
 
@@ -108,7 +113,10 @@ export const Accords = () => {
         Accord.closeAll(e.target.closest("._accord-js"));
         const NewAccord = new Accord(e);
         NewAccord.start();
-      } else if (!e.target.closest("._accord-js")) {
+      } else if (
+        !e.target.closest("._accord-js") &&
+        !e.target.closest(".popup-overlay-js")
+      ) {
         Accord.closeAll(e.target);
       }
     });
