@@ -1,5 +1,4 @@
 .accord {
-  border: 1px solid #7ab764;
   &__nav {
     display: grid;
     grid-auto-flow: column;
@@ -25,16 +24,6 @@
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  transition: all 1s;
-
-  &._is-open {
-    animation: open 1s ease-in-out;
-    grid-template-rows: 1fr;
-  }
-  &._is-closed {
-    animation: closed 1s ease-in-out;
-    grid-template-rows: 0fr;
-  }
   li {
     display: none;
     &._is-active {
@@ -45,36 +34,4 @@
 
 ._accord-hidden-wrap {
   min-height: 0;
-  transition: all 1s;
 }
-
-@keyframes open {
-  0% {
-    grid-template-rows: 0fr;
-  }
-  100% {
-    grid-template-rows: 1fr;
-  }
-}
-
-@keyframes closed {
-  0% {
-    grid-template-rows: 1fr;
-  }
-  100% {
-    grid-template-rows: 0fr;
-  }
-}
-//   display: grid;
-//   grid-template-rows: 0fr;
-//   overflow: hidden;
-//   transition: all 0.2s;
-
-//   &._is-active {
-//     grid-template-rows: 1fr;
-//   }
-// }
-// ._accord-hidden-wrap-js {
-//   min-height: 0;
-//   min-width: 0;
-// }
