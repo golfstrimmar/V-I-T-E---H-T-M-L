@@ -103,9 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========
 
   // ========Cases=============
-  if (document.querySelector("._accord-cases-js")) {
-    CasesInit();
-  }
+  // if (document.querySelector("._accord-cases-js")) {
+  //   CasesInit();
+  // }
 
   // ====GalCases=====
   // if (document.querySelector("._galCases-plaza-js")) {
