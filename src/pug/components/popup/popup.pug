@@ -11,20 +11,6 @@
       #popup1.popup__content
         include ../form/form.pug
 
-      //- #popup2.popup__content
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //-   p popup2
-      //- #popup3.popup__content
-      //-   p popup3
-      //-   p popup3
-      //-   p popup3
       #popupGalery.popup__content
         .slider__body
           button.slider-arrow.slider-arrow-prev.arrow-galery-prev(type='button')
@@ -34,22 +20,8 @@
           button.slider-arrow.slider-arrow-next.arrow-galery-next(type='button')
             svg.icon
               use(xlink:href='#chevron-right')
-          #slider-galery.slider__wrapper.slider-js-galery.swiper-container
-            ul#popupGalerySwiper.swiper-wrapper
-          //-     li.slider__item.swiper-slide
-          //-       .imgs
-          //-         img(src='/assets/img/img-3.png')
-          //-     li.slider__item.swiper-slide
-          //-       .imgs
-          //-         img(src='/assets/img/img-1.png')
-          //-     li.slider__item.swiper-slide
-          //-       .imgs
-          //-         img(src='/assets/img/img-2.png')
-
-
-      //- #popupGal.popup__content.rel
-      //-     .imgs
-      //-       img(src='' alt='img')
+          #slider-pop.swiper.slider__wrapper.swiper-container
+            ul.swiper-wrapper
     i.popup__close.popup-close-js
       svg
-        use(xlink:href='#x')
+        use(xlink:href='#close')
