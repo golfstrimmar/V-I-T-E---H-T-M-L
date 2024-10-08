@@ -1,41 +1,110 @@
-section#galSlider.galSlider
+//- скрипт отлавливает содержимое li и выводит в слайдер. важно чтобы содержимое было разбито на блоки ---div.card
 
+section.galSlider.accord.accord--galery
   .container
     h2 galSlider
-    .slider.s2
-      button.slider-arrow.slider-arrow-prev.s2-prev(type='button')
-        svg
-          use(xlink:href='#chevron-left')
-      button.slider-arrow.slider-arrow-next.s2-next(type='button')
-        svg
-          use(xlink:href='#chevron-right')
-      .swiper-pagination-s2
+    .accord__body._accord-js._accord-galery-js
+      nav.accord__nav._accord-nav-js
+        button(type='button')  blue
+        button(type='button')  green
+        button(type='button')  coral
+        button(type='button')  red
+        button(type='button')  all
 
-      .swiper-container.s2swiper
-        .swiper-wrapper
-          .slide.slide--1.swiper-slide.rel(data-id='0')
-            .imgs
-              img(src='assets/img/img-1.png' alt='img')     
-            h3 slide--0
-          .slide.slide--2.swiper-slide.rel(data-id='1')
-            .imgs
-              img(src='assets/img/img-2.png' alt='img')
-            h3 slide--1
-          .slide.slide--3.swiper-slide.rel(data-id='2')
-            .imgs
-              img(src='assets/img/img-3.png' alt='img')
-            h3 slide--2
-          .slide.slide--4.swiper-slide.rel(data-id='3')
-            .imgs
-              img(src='assets/img/paralax.jpg' alt='img')
-            h3 slide--3
-    //- ul.slider.s1
-      li.slide.slide--1._is-active.rel slide00000000000
-        .imgs
-          img(src='../src/assets/img/paralax.jpg' alt='img')
-      li.slide.slide--2 slide111111111
-        .imgs
-          img(src='../src/assets/img/paralax.jpg' alt='img')
-      li.slide.slide--3 slide222222222
-        .imgs
-          img(src='../src/assets/img/paralax.jpg' alt='img')
+      .accord__hidden._accord-hidden-js
+        ul._accord-hidden-wrap
+          li
+            div.card
+              .imgs
+                img(src="assets/img/img-2.png" alt="alt")
+              .card__body 
+                .card__title 
+                  h3 appartments1
+            div.card
+              .imgs
+                img(src="assets/img/img-1.png" alt="alt")
+              .card__body 
+                .card__title 
+                  h3 appartments1
+            div.card
+              .imgs
+                img(src="assets/img/img-3.png" alt="alt")
+              .card__body 
+                .card__title 
+                  h3 appartments1
+            div.card
+              .imgs
+                img(src="assets/img/img-2.png" alt="alt")
+              .card__body 
+                .card__title 
+                  h3 appartments1
+            div.card
+              .imgs
+                img(src="assets/img/img-2.png" alt="alt")
+              .card__body 
+                .card__title 
+                  h3 appartments1
+
+          li
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-1.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-2.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-3.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-4.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-5.jpg" alt="alt")
+          li
+            div.card
+              .imgs
+                img(src="assets/img/img-1.png" alt="alt")
+            div.card
+              .imgs
+                img(src="assets/img/paralax.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="assets/img/img-2.png" alt="alt")
+            div.card
+              .imgs
+                img(src="assets/img/img-3.png" alt="alt")
+          li
+            div.card
+              .imgs
+                img(src="assets/img/paralax.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="assets/img/paralax.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="assets/img/img-2.png" alt="alt")
+            div.card
+              .imgs
+                img(src="assets/img/img-2.png" alt="alt")
+            div.card
+              .imgs
+                img(src="assets/img/paralax.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="assets/img/paralax.jpg" alt="alt")
+
+          li._allBlocks 
+
+
+.swiper-gal#swiper-gal
+  .swiper-gal__body
+    .slider-arrow.arrow-next-1
+      svg
+        use(xlink:href='#chevron-left') 
+    .slider-arrow.arrow-prev-1 
+      svg
+        use(xlink:href='#chevron-right')
+    #galSwiper.swiper.swiper-container
+      .swiper-wrapper
+

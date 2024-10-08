@@ -28,7 +28,6 @@ export const Popup = () => {
     // =====================
     open() {
       this.pop.classList.add("_is-active");
-      this.body.classList.add("lock");
       this.content = this.pop.querySelector(this.rel);
       this.content.classList.add("_is-active");
       if (this.content.matches(".popup__content--plyr")) {
@@ -75,6 +74,8 @@ export const Popup = () => {
     }
   }
 
+  var mySwiperGalary = {};
+
   const logikPopup = () => {
     var newPopup = new Popup(document.querySelector(".popups-init-js"));
     var tempPopup = [];
@@ -95,8 +96,45 @@ export const Popup = () => {
           .querySelector(".popup__content")
           .classList.remove("_is-active");
       }
+
+      if (e.target.closest(".galery__item")) {
+        var temp = [
+          ...e.target
+            .closest("._accord-content-js")
+            .querySelectorAll(".galery__item img"),
+        ];
+
+        var plasa = [
+          ...e.target
+            .closest("._accord-js")
+            .querySelector("._accord-content-js._is-active")
+            .querySelectorAll(".galery__item "),
+        ];
+
+        temp = temp.map((el) => {
+          return el.getAttribute("src");
+        });
+
+        var itemIndex = plasa.indexOf(e.target.closest(".galery__item"));
+        newPopup.startGalary(temp, itemIndex);
+      }
+    });
+  };
+  const SliderGalery = () => {
+    mySwiperGalary = new Swiper("#slider-galery", {
+      slidesPerView: 1,
+      speed: 500,
+      modules: [Navigation],
+      navigation: {
+        nextEl: ".arrow-galery-next",
+        prevEl: ".arrow-galery-prev",
+      },
+      grabCursor: true,
     });
   };
 
   logikPopup();
+  if (document.querySelector("#slider-galery")) {
+    SliderGalery();
+  }
 };

@@ -1,0 +1,64 @@
+section.accord#accord--galery
+  .container
+    h2 galery
+    .accord__body._accord-js._accord-galery-js
+      nav.accord__nav._accord-nav-js
+        button(type='button')  blue
+        button(type='button')  green
+        button(type='button')  coral
+        button(type='button')  red
+        button(type='button')  all
+
+      .accord__hidden._accord-hidden-js
+        .accord-hidden__wrap._accord-hidden-wrap-js
+          ul.accord__content._accord-content-js._accord-default-js
+            -
+              var blocks = [
+                {src: 'assets/img/img-3.png'},
+                {src: 'assets/img/img-1.png',},
+                {src: 'assets/img/img-2.png'},
+
+              ];
+            each block in blocks
+              li.galery__item.rel.center
+                a(href="javascript:void(0);" rel='#popupGalery').galery__img.but-wave.popups-init-js
+                  .imgs
+                    img(src=block.src alt='img')
+          ul.accord__content._accord-content-js
+            -
+              var blocks = [
+                {src: 'assets/img/paralax.jpg'},
+                {src: 'assets/img/paralax.jpg',},
+                {src: 'assets/img/img-2.png'},
+              ];
+            each block in blocks
+              li.galery__item.rel.center
+                a(href="javascript:void(0);" rel='#popupGalery').galery__img.but-wave.popups-init-js
+                  .imgs
+                    img(src=block.src alt='img')
+          ul.accord__content._accord-content-js
+            -
+              var blocks = [
+                {src: 'assets/img/img-1.png'},
+                {src: 'assets/img/img-2.png'},
+                {src: 'assets/img/img-3.png'},
+                {src: 'assets/img/paralax.jpg'},
+              ];
+            each block in blocks
+              li.galery__item.rel.center
+                a(href="javascript:void(0);" rel='#popupGalery').galery__img.but-wave.popups-init-js
+                  .imgs
+                    img(src=block.src alt='img')
+          ul.accord__content._accord-content-js
+            -
+              var blocks = [
+                {src: 'assets/img/img-2.png'},
+                {src: 'assets/img/img-2.png'},
+              ];
+            each block in blocks
+              li.galery__item.rel.center
+                a(href="javascript:void(0);" rel='#popupGalery').galery__img.but-wave.popups-init-js
+                  .imgs
+                    img(src=block.src alt='img')
+          ul.accord__content._accord-content-js
+

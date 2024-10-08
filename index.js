@@ -15,12 +15,16 @@ import { Header } from "@/pug/components/header/header";
 import { bunnerSwiper } from "@/pug/components/bunner/bunner";
 import { Popup } from "@/pug/components/popup/popup";
 import { Tab } from "@/pug/components/tab/tab";
-import { Accords } from "@/pug/components/accord/accord";
+
 import { SideMenu } from "@/pug/components/side-menu/side-menu";
-import { CasesInit } from "@/pug/components/cases/cases";
+// import { CasesInit } from "@/pug/components/cases/cases";
+
+import { Accords } from "@/pug/components/accord/accord";
 import { GalleryInit } from "@/pug/components/galery/galery";
 import { GalSlider } from "@/pug/components/galSlider/galSlider";
 import { GalCases } from "@/pug/components/galCases/galCases";
+import { GalleryPop } from "@/pug/components/galeryPop/galeryPop";
+
 import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "@/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "@/pug/components/slider-scroll/slider-scroll";
@@ -80,19 +84,35 @@ document.addEventListener("DOMContentLoaded", function () {
     SideMenu();
   }
 
+  // =========
   // ====Accords=====
-  if (document.querySelector(".accord")) {
-    Accords();
-  }
+  // =========
 
-  // ========Cases=============
-  if (document.querySelector("._accord-cases-js")) {
-    CasesInit();
+  if (document.querySelector("._accord-js")) {
+    Accords();
   }
   // ======Gallery======================
   if (document.querySelector("._accord-galery-js")) {
     GalleryInit();
   }
+  // ======GalSlider==================
+  if (document.querySelector(".galSlider")) {
+    GalSlider();
+  }
+  // ======galeryPop==================
+  if (document.querySelector(".accord--GalleryPop")) {
+    GalleryPop();
+  }
+
+  // =========
+  // =========
+  // =========
+
+  // ========Cases=============
+  // if (document.querySelector("._accord-cases-js")) {
+  //   CasesInit();
+  // }
+
   // ====GalCases=====
   if (document.querySelector("._galCases-plaza-js")) {
     GalCases();
@@ -188,10 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // =======================
 
-// // ======GalSlider==================
-if (document.querySelector("#galSlider")) {
-  GalSlider();
-}
 // const tabs = document.querySelectorAll(".tabs-container-js");
 // if (tabs.length > 0) {
 //   document.addEventListener("click", (e) => {
@@ -221,17 +237,4 @@ Object.defineProperty(HTMLElement.prototype, "remAct", {
       return this.classList.remove("_is-active");
     }
   },
-});
-
-// ===============================
-import { createApp } from "vue";
-import VueDatePicker from "@vuepic/vue-datepicker";
-import CheckIn from "@/pug/vue-components/book/CheckIn.vue";
-import CheckOut from "@/pug/vue-components/book/CheckOut.vue";
-
-[...document.querySelectorAll(".check-in-vue")].forEach((cell) => {
-  createApp(CheckIn).component("VueDatePicker", VueDatePicker).mount(cell);
-});
-[...document.querySelectorAll(".check-out-vue")].forEach((cell) => {
-  createApp(CheckOut).component("VueDatePicker", VueDatePicker).mount(cell);
 });

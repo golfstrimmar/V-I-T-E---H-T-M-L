@@ -1,54 +1,109 @@
 .galSlider {
-  h2 {
-    text-align: center;
-  }
-
-  .s2 {
+  ._accord-hidden-wrap li {
+    min-height: 300px;
+    margin: 20px;
     position: relative;
-    overflow: hidden;
-    .slide {
-      min-height: 500px;
-      background: bisque;
-      h3 {
+    .card {
+      &__body {
         position: relative;
         z-index: 5;
+        h3 {
+          color: tomato;
+        }
       }
     }
-
-    .slider-arrow {
-      top: 25px;
-    }
-    .slider-arrow-next {
-      right: 27%;
-    }
-    .slider-arrow-prev {
-      left: 27%;
-    }
   }
+  & + .swiper-gal {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  //   h2 {
+  //     text-align: center;
+  //   }
+
+  //   .s2 {
+  //     position: relative;
+  //     overflow: hidden;
+  //     .slide {
+  //       min-height: 500px;
+  //       background: bisque;
+  //       h2 {
+  //         position: relative;
+  //         z-index: 5;
+  //       }
+  //     }
+
+  //     .slider-arrow {
+  //       top: 25px;
+  //     }
+  //     .slider-arrow-next {
+  //       right: 27%;
+  //     }
+  //     .slider-arrow-prev {
+  //       left: 27%;
+  //     }
+  //   }
+  // }
+
+  // .swiper-pagination-s2 {
+  //   position: relative;
+  //   height: 50px;
+  //   left: 0;
+  //   width: 100%;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   bottom: 0px !important;
+  //   .swiper-pagination-bullet {
+  //     width: 50px;
+  //     height: 50px;
+  //     border-radius: 0;
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     position: relative;
+  //     opacity: 0.4;
+  //     transition: all 0.3s;
+  //     cursor: pointer;
+  //   }
+  //   .swiper-pagination-bullet-active {
+  //     opacity: 1;
+  //   }
 }
-
-.swiper-pagination-s2 {
-  position: relative;
-  height: 50px;
-  left: 0;
+.swiper-gal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0px !important;
-  .swiper-pagination-bullet {
-    width: 50px;
-    height: 50px;
-    border-radius: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    opacity: 0.4;
-    transition: all 0.3s;
-    cursor: pointer;
+  height: 100%;
+  opacity: 1;
+}
+.swiper-gal {
+  .swiper {
+    width: 100%;
+    height: 100%;
   }
-  .swiper-pagination-bullet-active {
-    opacity: 1;
+
+  .swiper-slide {
+    position: relative;
+    min-height: 250px;
+  }
+
+  // ===============
+
+  .swiper-gal__body {
+    height: 100%;
+    position: relative;
+  }
+
+  .arrow-next-1 {
+    left: 40px;
+    right: auto;
+  }
+  .arrow-prev-1 {
+    left: auto;
+    right: 40px;
   }
 }

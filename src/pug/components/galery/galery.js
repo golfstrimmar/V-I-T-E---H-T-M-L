@@ -3,22 +3,22 @@
 export const GalleryInit = () => {
   class contentGallery {
     constructor(cell) {
-      this.allcontentGallery = [
-        ...cell.querySelectorAll("._accord-content-js "),
-      ];
-      this.temp1 = [];
+      this.gal = cell;
+      this.allBlocks = this.gal.querySelector("._allBlocks ul");
+      this.wrap = this.gal.querySelector("._accord-hidden-wrap");
+      this.allItems = [...this.wrap.querySelectorAll(".galery__item")];
     }
 
     start() {
-      for (let i = 0; i < this.allcontentGallery.length; ++i) {
-        this.temp1[i] = this.allcontentGallery[i].innerHTML;
+      if (this.allBlocks) {
+        this.allBlocks;
+        this.allItems.forEach((cell) => {
+          const copyCell = cell.cloneNode(true);
+          this.allBlocks.append(copyCell);
+        });
       }
-      this.temp1 = this.temp1.join(" ");
-      this.allcontentGallery[this.allcontentGallery.length - 1].innerHTML =
-        this.temp1;
     }
   }
-
   [...document.querySelectorAll("._accord-galery-js")].forEach((cell) => {
     new contentGallery(cell).start();
   });

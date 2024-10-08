@@ -1,6 +1,12 @@
 .galCases {
   background: black;
-
+  &__title {
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+    }
+  }
   &__body {
     max-width: 961px;
     margin: 0 auto;

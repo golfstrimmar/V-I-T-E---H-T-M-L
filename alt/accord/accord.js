@@ -14,24 +14,15 @@ export const Accords = () => {
         this.button
       );
       this.hidden = this.Accord.querySelector("._accord-hidden-js");
-
-      this.units = [
-        ...this.hidden
-          .querySelector("._accord-hidden-wrap")
-          .querySelectorAll(":scope > li"),
-      ];
+      this.units = [...this.hidden.querySelectorAll("._accord-hidden-wrap li")];
       this.indexNabour = 0;
     }
 
     isOpen() {
       this.units[this.index].classList.add("_is-active");
       this.button.classList.add("_is-active");
-      const height = this.hidden.offsetHeight;
       const anim = this.hidden.animate(
-        [
-          { gridTemplateRows: "0fr", minHeight: "0px" },
-          { gridTemplateRows: "1fr", minHeight: `${height}` + "px" },
-        ],
+        [{ gridTemplateRows: "0fr" }, { gridTemplateRows: "1fr" }],
         {
           duration: 200,
           easing: "ease-in-out",
@@ -39,18 +30,12 @@ export const Accords = () => {
       );
       anim.finished.then(() => {
         this.hidden.style.gridTemplateRows = "1fr";
-        this.hidden.style.minHeight = `${height}` + "px";
-        this.hidden.classList.add("_is-active");
       });
     }
 
     isClose() {
-      const height = this.hidden.offsetHeight;
       const anim = this.hidden.animate(
-        [
-          { gridTemplateRows: "1fr", minHeight: `${height}` + "px" },
-          { gridTemplateRows: "0fr", minHeight: "0px" },
-        ],
+        [{ gridTemplateRows: "1fr" }, { gridTemplateRows: "0fr" }],
         {
           duration: 200,
           easing: "ease-in-out",
@@ -58,8 +43,6 @@ export const Accords = () => {
       );
       anim.finished.then(() => {
         this.hidden.style.gridTemplateRows = "0fr";
-        this.hidden.style.minHeight = "0px";
-        this.hidden.classList.remove("_is-active");
         this.button.classList.remove("_is-active");
         this.units[this.index].classList.remove("_is-active");
       });
@@ -70,23 +53,17 @@ export const Accords = () => {
         if (this.nabours.length == 0) {
           this.isOpen();
         } else if (this.nabours.length > 0) {
-          const height = this.hidden.offsetHeight;
           const anim = this.hidden.animate(
-            [
-              { gridTemplateRows: "1fr", minHeight: `${height}` + "px" },
-              { gridTemplateRows: "0fr", minHeight: "0px" },
-            ],
+            [{ gridTemplateRows: "1fr" }, { gridTemplateRows: "0fr" }],
             {
               duration: 200,
               easing: "ease-in-out",
             }
           );
           anim.finished.then(() => {
-            this.hidden.style.gridTemplateRows = "0fr";
-            this.hidden.style.minHeight = "0px";
-            this.hidden.classList.remove("_is-active");
             this.nabour.classList.remove("_is-active");
             this.button.classList.add("_is-active");
+            this.hidden.style.gridTemplateRows = "0fr";
             this.indexNabour = this.buttons.indexOf(this.nabour);
             this.units[this.indexNabour].classList.remove("_is-active");
             this.units[this.index].classList.add("_is-active");
@@ -101,40 +78,24 @@ export const Accords = () => {
     static closeAll(item) {
       const accordAll = [...document.querySelectorAll("._accord-js")];
       const anderenAll = accordAll.filter((el) => el !== item);
-
       anderenAll.forEach((cell) => {
-        if (
-          cell
-            .querySelector("._accord-hidden-js")
-            .classList.contains("_is-active")
-        ) {
-          const hidden = cell.querySelector("._accord-hidden-js");
-          const height = hidden.offsetHeight;
-          const anim = hidden.animate(
-            [
-              { gridTemplateRows: "1fr", minHeight: `${height}` + "px" },
-              { gridTemplateRows: "0fr", minHeight: "0px" },
-            ],
-            {
-              duration: 200,
-              easing: "ease-in-out",
+        const anim = cell
+          .querySelector("._accord-hidden-js")
+          .animate([{ gridTemplateRows: "1fr" }, { gridTemplateRows: "0fr" }], {
+            duration: 200,
+            easing: "ease-in-out",
+          });
+        anim.finished.then(() => {
+          [...cell.querySelectorAll("button")].forEach((car) => {
+            car.classList.remove("_is-active");
+          });
+
+          [...cell.querySelectorAll("._accord-hidden-wrap li")].forEach(
+            (car) => {
+              car.classList.remove("_is-active");
             }
           );
-          anim.finished.then(() => {
-            [...cell.querySelectorAll("button")].forEach((car) => {
-              car.classList.remove("_is-active");
-            });
-
-            [...cell.querySelectorAll("._accord-hidden-wrap li")].forEach(
-              (car) => {
-                car.classList.remove("_is-active");
-              }
-            );
-            hidden.classList.remove("_is-active");
-            hidden.style.gridTemplateRows = "0fr";
-            hidden.style.minHeight = "0px";
-          });
-        }
+        });
       });
     }
   }
@@ -147,10 +108,7 @@ export const Accords = () => {
         Accord.closeAll(e.target.closest("._accord-js"));
         const NewAccord = new Accord(e);
         NewAccord.start();
-      } else if (
-        !e.target.closest("._accord-js") &&
-        !e.target.closest(".popup-overlay-js")
-      ) {
+      } else if (!e.target.closest("._accord-js")) {
         Accord.closeAll(e.target);
       }
     });
