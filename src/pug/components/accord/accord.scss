@@ -3,20 +3,13 @@
     display: grid;
     grid-auto-flow: column;
     button {
-      border: 1px solid #120a81;
-      background: #7268fa;
       transition: all 0.2s ease-in-out;
       padding: 10px;
       &:hover {
-        background: #a09af7;
       }
       &._is-active {
-        background: #550a81;
       }
     }
-  }
-  &__hidden {
-    background: rgb(134, 231, 125);
   }
 }
 

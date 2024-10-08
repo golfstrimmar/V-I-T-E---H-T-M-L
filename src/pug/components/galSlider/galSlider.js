@@ -1,7 +1,7 @@
 "use strict";
 
 // Импортировать Swiper и его модули
-import Swiper, { Navigation, Pagination } from "swiper";
+import Swiper, { Pagination } from "swiper";
 
 // Экспортировать функцию GalSlider
 export const GalSlider = () => {
@@ -75,15 +75,15 @@ export const GalSlider = () => {
     // Инициализировать экземпляр Swiper, если он не существует
     if (galSwiperInstance == null) {
       galSwiperInstance = new Swiper("#galSwiper", {
-        spaceBetween: 10,
+        spaceBetween: 30,
         slidesPerView: 4,
         // loop: true,
         speed: 500,
-        modules: [Navigation, Pagination],
-        navigation: {
-          nextEl: ".arrow-prev-1",
-          prevEl: ".arrow-next-1",
-        },
+        modules: [Pagination],
+        // navigation: {
+        //   nextEl: ".arrow-prev-1",
+        //   prevEl: ".arrow-next-1",
+        // },
         pagination: {
           el: ".swiper-pagination-1",
           clickable: true,

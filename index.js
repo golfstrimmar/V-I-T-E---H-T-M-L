@@ -22,7 +22,7 @@ import { Accords } from "@/pug/components/accord/accord";
 import { CasesInit } from "@/pug/components/cases/cases";
 import { GalleryInit } from "@/pug/components/galery/galery";
 import { GalSlider } from "@/pug/components/GalSlider/GalSlider";
-import { GalleryPop } from "@/pug/components/galeryPop/galeryPop";
+// import { GalleryPop } from "@/pug/components/galeryPop/galeryPop";
 // import { GalCases } from "@/pug/components/galCases/galCases";
 // import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
 // import { SwiperFull } from "@/pug/components/slider-full/slider-full";
@@ -99,9 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
     GalSlider();
   }
   // ======galeryPop==================
-  if (document.querySelector(".accord--GalleryPop")) {
-    GalleryPop();
-  }
+  // if (document.querySelector(".accord--GalleryPop")) {
+  //   GalleryPop();
+  // }
 
   // =========
   // =========

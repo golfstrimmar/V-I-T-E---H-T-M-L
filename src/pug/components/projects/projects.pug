@@ -1,6 +1,10 @@
-section.accord#accord--cases1
+//- скрипт отлавливает содержимое li и выводит в слайдер. важно чтобы содержимое было разбито на блоки ---div.card
+
+section.galSlider.accord.accord--galery
   .container
-    .accord__body._accord-js._accord-galery-js._accord-cases-js
+
+    .accord__body._accord-js._accord-galery-js
+      h2 Latest projects
       nav.accord__nav._accord-nav-js
         button(type='button')  All
         button(type='button')  Building
@@ -8,42 +12,99 @@ section.accord#accord--cases1
 
 
       .accord__hidden._accord-hidden-js
-        .accord-hidden__wrap._accord-hidden-wrap-js
-          ul.accord__content._accord-content-js._accord-default-js
-            -
-              var blocks = [
-                {src: 'assets/img/img-3.png',data: 'red',},
-                {src: 'assets/img/img-1.png',data: 'red',},
-                {src: 'assets/img/img-2.png',data: 'red',},
-                {src: 'assets/img/paralax.jpg',data: 'blue',},
-                {src: 'assets/img/paralax.jpg',data: 'blue',},
-
-              ];
-            each block in blocks
-              li
-                img(src=block.src alt='img')
-          ul.accord__content._accord-content-js
-            -
-              var blocks = [
-                {src: 'assets/img/paralax.jpg',data: 'blue',},
-                {src: 'assets/img/paralax.jpg',data: 'blue',},
-                {src: 'assets/img/img-2.png',data: 'blue',},
-                {src: 'assets/img/img-2.png',data: 'blue',},
-              ];
-            each block in blocks
-              li
-                img(src=block.src alt='img')
 
 
-          ul.accord__content._accord-content-js
-          .slider-cases.swiper-container
-            button.slider-arrow.cases-prev.js-cases-prev(type='button')
-              svg
-                use(xlink:href='#chevron-left')
-            button.slider-arrow.cases-next.js-cases-next(type='button')
-              svg
-                use(xlink:href='#chevron-right')
-            ul.swiper-wrapper
-            .swiper-pagination-cases
+        ul._accord-hidden-wrap
+          li._allBlocks 
+          li
+            div.card
+              .imgs
+                img(src="assets/img/projects/apartments.png" alt="alt")
+              .card__title
+                h3 Apartments
+              .card__body 
+                .card__title--body 
+                  h3 Apartments
+                p.card__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat molestie integer aliquam consectetur. Faucibus vitae dui massa tellus magna sit.
+                a(href="") See project
+                  svg
+                    use(xlink:href='#chevron-right')
+            div.card
+              .imgs
+                img(src="assets/img/projects/dubai.png" alt="alt")
+              .card__title
+                h3 Dubai
+              .card__body 
+                .card__title--body 
+                  h3 Dubai
+                p.card__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat molestie integer aliquam consectetur. Faucibus vitae dui massa tellus magna sit.
+                a(href="") See project
+                  svg
+                    use(xlink:href='#chevron-right')
+            div.card
+              .imgs
+                img(src="assets/img/projects/houses.png" alt="alt")
+              .card__title
+                h3 Houses
+              .card__body 
+                .card__title--body 
+                  h3 Houses
+                p.card__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat molestie integer aliquam consectetur. Faucibus vitae dui massa tellus magna sit.
+                a(href="") See project
+                  svg
+                    use(xlink:href='#chevron-right')
+            div.card
+              .imgs
+                img(src="assets/img/projects/valas.png" alt="alt")
+              .card__title
+                h3 Villas
+              .card__body 
+                .card__title--body 
+                  h3 Villas
+                p.card__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat molestie integer aliquam consectetur. Faucibus vitae dui massa tellus magna sit.
+                a(href="") See project
+                  svg
+                    use(xlink:href='#chevron-right')
+            div.card
+              .imgs
+                img(src="assets/img/projects/valas.png" alt="alt")
+              .card__title
+                h3 Villas
+              .card__body 
+                .card__title--body 
+                  h3 Villas
+                p.card__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat molestie integer aliquam consectetur. Faucibus vitae dui massa tellus magna sit.
+                a(href="") See project
+                  svg
+                    use(xlink:href='#chevron-right')
 
+
+
+          li
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-1.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-2.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-3.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-4.jpg" alt="alt")
+            div.card
+              .imgs
+                img(src="https://swiperjs.com/demos/images/nature-5.jpg" alt="alt")
+
+
+
+
+
+
+.swiper-gal#swiper-gal
+  .swiper-gal__body
+    #galSwiper.swiper.swiper-container
+      .swiper-wrapper
+  .swiper-pagination-1
 
