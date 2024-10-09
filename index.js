@@ -34,6 +34,7 @@ import { Select } from "@/pug/components/select/select";
 import { Look } from "@/pug/components/look/look";
 import { TypedItem } from "@/pug/components/typed/typedHover";
 import { Form } from "@/pug/components/form/form";
+import { HeaderForm } from "@/pug/components/form/header-form";
 import { FormFields } from "@/pug/vue-components/book/book";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -190,6 +191,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (document.querySelector(".send-form")) {
     Form();
+  }
+  if (document.querySelector("#header-form")) {
+    HeaderForm();
   }
   // =========Button==============
   if (document.querySelector(".but-wave")) {
