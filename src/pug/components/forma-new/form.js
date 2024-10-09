@@ -38,12 +38,19 @@ export const Form = () => {
     if (!tel.value.trim()) {
       tel.closest(".input-field").classList.add("_check_invalid");
       hasError = true;
-      tel.addEventListener("input", (e) => {
-        tel.closest(".input-field").classList.remove("_check_invalid");
-      });
-    } else {
-      tel.closest(".input-field").classList.remove("_check_invalid");
     }
+    tel.addEventListener("input", (e) => {
+      const value = tel.value.trim();
+      const regex = /^\+?\d+$/;
+
+      if (!regex.test(value)) {
+        tel.closest(".input-field").classList.add("_check_invalid");
+        hasError = true;
+      } else {
+        tel.closest(".input-field").classList.remove("_check_invalid");
+        hasError = false;
+      }
+    });
 
     selectedRating = "";
     rating.forEach((radio) => {

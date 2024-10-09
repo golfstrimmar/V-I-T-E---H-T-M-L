@@ -1,9 +1,8 @@
 "use ctrict";
-export const Form = () => {
-  const form = document.querySelector("#send-form");
-  // const firstName = form.querySelector("#firstname");
-  const email = form.querySelector("#email");
-  // const tel = form.querySelector("#tel");
+export const HeaderForm = () => {
+  const form = document.querySelector("#header-form");
+  const firstName = form.querySelector("#firstname");
+  const tel = form.querySelector("#tel");
   // const rating = form.querySelectorAll("[name='ratingForm']");
   // const textarea = form.querySelector("#textarea4");
   // const checkbox = form.querySelector("#agree");
@@ -13,37 +12,36 @@ export const Form = () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    let hasError = false;
+    let hasError;
     // ==================================================
-    // if (!firstName.value.trim()) {
-    //   firstName.closest(".input-field").classList.add("_check_invalid");
-    //   hasError = true;
-    //   firstName.addEventListener("input", (e) => {
-    //     firstName.closest(".input-field").classList.remove("_check_invalid");
-    //   });
-    // } else {
-    //   firstName.closest(".input-field").classList.remove("_check_invalid");
-    // }
-    // ==================================================
-    if (!email.value.trim()) {
-      email.closest(".input-field").classList.add("_check_invalid");
-      email.addEventListener("input", (e) => {
-        email.closest(".input-field").classList.remove("_check_invalid");
-      });
+    if (!firstName.value.trim()) {
+      firstName.closest(".input-field").classList.add("_check_invalid");
       hasError = true;
+      firstName.addEventListener("input", (e) => {
+        firstName.closest(".input-field").classList.remove("_check_invalid");
+      });
     } else {
-      email.closest(".input-field").classList.remove("_check_invalid");
+      firstName.closest(".input-field").classList.remove("_check_invalid");
     }
     // ==================================================
-    // if (!tel.value.trim()) {
-    //   tel.closest(".input-field").classList.add("_check_invalid");
-    //   hasError = true;
-    //   tel.addEventListener("input", (e) => {
-    //     tel.closest(".input-field").classList.remove("_check_invalid");
-    //   });
-    // } else {
-    //   tel.closest(".input-field").classList.remove("_check_invalid");
-    // }
+    if (!tel.value.trim()) {
+      tel.closest(".input-field").classList.add("_check_invalid");
+      hasError = true;
+    }
+
+    tel.addEventListener("input", (e) => {
+      const value = tel.value.trim();
+      const regex = /^\+?\d+$/;
+
+      if (!regex.test(value)) {
+        tel.closest(".input-field").classList.add("_check_invalid");
+        hasError = true;
+      } else {
+        tel.closest(".input-field").classList.remove("_check_invalid");
+        hasError = false;
+      }
+    });
+
     // ==================================================
     // selectedRating = "";
     // rating.forEach((radio) => {
@@ -93,9 +91,9 @@ export const Form = () => {
     // ==================================================
     if (!hasError) {
       const params = new URLSearchParams({
-        // name: firstName.value.trim(),
-        email: email.value.trim(),
-        // tel: tel.value.trim(),
+        name: firstName.value.trim(),
+        // email: email.value.trim(),
+        tel: tel.value.trim(),
         // rating: selectedRating,
         // textarea: textarea.value.trim(),
         // checkbox: checkbox.checked,
@@ -104,9 +102,9 @@ export const Form = () => {
 
       history.pushState(null, "", `?${params.toString()}`);
 
-      // firstName.value = "";
-      email.value = "";
-      // tel.value = "";
+      firstName.value = "";
+      // email.value = "";
+      tel.value = "";
       // textarea.value = "";
       // selectedRating = "";
       // wal.innerHTML = "custom";
@@ -115,9 +113,16 @@ export const Form = () => {
       // });
       // checkbox.checked = false;
       // wal.closest("#wal").classList.remove("_is-filled");
-      let success = document.querySelector("#success");
+
+      document.querySelector(".popup-js").classList.remove("_is-active");
+      document
+        .querySelector(".popup__content._is-active")
+        .classList.remove("_is-active");
+
+      let success = document.querySelector("#successheader");
       success.classList.add("_is-active");
       setTimeout(() => {
+        document.querySelector("body").classList.remove("lock");
         success.classList.remove("_is-active");
       }, 2000);
     }

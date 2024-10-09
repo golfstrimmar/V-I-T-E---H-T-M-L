@@ -1,0 +1,82 @@
+.feed {
+  margin: 100px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .swiper {
+    width: 138%;
+    left: -20px;
+    // overflow: visible;
+  }
+  .swiper-slide {
+    margin-top: 60px;
+    border: 1px solid $act;
+    padding: 100px 45px 30px 30px;
+    // max-width: 525px;
+    min-height: 311px;
+    opacity: 0.3;
+    transition: all 0.2s;
+    &._active-slide {
+      opacity: 1;
+      margin-top: 80px;
+    }
+    svg {
+      width: 54px;
+      height: 54px;
+      position: absolute;
+      top: 3px;
+      right: 11px;
+      z-index: 5;
+    }
+  }
+  &__title {
+    h3 {
+      color: $white;
+      font-family: "Gilroy-Bold", sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 31px;
+    }
+  }
+  &__info {
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    margin: 20px 0 0 0;
+    span {
+      color: $act;
+    }
+  }
+  &__text {
+    color: rgb(146, 146, 146);
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin: 34px 0 0 0;
+  }
+  &__bage {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    z-index: 5;
+    transform: translate(0%, -50%);
+  }
+  .swiper-pagination-feed {
+    margin: 40px 0 0 0;
+    text-align: center;
+    .swiper-pagination-bullet {
+      background: rgb(146, 146, 146);
+      width: 13px;
+      height: 13px;
+      &-active {
+        background: $act;
+      }
+    }
+  }
+}

@@ -22,6 +22,7 @@ import { Accords } from "@/pug/components/accord/accord";
 import { CasesInit } from "@/pug/components/cases/cases";
 import { GalleryInit } from "@/pug/components/galery/galery";
 import { GalSlider } from "@/pug/components/GalSlider/GalSlider";
+import { Feed } from "@/pug/components/feed/feed";
 // import { GalleryPop } from "@/pug/components/galeryPop/galeryPop";
 // import { GalCases } from "@/pug/components/galCases/galCases";
 // import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
@@ -33,6 +34,7 @@ import { Select } from "@/pug/components/select/select";
 import { Look } from "@/pug/components/look/look";
 // import { TypedItem } from "@/pug/components/typed/typedHover";
 import { Form } from "@/pug/components/form/form";
+import { HeaderForm } from "@/pug/components/form/header-form";
 // import { FormFields } from "@/pug/vue-components/book/book";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -124,6 +126,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // if (document.querySelector("#swiper-1")) {
   //   Swiper1();
   // }
+  // =========Swiper1==============
+  if (document.querySelector("#feed")) {
+    Feed();
+  }
   // ========swiper-1licens===============
   // if (document.querySelector("#swiper-1licens")) {
   //   Swiper1licens();
@@ -189,6 +195,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (document.querySelector(".send")) {
     Form();
+  }
+
+  if (document.querySelector("#header-form")) {
+    HeaderForm();
   }
   // =========Button==============
   if (document.querySelector(".but-wave")) {

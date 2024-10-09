@@ -1,0 +1,16 @@
+section(id="form").rel.header-form
+  .form__body
+    .form__title
+      h2 Leave your contacts
+    p.form__text  we will contact you within three hours
+
+
+    form#header-form(action="#" method="post" name="send-form").send
+      .send__linia.input-field.text-field 
+        input#firstname(type='text' name='name' value='' placeholder='Denzel Washington')
+        label.text-field__label(for='name') Name
+      .send__linia.input-field.text-field 
+        input#tel(type='tel' name='tel' value='' placeholder='Denzel Washington')
+        label.text-field__label(for='tel') Phone
+      p.but-wave
+        button.btn.btn-success(type='submit' ) Send

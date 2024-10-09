@@ -147,12 +147,13 @@ export const Accords = () => {
         Accord.closeAll(e.target.closest("._accord-js"));
         const NewAccord = new Accord(e);
         NewAccord.start();
-      } else if (
-        !e.target.closest("._accord-js") &&
-        !e.target.closest(".popup-overlay-js")
-      ) {
-        Accord.closeAll(e.target);
       }
+      //  else if (
+      //   !e.target.closest("._accord-js") &&
+      //   !e.target.closest(".popup-overlay-js")
+      // ) {
+      //   Accord.closeAll(e.target);
+      // }
     });
   }
   // ==================================

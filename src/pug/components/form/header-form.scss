@@ -1,0 +1,62 @@
+.header-form {
+  max-width: 729px;
+  min-height: 445px;
+  background: $white;
+  padding: 67px 140px;
+  .form__title {
+    h2 {
+      color: $black;
+      font-family: "Gilroy-Bold", sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 59px;
+    }
+  }
+  .form__text {
+    color: $black;
+    font-family: "Work Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+  }
+  .form__body {
+  }
+
+  .send {
+    margin: 47px auto 0;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .send .input-field {
+    min-height: 34px;
+    border-bottom: 1px solid rgb(146, 146, 146);
+  }
+  .input-field input[type="text"],
+  .input-field input[type="tel"] {
+    border: none;
+  }
+  .send__linia {
+    margin: 0 0 20px 0;
+  }
+  .but-wave {
+    margin: 47px auto 0;
+  }
+  .input-field input[type="tel"] + label,
+  .input-field input[type="text"] + label {
+    color: $black;
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+  }
+  .send p.but-wave button {
+    width: 216px;
+    height: 54px;
+    background: $act;
+    color: $black;
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+}

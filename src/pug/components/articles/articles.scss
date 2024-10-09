@@ -1,0 +1,95 @@
+.articles {
+  margin: 90px 0 0 0;
+
+  h3 {
+    color: $white;
+    font-family: "Gilroy-Bold", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 35px;
+    position: relative;
+    z-index: 5;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    h2 {
+    }
+  }
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    column-gap: 23px;
+    row-gap: 30px;
+    justify-content: space-between;
+    margin: 60px 0 0 0;
+    li {
+      position: relative;
+      min-height: 352px;
+      padding: 53px 38px;
+      display: flex;
+      flex-direction: column;
+      .column__title {
+        margin: auto 0 0 0;
+      }
+      &:hover {
+        cursor: pointer;
+        .column__body {
+          transition: all 0.2s;
+          transform: scaleY(1);
+        }
+      }
+      .column {
+        &__data {
+          color: $white;
+          font-family: "Work Sans", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+        }
+        &__body {
+          border: 1px solid $act;
+          background: rgb(39, 39, 39);
+          padding: 40px 36px 23px;
+          margin: auto 0 0 0;
+          z-index: 5;
+          position: absolute;
+          top: 0%;
+          left: 0%;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transform: scaleY(0);
+          transform-origin: top;
+        }
+
+        &__text--body {
+          color: rgb(146, 146, 146);
+          font-family: "Work Sans", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+        }
+        &__link {
+          color: $act;
+          margin: 45px 0 0 0;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  &__link {
+    color: rgb(146, 146, 146);
+    font-family: "Gilroy-SemiBold", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+    margin: 0 21px 0 0;
+  }
+}
