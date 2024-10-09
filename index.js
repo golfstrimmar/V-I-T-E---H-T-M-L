@@ -96,7 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // ======GalSlider==================
   if (document.querySelector(".galSlider")) {
-    GalSlider();
+    let galSliders = [...document.querySelectorAll(".galSlider")];
+    galSliders.forEach((car) => {
+      GalSlider(car);
+    });
   }
   // ======galeryPop==================
   // if (document.querySelector(".accord--GalleryPop")) {

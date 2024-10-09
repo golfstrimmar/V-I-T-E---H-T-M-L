@@ -1,22 +1,22 @@
 .galSlider {
   padding: 105px 0 70px 0;
+  .container-small {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .title-small {
+    margin: -14px 0 0 0;
+  }
+
   .accord__body {
-    h2 {
-      color: rgb(255, 255, 255);
-      font-family: "Gilroy-Bold", sans-serif;
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 1;
-      position: absolute;
-      margin: -14px 0 0 0;
-    }
     .accord__nav {
       display: grid;
       grid-auto-flow: column;
       grid-template-columns: repeat(3, max-content);
       column-gap: 34px;
       justify-content: right;
-      margin: 0 528px 0 0;
     }
   }
   ._accord-hidden-wrap li {

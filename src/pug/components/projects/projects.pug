@@ -1,21 +1,19 @@
-//- скрипт отлавливает содержимое li и выводит в слайдер. важно чтобы содержимое было разбито на блоки ---div.card
-
 section.galSlider.accord.accord--galery
   .container
 
     .accord__body._accord-js._accord-galery-js
-      h2 Latest projects
-      nav.accord__nav._accord-nav-js
-        button(type='button')  All
-        button(type='button')  Building
-        button(type='button')  Interior
+      .container-small
+        .title-small
+          h2 Latest projects
+        nav.accord__nav._accord-nav-js
+          button(type='button')._is-active  All
+          button(type='button')  Building
+          button(type='button')  Interior
 
 
       .accord__hidden._accord-hidden-js
-
-
         ul._accord-hidden-wrap
-          li._allBlocks 
+          li._allBlocks
           li
             div.card
               .imgs
@@ -102,9 +100,9 @@ section.galSlider.accord.accord--galery
 
 
 
-.swiper-gal#swiper-gal
+.swiper-gal
   .swiper-gal__body
-    #galSwiper.swiper.swiper-container
+    .swiper.swiper-container
       .swiper-wrapper
   .swiper-pagination-1
 
