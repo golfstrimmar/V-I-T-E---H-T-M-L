@@ -19,10 +19,10 @@
   }
   &__body {
     position: relative;
+    width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 185px repeat(4, max-content);
-    width: 100%;
     gap: 0 40px;
     justify-content: space-between;
     padding: 18px 0;
@@ -236,7 +236,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(15px);
   .header__body {
-    padding: 10px 0;
+    padding: 15px 0;
   }
 }
 
@@ -254,7 +254,7 @@
 
 // /*===========*/
 
-@media (max-width: 768px) {
+@media (max-width: 1253px) {
   .header {
     .burger {
       display: inline-block;
@@ -299,7 +299,7 @@
         span,
         &::after,
         &::before {
-          background: rgb(29, 128, 1, 25%);
+          background: $act-hover;
         }
       }
       &._is-active {
@@ -319,26 +319,30 @@
       }
     }
     &__body {
-      grid-template-columns: 100px repeat(5, max-content);
+      grid-template-columns: 170px 1fr repeat(2, max-content);
       justify-content: left;
+      padding: 18px 39px 18px 0;
     }
-
+    .logo p {
+      font-size: 20px;
+      line-height: 25px;
+    }
     &__menu {
       width: 100vw;
       min-height: 100vh;
       position: fixed;
-      top: 0;
+      top: 77px;
       left: 0;
       transform: translateX(-100vw);
-      padding: 100px 20px 0 20px;
+      padding: 37px 20px 0 20px;
       overflow: auto;
-      text-align: right;
+      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-end;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(15px);
+      align-items: center;
+      background: $bg;
+      // backdrop-filter: blur(15px);
       z-index: 20;
     }
 
@@ -346,7 +350,7 @@
       &__list {
         grid-template-columns: 1fr;
         grid-auto-flow: row;
-        justify-items: end;
+        justify-items: center;
         row-gap: 15px;
         margin: 0 0 30px 0;
       }
@@ -362,5 +366,32 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 10px 0;
+  }
+  .responciveHeader {
+    .header__body {
+      padding: 15px 39px 15px 0;
+    }
+  }
+}
+
+@media (max-width: 1034px) {
+  .info {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 15px;
+    border-top: 1px solid $act;
+    padding: 30px 0 0 0;
+    .book-button {
+      order: -1;
+    }
+  }
+  .header__search {
+    margin: 30px 0 0 0;
+  }
+  .header__search input[type="text"] {
+    min-height: 41px;
+  }
+  #languageForm {
+    margin: 30px 0 0 0;
   }
 }

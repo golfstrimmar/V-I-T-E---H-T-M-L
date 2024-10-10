@@ -9,4 +9,9 @@
 <script  src="./assets/index.js"></script>
 и перекидывать его вниз
 
-
+@media (min-width: 1035px) and (max-width: 1253px) {
+      
+}
+@media (max-width: 1034px) {
+      
+}

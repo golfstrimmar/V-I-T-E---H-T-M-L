@@ -19,10 +19,10 @@ body {
 }
 
 .container {
-  // outline: 1px solid #4164ff;
+  outline: 1px solid fuchsia;
   max-width: 1800px;
-  width: 100%;
-  margin: 0 auto;
+  width: calc(100vw - 110px);
+  margin: 0 55px;
   position: relative;
 }
 
@@ -192,16 +192,22 @@ a.common__link {
   }
 }
 
-@media (min-width: 901px) and (max-width: 1259px) {
+@media (min-width: 1253px) and (max-width: 1323px) {
   .container {
     margin: 0 20px;
-    max-width: calc(100% - 40px);
+    width: calc(100vw - 40px);
+  }
+  .inner {
+    margin: 77px 0 0 0;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1252px) {
   .container {
-    margin: 0 10px;
-    max-width: calc(100% - 20px);
+    margin: 0 20px;
+    width: calc(100vw - 40px);
+  }
+  .inner {
+    margin: 77px 0 0 0;
   }
 }

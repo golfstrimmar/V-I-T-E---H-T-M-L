@@ -28,3 +28,13 @@
     }
   }
 }
+
+@media (min-width: 1035px) and (max-width: 1253px) {
+  .btn-empty {
+    font-size: 16px;
+  }
+  .btn-empty svg {
+    width: 10px;
+    height: 15px;
+  }
+}

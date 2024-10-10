@@ -6,7 +6,8 @@ export const Header = () => {
   const info = header.querySelector(".info");
   const burger = header.querySelector(".burger");
   const HeaderBody = header.querySelector(".header__body");
-  const now = info.cloneNode(true);
+  const lang = header.querySelector("#languageForm");
+  const search = header.querySelector(".search");
   const body = document.querySelector("body");
   // ---------------------------------------------
   const activeItemHEAD = (event) => {
@@ -37,37 +38,24 @@ export const Header = () => {
 
   // ---------------------------------------------
 
-  const smMenu = () => {
-    info.remove();
-    menu.classList.remove("menu-active");
-    now.classList.add("info-active");
-    menu.append(now);
-    burger.classList.remove("_is-active");
-    body.classList.remove("lock");
-  };
-
-  const lgMenu = () => {
-    body.classList.remove("lock");
-    burger.classList.remove("_is-active");
-    if (menu.querySelector(".info")) {
-      menu.querySelector(".info").remove();
-      now.classList.remove("info-active");
-      HeaderBody.append(now);
-    }
-  };
-
-  if (window.innerWidth >= 768) {
-    lgMenu();
-  } else {
-    smMenu();
+  if (window.innerWidth <= 1035) {
+    menu.append(info);
+    menu.append(search);
+    menu.append(lang);
   }
   window.onresize = function () {
-    if (window.innerWidth >= 768) {
-      lgMenu();
+    if (window.innerWidth <= 1035) {
+      menu.append(info);
+      menu.append(search);
+      menu.append(lang);
     } else {
-      if (!burger.classList.contains("_is-active")) {
-        smMenu();
-      }
+      HeaderBody.append(lang);
+      HeaderBody.append(info);
+      HeaderBody.append(search);
+    }
+    if (window.innerWidth >= 1253) {
+      burger.classList.remove("_is-active");
+      menu.classList.remove("menu-active");
     }
   };
 

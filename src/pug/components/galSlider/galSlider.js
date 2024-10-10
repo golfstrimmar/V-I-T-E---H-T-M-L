@@ -56,8 +56,19 @@ export const GalSlider = (car) => {
 
     if (!swiperInstances.has(car)) {
       const galSwiperInstance = new Swiper(nextSwiper, {
-        spaceBetween: 30,
-        slidesPerView: 4,
+        slidesPerView: 1,
+        spaceBetween: 7,
+        breakpoints: {
+          1034: {
+            spaceBetween: 10,
+            slidesPerView: 4,
+          },
+          1253: {
+            spaceBetween: 30,
+            slidesPerView: 4,
+          },
+        },
+        loop: true,
         speed: 500,
         modules: [Pagination],
         pagination: {
