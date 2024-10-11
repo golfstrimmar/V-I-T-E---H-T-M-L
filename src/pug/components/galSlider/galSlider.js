@@ -1,11 +1,11 @@
 "use strict";
-import Swiper, { Pagination } from "swiper";
+import Swiper, { Navigation, Pagination } from "swiper";
 
 export const GalSlider = (car) => {
-  const swiperInstances = new WeakMap();
+  // const swiperInstances = new WeakMap();
   const gal = car.querySelector("._accord-hidden-wrap");
   const hidden = car.querySelector("._accord-hidden-wrap");
-
+  const hiddenItems = [...hidden.querySelectorAll(" li")];
   let ingal = [...gal.querySelectorAll("li")];
   const allBlocks = car.querySelector("._allBlocks");
   const galSlider = car.nextElementSibling;
@@ -25,54 +25,53 @@ export const GalSlider = (car) => {
   ingal.forEach((cell) => {
     cell.innerHTML = "";
   });
+  let duble = null;
+
+  var cardMatches = null;
 
   const init = (item, i) => {
     sw.innerHTML = "";
-    const duble = JSON.parse(localStorage.getItem("duble"));
-    const regex =
-      /<div class="card">[\s\S]*?<\/div>(?=<(?:\/div|<div class="card"))/g;
-    var cardMatches = [...duble[i].matchAll(regex)];
-    cardMatches.forEach((match) => {
-      const el = document.createElement("div");
-      el.classList.add("swiper-slide");
-      el.innerHTML = match;
-      sw.append(el);
-    });
+    duble = null;
+    galSwiperInstance = null;
 
-    // if (galSwiperInstance == null) {
-    //   galSwiperInstance = new Swiper(nextSwiper, {
-    //     spaceBetween: 30,
-    //     slidesPerView: 4,
-    //     speed: 500,
-    //     modules: [Pagination],
-    //     pagination: {
-    //       el: ".swiper-pagination-1",
-    //       clickable: true,
-    //     },
-    //     grabCursor: true,
-    //   });
-    // }
-    // galSwiperInstance.update();
-
-    if (!swiperInstances.has(car)) {
-      const galSwiperInstance = new Swiper(nextSwiper, {
-        spaceBetween: 30,
-        slidesPerView: 4,
-        speed: 500,
-        modules: [Pagination],
-        pagination: {
-          el: ".swiper-pagination-1",
-          clickable: true,
-        },
-        grabCursor: true,
+    const ItemsApdate = () => {
+      return new Promise((resolve) => {
+        duble = JSON.parse(localStorage.getItem("duble"));
+        const regex =
+          /<div class="card">[\s\S]*?<\/div>(?=<(?:\/div|<div class="card"))/g;
+        cardMatches = [...duble[i].matchAll(regex)];
+        cardMatches.forEach((match) => {
+          const el = document.createElement("div");
+          el.classList.add("swiper-slide");
+          el.innerHTML = match[0];
+          sw.append(el);
+        });
+        resolve();
       });
-      swiperInstances.set(car, galSwiperInstance);
-    }
-    galSwiperInstance = swiperInstances.get(car);
-    galSwiperInstance.update();
-  };
+    };
 
-  const hiddenItems = [...hidden.querySelectorAll(" li")];
+    ItemsApdate().then(() => {
+      if (galSwiperInstance == null) {
+        galSwiperInstance = new Swiper(nextSwiper, {
+          spaceBetween: 30,
+          slidesPerView: 4,
+          loop: "true",
+          speed: 300,
+          modules: [Pagination, Navigation],
+          navigation: {
+            nextEl: ".arrow-prev-1",
+            prevEl: ".arrow-next-1",
+          },
+          pagination: {
+            el: ".swiper-pagination-1",
+            type: "bullets",
+            clickable: true,
+          },
+          grabCursor: true,
+        });
+      }
+    });
+  };
 
   const nav = car.querySelector("._accord-nav-js");
   let navItems = [...nav.children];
@@ -95,16 +94,15 @@ export const GalSlider = (car) => {
           mutation.type === "attributes" &&
           mutation.attributeName === "class"
         ) {
+          if (galSwiperInstance && galSwiperInstance.destroy) {
+            galSwiperInstance.destroy(true, true);
+            galSlider.remove();
+            galSwiperInstance = null;
+          }
           if (mutation.target.classList.contains("_is-active")) {
             init(item, index);
             item.append(galSlider);
-            if (!swiperInstances.has(car)) {
-              item.append(galSlider);
-            }
-          } else {
-            if (item.contains(galSlider)) {
-              galSlider.remove();
-            }
+          } else if (!mutation.target.classList.contains("_is-active")) {
           }
         }
       });
