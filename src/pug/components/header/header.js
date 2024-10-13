@@ -1,5 +1,4 @@
 "use ctrict";
-
 export const Header = () => {
   const header = document.querySelector("header");
   const menu = header.querySelector(".menu");
@@ -43,12 +42,14 @@ export const Header = () => {
     menu.append(search);
     menu.append(lang);
   }
-  window.onresize = function () {
+
+  window.addEventListener("resize", function () {
     if (window.innerWidth <= 1035) {
       menu.append(info);
       menu.append(search);
       menu.append(lang);
-    } else {
+    }
+    if (window.innerWidth > 1035) {
       HeaderBody.append(lang);
       HeaderBody.append(info);
       HeaderBody.append(search);
@@ -57,8 +58,7 @@ export const Header = () => {
       burger.classList.remove("_is-active");
       menu.classList.remove("menu-active");
     }
-  };
-
+  });
   // ------------responciveHeader--------------
   if (window.pageYOffset > 100) {
     header.classList.add("responciveHeader");

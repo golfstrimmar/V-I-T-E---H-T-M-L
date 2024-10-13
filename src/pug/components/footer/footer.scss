@@ -1,7 +1,15 @@
 .footer {
   margin: 120px 0 0 0;
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid $act;
+  // .tab-header {
+  //   padding: 14px 30px 14px 10px;
+  // }
+  // .tab-content {
+  //   border-top: 1px solid rgb(58, 58, 58);
+  //   background-color: transparent;
+  //   padding: 0 0 0 0;
+  // }
 }
 
 .footer__body {
@@ -42,10 +50,26 @@
   line-height: 22px;
 }
 .footer__low {
-  text-align: center;
-  margin: 20px 0 0 0;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 200px);
+  padding: 30px 0;
+  a {
+    color: rgb(232, 232, 232);
+    font-family: "Lexend", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 160%;
+    white-space: nowrap;
+  }
 }
-
+.footer__soc {
+  flex-direction: row;
+  justify-content: space-between;
+  row-gap: 0px;
+  column-gap: 20px;
+  justify-items: right;
+}
 @media (min-width: 901px) and (max-width: 1024px) {
   .footer {
     padding: 30px 0;
@@ -78,5 +102,82 @@
 
   .info__search--footer {
     margin: 0;
+  }
+}
+
+@media (min-width: 1035px) and (max-width: 1253px) {
+  .footer {
+    margin: 70px 0 0 0;
+    .tab-header {
+      padding: 14px 30px 14px 10px;
+    }
+    .tab-content {
+      border-top: 1px solid rgb(58, 58, 58);
+      background-color: transparent;
+      padding: 0 0 0 0;
+    }
+    .footer__body {
+      grid-template-columns: 1fr;
+      column-gap: 0px;
+      margin: 63px 0 0 0;
+      justify-content: сenter;
+    }
+    .footer__logo {
+      grid-column: 1;
+      margin: 0 auto 27px auto;
+    }
+    .footer__col ul {
+      margin: 0;
+    }
+  }
+}
+@media (max-width: 1034px) {
+  .footer {
+    margin: 70px 0 0 0;
+    .tab-header {
+      padding: 14px 10px 14px 0;
+    }
+    .tab-content {
+      border-top: 1px solid rgb(58, 58, 58);
+      background-color: transparent;
+      padding: 0 0 0 0;
+    }
+    .footer__body {
+      grid-template-columns: 1fr;
+      column-gap: 0px;
+      margin: 63px 0 0 0;
+      justify-content: сenter;
+    }
+    .footer__logo {
+      grid-column: 1;
+      margin: 0 auto 27px auto;
+    }
+    .footer__col ul {
+      margin: 0;
+      row-gap: 0px;
+    }
+    .footer__col {
+      width: 100%;
+      margin: 0 0 0 0;
+    }
+    .footer__col li {
+      padding: 10px 14px 0;
+    }
+    .footer__col li a {
+      font-size: 14px;
+    }
+  }
+  .footer__low {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    padding: 32px 0;
+    .footer__soc {
+      margin: 20px auto 0;
+      max-width: 300px;
+    }
+    a {
+      text-align: center;
+      font-size: 14px;
+    }
   }
 }

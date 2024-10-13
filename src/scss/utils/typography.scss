@@ -29,3 +29,16 @@ h5 {
     line-height: 1;
   }
 }
+@media (min-width: 1035px) and (max-width: 1253px) {
+  .title h2 {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
+@media (max-width: 1034px) {
+  .title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+}

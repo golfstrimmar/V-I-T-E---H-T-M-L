@@ -16,6 +16,8 @@ const SVG_FOLDER_PATH = path.resolve("assets", "svg");
 
 export default defineConfig({
   base: "./",
+  devtool: "source-map",
+
   plugins: [
     vue(),
     vitePugPlugin({
@@ -24,7 +26,9 @@ export default defineConfig({
     createSvgSpritePlugin({
       svgFolder: SVG_FOLDER_PATH,
     }),
-    postcss(),
+    postcss({
+      sourceMap: "inline",
+    }),
     viteImagemin({
       // Настройки для минификации изображений
       gifsicle: {
@@ -92,9 +96,17 @@ export default defineConfig({
     cssCodeSplit: false, // Объединяем все стили в один файл
     // chunkSizeWarningLimit: 60000, // Увеличиваем лимит предупреждения для размера чанков
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        sourceMap: true,
+      },
+    },
+  },
   server: {
     port: 3000, // Порт для локального сервера
     host: "0.0.0.0", // Доступ извне (по сети)
     hmr: true,
+    sourcemap: true,
   },
 });

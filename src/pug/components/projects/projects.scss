@@ -29,7 +29,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
-
+      width: 100%;
       &__title {
         position: relative;
         z-index: 15;
@@ -136,8 +136,8 @@
     column-gap: 17px;
     bottom: -30px;
     .swiper-pagination-bullet {
-      width: 13px;
-      height: 13px;
+      min-width: 13px;
+      min-height: 13px;
       background: rgb(146, 146, 146);
     }
     .swiper-pagination-bullet-active {
@@ -219,16 +219,24 @@
     font-size: 12px;
   }
   .swiper-gal .swiper-slide {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(40px, 140px));
+    grid-template-rows: repeat(2, minmax(186px, 1fr));
+    gap: 7px 7px;
     justify-content: center;
-    min-height: 250px;
+    min-height: 379px;
   }
   .galSlider ._accord-hidden-wrap li {
-    min-height: 250px;
+    min-height: 379px;
     margin: 30px 0 0 0 0;
   }
   .galSlider ._accord-hidden-wrap li .card__title {
-    margin: auto 80px 40px 80px;
+    margin: auto 12px 12px 12px;
+  }
+  .galSlider ._accord-hidden-wrap li .card__text {
+    font-size: 10px;
+    line-height: 12px;
+    margin: 11px 0 0 0;
   }
   .galSlider .container-small {
     flex-direction: column;
@@ -241,5 +249,11 @@
   }
   .galSlider ._accord-hidden-wrap li {
     margin: 0px 0px 38px 0px;
+  }
+  .galSlider ._accord-hidden-wrap li .card__title h3 {
+    font-size: 18px;
+  }
+  .galSlider ._accord-hidden-wrap li .card__body .card__title--body h3 {
+    line-height: 1;
   }
 }

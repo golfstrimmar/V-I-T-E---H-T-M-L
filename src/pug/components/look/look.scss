@@ -7,6 +7,12 @@
   }
   &__content {
     margin: 33px 0 0 0;
+    color: rgb(232, 232, 232);
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0%;
   }
   &__text {
     color: $act;
@@ -112,5 +118,116 @@
         position: relative;
       }
     }
+  }
+}
+@media (min-width: 1035px) and (max-width: 1253px) {
+  .look__body {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .look__text {
+    font-size: 16px;
+  }
+  .look__title {
+    margin: 14px 0 0 0;
+  }
+  .look__content {
+    margin: 23px 0 0 0;
+    font-size: 14px;
+    color: rgb(232, 232, 232);
+  }
+  .look__video {
+    margin: 70px 0 0 0;
+    max-height: 394px;
+    height: 394px;
+  }
+  .look .plyr__control--overlaid {
+    width: 52px;
+    height: 52px;
+  }
+  .look .plyr__control--overlaid::after {
+    width: 20px;
+    height: 20px;
+  }
+  .look__info p.look__bage {
+    margin: 70px auto 0;
+    padding: 37px 60px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 160%;
+    width: 100%;
+    display: block;
+  }
+  .look__info ul.look__blocks {
+    column-gap: 30px;
+    max-width: 686px;
+    margin: 64px auto 0;
+  }
+  .look__info ul.look__blocks li .look__img {
+    height: 194px;
+  }
+  .look__info ul.look__blocks li p {
+    margin: 30px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+  }
+  .look {
+    padding: 0 0 70px 0;
+  }
+}
+@media (max-width: 1034px) {
+  .look__body {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .look__text {
+    font-size: 14px;
+  }
+  .look__title {
+    margin: 10px 0 0 0;
+  }
+  .look__content {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: rgb(232, 232, 232);
+  }
+  .look__video {
+    margin: 40px 0 0 0;
+    max-height: 185px;
+    height: 185px;
+  }
+  .look .plyr__control--overlaid {
+    width: 24px;
+    height: 24px;
+  }
+  .look .plyr__control--overlaid::after {
+    width: 13px;
+    height: 13px;
+  }
+  .look__info p.look__bage {
+    margin: 70px auto 0;
+    padding: 22px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+    width: 100%;
+    display: block;
+  }
+  .look__info ul.look__blocks {
+    grid-template-columns: 1fr;
+    column-gap: 0px;
+    row-gap: 20px;
+    max-width: 340px;
+    margin: 64px auto 0;
+  }
+  .look__info ul.look__blocks li .look__img {
+    height: 194px;
+  }
+  .look__info ul.look__blocks li p {
+    margin: 30px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
   }
 }
