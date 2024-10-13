@@ -40,6 +40,7 @@ export const GalSlider = (car) => {
         const regex =
           /<div class="card">[\s\S]*?<\/div>(?=<(?:\/div|<div class="card"))/g;
         cardMatches = [...duble[i].matchAll(regex)];
+        console.log(cardMatches);
         let slides = [];
         if (window.innerWidth <= 1035) {
           for (let i = 0; i < cardMatches.length; i += 4) {
@@ -131,8 +132,22 @@ export const GalSlider = (car) => {
           }
           if (mutation.target.classList.contains("_is-active")) {
             init(item, index);
+            function debounce(func, wait) {
+              let timeout = null;
+              return function () {
+                clearTimeout(timeout);
+                timeout = setTimeout(func, wait);
+              };
+            }
+
+            window.addEventListener(
+              "resize",
+              debounce(() => {
+                init(item, index);
+              }, 150)
+            );
+
             item.append(galSlider);
-          } else if (!mutation.target.classList.contains("_is-active")) {
           }
         }
       });
