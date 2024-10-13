@@ -40,8 +40,8 @@ export const GalSlider = (car) => {
         const regex =
           /<div class="card">[\s\S]*?<\/div>(?=<(?:\/div|<div class="card"))/g;
         cardMatches = [...duble[i].matchAll(regex)];
+        let slides = [];
         if (window.innerWidth <= 1035) {
-          const slides = [];
           for (let i = 0; i < cardMatches.length; i += 4) {
             const slide = document.createElement("div");
             slide.classList.add("swiper-slide");
@@ -65,34 +65,6 @@ export const GalSlider = (car) => {
             sw.append(el);
           });
         }
-
-        window.addEventListener("resize", function () {
-          if (window.innerWidth <= 1035) {
-            const slides = [];
-            for (let i = 0; i < cardMatches.length; i += 4) {
-              const slide = document.createElement("div");
-              slide.classList.add("swiper-slide");
-              for (let j = 0; j < 4; j++) {
-                const match = cardMatches[i + j];
-                if (match) {
-                  const el = document.createElement("div");
-                  el.classList.add("card");
-                  el.innerHTML = match[0];
-                  slide.appendChild(el);
-                }
-              }
-              slides.push(slide);
-            }
-            sw.append(...slides);
-          } else {
-            cardMatches.forEach((match) => {
-              const el = document.createElement("div");
-              el.classList.add("swiper-slide");
-              el.innerHTML = match[0];
-              sw.append(el);
-            });
-          }
-        });
 
         resolve();
       });
