@@ -2,17 +2,18 @@
 import Swiper, { Navigation, Pagination } from "swiper";
 
 export const GalSlider = (car) => {
-  // const swiperInstances = new WeakMap();
-  const gal = car.querySelector("._accord-hidden-wrap");
-  const hidden = car.querySelector("._accord-hidden-wrap");
-  const hiddenItems = [...hidden.querySelectorAll(" li")];
-  let ingal = [...gal.querySelectorAll("li")];
+  const hidden = car.querySelector("._accord-hidden-js");
+  const buttons = [...car.querySelectorAll("._accord-nav-js button")];
+  let ActIndex = 0;
   const allBlocks = car.querySelector("._allBlocks");
-  const galSlider = car.nextElementSibling;
-  let sw = galSlider.querySelector(".swiper-wrapper");
-  let imagesHTML = "";
-  const nextSwiper = galSlider.querySelector(".swiper");
   let galSwiperInstance = null;
+  const ingal = [...car.querySelectorAll("li")];
+  var actLi = null;
+  var actLiCards = null;
+  const galSlider = document.querySelector(".swiper-gal");
+  let sw = galSlider.querySelector(".swiper-wrapper");
+  const nextSwiper = galSlider.querySelector(".swiper");
+  let imagesHTML = "";
   imagesHTML = ingal.filter((foo) => {
     return !foo.classList.contains("_allBlocks");
   });
@@ -20,93 +21,67 @@ export const GalSlider = (car) => {
     const cardHTML = li.innerHTML;
     allBlocks.innerHTML += cardHTML;
   });
-  let ingalContent = ingal.map((cell) => cell.innerHTML);
-  localStorage.setItem("duble", JSON.stringify(ingalContent));
-  ingal.forEach((cell) => {
-    cell.innerHTML = "";
-  });
-  let duble = null;
-
-  var cardMatches = null;
-
-  const init = (item, i) => {
-    sw.innerHTML = "";
-    duble = null;
-    galSwiperInstance = null;
-
-    const ItemsApdate = () => {
-      return new Promise((resolve) => {
-        duble = JSON.parse(localStorage.getItem("duble"));
-        const regex =
-          /<div class="card">[\s\S]*?<\/div>(?=<(?:\/div|<div class="card"))/g;
-        cardMatches = [...duble[i].matchAll(regex)];
-        cardMatches.forEach((match) => {
-          const el = document.createElement("div");
-          el.classList.add("swiper-slide");
-          el.innerHTML = match[0];
-          sw.append(el);
-        });
-        resolve();
-      });
-    };
-
-    ItemsApdate().then(() => {
-      if (galSwiperInstance == null) {
-        galSwiperInstance = new Swiper(nextSwiper, {
-          spaceBetween: 30,
-          slidesPerView: 4,
-          loop: "true",
-          speed: 300,
-          modules: [Pagination, Navigation],
-          navigation: {
-            nextEl: ".arrow-prev-1",
-            prevEl: ".arrow-next-1",
-          },
-          pagination: {
-            el: ".swiper-pagination-1",
-            type: "bullets",
-            clickable: true,
-          },
-          grabCursor: true,
-        });
-      }
+  const Slider = (actLi) => {
+    sw.innerHTML = null;
+    actLiCards = [...actLi.querySelectorAll(".card")];
+    actLiCards.forEach((card) => {
+      const el = document.createElement("div");
+      el.classList.add("swiper-slide");
+      el.innerHTML = card.outerHTML;
+      sw.append(el);
     });
+    if (galSwiperInstance == null) {
+      galSwiperInstance = new Swiper(nextSwiper, {
+        spaceBetween: 30,
+        slidesPerView: 4,
+        // loop: "true",
+        speed: 300,
+        modules: [Pagination, Navigation],
+        navigation: {
+          nextEl: ".arrow-prev-1",
+          prevEl: ".arrow-next-1",
+        },
+        pagination: {
+          el: ".swiper-pagination-1",
+          type: "bullets",
+          clickable: true,
+        },
+        grabCursor: true,
+      });
+    } else if (galSwiperInstance !== null) {
+      galSwiperInstance.update();
+    }
   };
 
-  const nav = car.querySelector("._accord-nav-js");
-  let navItems = [...nav.children];
-  navItems.forEach((foo) => {
-    let index = navItems.indexOf(foo);
+  buttons.forEach((foo) => {
+    let index = buttons.indexOf(foo);
     if (foo.classList.contains("_is-active")) {
-      hiddenItems[index].classList.add("_is-active");
-      car.querySelector("._accord-hidden-js").classList.add("_is-active");
-      car.querySelector("._accord-hidden-js").style =
-        "grid-template-rows: 1fr;";
-      init(hiddenItems[index], index);
-      hiddenItems[index].append(galSlider);
+      ingal[index].classList.add("_is-active");
+      hidden.classList.add("_is-active");
+      hidden.style = "grid-template-rows: 1fr;";
+      Slider(ingal[index]);
+      ingal[index].append(galSlider);
     }
   });
+  buttons.forEach((hero) => {
+    hero.addEventListener("click", (e) => {
+      const observer = new MutationObserver((mutationsList) => {
+        mutationsList.forEach((mutation) => {
+          if (
+            mutation.type === "attributes" &&
+            mutation.attributeName === "class"
+          ) {
+            if (mutation.target.classList.contains("_is-active")) {
+              ActIndex = buttons.indexOf(hero);
+              actLi = ingal[ActIndex];
+              Slider(actLi);
 
-  hiddenItems.forEach((item, index) => {
-    const observer = new MutationObserver((mutationsList) => {
-      mutationsList.forEach((mutation) => {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "class"
-        ) {
-          if (galSwiperInstance && galSwiperInstance.destroy) {
-            galSwiperInstance.destroy(true, true);
-            galSlider.remove();
-            galSwiperInstance = null;
+              actLi.append(galSlider);
+            }
           }
-          if (mutation.target.classList.contains("_is-active")) {
-            init(item, index);
-            item.append(galSlider);
-          } else if (!mutation.target.classList.contains("_is-active")) {
-          }
-        }
+        });
       });
+      observer.observe(hero, { attributes: true });
     });
-    observer.observe(item, { attributes: true });
   });
 };

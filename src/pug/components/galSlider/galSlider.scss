@@ -3,6 +3,9 @@
     min-height: 350px;
     margin: 20px;
     position: relative;
+    & > .card {
+      opacity: 0;
+    }
     .card {
       &__body {
         position: relative;
