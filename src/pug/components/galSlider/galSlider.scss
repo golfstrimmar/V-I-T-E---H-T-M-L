@@ -3,10 +3,16 @@
     min-height: 300px;
     margin: 20px 0;
     position: relative;
+    & > .card {
+      opacity: 0;
+    }
     .card {
       &__body {
         position: relative;
         z-index: 5;
+        h3 {
+          color: tomato;
+        }
       }
     }
   }

@@ -20,9 +20,18 @@
     }
   }
   ._accord-hidden-wrap li {
-    min-height: 573px;
+    height: 573px;
     margin: 20px 0px 38px 0px;
     position: relative;
+    & > .card {
+      opacity: 0;
+    }
+    .card {
+      &__body {
+        position: relative;
+        z-index: 5;
+      }
+    }
     .card {
       max-width: 430px;
       height: 100%;
@@ -153,7 +162,7 @@
 
   .swiper-slide {
     position: relative;
-    min-height: 572px;
+    height: 572px;
   }
 
   // ===============
@@ -181,10 +190,10 @@
   }
   .swiper-gal .swiper-slide {
     position: relative;
-    min-height: 220px;
+    height: 220px;
   }
   .galSlider ._accord-hidden-wrap li {
-    min-height: 220px;
+    height: 220px;
   }
   .galSlider ._accord-hidden-wrap li .card__body .card__title--body h3 {
     font-size: 18px;
@@ -227,7 +236,7 @@
     min-height: 379px;
   }
   .galSlider ._accord-hidden-wrap li {
-    min-height: 379px;
+    height: 379px;
     margin: 30px 0 0 0 0;
   }
   .galSlider ._accord-hidden-wrap li .card__title {
