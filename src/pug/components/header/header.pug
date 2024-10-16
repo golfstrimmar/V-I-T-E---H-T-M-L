@@ -12,7 +12,7 @@ header.header
           li.menu__item
             .tabs-container
               .tab
-                .tab-header.menu__link Buy
+                .tab-header.menu__link.menu__link--active Buy
                   svg
                     use(xlink:href='#chevron-down')
                 .tab-content
@@ -26,7 +26,16 @@ header.header
           li.menu__item
             a.menu__link(href='javascript:void(0);' rel='#galery') About
           li.menu__item.rel
-            a.menu__link(href='javascript:void(0);' rel='#') Contact
+            .tabs-container
+              .tab
+                .tab-header.menu__link Contact
+                  svg
+                    use(xlink:href='#chevron-down')
+                .tab-content
+                  .tab-wrap
+                    a(href="javascript:void(0);") Category number one 
+                    a(href="javascript:void(0);") Apartments in Dubai 
+                    a(href="javascript:void(0);") Category number twenty five 
       form#languageForm(method='GET' action='/lang' onsubmit='return false;')
         fieldset.fildset-radio.fildset-radio--lang
           .form-check

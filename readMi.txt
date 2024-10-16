@@ -9,6 +9,10 @@
 <script  src="./assets/index.js"></script>
 и перекидывать его вниз
 
+
+export default Gr();---внизу index.js
+заменить Gr();
+
 @media (min-width: 1035px) and (max-width: 1253px) {
       
 }

@@ -67,8 +67,10 @@ export const Header = () => {
   window.addEventListener("scroll", function (event) {
     if (window.pageYOffset > 100) {
       header.classList.add("responciveHeader");
+      menu.style = "top:67px";
     } else {
       header.classList.remove("responciveHeader");
+      menu.style = "top:77px";
     }
   });
 };

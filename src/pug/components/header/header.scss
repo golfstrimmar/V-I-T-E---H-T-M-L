@@ -51,19 +51,20 @@
     margin: 15px 0 0 0;
     border: none;
     z-index: -1;
+    min-width: 247px;
     transform: scaleY(0);
     transform-origin: top;
     grid-template-rows: 1fr;
+    border: 1px solid rgb(151, 151, 151);
+    background: rgb(39, 39, 39);
   }
   .tab._is-active > .tab-content {
     grid-template-rows: 1fr;
     transform: scaleY(1);
     transform-origin: top;
     z-index: 1;
-    border: 1px solid rgb(151, 151, 151);
-    background: rgb(39, 39, 39);
+
     overflow: visible;
-    min-width: 247px;
     .tab-wrap {
       border: none;
       a {
