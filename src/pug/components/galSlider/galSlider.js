@@ -21,7 +21,13 @@ export const GalSlider = (car) => {
     const cardHTML = li.innerHTML;
     allBlocks.innerHTML += cardHTML;
   });
+  let previousClass = "";
+
   const Slider = (actLi) => {
+    if (galSwiperInstance !== null) {
+      galSwiperInstance.destroy();
+    }
+
     sw.innerHTML = null;
     actLiCards = [...actLi.querySelectorAll(".card")];
     actLiCards.forEach((card) => {
@@ -30,29 +36,38 @@ export const GalSlider = (car) => {
       el.innerHTML = card.outerHTML;
       sw.append(el);
     });
-    if (galSwiperInstance == null) {
-      galSwiperInstance = new Swiper(nextSwiper, {
-        spaceBetween: 30,
-        slidesPerView: 4,
-        // loop: "true",
-        speed: 300,
-        modules: [Pagination, Navigation],
-        navigation: {
-          nextEl: ".arrow-prev-1",
-          prevEl: ".arrow-next-1",
+    galSwiperInstance = new Swiper(nextSwiper, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 0,
         },
-        pagination: {
-          el: ".swiper-pagination-1",
-          type: "bullets",
-          clickable: true,
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 30,
         },
-        grabCursor: true,
-      });
-    } else if (galSwiperInstance !== null) {
-      galSwiperInstance.update();
-    }
+        640: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      },
+      loop: "true",
+      speed: 300,
+      modules: [Pagination, Navigation],
+      navigation: {
+        nextEl: ".arrow-prev-1",
+        prevEl: ".arrow-next-1",
+      },
+      pagination: {
+        el: ".swiper-pagination-1",
+        type: "bullets",
+        clickable: true,
+      },
+      grabCursor: true,
+    });
   };
-
   buttons.forEach((foo) => {
     let index = buttons.indexOf(foo);
     if (foo.classList.contains("_is-active")) {
@@ -63,25 +78,25 @@ export const GalSlider = (car) => {
       ingal[index].append(galSlider);
     }
   });
-  buttons.forEach((hero) => {
-    hero.addEventListener("click", (e) => {
-      const observer = new MutationObserver((mutationsList) => {
-        mutationsList.forEach((mutation) => {
-          if (
-            mutation.type === "attributes" &&
-            mutation.attributeName === "class"
-          ) {
-            if (mutation.target.classList.contains("_is-active")) {
-              ActIndex = buttons.indexOf(hero);
-              actLi = ingal[ActIndex];
-              Slider(actLi);
 
-              actLi.append(galSlider);
-            }
-          }
-        });
+  buttons.forEach((hero) => {
+    var mutationObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (mutation.target.getAttribute("class") == "_is-active") {
+          ActIndex = buttons.indexOf(hero);
+          actLi = ingal[ActIndex];
+          Slider(actLi);
+          actLi.append(galSlider);
+        }
       });
-      observer.observe(hero, { attributes: true });
+    });
+    mutationObserver.observe(hero, {
+      attributes: true,
+      characterData: true,
+      childList: true,
+      subtree: true,
+      attributeOldValue: true,
+      characterDataOldValue: true,
     });
   });
 };
