@@ -68,13 +68,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let tabs = document.querySelectorAll(".tabs-container");
     tabs.forEach((car) => {
       car.addEventListener("click", (e) => {
-        Array.from(document.querySelectorAll(".tab")).forEach((item) => {
-          item.classList.remove("_is-active");
-          [...item.querySelectorAll(".tab-header")].forEach((foo) => {
-            foo.classList.remove("_is-active");
-          });
-        });
         Tab(e);
+        tabs.forEach((foo) => {
+          if (foo !== car) {
+            Array.from(foo.querySelectorAll(".tab")).forEach((item) => {
+              item.classList.remove("_is-active");
+            });
+          }
+        });
       });
     });
 
