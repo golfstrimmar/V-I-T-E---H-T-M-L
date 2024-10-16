@@ -42,7 +42,31 @@ header.header
           li.menu__item
             a.menu__link(href='javascript:void(0);' rel='#galery') Projects
           li.menu__item.rel
-            a.menu__link(href='javascript:void(0);' rel='#') Contacts
+            .tabs-container
+              .tab
+                .tab-header.menu__link Home
+                  svg
+                    use(xlink:href='#chevron-down')
+                .tab-content
+                  .tab-wrap
+                    a(href="javascript:void(0);") Apartments 
+                    .tab
+                      .tab-header in Dubai
+                        svg
+                          use(xlink:href='#chevron-down')
+                      .tab-content
+                        .tab-wrap
+                          a(href="javascript:void(0);") West
+                          a(href="javascript:void(0);") Ost
+                          .tab
+                            .tab-header Suid
+                              svg
+                                use(xlink:href='#chevron-down')
+                            .tab-content
+                              .tab-wrap
+                                a(href="javascript:void(0);") Suid 1
+                                a(href="javascript:void(0);") Suid 2
+                                a(href="javascript:void(0);") Suid 3
       form#languageForm(method='GET' action='/lang' onsubmit='return false;')
         fieldset.fildset-radio.fildset-radio--lang
           .form-check
