@@ -1,0 +1,327 @@
+.look {
+  &__container {
+    margin: 0 auto;
+    width: 1110px;
+    &--small {
+      max-width: 730px;
+      margin: 0 auto;
+    }
+  }
+
+  &__content--met {
+    margin-top: 50px;
+    color: rgb(146, 146, 146);
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  &__title--met {
+    h2 {
+      color: rgb(255, 255, 255);
+      font-family: "Gilroy-Bold", sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 45px;
+    }
+  }
+
+  &__pan {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    margin-top: 30px;
+    margin-bottom: 76px;
+
+    a {
+      font-family: "Work Sans", sans-serif;
+      font-size: 14px;
+      color: rgb(255, 255, 255);
+      font-weight: 400;
+      line-height: 16px;
+      &:last-of-type {
+        color: rgb(146, 146, 146);
+      }
+    }
+    svg {
+      color: rgb(146, 146, 146);
+      width: 8px;
+      height: 10px;
+    }
+  }
+  &__img {
+  }
+  &__gal {
+    margin-top: 150px;
+    min-height: 634px;
+    display: grid;
+    grid-template-areas: "a c" "b c";
+    row-gap: 30px;
+    column-gap: 30px;
+    ._a {
+      grid-area: a;
+    }
+    ._b {
+      grid-area: b;
+    }
+    ._c {
+      grid-area: c;
+    }
+  }
+}
+.look__blocks--met {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 90px;
+  div {
+    display: flex;
+    align-items: center;
+    &:last-of-type {
+      position: relative;
+      span::after {
+        content: "+";
+        position: absolute;
+        color: $act;
+        width: 10px;
+        height: 10px;
+        top: -27px;
+        left: 96px;
+        font-size: 30px;
+      }
+    }
+  }
+  span {
+    color: $act;
+    font-family: Work Sans;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+  p {
+    color: rgb(255, 255, 255);
+    font-family: "Gilroy-SemiBold", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+    margin: 0 0 0 20px;
+  }
+}
+.look__items {
+  margin-top: 123px;
+  border-top: 1px solid rgb(146, 146, 146);
+  padding: 65px 0 0 0;
+  li {
+    list-style-type: disc;
+    color: rgb(146, 146, 146);
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+  }
+}
+.look__info--met {
+  max-width: 730px;
+  margin: 0 auto;
+  h3 {
+    color: rgb(255, 255, 255);
+    font-family: "Gilroy-Bold", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin: 48px 0 -20px 0;
+  }
+}
+
+.look__info p.look__bage.look__bage--met {
+  font-size: 20px;
+  border: 4px solid $act;
+  text-align: left;
+  padding: 37px 72px 34px 128px;
+  position: relative;
+  span {
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    display: block;
+    margin: 28px 0 0 0;
+    color: $act;
+  }
+  svg {
+    position: absolute;
+    top: 34px;
+    left: 69px;
+    z-index: 2;
+    width: 30px;
+    height: 40px;
+  }
+}
+.look__img--met {
+  margin: 80px 0 0 0;
+  position: relative;
+  aspect-ratio: 1.5/1;
+  width: 100%;
+  height: auto;
+  min-height: 436px;
+  max-height: 702px;
+}
+
+@media (min-width: 1035px) and (max-width: 1253px) {
+  .look__container {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+  .look__container--small {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+  .look__info ul.look__blocks li p {
+    margin: 30px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  .look__pan {
+    margin: 17px 0 40px 0;
+  }
+  .look__title h2 {
+    font-size: 25px;
+  }
+  .look__content--met {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .look__img--met {
+    aspect-ratio: 1.5/1;
+    width: 100%;
+    height: auto;
+    min-height: 436px;
+  }
+  .look__gal {
+    margin-top: 150px;
+    max-height: 405px;
+    aspect-ratio: 1.5/1;
+    width: 100%;
+    height: auto;
+  }
+  .look__blocks {
+    margin-top: 60px;
+    justify-content: space-between;
+  }
+  .look__items {
+    margin-top: 50px;
+    padding: 50px 0 0 20px;
+  }
+  .look__info--met h3 {
+    font-size: 18px;
+    margin: 40px 0 0px 0;
+  }
+}
+.look__pan a {
+  font-size: 12px;
+  &:hover {
+    color: $act-hover;
+  }
+}
+@media (max-width: 1034px) {
+  .look__container {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+  .look__container--small {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+  .look__pan {
+    margin-top: 20px;
+    margin-bottom: 26px;
+  }
+  .look__pan a {
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+  }
+  .look__title h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .look__content--met {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .look__img--met {
+    margin-top: 40px;
+    position: relative;
+    aspect-ratio: 1.5/1;
+    width: 100%;
+    height: auto;
+    min-height: 252px;
+  }
+  .look__body--met {
+    margin: 50px 0 0 0;
+  }
+  .look__info p.look__bage.look__bage--met {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    padding: 50px 25px 10px;
+  }
+  .look__info p.look__bage.look__bage--met svg {
+    position: absolute;
+    top: 13px;
+    left: 27px;
+    width: 27px;
+    height: 27px;
+  }
+  .look__info p.look__bage.look__bage--met span {
+    margin: 0 0 0 10px;
+  }
+  .look__gal {
+    margin-top: 50px;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    column-gap: 0px;
+  }
+  .look__dec1 {
+    min-height: 165px;
+    aspect-ratio: 1.5/1;
+    height: auto;
+    width: 100%;
+  }
+  .look__dec2 {
+    min-height: 165px;
+    aspect-ratio: 1.5/1;
+    height: auto;
+    width: 100%;
+  }
+  .look__dec3 {
+    min-height: 300px;
+    aspect-ratio: 1/1.2;
+    height: auto;
+    width: 100%;
+  }
+  .look__blocks {
+    margin-top: 50px;
+    flex-direction: column;
+  }
+  .look__info--met h3 {
+    font-size: 18px;
+    margin: 40px 0 0px 0;
+  }
+  .look__items {
+    margin-top: 30px;
+    padding: 30px 0 0 20px;
+  }
+}

@@ -82,3 +82,16 @@
     top: 6px;
   }
 }
+@media (max-width: 1034px) {
+  .popup__content {
+       width: 100vw;
+    height: 100vh;
+  }
+  .popup__close svg {
+    color: #090000;
+  }
+  .popup__inner {
+    width: 100vw;
+    height: 100vh;
+  }
+}

@@ -42,6 +42,7 @@
   place-items: center;
   color: $white;
   font-size: 30px;
+  text-align: center;
   &._is-active {
     transform: scale(1);
     z-index: 10000;

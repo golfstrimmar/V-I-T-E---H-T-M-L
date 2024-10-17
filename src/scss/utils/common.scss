@@ -22,8 +22,9 @@ body {
   // outline: 1px solid fuchsia;
   max-width: 1800px;
   width: calc(100vw - 110px);
-  margin: 0 55px;
+  margin: 0 auto;
   position: relative;
+  height: 100%;
 }
 
 .inner {
@@ -194,7 +195,6 @@ a.common__link {
 
 @media (min-width: 1253px) and (max-width: 1323px) {
   .container {
-    margin: 0 20px;
     width: calc(100vw - 40px);
   }
   .inner {
@@ -204,7 +204,6 @@ a.common__link {
 
 @media (max-width: 1252px) {
   .container {
-    margin: 0 20px;
     width: calc(100vw - 40px);
   }
   .inner {

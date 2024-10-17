@@ -34,6 +34,7 @@ import { Select } from "@/pug/components/select/select";
 import { Look } from "@/pug/components/look/look";
 // import { TypedItem } from "@/pug/components/typed/typedHover";
 import { Form } from "@/pug/components/form/form";
+import { ContactsForm } from "@/pug/components/contacts/contacts-form";
 import { HeaderForm } from "@/pug/components/form/header-form";
 import { Footer } from "@/pug/components/footer/footer";
 // import { FormFields } from "@/pug/vue-components/book/book";
@@ -199,15 +200,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
   // ========Form===============
 
-  if (document.querySelector(".send")) {
+  if (document.querySelector("#send-form")) {
     Form();
   }
 
   if (document.querySelector("#header-form")) {
     HeaderForm();
   }
+  if (document.querySelector("#contacts-form")) {
+    ContactsForm();
+  }
+
   // =========Button==============
   if (document.querySelector(".but-wave")) {
     const wave = [...document.querySelectorAll(".but-wave")];
@@ -218,16 +224,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   // =======================
-  // =========Footer==============
-  if (document.querySelector("footer")) {
-    Footer();
-  }
+
   // const textTypedAll = [...document.querySelectorAll("._hover-typed")];
   // if (textTypedAll.length > 0) {
   //   textTypedAll.forEach((item) => {
   //     TypedItem(item);
   //   });
   // }
+
+  // =========Footer==============
+  if (document.querySelector("footer")) {
+    Footer();
+  }
 });
 // =======================
 

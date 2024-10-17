@@ -1,0 +1,59 @@
+header.header.header--blog
+  #successheader Your data has been sent successfully.
+  .container
+    .burger  
+      span
+    .header__body 
+      .header__logo.logo
+        p DubaiRealty
+        span Real Estate
+      nav.header__menu.menu
+        ul.menu__list
+          li.menu__item
+            .tabs-container
+              .tab
+                .tab-header.menu__link.menu__link--active Buy
+                  svg
+                    use(xlink:href='#chevron-down')
+                .tab-content
+                  .tab-wrap
+                    a(href="javascript:void(0);") Category number one 
+                    a(href="javascript:void(0);") Apartments in Dubai 
+                    a(href="javascript:void(0);") Category number twenty five 
+
+          li.menu__item
+            a.menu__link(href='javascript:void(0);' rel='#posts') Blog
+          li.menu__item
+            a.menu__link(href='javascript:void(0);' rel='#galery') About
+          li.menu__item.rel
+            .tabs-container
+              .tab
+                .tab-header.menu__link Contact
+                  svg
+                    use(xlink:href='#chevron-down')
+                .tab-content
+                  .tab-wrap
+                    a(href="javascript:void(0);") Category number one 
+                    a(href="javascript:void(0);") Apartments in Dubai 
+                    a(href="javascript:void(0);") Category number twenty five 
+      form#languageForm(method='GET' action='/lang' onsubmit='return false;')
+        fieldset.fildset-radio.fildset-radio--lang
+          .form-check
+            input(type="radio" id="14" name="lang" value="EN" checked)
+            label(for="14")._hover EN
+
+          .form-check
+            input(type="radio" id="15" name="lang" value="DE")
+            label(for="15")._hover DE
+
+
+      .header__info.info
+        a.info__phone._hover(href='javascript:void(0);') +7(000) 123 45 65 67 
+        a.book-button.btn.btn-success.but-wave.popups-init-js(rel='#popup-header' href='javascript:void(0);') Book a consultation
+
+
+
+
+
+
+

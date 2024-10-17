@@ -6,7 +6,9 @@ export const Header = () => {
   const burger = header.querySelector(".burger");
   const HeaderBody = header.querySelector(".header__body");
   const lang = header.querySelector("#languageForm");
+  // if (header.querySelector(".search") !== null) {
   const search = header.querySelector(".search");
+  // }
   const body = document.querySelector("body");
   // ---------------------------------------------
   const activeItemHEAD = (event) => {
@@ -39,20 +41,26 @@ export const Header = () => {
 
   if (window.innerWidth <= 1035) {
     menu.append(info);
-    menu.append(search);
+    if (search !== null) {
+      menu.append(search);
+    }
     menu.append(lang);
   }
 
   window.addEventListener("resize", function () {
     if (window.innerWidth <= 1035) {
       menu.append(info);
-      menu.append(search);
+      if (search !== null) {
+        menu.append(search);
+      }
       menu.append(lang);
     }
     if (window.innerWidth > 1035) {
       HeaderBody.append(lang);
       HeaderBody.append(info);
-      HeaderBody.append(search);
+      if (search !== null) {
+        HeaderBody.append(search);
+      }
     }
     if (window.innerWidth >= 1253) {
       burger.classList.remove("_is-active");

@@ -1,0 +1,37 @@
+section(id="contacts").contacts.rel
+  .container
+    .look__container.contacts__body
+      .contacts__title
+        h1 Contact
+    .contacts__plaza.rel
+      .imgs
+        img(src = "assets/img/contacts.png" alt = "img")
+      .contacts__unit
+        h2 Dubai, UAE
+        p 269 King Str, 05th Floor, Utral Hosue Building, Dubai, VIC 3000, UAE.
+        .contacts__phone +99 (0) 344 956 4050
+        p.contacts__line Email: 
+          span info@sparch.co
+        p.contacts__line Follow us:
+        p.contacts__line Work Hours:
+          span   Monday - Friday : 08h00 - 17h30
+    .look__container
+      form#contacts-form(action="#" method="post" name="send-form")
+        .contacts-form__title
+          h3 Be in touch <br> 
+          span with us
+        .contacts-form__content
+          .input-field.text-field 
+            input#firstname(type='text' name='name' value='' placeholder='Denzel Washington')
+            label.text-field__label(for='name') Name *
+          .input-field.text-field 
+            input#email(type='email' name='email' value='' placeholder='Denzel Washington')
+            label.text-field__label(for='email') Email *
+          .input-field.text-field 
+            input#subject(type='text' name='subject' value='' placeholder='Denzel Washington')
+            label.text-field__label(for='subject') Subject
+        .textarea-field.text-field 
+          textarea#contactstextarea(name="contactstextarea" row='20' placeholder="Введите текст" )
+          label(for='contactstextarea') Message *
+        p.but-wave
+          button.btn.btn-success(type='submit' ) SUBMIT
