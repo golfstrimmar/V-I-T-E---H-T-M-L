@@ -30,6 +30,7 @@ import { Feed } from "@/pug/components/feed/feed";
 // import { SwiperScroll } from "@/pug/components/slider-scroll/slider-scroll";
 // import { Double } from "@/pug/components/slider-double/sdouble.js";
 // import { Range } from "@/pug/components/range/range";
+import { catSwiper } from "@/pug/components/cat-slider/cat-slider";
 import { Select } from "@/pug/components/select/select";
 import { Look } from "@/pug/components/look/look";
 // import { TypedItem } from "@/pug/components/typed/typedHover";
@@ -135,9 +136,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // if (document.querySelector("#swiper-1")) {
   //   Swiper1();
   // }
-  // =========Swiper1==============
+  // =========Feed==============
   if (document.querySelector("#feed")) {
     Feed();
+  }
+  // =========catSwiper==============
+  if (document.querySelector("#cat-slider")) {
+    catSwiper();
   }
   // ========swiper-1licens===============
   // if (document.querySelector("#swiper-1licens")) {

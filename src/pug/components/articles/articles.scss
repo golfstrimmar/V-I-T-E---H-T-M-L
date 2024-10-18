@@ -93,6 +93,12 @@
     margin: 0 21px 0 0;
   }
 }
+.articles__body li .column__link {
+  &:hover {
+    color: $act-hover;
+  }
+}
+
 @media (min-width: 1035px) and (max-width: 1253px) {
   .articles {
     margin: 70px 0 0 0;

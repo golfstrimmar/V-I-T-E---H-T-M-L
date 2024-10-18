@@ -1,0 +1,65 @@
+section(id="cat").articles.cat-slider
+  .container
+    .articles__header
+      .articles__title.title-small
+        h2 All Apartments <br>Category
+    .swiper-1.rel
+      .swiper-1__body
+        .slider-arrow.arrow-next-1
+          svg
+            use(xlink:href='#chevron-left') 
+        .slider-arrow.arrow-prev-1 
+          svg
+            use(xlink:href='#chevron-right')
+        #cat-slider.swiper-container
+          ul.articles__body.swiper-wrapper
+            li.swiper-slide
+              .imgs
+                img(src = "assets/img/articles/i-1.png" alt = "img")
+              .column__title
+                h3 Townhous
+              .column__body
+                .column__title--body
+                  h3 Townhous
+                p.column__text--body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat molestie integer aliquam consectetur. Faucibus vitae dui massa tellus magna sit.
+                a.btn-empty.btn.column__link(href="#!") Learn more
+                  svg
+                    use(xlink: href = "#chevron-right")
+            li.swiper-slide
+              .imgs
+                img(src = "assets/img/articles/i-2.png" alt = "img")
+              .column__title
+                h3 Villa
+              .column__body
+                .column__title--body
+                  h3 Villa
+                  p.column__text--body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat molestie integer aliquam consectetur. Faucibus vitae dui massa tellus magna sit.
+                a.btn-empty.btn.column__link(href="#!") Learn more
+                  svg
+                    use(xlink: href = "#chevron-right")
+            li.swiper-slide
+              .imgs
+                img(src = "assets/img/articles/i-3.png" alt = "img")
+              .column__title
+                h3 Commercial
+              .column__body
+                .column__title--body
+                  h3 Commercial
+                p.column__text--body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat molestie integer aliquam consectetur. Faucibus vitae dui massa tellus magna sit.
+                a.btn-empty.btn.column__link(href="#!") Learn more
+                  svg
+                    use(xlink: href = "#chevron-right")
+            li.swiper-slide
+              .imgs
+                img(src = "assets/img/articles/i-3.png" alt = "img")
+              .column__title
+                h3 Apartments
+              .column__body
+                .column__title--body
+                  h3 Apartments
+                p.column__text--body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat molestie integer aliquam consectetur. Faucibus vitae dui massa tellus magna sit
+                a.btn-empty.btn.column__link(href="#!") Learn more
+                  svg
+                    use(xlink: href = "#chevron-right")
+
+        .cat-pagination
