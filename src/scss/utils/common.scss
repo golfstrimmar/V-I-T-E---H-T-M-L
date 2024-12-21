@@ -13,6 +13,10 @@
 
 body {
   background: white;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(37, 37, 37);
 }
 
 .container {
@@ -73,31 +77,38 @@ svg.hidden {
 .d-flex {
   display: flex;
 }
+
 .jucc {
   justify-content: center;
 }
+
 .alic {
   align-items: center;
 }
+
 .fdc {
   flex-direction: column;
 }
+
 ._hover {
   &:hover {
     color: rgba(9, 72, 207, 25%);
     text-shadow: 0 0 14px white;
   }
 }
+
 /* +++++++++++++++++++++++++++++++++++++ */
 @media (prefers-reduced-motion: no-preference) {
   .top-animation {
     animation: wipe-enter 1.5s;
   }
+
   @keyframes wipe-enter {
     0% {
       transform: translate(0, -100px);
       opacity: 0;
     }
+
     100% {
       transform: translate(0, 0);
       opacity: 1;
@@ -107,11 +118,13 @@ svg.hidden {
   .left-animation {
     animation: left-enter 1.5s;
   }
+
   @keyframes left-enter {
     0% {
       transform: translate(-200px, 0);
       opacity: 0;
     }
+
     100% {
       transform: translate(0, 0);
       opacity: 1;
@@ -121,25 +134,30 @@ svg.hidden {
   .right-animation {
     animation: right-enter 1.5s;
   }
+
   @keyframes right-enter {
     0% {
       transform: translate(200px, 0);
       opacity: 0;
     }
+
     100% {
       transform: translate(0, 0);
       opacity: 1;
     }
   }
 }
+
 /* +++++++++++++++++++++++++++++++++++++ */
 
 .lock {
   overflow: hidden;
 }
+
 .ttu {
   text-transform: uppercase;
 }
+
 a.common__link {
   width: 104px;
   height: 104px;
@@ -149,20 +167,24 @@ a.common__link {
   background-color: rgba(9, 72, 207);
   opacity: 0;
   z-index: 50;
+
   svg {
     width: 50px;
     height: 50px;
     fill: $white;
     transition: all 0.3s;
   }
+
   &:hover {
     background-color: rgba(9, 72, 207, 25%);
     box-shadow: 0 4px 24px 0 rgba(9, 72, 207, 0.45);
+
     svg {
       fill: rgba(9, 72, 207);
     }
   }
 }
+
 @media (min-width: 901px) and (max-width: 1259px) {
   .container {
     margin: 0 20px;
