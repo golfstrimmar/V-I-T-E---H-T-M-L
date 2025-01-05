@@ -6,54 +6,53 @@
   z-index: 50;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 40px 32px -24px rgba(15, 15, 15, 0.1);
+  background: rgb(255, 255, 255);
   @include transition;
+
   * {
     @include transition;
   }
+
   .container {
     height: 100%;
   }
+
   .burger {
     display: none;
   }
+
   &__body {
     position: relative;
     height: 100%;
     display: grid;
-    grid-template-columns: 100px repeat(5, max-content);
+    grid-template-columns: 318px max-content repeat(2, max-content);
     width: 100%;
     gap: 0 40px;
     justify-content: space-between;
   }
-  #languageForm {
-    fieldset {
-      height: 100%;
-    }
-  }
-  &__search {
-    margin: 0 10px;
-    input[type="text"] {
-      background: rgba(187, 186, 186, 0.63);
-    }
-  }
-  &__button {
-    padding: 10px 5px;
-  }
+
+
+
+
   &__info {
     margin: 0 0 0 0;
   }
 
   .tab-header.menu__link {
     background: transparent;
+    color: $txt-gray;
+
     &:hover {
-      background: #ff9999;
+      background: $act-hover;
     }
   }
+
   .tab-header.menu__link.menu__link--active {
-    background: #f73030;
+    background: $act;
   }
-  .tab > .tab-content {
+
+  .tab>.tab-content {
     position: absolute;
     margin: 5px 0 0 0;
     border: none;
@@ -62,20 +61,24 @@
     transform-origin: top;
     grid-template-rows: 1fr;
   }
-  .tab._is-active > .tab-content {
+
+  .tab._is-active>.tab-content {
     grid-template-rows: 1fr;
     transform: scaleY(1);
     transform-origin: top;
     z-index: 1;
     border: 1px solid #ccc;
     overflow: visible;
+
     .tab-wrap {
       border: none;
+
       a {
         width: 100%;
       }
     }
   }
+
   .tab .tab .tab-content {
     position: relative;
     grid-template-rows: 0fr;
@@ -83,7 +86,7 @@
     margin: 0 0 0 0;
   }
 
-  .tab._is-active > .tab-content {
+  .tab._is-active>.tab-content {
     grid-template-rows: 1fr;
   }
 
@@ -93,20 +96,6 @@
   }
 }
 
-.logo {
-  gap: 0 10px;
-  display: flex;
-  align-items: center;
-  a {
-    svg {
-      height: 50px;
-      width: 50px;
-    }
-  }
-  p {
-    color: aliceblue;
-  }
-}
 
 /*=====================*/
 
@@ -117,6 +106,7 @@
     height: 100%;
     gap: 0 20px;
   }
+
   &__item {
     display: grid;
     place-items: center;
@@ -128,47 +118,53 @@
     -moz-transition: all 0.2s;
     transition: all 0.2s;
   }
+
   &__link {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 10px;
     text-transform: uppercase;
     color: white;
     cursor: pointer;
+
     svg {
-      width: 10px;
-      height: 10px;
+      width: 18px;
+      height: 18px;
     }
+
     &:hover {
-      background: #ff9999;
+      background: $act-hover;
     }
+
     &--active {
-      background: #f73030;
+      background: $act;
       box-shadow: 0px 0px 20px white;
     }
 
     &._is-active {
-      & ~ .menu-tab {
+      &~.menu-tab {
         background-color: black;
         max-height: 190px;
         height: 190px;
-        outline: solid 1px rgb(165, 10, 10);
         animation: pul 0.3s linear;
         animation-fill-mode: forwards;
+
         .smenu__item:hover {
-          & > .smenu-title-js {
+          &>.smenu-title-js {
             background: rgb(147, 240, 185);
+
             svg {
               transform: rotate(90deg);
             }
           }
-          & > .smenu__hidden {
+
+          &>.smenu__hidden {
             animation: pulse 0.3s linear;
             animation-fill-mode: forwards;
           }
         }
       }
+
       svg {
         fill: rgb(54, 54, 56);
         transform: rotate(180deg);
@@ -183,10 +179,12 @@
   align-items: center;
   justify-content: space-between;
   column-gap: 15px;
+
   .info__phone {
     white-space: nowrap;
   }
 }
+
 // ==========================================
 .responciveHeader {
   position: fixed;
@@ -255,6 +253,7 @@
       right: 0px;
       z-index: 110;
       cursor: pointer;
+
       span {
         position: absolute;
         top: 50%;
@@ -265,6 +264,7 @@
         background: white;
         @include transition;
       }
+
       &::after,
       &::before {
         content: "";
@@ -274,30 +274,37 @@
         background: white;
         @include transition;
       }
+
       &::after {
         top: 0;
         left: 0;
       }
+
       &::before {
         bottom: 0;
         left: 0;
       }
+
       &:hover {
+
         span,
         &::after,
         &::before {
           background: rgb(29, 128, 1, 25%);
         }
       }
+
       &._is-active {
         span {
           opacity: 0;
         }
+
         &::after {
           top: calc(50% - 1px);
           left: 0;
           transform: rotate(45deg);
         }
+
         &::before {
           bottom: calc(50%);
           left: 0;
@@ -305,6 +312,7 @@
         }
       }
     }
+
     &__body {
       grid-template-columns: 100px repeat(5, max-content);
       justify-content: left;

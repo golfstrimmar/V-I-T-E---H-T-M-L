@@ -1,0 +1,54 @@
+section#best.best.rel
+  .container
+    .best__body
+      .best__column
+        .best__title
+          h2 ГЛАВНОМУ БУХГАЛТЕРУ АГРОПРЕДПРИЯТИЯ
+        p.best__text РЕШАЙТЕ ЛЮБЫЕ ВОПРОСЫПО 1С   С АГРОБУХУЧЕТ
+        .best__cards
+          -
+            var blocks = [
+              {
+                src: '#card1',
+                title: '434 228',
+                text: 'Вопросов решено в 2023   году'
+              },
+              {
+                src: '#card2',
+                title: '62%',
+                text: 'Вопросов решено в первый   день'
+              },
+              {
+                src: '#card3',
+                title: '98%',
+                text: 'Положительных отзывов от   наших         клиентов'
+              },
+            ];
+          each block in blocks
+            .best__card.card 
+              svg
+                use(xlink:href=block.src)
+              h3=block.title
+              p=block.text
+      .best__column
+        include ../form/form.pug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -23,10 +23,10 @@
 
 
 
-// @import "./../pug/components/header/header.scss";
+@import "./../pug/components/header/header.scss";
 // @import "./../pug/components/bunner/bunner.scss";
 // @import "./../pug/components/bunner/bunner-slider.scss";
-// @import "./../pug/components/do/do.scss";
+@import "./../pug/components/baza/baza.scss";
 // @import "./../pug/components/swiper-1/swiper-1.scss";
 // @import "./../pug/components/slider-full/slider-full.scss";
 // @import "./../pug/components/slider-double/sdouble.scss";
@@ -40,7 +40,7 @@
 // @import "./../pug/components/galeryPop/galeryPop.scss";
 
 // @import "./../pug/components/look/look.scss";
-// @import "./../pug/components/select/select.scss";
+@import "./../pug/components/select/select.scss";
 // @import "./../pug/components/range/range.scss";
 // @import "./../pug/components/footer/footer.scss";
 
@@ -50,7 +50,65 @@
 // @import "./../pug/components/side-menu/side-menu.scss";
 // // @import "./../pug/components/cases/cases.scss";
 // @import "./../pug/components/galCases/galCases.scss";
-// @import "./../pug/components/form/form.scss";
+@import "./../pug/components/form/form.scss";
 // @import "./../pug/components/form/header-form.scss";
 // @import "./../pug/vue-components/book/book-section.scss";
-@import "./../pug/dreambit/baza.scss";
+
+
+
+.logo {
+  width: 319px;
+  height: 60px;
+}
+
+.info-unit {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  span {
+    /* Десктоп/H6 */
+    color: rgb(51, 51, 51);
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%;
+  }
+}
+
+.card {
+  width: 236px;
+  min-height: 205px;
+  box-sizing: border-box;
+  border: 1px solid rgb(230, 232, 236);
+  border-radius: 8px;
+  padding: 16px 24px;
+  background: rgb(255, 255, 255);
+
+  svg {
+    width: 80px;
+    height: 64px;
+  }
+
+  h3 {
+    color: rgb(0, 128, 0);
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 24px 0 0 0;
+  }
+
+  p {
+    color: rgb(10, 12, 19);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+}

@@ -1,57 +1,49 @@
 form#send-form(action="#" method="post" name="send-form").send.send-form
-  .send__linia.input-field.text-field 
-    input#firstname(type='text' name='name' value='' placeholder='Denzel Washington')
-    label.text-field__label(for='name') *input name
-    span *поле обязательное для заполнения
-  .send__linia.input-field.text-field 
-    input#email(type='email' name='email' value='' placeholder='Denzel Washington')
-    label.text-field__label(for='email') *input email
-    span *поле обязательное для заполнения
-  .send__linia.input-field.text-field 
-    input#tel(type='tel' name='tel' value='' placeholder='Denzel Washington')
-    label.text-field__label(for='tel') *input tel
-    span *поле обязательное для заполнения
-  .send__linia.textarea-field.text-field 
-    textarea#textarea4(name="textarea4" row='20' placeholder="Введите текст" )
-    label(for='textarea4') *textarea
-  .send__linia
-    p Оценка:
-    fildset.fildset-rating
-      .fildset-rating__items
-        input(type="radio" id="ratingForm5" name='ratingForm' value='5' )
-        label(for="ratingForm5")
-          svg
-            use(xlink:href='#Star')  
-        input(type="radio" id="ratingForm4" name='ratingForm' value='4' )
-        label(for="ratingForm4")
-          svg
-            use(xlink:href='#Star') 
-        input(type="radio" id="ratingForm3" name='ratingForm' value='3' )
-        label(for="ratingForm3") 
-          svg
-            use(xlink:href='#Star') 
-        input(type="radio" id="ratingForm2" name='ratingForm' value='2' )
-        label(for="ratingForm2") 
-          svg
-            use(xlink:href='#Star') 
-        input(type="radio" id="ratingForm1" name='ratingForm' value='1' )
-        label(for="ratingForm1") 
-          svg
-            use(xlink:href='#Star')
+  h2 Задать вопрос по 1С
   .send__linia.select#wal
+    p Программа
     button.dropdown-button
-      span custom
+      span 1С: Бухгалтерия 8
       input(type="hidden" name='place'  )
       svg.icon
         use(xlink:href='#chevron-down')
     ul.dropdown-list
-      li.dropdown-list__item(data-value='Notes') Notes
-      li.dropdown-list__item(data-value='Photo') Photo
-      li.dropdown-list__item(data-value='Dictionary') Dictionary
+      li.dropdown-list__item(data-value='Notes') 1С: Бухгалтерия 8
+      li.dropdown-list__item(data-value='Photo') 1С: Бухгалтерия 8
+      li.dropdown-list__item(data-value='Dictionary') 1С: Бухгалтерия 8
+  .send__linia.input-field.text-field 
+    p ИНН организации
+    input#firstname(type='text' name='name' value='' placeholder='Denzel Washington')
+    label.text-field__label(for='name') 6465465464654
+  .send__linia.input-field.text-field 
+    p Ваше имя
+    input#firstname(type='text' name='name' value='' placeholder='Denzel Washington')
+    label.text-field__label(for='name') *input name
+  .send__linia.select#wal
+    p Должность
+    button.dropdown-button
+      span Главный бухгалтер
+      input(type="hidden" name='place'  )
+      svg.icon
+        use(xlink:href='#chevron-down')
+    ul.dropdown-list
+      li.dropdown-list__item(data-value='Notes') Главный бухгалтер
+      li.dropdown-list__item(data-value='Photo') Главный бухгалтер
+      li.dropdown-list__item(data-value='Dictionary') Главный бухгалтер
+
+  .send__linia.input-field.text-field 
+    p Телефон
+    input#tel(type='tel' name='tel' value='' placeholder='Denzel Washington')
+    label.text-field__label(for='tel') *input tel
+  .send__linia.input-field.text-field 
+    p Почта
+    input#email(type='email' name='email' value='' placeholder='Denzel Washington')
+    label.text-field__label(for='email') *input email
+
   .fildset-checkbox
     .form-check
       input#agree(type='checkbox' name="agree")
-      label(for='agree') I agree with the rules for publishing reviews
+      label(for='agree') Я согласен на обработку Персональных данных
   p.but-wave
-    button.btn.btn-success(type='submit' ) Sent
+    button.btn.btn-success(type='submit' ) Отправить
 

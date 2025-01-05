@@ -1,55 +1,22 @@
 header.header
-  #successheader Your data has been sent successfully.
   .container
     .burger  
       span
     .header__body 
-      .header__logo.logo
-        a(href='javascript:void(0);')
-          svg
-            use(xlink:href='#logo')
-        p lorem
+      .header__logo
+        svg.logo 
+          use(xlink:href='#logo')
       nav.header__menu.menu
         ul.menu__list
-          li.menu__item
-            .tabs-container
-              .tab
-                .tab-header.menu__link Home
-                  svg
-                    use(xlink:href='#chevron-down')
-                .tab-content
-                  .tab-wrap
-                    a(href="javascript:void(0);") Apartments 
-                    .tab
-                      .tab-header in Dubai
-                        svg
-                          use(xlink:href='#chevron-down')
-                      .tab-content
-                        .tab-wrap
-                          a(href="javascript:void(0);") West
-                          a(href="javascript:void(0);") Ost
-                          .tab
-                            .tab-header Suid
-                              svg
-                                use(xlink:href='#chevron-down')
-                            .tab-content
-                              .tab-wrap
-                                a(href="javascript:void(0);") Suid 1
-                                a(href="javascript:void(0);") Suid 2
-                                a(href="javascript:void(0);") Suid 3
-          li.menu__item
-            a.menu__link(href='javascript:void(0);' rel='#posts') Posts
-          li.menu__item
-            a.menu__link(href='javascript:void(0);' rel='#galery') Projects
           li.menu__item.rel
             .tabs-container
               .tab
-                .tab-header.menu__link Home
+                .tab-header.menu__link Наши услуги
                   svg
                     use(xlink:href='#chevron-down')
                 .tab-content
                   .tab-wrap
-                    a(href="javascript:void(0);") Apartments 
+                    a(href="javascript:void(0);") Наши услуги
                     .tab
                       .tab-header in Dubai
                         svg
@@ -67,29 +34,21 @@ header.header
                                 a(href="javascript:void(0);") Suid 1
                                 a(href="javascript:void(0);") Suid 2
                                 a(href="javascript:void(0);") Suid 3
-      form#languageForm(method='GET' action='/lang' onsubmit='return false;')
-        fieldset.fildset-radio.fildset-radio--lang
-          .form-check
-            input(type="radio" id="14" name="lang" value="EN" checked)
-            label(for="14") EN
-              svg
-                use(xlink:href='#check')
-          .form-check
-            input(type="radio" id="15" name="lang" value="DE")
-            label(for="15") DE
-              svg
-                use(xlink:href='#check')
+
 
       .header__info.info
-        a.info__phone(href='javascript:void(0);') +7(000) 123 45 65 67 
-        a.header__button.btn.btn-success.but-wave.popups-init-js(rel='#popup-header' href='javascript:void(0);') form
-      form.search.header__search.search-field(method='GET' action='/search' onsubmit='return false;')
-        input#search1(type='text' placeholder='search' name='query' )
-        label(for='search1') search
-        .search-field__submit
-          input(type='submit')
+        a(href="!#").info-unit 
           svg
-            use(xlink:href='#search')
+            use(xlink:href='#phone')
+          span +8 (800) 123-45-67
+        a(href="!#").info-unit 
+          svg
+            use(xlink:href='#mail')
+          span 1c@agrobuh.ru 
+      a.btn-empty.popups-init-js.btn.but-wave(href='#!' rel='#popup1') Обратный звонок  
+        svg
+          use(xlink:href='#arrow-narrow-right')
+
 
 
 

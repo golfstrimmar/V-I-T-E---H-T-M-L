@@ -1,0 +1,52 @@
+.best {
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    column-gap: 40px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    h2 {
+      color: rgb(0, 128, 0);
+      font-family: Inter;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 120%;
+    }
+  }
+
+  &__text {
+    margin: 30px 0 0 0;
+    color: rgb(10, 12, 19);
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0px;
+
+  }
+
+  &__cards {
+    display: flex;
+    gap: 16px;
+    margin: 30px 0 0 0;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    svg {}
+
+    p {}
+
+    h3 {}
+  }
+
+}
