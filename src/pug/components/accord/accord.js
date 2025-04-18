@@ -141,7 +141,17 @@ export const Accords = () => {
 
   // ==================================
   const accordAll = [...document.querySelectorAll("._accord-js")];
+
   if (accordAll.length > 0) {
+    const accordAll = [...document.querySelectorAll("._accord-js")];
+    accordAll.forEach((cell) => {
+      [...cell.querySelectorAll("button")][0].classList.add("_is-active");
+      [...cell.querySelectorAll("li")][0].classList.add("_is-active");
+      const hidden = [...cell.querySelectorAll("._accord-hidden-js")][0];
+      hidden.classList.add("_is-active");
+      hidden.style.gridTemplateRows = "1fr";
+      hidden.style.minHeight = 0 + "px";
+    });
     document.addEventListener("click", (e) => {
       if (e.target.closest("._accord-nav-js button")) {
         Accord.closeAll(e.target.closest("._accord-js"));
