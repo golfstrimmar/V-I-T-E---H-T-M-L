@@ -17,7 +17,6 @@ import { Popup } from "@/pug/components/popup/popup";
 import { Tab } from "@/pug/components/tab/tab";
 
 import { SideMenu } from "@/pug/components/side-menu/side-menu";
-// import { CasesInit } from "@/pug/components/cases/cases";
 
 import { Accords } from "@/pug/components/accord/accord";
 import { GalleryInit } from "@/pug/components/galery/galery";
@@ -118,10 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========
   // =========
 
-  // ========Cases=============
-  // if (document.querySelector("._accord-cases-js")) {
-  //   CasesInit();
-  // }
+ 
 
   // ====GalCases=====
   if (document.querySelector("._galCases-plaza-js")) {
@@ -175,12 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   // =========Select==============
-  // const selects = [...document.querySelectorAll(".select-custom")];
-  // if (selects.length > 0) {
-  //   selects.forEach((select) => {
-  //     Select(select);
-  //   });
-  // }
+
   const selects = [...document.querySelectorAll(".select")];
   if (selects.length > 0) {
     document.addEventListener("click", (e) => {

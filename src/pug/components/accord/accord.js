@@ -100,7 +100,7 @@ export const Accords = () => {
 
     static closeAll(item) {
       const accordAll = [...document.querySelectorAll("._accord-js")];
-      const anderenAll = accordAll.filter((el) => el !== item);
+      const anderenAll = accordAll.filter((el) => el === item);
 
       anderenAll.forEach((cell) => {
         if (

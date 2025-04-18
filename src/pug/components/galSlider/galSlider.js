@@ -34,6 +34,15 @@ export const GalSlider = (car) => {
       const el = document.createElement("div");
       el.classList.add("swiper-slide");
       el.innerHTML = card.outerHTML;
+      const link = el.querySelector("a.popups-init-js");
+      const popLink = document.querySelector("#popupCommon");
+      if (link) {
+        link.addEventListener("click", (e) => {
+          console.log("<====el.inner====>", link);
+          popLink.innerHTML = link.innerHTML;
+        });
+      }
+
       sw.append(el);
     });
     galSwiperInstance = new Swiper(nextSwiper, {
