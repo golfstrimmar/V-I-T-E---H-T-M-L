@@ -36,13 +36,13 @@ const createComponent = (componentName) => {
   const jsFile = path.join(componentFolder, `${componentName}.js`);
 
   // Создание пустых файлов PUG, SCSS и JS
-  fs.writeFileSync(pugFile, "", "utf8");
+  fs.writeFileSync(pugFile, `${componentName}`, "utf8");
   console.log(`Файл ${componentName}.pug был успешно создан в ${pugFile}`);
 
-  fs.writeFileSync(scssFile, "", "utf8");
+  fs.writeFileSync(scssFile, `${componentName}`, "utf8");
   console.log(`Файл ${componentName}.scss был успешно создан в ${scssFile}`);
 
-  fs.writeFileSync(jsFile, "", "utf8");
+  fs.writeFileSync(jsFile, `${componentName}`, "utf8");
   console.log(`Файл ${componentName}.js был успешно создан в ${jsFile}`);
 };
 
