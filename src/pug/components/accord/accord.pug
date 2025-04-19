@@ -1,6 +1,77 @@
 section.accord#accord1
     .container
         h2 accord
+        ._accord-js._accord-horisont
+            nav.accord__nav._accord-nav-js
+                button(type='button')  1
+                button(type='button')  2
+                
+                
+                .tabs-container
+                    .tab
+                      .tab-header 
+                        p 3
+                        svg
+                          use(xlink:href='#chevron-down')
+                      .tab-content
+                        .tab-wrap
+                            button(type='button')  3
+                            button(type='button')  4
+                        //-   p Content for Item 1
+                        //-   .tab
+                        //-     .tab-header Item 2
+                        //-       svg
+                        //-         use(xlink:href='#chevron-down')
+                        //-     .tab-content
+                        //-       .tab-wrap
+                                
+                                //- p Content for Item 2
+                                //- .tab
+                                //-   .tab-header Item 2
+                                //-     svg
+                                //-       use(xlink:href='#chevron-down')
+                                //-   .tab-content
+                                //-     .tab-wrap
+                                //-       p Content for Item 2
+                                //-       .tab
+                                //-         .tab-header Item 2
+                                //-           svg
+                                //-             use(xlink:href='#chevron-down')
+                                //-         .tab-content
+                                //-           .tab-wrap
+                                //-             p Content for Item 2
+                                //-             .tab
+                                //-               .tab-header Item 2
+                                //-                 svg
+                                //-                   use(xlink:href='#chevron-down')
+                                //-               .tab-content
+                                //-                 .tab-wrap
+                                //-                   p Content for Item 2
+
+            .accord__hidden._accord-hidden-js
+                ul._accord-hidden-wrap
+                    li 
+                        include ../tab/tab.pug
+                    li 
+                        p 2222222222
+                        p 2222222222
+                        p 2222222222
+                        p 2222222222
+                        p 2222222222
+
+                    li 
+                        p 3333
+                        p 3333
+                        p 3333
+                        p 3333  
+                    li 
+                        p 4444444444
+                        p 44444444444
+                        p 4444444444
+                        p 44444444444444444
+section.accord#accord1
+    .container
+        h2 accord
         ._accord-js
             nav.accord__nav._accord-nav-js
                 button(type='button')  1
