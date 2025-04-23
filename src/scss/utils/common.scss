@@ -13,15 +13,19 @@
 
 body {
   background: white;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 18px;
+  font-family: "Montserat", sans-serif;
+  font-family: Montserrat,
+    sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 13px;
   font-weight: 400;
-  color: rgb(37, 37, 37);
+  line-height: 16px;
+  letter-spacing: 0%;
 }
 
 .container {
   // outline: 1px solid #4164ff;
-  max-width: 1200px;
+  max-width: 1110px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -35,7 +39,7 @@ a {
   display: inline-block;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  color: rgb(72, 89, 245);
+  // color: rgb(72, 89, 245);
 }
 
 .imgs {
@@ -92,8 +96,8 @@ svg.hidden {
 
 ._hover {
   &:hover {
-    color: rgba(9, 72, 207, 25%);
-    text-shadow: 0 0 14px white;
+    color: rgba(71, 71, 71, 0.25);
+    // text-shadow: 0 0 14px white;
   }
 }
 
@@ -158,32 +162,7 @@ svg.hidden {
   text-transform: uppercase;
 }
 
-a.common__link {
-  width: 104px;
-  height: 104px;
-  z-index: 50;
-  border-radius: 100px;
-  box-shadow: 0 4px 24px 0 rgba(27, 49, 95, 0.15);
-  background-color: rgba(9, 72, 207);
-  opacity: 0;
-  z-index: 50;
 
-  svg {
-    width: 50px;
-    height: 50px;
-    fill: $white;
-    transition: all 0.3s;
-  }
-
-  &:hover {
-    background-color: rgba(9, 72, 207, 25%);
-    box-shadow: 0 4px 24px 0 rgba(9, 72, 207, 0.45);
-
-    svg {
-      fill: rgba(9, 72, 207);
-    }
-  }
-}
 
 @media (min-width: 901px) and (max-width: 1259px) {
   .container {

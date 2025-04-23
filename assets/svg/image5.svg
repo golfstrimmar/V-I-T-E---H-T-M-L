@@ -1,0 +1,12 @@
+<svg width="22.000000" height="22.000000" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<pattern id="pattern_28_2390" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+			<use xlink:href="#image28_239_0" transform="matrix(0.015625,0,0,0.015625,0,0)"/>
+		</pattern>
+		<image id="image28_239_0" width="64.000000" height="64.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAA+JJREFUeJztmkFu3DYUhj+SqhO4QWEEBdob9BJdeZ07FAW8KdAexasWyDKLXqELH6A+RBdFtw6SFoY7iTOW+F4XEjkUhyNPgiYzI/MHNJRIinj8+b/3SGGgoqKioqKioqKiouIhwgxl880Pv7U7teQT44/nzz4DumZ4fgzKLz99y8uFxxjLipv3w6PG8KgxOGtwtq9rrMEMwzkzPa5XBUAVOunvvYAXZdn114dBURW+euL48effAR4Di0BAgype4Z+3HmP0Q+e/v1BQFb783PXsQhN/ADDKv+88f7/pMMbAPSt1cFBFVXnzRTNa3Cbt8HrR8XYpGGt3YOHHhqIivFp0wMqNIgGqwtXNHaJgZI4u0Cvg6qYNLgCMFNAHGi/MNAb0BPihDFgpAEFUEQwGTVUyEyhKWPySAkQQUbzXWccAL6bsAqoDAWKwPVe7sPKjQgRkSIcBKwWgiIKI9gTNNA3qyg+AVAG+o/UeL6Z3AZ2fAlSETrSsABWPqiKiQwKYmQKgj/4KqI91kYC/fv2eG/sd19fX/U5whlBVzNOn/PniRaxr0g5d13F3d4dNssBcyNAhBojIqH6NAO89IjKbiadQVdp2fOpfI6Drujh5O7P9QFjcFJMEzE0FqkrXdaO6IgHOuZgq+o8jh48wH+/9qH5EgPc+xoHV6vtZKCEcgCZdYLlcslwusdbGSasqxpiDJUGz09/t7e2ofU0BOUPGmNEAh4TU9pACN7pA38GPSEiDobV2jZx9R7A5pHVVnY4BbbvKAiEFisjIJWD/s0NYde/9mu9vlQZhvAdIGTwkBJtTuyc3Qqn8D90NrLUjBaSqSBEJOD8/5/T0lKOjI5xzOOdomgZrLc656AaHkBE0nv01xgDvPW3bcnx8zMXFBWdnZ0BCQLry1tr4sjEmlqmk9pmEVPI5GXkgjI4eGtPnUJdeh4J0wvkpML2PCgishM7OuficE7DvATG1Nbc/J8OmL+WrnqoiH3Rfkas4n1eoDyi6QMlvDsEN8l1fWp/avpGAUmDLN0D7HADT80so84AIG2JAKXKm92n03xcS0kXL7S258iQBeaeS7PO2XZJQsjM8pyk9bIY2xbA1AvJBSy/u8pthSdKbYld6baUAYLTTSyf5Pt8FSn1KKTQff6o9tSEnIrV/KouVMDoLlHy9JK/7PpZOZYrSCm7Tvml3l9s2lc7zzd6IgNJq3OfznyoObENa8PX8CJwSUkIk4OTkhMvLy9GBx1o7ukJd/x+i/3uaW2KY/6ZoD+V4lt6PUvtQPgG+HsqHgAVwBSziHyXp/zfXbHxlXuiAd0NZUVFRUVFRUVHxIPEf5NhwjgeJ1oUAAAAASUVORK5CYII="/>
+	</defs>
+	<rect id="image 18" width="22.000000" height="22.000000" fill="url(#pattern_28_2390)" fill-opacity="1.000000"/>
+</svg>

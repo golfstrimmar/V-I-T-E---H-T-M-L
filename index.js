@@ -3,38 +3,38 @@ import "./assets/css/plyr.css";
 import "./assets/css/swiper-bundle.min.css";
 import "@/scss/main.scss";
 import { Button } from "@/pug/components/buttons/btn-wave";
-import { Lazy } from "./assets/js/lazy";
+// import { Lazy } from "./assets/js/lazy";
 import { Anim } from "./assets/js/animation";
-import { Marque } from "./assets/js/marque";
+// import { Marque } from "./assets/js/marque";
 
-import { Lang } from "./assets/js/lang";
-import { Search } from "./assets/js/search";
+// import { Lang } from "./assets/js/lang";
+// import { Search } from "./assets/js/search";
 
 import { Header } from "@/pug/components/header/header";
 
-import { bunnerSwiper } from "@/pug/components/bunner/bunner";
+// import { bunnerSwiper } from "@/pug/components/bunner/bunner";
 import { Popup } from "@/pug/components/popup/popup";
 import { Tab } from "@/pug/components/tab/tab";
 
-import { SideMenu } from "@/pug/components/side-menu/side-menu";
+// import { SideMenu } from "@/pug/components/side-menu/side-menu";
 
 import { Accords } from "@/pug/components/accord/accord";
-import { GalleryInit } from "@/pug/components/galery/galery";
-import { GalSlider } from "@/pug/components/galSlider/galSlider";
-import { GalCases } from "@/pug/components/galCases/galCases";
-import { GalleryPop } from "@/pug/components/galeryPop/galeryPop";
+// import { GalleryInit } from "@/pug/components/galery/galery";
+// import { GalSlider } from "@/pug/components/galSlider/galSlider";
+// import { GalCases } from "@/pug/components/galCases/galCases";
+// import { GalleryPop } from "@/pug/components/galeryPop/galeryPop";
 
-import { Range } from "@/pug/components/range/range";
+// import { Range } from "@/pug/components/range/range";
 import { Select } from "@/pug/components/select/select";
-import { Look } from "@/pug/components/look/look";
-import { TypedItem } from "@/pug/components/typed/typedHover";
-import { Form } from "@/pug/components/form/form";
-import { HeaderForm } from "@/pug/components/form/header-form";
-import { FormFields } from "@/pug/vue-components/book/book";
-import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
-import { SwiperFull } from "@/pug/components/slider-full/slider-full";
-import { SwiperScroll } from "@/pug/components/slider-scroll/slider-scroll";
-import { Double } from "@/pug/components/slider-double/sdouble.js";
+// import { Look } from "@/pug/components/look/look";
+// import { TypedItem } from "@/pug/components/typed/typedHover";
+// import { Form } from "@/pug/components/form/form";
+// import { HeaderForm } from "@/pug/components/form/header-form";
+// import { FormFields } from "@/pug/vue-components/book/book";
+// import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
+// import { SwiperFull } from "@/pug/components/slider-full/slider-full";
+// import { SwiperScroll } from "@/pug/components/slider-scroll/slider-scroll";
+// import { Double } from "@/pug/components/slider-double/sdouble.js";
 document.addEventListener("DOMContentLoaded", function () {
   Anim();
 
@@ -44,17 +44,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ===Look=======
-  if (document.querySelector("video")) {
-    Look();
-  }
+  // if (document.querySelector("video")) {
+  //   Look();
+  // }
   // =========Lazy==============
-  if (document.querySelector("img")) {
-    Lazy();
-  }
+  // if (document.querySelector("img")) {
+  //   Lazy();
+  // }
   // =========bunnerSwiper==============
-  if (document.querySelector("#bunner-slider")) {
-    bunnerSwiper();
-  }
+  // if (document.querySelector("#bunner-slider")) {
+  //   bunnerSwiper();
+  // }
   // ========popup===============
   if (document.querySelector(".popups-init-js")) {
     Popup();
@@ -86,9 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // =========sideMenu==============
-  if (document.querySelector("._smenu-js")) {
-    SideMenu();
-  }
+  // if (document.querySelector("._smenu-js")) {
+  //   SideMenu();
+  // }
 
   // =========
   // ====Accords=====
@@ -98,78 +98,76 @@ document.addEventListener("DOMContentLoaded", function () {
     Accords();
   }
   // ======Gallery======================
-  if (document.querySelector("._accord-galery-js")) {
-    GalleryInit();
-  }
+  // if (document.querySelector("._accord-galery-js")) {
+  //   GalleryInit();
+  // }
   // ======GalSlider==================
-  if (document.querySelector(".galSlider")) {
-    let galSliders = [...document.querySelectorAll(".galSlider")];
-    galSliders.forEach((car) => {
-      GalSlider(car);
-    });
-  }
+  // if (document.querySelector(".galSlider")) {
+  //   let galSliders = [...document.querySelectorAll(".galSlider")];
+  //   galSliders.forEach((car) => {
+  //     GalSlider(car);
+  //   });
+  // }
   // ======galeryPop==================
-  if (document.querySelector(".accord--GalleryPop")) {
-    GalleryPop();
-  }
+  // if (document.querySelector(".accord--GalleryPop")) {
+  //   GalleryPop();
+  // }
 
   // =========
   // =========
   // =========
-
- 
 
   // ====GalCases=====
-  if (document.querySelector("._galCases-plaza-js")) {
-    GalCases();
-  }
+  // if (document.querySelector("._galCases-plaza-js")) {
+  //   GalCases();
+  // }
 
   // =========Swiper1==============
-  if (document.querySelector("#swiper-1")) {
-    Swiper1();
-  }
+  // if (document.querySelector("#swiper-1")) {
+  //   Swiper1();
+  // }
   // ========swiper-1licens===============
-  if (document.querySelector("#swiper-1licens")) {
-    Swiper1licens();
-  }
+  // if (document.querySelector("#swiper-1licens")) {
+  //   Swiper1licens();
+  // }
   // =========Marque==============
-  if (document.querySelector(".marque")) {
-    Marque();
-  }
+  // if (document.querySelector(".marque")) {
+  //   Marque();
+  // }
   // ======slider-full=================
-  if (document.querySelector("#slider-full")) {
-    SwiperFull();
-  }
+  // if (document.querySelector("#slider-full")) {
+  //   SwiperFull();
+  // }
   // =====swiper-scroll==================
-  if (document.querySelector("#swiper-scroll")) {
-    SwiperScroll();
-  }
+  // if (document.querySelector("#swiper-scroll")) {
+  //   SwiperScroll();
+  // }
   // ========swiperDouble===============
-  if (document.querySelector("#swiperDoubleTop")) {
-    Double();
-  }
+  // if (document.querySelector("#swiperDoubleTop")) {
+  //   Double();
+  // }
   // ========lang===============
-  if (document.querySelector('input[name="lang"]')) {
-    document.querySelectorAll('input[name="lang"]').forEach(function (radio) {
-      Lang(radio);
-    });
-  }
+  // if (document.querySelector('input[name="lang"]')) {
+  //   document.querySelectorAll('input[name="lang"]').forEach(function (radio) {
+  //     Lang(radio);
+  //   });
+  // }
   // ========Search===============
-  if (document.querySelector("#search")) {
-    Search();
-  }
+  // if (document.querySelector("#search")) {
+  //   Search();
+  // }
   // ========vue book===============
-  if (document.querySelector(".book")) {
-    FormFields();
-  }
+  // if (document.querySelector(".book")) {
+  //   FormFields();
+  // }
 
   // ========Range===============
-  const ranges = [...document.querySelectorAll("._range-wrap-js")];
-  if (ranges.length > 0) {
-    ranges.forEach((item) => {
-      Range(item);
-    });
-  }
+  // const ranges = [...document.querySelectorAll("._range-wrap-js")];
+  // if (ranges.length > 0) {
+  //   ranges.forEach((item) => {
+  //     Range(item);
+  //   });
+  // }
   // =========Select==============
 
   const selects = [...document.querySelectorAll(".select")];
@@ -186,12 +184,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // ========Form===============
 
-  if (document.querySelector(".send-form")) {
-    Form();
-  }
-  if (document.querySelector("#header-form")) {
-    HeaderForm();
-  }
+  // if (document.querySelector(".send-form")) {
+  //   Form();
+  // }
+  // if (document.querySelector("#header-form")) {
+  //   HeaderForm();
+  // }
   // =========Button==============
   if (document.querySelector(".but-wave")) {
     const wave = [...document.querySelectorAll(".but-wave")];
@@ -203,12 +201,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // =======================
 
-  const textTypedAll = [...document.querySelectorAll("._hover-typed")];
-  if (textTypedAll.length > 0) {
-    textTypedAll.forEach((item) => {
-      TypedItem(item);
-    });
-  }
+  // const textTypedAll = [...document.querySelectorAll("._hover-typed")];
+  // if (textTypedAll.length > 0) {
+  //   textTypedAll.forEach((item) => {
+  //     TypedItem(item);
+  //   });
+  // }
 });
 // =======================
 

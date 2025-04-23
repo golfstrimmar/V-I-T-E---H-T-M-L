@@ -1,0 +1,136 @@
+section.vac {
+  .vac__wrap {
+    .vac__title {
+      h2 {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 44px;
+        letter-spacing: 0%;
+
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+
+    .vac__content {
+      .vac__items {
+        margin: 20px 0 0 0;
+        display: flex;
+        align-items: center;
+
+        span {
+          margin: 0 10px 0 0;
+        }
+
+        ul {
+          display: flex;
+          align-items: center;
+          gap: 0 6px;
+
+          li {
+            display: flex;
+            align-items: center;
+            gap: 0 4px;
+
+            svg {
+              width: 22px;
+              height: 22px;
+            }
+
+            span {
+              color: rgb(10, 7, 7);
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 15px;
+              letter-spacing: 0%;
+            }
+          }
+
+
+        }
+      }
+
+      ul.vac__cards {
+        margin: 20px 0 0 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 255px);
+        gap: 24px 30px;
+
+        li {
+          .vac__card {}
+
+          .card {
+            border-radius: 10px;
+            background: rgb(243, 248, 249);
+
+            .card__wrap {
+              padding: 30px 50px;
+              position: relative;
+
+              svg {
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 24px;
+                right: 12px;
+              }
+
+              .card__decor {
+                position: absolute;
+                top: 8px;
+                left: -50px;
+                width: 28px;
+                height: 1px;
+                background-color: rgb(237, 0, 0);
+                position: relative;
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  top: 50%;
+                  right: -2px;
+                  width: 10px;
+                  height: 10px;
+                  transform: translateY(-50%);
+                  border-radius: 100%;
+                  background: rgb(237, 0, 0);
+                }
+              }
+
+              h3 {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1;
+                margin: 0 0 10px 0;
+              }
+
+              p {
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 15px;
+                margin: 0 0 5px 0;
+              }
+
+
+
+              button {
+                width: 148px;
+                height: 28px;
+                margin: 20px 0 0 0;
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    button.vac__button {
+      border-radius: 10px;
+      background: rgb(237, 0, 0);
+      width: 254px;
+      height: 55px;
+    }
+  }
+}
