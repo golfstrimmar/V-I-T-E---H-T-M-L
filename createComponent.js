@@ -44,6 +44,67 @@ const createComponent = (componentName) => {
 
   fs.writeFileSync(jsFile, `${componentName}`, "utf8");
   console.log(`Файл ${componentName}.js был успешно создан в ${jsFile}`);
+
+  // Пути к main.scss и index.pug
+  const mainScssFile = path.join(projectDir, "src", "scss", "main.scss");
+  const mainPugFile = path.join(projectDir, "src", "pug", "pages", "index.pug");
+
+  // Строка импорта для main.scss
+  const scssImport = `@import "./../pug/components/${componentName}/${componentName}.scss";\n`;
+
+  // Строка включения для index.pug (с табом)
+  const pugInclude = `\tinclude ../../components/${componentName}/${componentName}.pug\n`;
+
+  // Обновление main.scss
+  try {
+    if (fs.existsSync(mainScssFile)) {
+      const scssContent = fs.readFileSync(mainScssFile, "utf8");
+      if (!scssContent.includes(scssImport.trim())) {
+        fs.appendFileSync(mainScssFile, scssImport, "utf8");
+        console.log(`Добавлен импорт в ${mainScssFile}: ${scssImport.trim()}`);
+      }
+    } else {
+      console.log(
+        `Файл ${mainScssFile} не найден. Пропускаем добавление импорта SCSS.`
+      );
+    }
+  } catch (err) {
+    console.error(`Ошибка при обновлении ${mainScssFile}: ${err.message}`);
+  }
+
+  // Обновление index.pug
+  try {
+    if (fs.existsSync(mainPugFile)) {
+      let pugContent = fs.readFileSync(mainPugFile, "utf8");
+      if (!pugContent.includes(pugInclude.trim())) {
+        // Ищем main.inner с учетом табов и переносов строк
+        const mainInnerRegex = /^[\t]*main\.inner[\t]*(\r?\n)/m;
+        const match = pugContent.match(mainInnerRegex);
+        if (match) {
+          const insertPosition = match.index + match[0].length;
+          pugContent =
+            pugContent.slice(0, insertPosition) +
+            pugInclude +
+            pugContent.slice(insertPosition);
+          fs.writeFileSync(mainPugFile, pugContent, "utf8");
+          console.log(
+            `Добавлено включение в ${mainPugFile} после main.inner: ${pugInclude.trim()}`
+          );
+        } else {
+          console.log(
+            `Строка "main.inner" не найдена в ${mainPugFile}. Добавляем include в конец файла.`
+          );
+          fs.appendFileSync(mainPugFile, pugInclude, "utf8");
+        }
+      }
+    } else {
+      console.log(
+        `Файл ${mainPugFile} не найден. Пропускаем добавление включения Pug.`
+      );
+    }
+  } catch (err) {
+    console.error(`Ошибка при обновлении ${mainPugFile}: ${err.message}`);
+  }
 };
 
 // Запрашиваем имя компонента у пользователя
