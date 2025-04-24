@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "vite": "^5.4.8",
@@ -26,6 +27,8 @@
     "@vuepic/vue-datepicker": "^9.0.3",
     "plyr": "^3.7.2",
     "postcss-nesting": "^10.2.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "sass": "^1.54.9",
     "swiper": "^8.4.2",
     "typed.js": "^2.0.12",

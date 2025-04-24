@@ -6,35 +6,32 @@ import { Button } from "@/pug/components/buttons/btn-wave";
 import { Lazy } from "./assets/js/lazy";
 import { Anim } from "./assets/js/animation";
 import { Marque } from "./assets/js/marque";
-
 import { Lang } from "./assets/js/lang";
 import { Search } from "./assets/js/search";
-
 import { Header } from "@/pug/components/header/header";
-
 import { bunnerSwiper } from "@/pug/components/bunner/bunner";
 import { Popup } from "@/pug/components/popup/popup";
 import { Tab } from "@/pug/components/tab/tab";
-
 import { SideMenu } from "@/pug/components/side-menu/side-menu";
-
 import { Accords } from "@/pug/components/accord/accord";
 import { GalleryInit } from "@/pug/components/galery/galery";
 import { GalSlider } from "@/pug/components/galSlider/galSlider";
 import { GalCases } from "@/pug/components/galCases/galCases";
 import { GalleryPop } from "@/pug/components/galeryPop/galeryPop";
-
 import { Range } from "@/pug/components/range/range";
 import { Select } from "@/pug/components/select/select";
 import { Look } from "@/pug/components/look/look";
 import { TypedItem } from "@/pug/components/typed/typedHover";
 import { Form } from "@/pug/components/form/form";
 import { HeaderForm } from "@/pug/components/form/header-form";
-import { FormFields } from "@/pug/vue-components/book/book";
 import { Swiper1 } from "@/pug/components/swiper-1/swiper-1";
 import { SwiperFull } from "@/pug/components/slider-full/slider-full";
 import { SwiperScroll } from "@/pug/components/slider-scroll/slider-scroll";
 import { Double } from "@/pug/components/slider-double/sdouble.js";
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 document.addEventListener("DOMContentLoaded", function () {
   Anim();
 
@@ -117,8 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========
   // =========
 
- 
-
   // ====GalCases=====
   if (document.querySelector("._galCases-plaza-js")) {
     GalCases();
@@ -157,10 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // ========Search===============
   if (document.querySelector("#search")) {
     Search();
-  }
-  // ========vue book===============
-  if (document.querySelector(".book")) {
-    FormFields();
   }
 
   // ========Range===============

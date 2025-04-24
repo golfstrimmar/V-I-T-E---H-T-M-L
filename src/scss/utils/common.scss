@@ -98,6 +98,17 @@ svg.hidden {
 }
 
 /* +++++++++++++++++++++++++++++++++++++ */
+
+.d-grid {
+  display: grid;
+}
+
+.grig-cols-2 {
+  grid-template-columns: repeat(2, max-content);
+  gap: 10px;
+}
+
+/* +++++++++++++++++++++++++++++++++++++ */
 @media (prefers-reduced-motion: no-preference) {
   .top-animation {
     animation: wipe-enter 1.5s;
