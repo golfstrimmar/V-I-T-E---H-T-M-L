@@ -71,6 +71,23 @@ export default function Book() {
     // }
   }, [errors, openCalendarIn, openCalendarOut, checkIn, checkOut]);
 
+  const parseDate = (dateString) => {
+    const [day, month, year] = dateString.split(".").map(Number);
+    return new Date(year, month - 1, day); // Месяцы в Date начинаются с 0
+  };
+
+  useEffect(() => {
+    const tempIn = parseDate(checkIn); // Преобразуем строку в объект Date
+    const tempOut = parseDate(checkOut);
+    if (tempIn >= tempOut) {
+      // Если дата заезда позже или равна дате выезда, сдвигаем checkOut на 1 день
+      const newCheckOut = new Date(tempIn);
+      newCheckOut.setDate(tempIn.getDate() + 1); // Увеличиваем дату на 1 день
+
+      // Обновляем состояние checkOut
+      setCheckOut(newCheckOut.toLocaleDateString("de-DE"));
+    }
+  }, [checkIn, checkOut]);
   return (
     <div className="book">
       <div className="container">
@@ -106,6 +123,7 @@ export default function Book() {
                     setDate={setCheckIn}
                     closeCalendar={() => setOpenCalendarIn(false)}
                     minDate={new Date()}
+                    flag="in"
                     initialDate={
                       new Date(checkIn.split(".").reverse().join("-"))
                     }
@@ -144,6 +162,7 @@ export default function Book() {
                     setErrors={setErrors}
                     setDate={setCheckOut}
                     closeCalendar={() => setOpenCalendarOut(false)}
+                    flag="out"
                     minDate={
                       checkIn
                         ? new Date(checkIn.split(".").reverse().join("-"))

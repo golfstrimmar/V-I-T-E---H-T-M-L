@@ -24,6 +24,7 @@ const Calendar = ({
   minDate,
   initialDate,
   setErrors,
+  flag,
 }) => {
   const [currentDate, setCurrentDate] = useState(() => {
     const date = initialDate || new Date();
@@ -81,14 +82,14 @@ const Calendar = ({
       }
 
       // Проверяем minDate (например, выезд не раньше заезда)
-      if (minDate && newDate < minDate) {
-        setErrors("Дата должна быть не раньше минимальной.");
+      if (minDate && newDate < minDate && flag === "out") {
+        setErrors("Дата отъезда должна быть не раньше даты приезда.");
         return;
       }
       if (minDate) {
         const minCheckOutDate = new Date(minDate);
         minCheckOutDate.setDate(minCheckOutDate.getDate() + 1); // Минимальная дата выезда = minDate + 1 день
-        if (newDate < minCheckOutDate) {
+        if (newDate < minCheckOutDate && flag === "out") {
           setErrors("Дата выезда должна быть минимум на день позже заезда.");
           return;
         }
