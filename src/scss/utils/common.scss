@@ -38,6 +38,10 @@ a {
   color: rgb(72, 89, 245);
 }
 
+*:has(> .imgs) {
+  position: relative;
+}
+
 .imgs {
   overflow: hidden;
   position: relative;
