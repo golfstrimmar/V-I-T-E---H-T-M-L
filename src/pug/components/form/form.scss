@@ -1,6 +1,6 @@
 .send {
   padding: 20px;
-  background: $white;
+  background: white;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -9,13 +9,16 @@
     margin: 0 0 20px 0;
     max-width: 100%;
   }
+
   .send__linia._check_invalid {
     border: 1px solid red;
     color: red;
   }
+
   .input-field {
     border: 1px solid #b4b4b4;
     position: relative;
+
     span {
       position: absolute;
       top: 110%;
@@ -36,6 +39,7 @@
       border-radius: 5px;
     }
   }
+
   .input-field input[type="text"],
   .input-field input[type="email"],
   .input-field input[type="tel"] {
@@ -50,46 +54,53 @@
 
   .input-field._check_invalid {
     border: 1px solid red;
-    input[type="text"] + label,
-    input[type="email"] + label,
-    input[type="tel"] + label,
-    textarea + label {
+
+    input[type="text"]+label,
+    input[type="email"]+label,
+    input[type="tel"]+label,
+    textarea+label {
       color: red;
     }
+
     span {
       display: block;
     }
   }
+
   .text-field label {
     left: 10px;
   }
+
   .textarea-field {
     border: 1px solid #b4b4b4;
   }
+
   .fildset-checkbox {
     margin: 10px 0;
+
     &._check_invalid {
       label {
         color: red;
       }
-      input[type="checkbox"]:not(:checked) + label::before {
+
+      input[type="checkbox"]:not(:checked)+label::before {
         border-color: red;
       }
     }
   }
 
-  .fildset-checkbox._check_invalid
-    input[type="checkbox"]:not(:checked)
-    + label:hover {
+  .fildset-checkbox._check_invalid input[type="checkbox"]:not(:checked)+label:hover {
     color: red;
   }
 
-  .textarea-field textarea + label {
+  .textarea-field textarea+label {
     padding: 0px;
   }
+
   .textarea-field._check_invalid {
     border: 1px solid red;
-    textarea + label {
+
+    textarea+label {
       color: red;
     }
   }
