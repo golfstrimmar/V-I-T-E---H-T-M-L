@@ -1,16 +1,173 @@
-.rrr {
-  .rrr__wrap {
-    padding: 2px 4px;
-    background: $background-6;
-
-    .rrr__title {
-      text-align: center;
-    }
-  }
-
-  p {
-    text-align: center;
-    margin: 40px 135px;
-  }
-
+@mixin font-montserrat-700-48 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: $color-1;
 }
+@mixin font-montserrat-400-18 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: $color-1;
+}
+@mixin font-montserrat-500-27 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 27px;
+    color: $color-1;
+}
+@mixin font-montserrat-400-16 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: $color-1;
+}
+@mixin font-montserrat-500-22 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: $color-1;
+}
+
+section {
+    .container {
+        div {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            div {
+                h3 {
+                    @include font-montserrat-700-48;
+                }
+                p {
+                    @include font-montserrat-400-18;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    li {
+                        span {
+                            @include font-montserrat-400-16;
+                        }
+                        h4 {
+                            @include font-montserrat-500-22;
+                        }
+                    }
+                    li {
+                        span {
+                            @include font-montserrat-400-16;
+                        }
+                        h4 {
+                            @include font-montserrat-500-22;
+                        }
+                    }
+                    li {
+                        span {
+                            @include font-montserrat-400-16;
+                        }
+                        h4 {
+                            @include font-montserrat-500-22;
+                        }
+                    }
+                }
+            }
+            ul {
+                display: flex;
+                flex-direction: row;
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img {
+                        background: #e2e8f0;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 4px;
+                    }
+                    h3 {
+                        @include font-montserrat-500-27;
+                    }
+                    ul {
+                        li {
+                            @include font-montserrat-400-16;
+                        }
+                    }
+                }
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img {
+                        background: #e2e8f0;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 4px;
+                    }
+                    h3 {
+                        @include font-montserrat-500-27;
+                    }
+                    ul {
+                        li {
+                            @include font-montserrat-400-16;
+                        }
+                        li {
+                            @include font-montserrat-400-16;
+                        }
+                        li {
+                            @include font-montserrat-400-16;
+                        }
+                        li {
+                            @include font-montserrat-400-16;
+                        }
+                        li {
+                            @include font-montserrat-400-16;
+                        }
+                    }
+                }
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img {
+                        background: #e2e8f0;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 4px;
+                    }
+                    h3 {
+                        @include font-montserrat-500-27;
+                    }
+                    ul {
+                        li {
+                            @include font-montserrat-400-16;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+$color-1: rgb(37, 37, 37);
+$color-2: rgb(52, 52, 90);
+$color-3: rgb(33, 70, 164);
+$color-4: rgb(45, 89, 202);
+$color-5: rgb(51, 95, 206);
+$color-6: rgb(52, 95, 206);
+$color-7: rgb(58, 83, 155);
+$color-8: rgb(69, 69, 114);
+$color-9: rgb(86, 86, 134);
+$color-10: rgb(240, 164, 49);
+$color-11: rgb(255, 179, 64);
+$color-12: rgb(37, 155, 231);
+$color-13: rgb(59, 105, 223);
+$color-14: rgb(65, 123, 235);
+$color-15: rgb(66, 123, 235);
+$color-16: rgb(67, 113, 232);
+$color-17: rgb(69, 121, 255);
+$color-18: rgb(107, 157, 255);
+$color-19: rgb(135, 117, 104);
+$color-20: rgb(208, 198, 198);
+$color-21: rgb(236, 234, 231);
+$color-22: rgb(247, 249, 252);
+$color-23: rgb(249, 242, 248);
+$color-24: rgb(255, 255, 255);
